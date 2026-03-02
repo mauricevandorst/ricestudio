@@ -1,0 +1,1081 @@
+﻿<!DOCTYPE html>
+<!-- Bestand: index.html | Doel: Complete, responsive en toegankelijke website voor Rice Studio. -->
+<html lang="nl" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Rice Studio bouwt snelle, converterende websites in Assendelft. Strategie, design en development door Maurice, met groei via SEO/SEA en performance campagnes met Rafael.">
+  <meta property="og:title" content="Rice Studio | Webdesign & Website Ontwikkeling in Assendelft">
+  <meta property="og:description"
+    content="Strak design + snelle, converterende websites. Daarna ook groei via SEO, SEA en performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.rice-studio.nl/">
+  <meta property="og:locale" content="nl_NL">
+  <title>Rice Studio | Webdesign & Website Ontwikkeling in Assendelft</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"LocalBusiness","name":"Rice Studio","url":"https://www.rice-studio.nl/","telephone":"TODO: +31-XX-XXXXXXX","email":"TODO: info@rice-studio.nl","address":{"@type":"PostalAddress","streetAddress":"TODO: Straat + huisnummer","addressLocality":"Assendelft","postalCode":"TODO: postcode","addressCountry":"NL"},"areaServed":["Assendelft","Zaanstad","Noord-Holland"],"priceRange":"EUR EUR","description":"Webdesign, website ontwikkeling, SEO basis, performance en onderhoud voor ondernemers in Assendelft en omgeving."}
+  </script>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-900 antialiased [font-family:'Manrope',sans-serif]">
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:ring-2 focus:ring-indigo-500">Ga
+    direct naar de inhoud</a>
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div
+      class="absolute -left-20 top-16 h-80 w-80 rounded-full bg-gradient-to-br from-indigo-200/60 to-cyan-100/20 blur-3xl">
+    </div>
+    <div
+      class="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-gradient-to-tr from-emerald-200/50 to-sky-100/20 blur-3xl">
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white shadow-sm">
+    <div class="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="#top"
+        class="inline-flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900 [font-family:'Space_Grotesk',sans-serif]"
+        aria-label="Rice Studio home">
+        <span
+          class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 text-sm font-bold text-white shadow-lg shadow-indigo-200">RS</span>
+        Rice Studio
+      </a>
+      <nav aria-label="Hoofdmenu" class="hidden items-center gap-1 md:flex">
+        <a data-nav-link href="#diensten"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
+        <a data-nav-link href="#werk"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
+        <a data-nav-link href="#proces"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
+        <a data-nav-link href="#reviews"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
+        <a data-nav-link href="#faq"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
+        <a data-nav-link href="#contact"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
+      </nav>
+      <div class="hidden md:block"><a href="#contact" class="btn btn-primary px-5 py-3">Plan
+          een kennismaking</a></div>
+      <button id="menu-toggle" type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 md:hidden"
+        aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><svg class="h-5 w-5"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path>
+        </svg></button>
+    </div>
+    <div id="mobile-overlay"
+      class="pointer-events-none fixed inset-0 z-40 hidden bg-slate-950/40 opacity-0 transition-opacity duration-300 md:hidden"
+      aria-hidden="true"></div>
+    <nav id="mobile-menu"
+      class="fixed right-0 top-0 z-50 hidden h-full w-[84%] max-w-sm translate-x-full border-l border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-300 md:hidden"
+      aria-label="Mobiel menu">
+      <div class="mb-8 flex items-center justify-between">
+        <p class="text-base font-bold [font-family:'Space_Grotesk',sans-serif]">Rice Studio</p><button id="menu-close"
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          aria-label="Sluit menu"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"></path>
+          </svg></button>
+      </div>
+      <div class="flex flex-col gap-2">
+        <a data-nav-link href="#diensten"
+          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
+        <a data-nav-link href="#werk"
+          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
+        <a data-nav-link href="#proces"
+          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
+        <a data-nav-link href="#reviews"
+          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
+        <a data-nav-link href="#faq"
+          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
+        <a data-nav-link href="#contact"
+          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn-primary mt-8 w-full px-5 py-3">Vraag
+        offerte</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="scroll-mt-28 border-b border-slate-200/80 md:flex md:items-center">
+      <div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
+
+        <div class="mb-10 lg:mb-12">
+          <div
+            class="mx-auto flex w-full sm:w-max sm:min-w-[420px] max-w-3xl items-center gap-4 rounded-2xl border border-emerald-200 bg-emerald-50/80 px-4 py-4 text-slate-900 shadow-sm sm:pe-12">
+            <span
+              class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-lg text-white">✓</span>
+            <div class="min-w-0">
+              <p class="text-sm font-extrabold text-emerald-700">Betaalbare websites mét online ads</p>
+              <p class="text-sm font-semibold text-slate-900">Alles onder één dak. 🏠</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid w-full gap-12 lg:grid-cols-2 lg:items-start">
+          <div data-reveal class="opacity-0 translate-y-6 transition duration-700">
+
+            <h1
+              class="inline-block sm:min-h-[96px] lg:min-h-[180px] text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl [font-family:'Space_Grotesk',sans-serif]">
+              <span class="inline">Wij bouwen </span><span class="inline">
+                <span id="typing-prefix" class="inline">websites die </span><span id="typing-highlight"
+                  class="inline bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent">er
+                  strak
+                  uitzien</span><span id="typing-suffix" class="inline"></span><span id="typing-suffix-highlight"
+                  class="inline bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent"></span><span
+                  aria-hidden="true" class="ml-1 inline animate-pulse text-cyan-500">|</span>.
+              </span>
+            </h1>
+
+            <p class="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+              Voor jonge ondernemers tot MKB's bouwen wij online strategie, design en development. Na livegang werken
+              wij met onze partners door op SEO, SEA en performance.
+            </p>
+
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">Wij bouwen niet alleen je
+              website. We zorgen
+              daarna ook voor groei.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a href="#contact" class="btn btn-primary gap-1 text-base px-6 py-4">
+                <svg class="h-6 w-auto" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M26.5009 61.621C26.453 61.621 26.4007 61.6123 26.3484 61.5992C21.1 59.9994 15.4158 54.2629 14.1822 49.324C14.1124 49.0451 14.2824 48.7661 14.557 48.6963C14.836 48.6266 15.115 48.7966 15.1848 49.0712C16.3225 53.6264 21.7888 59.1232 26.6491 60.6097C26.9238 60.6925 27.0763 60.9802 26.9935 61.2548C26.9281 61.4771 26.7232 61.621 26.5009 61.621Z"
+                      fill="#f0f0f0"></path>
+                    <path
+                      d="M29.003 68.1292C28.9638 68.1292 28.9246 68.1249 28.8853 68.1161C24.5437 67.1048 19.4959 63.8617 15.0409 59.2149C10.8736 54.8733 8.17534 50.2526 8.00098 47.1577C7.98354 46.8743 8.20149 46.6259 8.48919 46.6128C8.77253 46.5954 9.021 46.8133 9.03408 47.101C9.19101 49.917 11.8413 54.3894 15.7863 58.5C20.1061 63.0073 24.9665 66.1415 29.1207 67.1092C29.3997 67.1746 29.5741 67.4536 29.5087 67.7325C29.452 67.9679 29.2384 68.1292 29.003 68.1292Z"
+                      fill="#f0f0f0"></path>
+                    <path
+                      d="M51.2562 22.834C51.0252 22.834 50.8159 22.6815 50.7549 22.4504C50.0269 19.6868 46.7184 15.72 43.7063 14.9441C43.4317 14.8743 43.2616 14.591 43.3358 14.312C43.4099 14.033 43.6888 13.8674 43.9678 13.9415C47.3592 14.8177 50.9423 19.0939 51.7575 22.1889C51.8316 22.4635 51.666 22.7468 51.387 22.8209C51.3434 22.8297 51.2998 22.834 51.2562 22.834Z"
+                      fill="#f0f0f0"></path>
+                    <path
+                      d="M57.7816 23.7536C57.5506 23.7536 57.3413 23.5967 57.2803 23.3656C55.3405 15.7285 48.087 9.76966 43.9459 9.02862C43.6625 8.97631 43.4794 8.71041 43.5274 8.42707C43.5797 8.14372 43.8456 7.96064 44.1289 8.00859C48.6406 8.81938 56.208 14.9613 58.2829 23.1084C58.3526 23.3874 58.187 23.6664 57.908 23.7362C57.8644 23.7492 57.8252 23.7536 57.7816 23.7536Z"
+                      fill="#f0f0f0"></path>
+                    <path
+                      d="M44.9005 37.3237C45.7331 38.2434 46.4829 39.4509 46.1646 39.7691C45.8464 40.0873 44.87 39.5119 44.1246 38.7621C43.3792 38.0167 41.5963 45.9503 41.422 46.3513C41.2912 46.6521 39.2163 49.0321 38.1309 51.2945C37.7691 52.0486 37.8214 54.3241 37.6862 54.4592C37.1414 55.0041 36.4483 54.9474 34.9531 53.6266C33.4579 52.3058 32.682 60.1739 34.4649 61.4163C37.5119 63.5435 43.6059 71.9958 51.6571 71.9958C60.9724 71.9958 69.5991 62.2794 69.5991 55.1479C69.5991 48.0165 67.5067 45.3138 67.6462 39.3375C67.7595 34.2767 71.4429 31.8617 71.4429 29.3335C71.4429 27.2062 68.2826 26.6875 67.2452 26.6875C65.4056 26.6875 60.6891 29.0458 60.6891 35.2531C60.6891 37.668 60.0004 39.8519 57.5288 39.8519C55.0572 39.8519 52.2979 36.4606 50.6283 33.8146"
+                      fill="url(#paint0_linear)"></path>
+                    <path
+                      d="M71.4388 29.3335C71.4388 28.1784 70.5016 27.4983 69.4815 27.1147C70.7064 31.173 64.4948 31.3474 64.4948 45.1744C64.4948 59.0014 56.4435 63.0248 53.1088 63.7179C49.7741 64.4067 43.8981 64.6072 39.4257 59.1191C38.0526 57.4321 36.1913 55.6013 34.1207 53.8708C33.2445 55.3311 33.0571 60.4356 34.4651 61.4163C37.5121 63.5436 43.606 71.9958 51.6573 71.9958C60.9726 71.9958 69.5992 62.2794 69.5992 55.148C69.5992 48.0165 67.5069 45.3139 67.6464 39.3376C67.7597 34.2767 71.4388 31.8618 71.4388 29.3335Z"
+                      fill="url(#paint1_linear)"></path>
+                    <path
+                      d="M34.9531 53.6267C33.458 52.3059 29.9227 48.5396 27.6212 46.6957C25.3196 44.8562 23.31 44.878 21.9282 46.9093C20.5464 48.9407 24.5742 52.5064 25.4939 53.4261C26.9019 54.8341 32.682 60.174 34.4649 61.4207"
+                      fill="url(#paint2_linear)"></path>
+                    <path
+                      d="M41.422 46.351C41.2476 46.7521 40.075 47.031 37.7429 44.4941C35.9601 42.5543 31.1869 36.979 28.3709 34.4507C25.5549 31.9225 23.3667 30.885 21.5271 32.2102C19.6876 33.5353 20.7338 36.2903 22.7913 38.5919C25.337 41.4383 28.2663 44.3415 31.0692 47.1313C33.2618 49.3108 38.2268 53.9184 37.6819 54.4633"
+                      fill="url(#paint3_linear)"></path>
+                    <path
+                      d="M31.0735 47.1271C33.1441 49.1846 37.6776 53.3998 37.7255 54.3283C38.3794 53.3083 37.185 50.2744 35.9208 49.2108C28.615 43.0601 21.5577 33.1432 20.6597 33.4396C20.2761 34.8825 21.2482 36.8615 22.7913 38.592C25.337 41.4342 28.2663 44.3417 31.0735 47.1271Z"
+                      fill="url(#paint4_linear)"></path>
+                    <path
+                      d="M50.624 33.819C48.9545 31.173 42.1107 22.6641 40.4455 20.2492C38.776 17.8342 36.5354 17.8342 34.9836 18.9284C33.4318 20.0225 32.9697 22.2064 36.4657 26.8488C38.6714 29.7781 40.5022 32.472 44.9049 37.328L50.0224 36.9706L50.624 33.819Z"
+                      fill="url(#paint5_linear)"></path>
+                    <path
+                      d="M44.1247 38.7622C43.3793 38.0168 36.7666 30.1792 35.2714 28.4966C32.4686 25.3493 28.9159 18.6058 24.6789 21.6092C22.4514 23.1872 23.6589 25.4757 24.2909 26.3955C24.923 27.3153 33.1442 36.805 33.9506 37.6071C34.7571 38.4135 41.5965 45.946 41.4265 46.347"
+                      fill="url(#paint6_linear)"></path>
+                    <path
+                      d="M44.9005 37.3233C45.7026 38.2082 46.4218 39.3546 46.1952 39.7252C48.8629 37.5805 43.2223 31.2773 40.0271 27.4936C37.5555 24.5643 36.8798 20.8373 35.11 18.8408C35.0664 18.867 35.0272 18.8975 34.9836 18.9236C33.4318 20.0178 32.9697 22.2017 36.4657 26.8441C38.667 29.7734 40.5022 32.4717 44.9005 37.3233Z"
+                      fill="url(#paint7_linear)"></path>
+                    <path
+                      d="M33.9462 37.6113C34.7526 38.4177 41.592 45.9502 41.422 46.3512C43.5361 43.5048 35.3411 35.1397 31.3743 30.9114C27.935 27.2454 27.3465 24.0371 23.99 22.2368C22.7433 23.7451 23.7328 25.5933 24.2864 26.3997C24.9185 27.3195 33.1441 36.8092 33.9462 37.6113Z"
+                      fill="url(#paint8_linear)"></path>
+                    <path
+                      d="M41.2693 46.5217C41.0296 46.6699 40.537 46.6829 39.7742 46.2427C40.3409 46.7004 40.8639 46.8747 41.2693 46.5217Z"
+                      fill="url(#paint9_linear)"></path>
+                    <path
+                      d="M67.729 27.5506C69.4857 27.2367 69.7952 27.4373 69.4813 27.1147C68.6269 26.7965 67.7115 26.6875 67.2408 26.6875C65.4012 26.6875 60.6847 29.0458 60.6847 35.2531C60.6847 37.668 59.996 39.8519 57.52 39.8519C56.5436 39.8519 55.5279 39.3245 54.5471 38.5224C58.8888 43.3305 62.2932 38.8014 62.8119 35.6977C63.3307 32.5941 62.5765 28.4747 67.729 27.5506Z"
+                      fill="url(#paint10_radial)"></path>
+                    <path
+                      d="M34.4518 19.3945C33.3795 20.6107 33.4144 22.7903 36.4614 26.8442C38.6671 29.7735 40.4979 32.4674 44.9006 37.3234C45.7331 38.2432 46.4829 39.4507 46.1647 39.7689C46.9014 34.7385 39.7394 29.7909 37.4117 25.9985C35.5678 22.9908 35.2016 21.2166 34.4518 19.3945Z"
+                      fill="url(#paint11_linear)"></path>
+                    <path
+                      d="M33.9462 37.6113C34.7526 38.4177 41.592 45.9502 41.422 46.3512C42.9302 45.2745 41.9015 43.5963 39.5694 41.2642C34.7875 36.4823 28.1312 30.057 25.4547 24.7651C25.2019 24.2638 24.7311 23.8933 24.1775 23.8235C22.7346 23.6361 23.807 25.6979 24.2908 26.3997C24.9185 27.3195 33.1441 36.8092 33.9462 37.6113Z"
+                      fill="url(#paint12_linear)"></path>
+                    <path
+                      d="M22.7913 38.5919C25.337 41.4384 28.2663 44.3415 31.0692 47.1314C33.2618 49.3109 38.2268 53.9184 37.6819 54.4633C40.7594 51.874 26.466 42.5151 20.6554 33.4438C20.2761 34.878 21.2482 36.8614 22.7913 38.5919Z"
+                      fill="url(#paint13_linear)"></path>
+                    <path
+                      d="M37.0543 54.9779C37.3463 54.8646 37.4989 54.7295 37.5468 54.5813C37.0194 54.9867 36.3263 54.8428 34.9532 53.6266C33.458 52.3058 29.9228 48.5396 27.6212 46.6957C26.6099 45.8893 25.6553 45.4403 24.7834 45.3618C26.0301 46.1421 25.4504 46.4211 28.2228 48.5483C29.7136 49.6904 35.1537 55.7233 37.0543 54.9779Z"
+                      fill="url(#paint14_linear)"></path>
+                    <path
+                      d="M33.4319 41.1772C35.4501 43.6357 39.3907 47.694 41.1605 46.5737C40.6723 46.7394 39.5607 46.4691 37.7473 44.4945C35.9645 42.5547 31.1913 36.9794 28.3753 34.4511C26.0955 32.4024 24.2255 31.3344 22.6213 31.7049C27.2899 33.2393 31.5182 38.8538 33.4319 41.1772Z"
+                      fill="url(#paint15_linear)"></path>
+                    <path
+                      d="M35.6158 30.5975C38.8371 34.1022 43.6191 41.055 46.0427 39.8388C45.646 39.9608 44.7916 39.4334 44.1247 38.7621C43.3793 38.0167 36.7666 30.1791 35.2714 28.4965C33.3273 26.3169 31.03 22.4112 28.3884 21.2168C31.0518 23.3179 33.0047 27.7598 35.6158 30.5975Z"
+                      fill="url(#paint16_linear)"></path>
+                    <path
+                      d="M54.5472 38.5266C54.5516 38.5266 54.5516 38.5266 54.5472 38.5266C53.0433 37.2973 51.631 35.4186 50.6197 33.8188C48.9545 31.1728 42.1108 22.6639 40.4456 20.249C39.9356 19.5123 39.3776 19.0023 38.7979 18.6797C39.5738 19.7956 40.014 21.3867 41.7707 23.357C44.5867 26.5173 48.2701 32.2103 49.5343 34.1675C50.794 36.116 52.8341 40.2397 54.5472 38.5266Z"
+                      fill="url(#paint17_linear)"></path>
+                    <path
+                      d="M63.7711 66.5906C62.7249 64.0449 61.1949 62.4931 58.9849 63.949C52.9562 67.9202 46.021 66.5776 37.3246 59.5507C29.5698 53.278 25.5594 48.7969 21.7845 47.1753C20.8778 49.2371 24.6092 52.5457 25.4897 53.4262C26.8977 54.8342 32.6778 60.1741 34.4607 61.4208C37.5077 63.548 43.6017 72.0002 51.6529 72.0002C56.1558 71.9959 60.4887 69.7335 63.7711 66.5906Z"
+                      fill="url(#paint18_linear)"></path>
+                    <path
+                      d="M67.642 39.3375C67.7553 34.2766 71.4388 31.8617 71.4388 29.3334C71.4388 28.588 71.0508 28.0432 70.5015 27.6465C71.1728 29.6168 69.5731 31.3648 67.1843 34.3377C64.595 37.559 64.024 42.5589 65.8025 47.5631C67.5853 52.5673 65.3404 59.4678 61.718 61.6517C58.0956 63.8356 53.2832 73.4386 39.5041 62.5889C39.4998 62.5845 39.4998 62.5845 39.4954 62.5801C38.6541 61.7999 37.8215 61.1068 36.9802 60.5837C31.1609 56.9787 27.8436 53.7356 25.3371 51.0112C24.8446 50.475 23.5194 48.4219 21.9414 49.0975C22.7304 50.8847 24.8533 52.7897 25.4897 53.4261C26.8977 54.8341 32.6778 60.1739 34.4607 61.4206C34.6917 61.5819 34.9445 61.7824 35.2104 62.0135C35.2802 62.0745 35.3499 62.1355 35.4197 62.1965C35.4371 62.214 35.4589 62.2314 35.4763 62.2445C35.5199 62.2837 35.5679 62.3273 35.6115 62.3666C35.6202 62.3753 35.6333 62.384 35.642 62.3971C37.451 64.0404 39.94 66.7605 42.9914 68.8834C42.9914 68.8834 42.9958 68.8834 42.9958 68.8877C43.2617 69.0752 43.5363 69.2583 43.8109 69.4326C43.8153 69.437 43.8196 69.437 43.824 69.4413C44.0986 69.6157 44.3776 69.7857 44.6566 69.947C44.6609 69.947 44.6609 69.9513 44.6653 69.9513C46.7751 71.1632 49.1159 72.0001 51.6442 72.0001C60.9595 72.0001 69.5861 62.2837 69.5861 55.1523C69.5861 48.0208 67.5069 45.3182 67.642 39.3375Z"
+                      fill="url(#paint19_radial)"></path>
+                    <defs>
+                      <linearGradient id="paint0_linear" x1="65.0704" y1="73.8405" x2="57.3943" y2="55.8565"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear" x1="66.5983" y1="61.3326" x2="50.4983" y2="42.1276"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear" x1="23.5643" y1="48.5465" x2="33.0518" y2="55.5328"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear" x1="20.1097" y1="30.055" x2="36.756" y2="47.4775"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint4_linear" x1="32.8886" y1="40.4011" x2="27.3859" y2="45.5848"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint5_linear" x1="38.0895" y1="21.8354" x2="47.7495" y2="37.0154"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint6_linear" x1="28.118" y1="24.3572" x2="41.228" y2="42.0672"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint7_linear" x1="43.7096" y1="26.4938" x2="35.4296" y2="33.9688"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint8_linear" x1="36.0933" y1="31.8196" x2="24.7083" y2="40.1427"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint9_linear" x1="44.5743" y1="43.4211" x2="33.1893" y2="51.7442"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <radialGradient id="paint10_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(59.5133 29.9083) scale(13.6681)">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </radialGradient>
+                      <linearGradient id="paint11_linear" x1="45.2249" y1="25.0259" x2="38.1524" y2="31.5809"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint12_linear" x1="39.8091" y1="28.5789" x2="30.4941" y2="36.9739"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint13_linear" x1="36.661" y1="37.6589" x2="25.161" y2="47.3189"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint14_linear" x1="24.1128" y1="44.6766" x2="37.4816" y2="55.5441"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint15_linear" x1="26.6716" y1="31.2062" x2="37.1079" y2="47.0762"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint16_linear" x1="34.8464" y1="32.3397" x2="37.7789" y2="30.0972"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#f0f0f0"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint17_linear" x1="49.3174" y1="41.1993" x2="45.4073" y2="22.5692"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </linearGradient>
+                      <linearGradient id="paint18_linear" x1="40.3917" y1="59.0796" x2="34.5267" y2="64.4703"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </linearGradient>
+                      <radialGradient id="paint19_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(44.2763 41.2639) rotate(48.1401) scale(39.6178 35.9605)">
+                        <stop offset="0.6134" stop-color="#c9c9c9" stop-opacity="0"></stop>
+                        <stop offset="1" stop-color="#c9c9c9"></stop>
+                      </radialGradient>
+                    </defs>
+                  </g>
+                </svg>
+                Laten we praten
+              </a>
+              <a href="#pricing-calculator" class="btn btn-secondary gap-0 px-6 py-3.5">
+                <svg class="h-8 w-auto" viewBox="0 -15.5 1055 1055" class="icon" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M573.213047 261.967704s125.388395 185.46511 206.373624 190.700075c0 0 23.510324-133.22517 2.617483-193.301884-0.015674-0.015674-99.276262-28.74529-208.991107 2.601809zM264.961352 460.504554l86.204521 23.510324 52.23994-91.423814c0.015674-0.015674-135.826979 47.004975-138.444461 67.91349zM562.75879 679.934245l15.673549 86.204521 23.510324-20.908515 39.183873-70.530972 2.617483-47.020648zM406.023296 538.8723l-86.204521 33.964582 13.056066 23.510324-39.183873 104.495553 5.219292 18.291032 20.892841-7.836774 62.694197 15.673549s57.474905 15.673549 83.587039-10.454257l33.964582-41.801356 5.219292-28.729616-99.244915-107.113037z"
+                      fill="#e3e3e3"></path>
+                    <path
+                      d="M558.840402 472.259716m-82.286134 0a82.286134 82.286134 0 1 0 164.572268 0 82.286134 82.286134 0 1 0-164.572268 0Z"
+                      fill="#e3e3e3"></path>
+                    <path
+                      d="M553.480048 698.961933a15.673549 15.673549 0 0 1-11.081199-4.592349L343.093995 495.049056a15.673549 15.673549 0 0 1-3.322792-17.256577c32.444247-75.703243 140.403655-181.734805 211.624263-222.439013 21.378721-12.209695 51.26818-19.999449 88.837678-23.165506a15.689223 15.689223 0 0 1 2.633156 31.253058c-32.992821 2.774218-58.540707 9.216047-75.922673 19.137403-62.223991 35.563283-160.058286 131.030873-193.928826 198.082317l183.772366 183.78804c67.051444-33.886214 162.534707-131.720509 198.082317-193.9445 30.720157-53.775948 19.372507-166.970321 14.811504-202.768708a736.609799 736.609799 0 0 0-64.12049-5.376027 15.673549 15.673549 0 0 1-15.046608-16.269145 15.375752 15.375752 0 0 1 16.269145-15.046607c36.284267 1.410619 66.111031 5.407375 76.063735 6.865015a14.184562 14.184562 0 0 1 5.172271 0.689636c3.13471 1.003107 5.877581 2.86826 7.852448 5.329007a15.124975 15.124975 0 0 1 2.946627 5.313333c0.595595 1.880826 0.846372 3.824346 0.752331 5.736519 3.84002 26.284542 21.378721 163.020587-17.507355 231.059464-40.704208 71.220608-146.735769 179.19569-222.439012 211.639937a15.266037 15.266037 0 0 1-6.144032 1.285231z"
+                      fill="#525252"></path>
+                    <path
+                      d="M354.190868 499.641406a15.673549 15.673549 0 0 1-3.683284-0.438859l-89.99752-21.660845a15.673549 15.673549 0 0 1-7.962163-25.751642c67.317894-74.402339 153.36568-73.383558 156.954923-73.493273a15.673549 15.673549 0 0 1 15.344405 16.002694 15.783264 15.783264 0 0 1-15.94 15.344405c-0.799351-0.015674-59.700549-0.329145-113.241394 44.121041l62.17697 14.96824a15.657876 15.657876 0 0 1-3.651937 30.908239zM579.168996 792.987556a15.642202 15.642202 0 0 1-15.23469-12.005939l-21.660845-89.99752a15.673549 15.673549 0 1 1 30.46938-7.335221l14.968239 62.17697c44.387492-53.462477 44.136715-112.583105 44.121042-113.241394a15.673549 15.673549 0 0 1 15.407099-15.908653h0.282123a15.673549 15.673549 0 0 1 15.67355 15.328732c0.062694 3.62059 0.956087 89.590008-73.493273 156.954923a15.845958 15.845958 0 0 1-10.532625 4.028102zM770.825157 481.303354a15.673549 15.673549 0 0 1-8.495063-2.507768c-133.287864-86.047786-198.975709-197.267292-201.718581-201.969357a15.689223 15.689223 0 0 1 27.083894-15.783264c0.642616 1.081475 64.951189 109.620804 191.640488 191.405384a15.689223 15.689223 0 0 1-8.510738 28.855005zM559.169547 574.451257a100.201001 100.201001 0 0 1-71.079547-29.387905 100.63986 100.63986 0 0 1 0-142.174766 15.657876 15.657876 0 1 1 22.162399 22.162399 69.277088 69.277088 0 0 0 0 97.849969 69.261415 69.261415 0 0 0 97.834295 0 69.277088 69.277088 0 0 0 0-97.849969 69.230068 69.230068 0 0 0-42.83581-19.999449 15.673549 15.673549 0 0 1 2.727198-31.22171 100.624187 100.624187 0 0 1 62.271011 29.05876 100.63986 100.63986 0 0 1 0 142.174766 100.201001 100.201001 0 0 1-71.079546 29.387905z"
+                      fill="#525252"></path>
+                    <path
+                      d="M459.611161 738.725728a15.673549 15.673549 0 0 1-7.382241-29.49762c20.077817-10.720708 33.933234-32.914454 41.174414-65.969969a15.673549 15.673549 0 0 1 30.626115 6.708279c-9.310088 42.443972-28.494513 71.690815-57.05172 86.925505a15.595182 15.595182 0 0 1-7.366568 1.833805zM384.503513 744.070409a15.595182 15.595182 0 0 1-3.871367-0.485881c-18.291032-4.655044-31.002281-11.049852-31.535181-11.316302a16.457227 16.457227 0 0 1-2.194297-1.347925c-9.059312-6.645585-32.162123 1.959194-44.904719 9.858662a15.673549 15.673549 0 1 1-23.949183-13.588967c1.253884-68.900923 22.930403-110.420155 38.886076-131.783203a71.283302 71.283302 0 0 1-11.128221-10.140787 15.673549 15.673549 0 0 1 0.454533-21.143618c44.136715-46.221297 102.222889-34.434788 104.667963-33.91756 8.463717 1.818132 13.855418 10.140786 12.052959 18.620176a15.736244 15.736244 0 0 1-18.526135 12.068633c-1.520334-0.313471-32.63233-6.26942-61.518681 13.056067l0.391839 0.015673a15.673549 15.673549 0 0 1 9.560865 28.102674c-1.441967 1.159843-34.199685 28.243736-41.926745 100.138307 16.128082-5.485742 36.832841-8.526411 53.196027 2.539115 2.774218 1.300905 11.958918 5.360354 24.215633 8.47939a15.673549 15.673549 0 0 1 11.331977 19.059036 15.736244 15.736244 0 0 1-15.203343 11.78651z"
+                      fill="#525252"></path>
+                    <path
+                      d="M360.303553 683.836958a15.689223 15.689223 0 0 1-13.02472-24.372369c3.260098-4.890147 8.040531-10.203481 13.839744-15.407099a15.657876 15.657876 0 1 1 20.939862 23.322242c-5.140924 4.608024-7.664366 7.915142-8.69882 9.482497a15.673549 15.673549 0 0 1-13.056066 6.974729zM409.612539 648.806576a15.673549 15.673549 0 0 1-4.513982-30.68881c9.999724-3.009321 19.043362-3.463854 26.84879-1.332252 2.366706-1.598702 9.090659-14.560727 11.958918-25.579232a15.673549 15.673549 0 0 1 30.328318 7.915142c-1.473314 5.642478-9.748948 34.35642-27.867571 44.842025a29.168475 29.168475 0 0 1-22.663952 3.072015c-0.70531-0.203756-3.542222-0.70531-9.576539 1.112822a15.971347 15.971347 0 0 1-4.513982 0.65829z"
+                      fill="#525252"></path>
+                  </g>
+                </svg>
+                Bekijk wat het kost
+              </a>
+            </div>
+          </div>
+
+          <div id="pricing-calculator" data-reveal
+            class="relative opacity-0 translate-y-6 transition delay-100 duration-700">
+            <div
+              class="pointer-events-none absolute -bottom-5 -left-5 h-40 w-40 rounded-2xl bg-gradient-to-br from-cyan-400/60 to-emerald-500/60 blur-xl">
+            </div>
+            <div
+              class="rounded-3xl border border-slate-300 bg-white/80 p-4 shadow-2xl shadow-slate-300/40 backdrop-blur-md sm:p-5 lg:max-h-[42rem] lg:overflow-y-auto">
+              <div class="space-y-3" id="quick-pricing" data-quick-mode="website">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3 space-y-3">
+                  <div class="mb-1 flex flex-col gap-1">
+                    <div class="flex justify-between items-center gap-3">
+                      <p id="quick-tier-label" class="text-sm font-semibold text-slate-900">Startup website</p>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[11px] font-semibold text-slate-600">Online advertenties</span>
+                        <label class="relative inline-flex cursor-pointer items-center">
+                          <input id="quick-ads-toggle" type="checkbox" class="peer sr-only"
+                            aria-label="Switch online advertenties voor Google en Meta" />
+                          <span
+                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-900 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
+                          <span
+                            class="pointer-events-none absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center gap-3">
+                      <div>
+                        <p class="text-sm font-semibold text-slate-900">
+                          <span id="quick-tier-price">€ 1.450</span>
+                          (<span id="quick-tier-monthly">€ 79 p/m</span>)
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-[11px] font-semibold text-slate-600">Webshop</span>
+                        <label class="relative inline-flex cursor-pointer items-center">
+                          <input id="quick-mode-toggle" type="checkbox" class="peer sr-only"
+                            aria-label="Switch tussen website en webshop" />
+                          <span
+                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-900 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
+                          <span
+                            class="pointer-events-none absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <input id="quick-tier-slider" type="range" min="1" max="4" step="1" value="1"
+                    class="quick-tier-slider h-2 w-full cursor-pointer" />
+                  <div class="flex justify-between text-xs font-medium text-slate-500">
+                    <span class="w-max">Startup</span>
+                    <span class="w-max">Klein</span>
+                    <span class="w-max">Uitgebreid</span>
+                    <span class="w-max">Groot</span>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
+                      <p class="font-semibold text-slate-500">Pagina's</p>
+                      <p id="quick-pages" class="mt-0.5 font-semibold text-slate-900">Tot 5 pagina's</p>
+                    </div>
+                    <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
+                      <p class="font-semibold text-slate-500">Custom secties</p>
+                      <p id="quick-custom-sections" class="mt-0.5 font-semibold text-slate-900">3 secties</p>
+                    </div>
+                  </div>
+                  <ul class="space-y-1 text-xs text-slate-600">
+                    <li id="quick-feature-1">Responsive design en basis SEO.</li>
+                    <li id="quick-feature-2">Contactformulier en analytics setup.</li>
+                    <li id="quick-feature-3">Handover met duidelijke uitleg.</li>
+                  </ul>
+                </div>
+                <a href="#pricing-calculator" class="btn btn-primary w-full px-5 py-2.5">
+                  Vrijblijvende offerte
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="trust" class="border-b border-slate-200/80 bg-white py-14 sm:py-16">
+      <div class="flex flex-col justify-center items-center mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mt-6 w-full max-w-lg flex flex-col overflow-hidden rounded-xl border border-slate-300 bg-slate-50">
+          <div class="flex flex-row justify-center border-b border-slate-300">
+            <div
+              class="w-full flex flex-col gap-1 justify-center items-center border-r border-slate-300 px-3 py-2 text-center text-xs font-medium">
+              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
+              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+            </div>
+            <div
+              class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
+              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
+              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+            </div>
+          </div>
+          <div class="flex flex-row justify-center">
+            <div
+              class="w-full flex flex-col gap-1 justify-center items-center border-r border-slate-300 px-3 py-2 text-center text-xs font-medium">
+              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
+              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+            </div>
+            <div
+              class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
+              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
+              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-8 text-center text-sm font-medium text-slate-500">
+          Vertrouwd door vooraanstaande oprichters en eigenaren.
+        </p>
+
+        <div class="marquee-shell mt-4 max-w-7xl overflow-hidden">
+          <div class="marquee relative z-10" aria-label="Merken waarmee we werken">
+            <div class="marquee__track">
+              <ul class="marquee__content" aria-label="Merken">
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/google" alt="Google" loading="eager"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/hp" alt="HP" loading="eager"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/samsung" alt="Samsung" loading="eager"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/apple" alt="Apple" loading="eager"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/meta" alt="Meta" loading="eager"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/netflix" alt="Netflix" loading="eager"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/tesla" alt="Tesla" loading="eager"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/nike" alt="Nike" loading="eager"
+                    decoding="async" /></li>
+              </ul>
+
+              <ul class="marquee__content" aria-hidden="true">
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/google" alt="" loading="lazy"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/hp" alt="" loading="lazy"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/samsung" alt="" loading="lazy"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/apple" alt="" loading="lazy"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/meta" alt="" loading="lazy"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/netflix" alt="" loading="lazy"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/tesla" alt="" loading="lazy"
+                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://cdn.simpleicons.org/nike" alt="" loading="lazy"
+                    decoding="async" /></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="diensten" class="scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-2xl" data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Diensten</p>
+          <h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
+            Van eerste idee tot een schaalbare website.</h2>
+          <p class="mt-4 text-slate-600">Alles is gericht op een doel: een website die snel laadt, vertrouwen opbouwt
+            en
+            leads oplevert.</p>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-5">
+          <article data-reveal
+            class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
+            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" aria-hidden="true">
+              <path d="M3 5h18v14H3z" />
+              <path d="M3 9h18" />
+            </svg>
+            <h3 class="mt-3 text-lg font-semibold text-slate-900">Webdesign</h3>
+            <p class="mt-2 text-sm text-slate-600">Heldere layouts, sterke hierarchie en visuele rust die converteert.
+            </p><a href="#proces" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+          </article>
+          <article data-reveal
+            class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
+            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" aria-hidden="true">
+              <path d="M7 8l-4 4 4 4" />
+              <path d="M17 8l4 4-4 4" />
+              <path d="M14 4l-4 16" />
+            </svg>
+            <h3 class="mt-3 text-lg font-semibold text-slate-900">Website ontwikkeling</h3>
+            <p class="mt-2 text-sm text-slate-600">Schone code, snelle frontend en solide technische basis.</p><a
+              href="#proces" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+          </article>
+          <article data-reveal
+            class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
+            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" aria-hidden="true">
+              <path d="M4 12h16" />
+              <path d="M4 6h10" />
+              <path d="M4 18h7" />
+            </svg>
+            <h3 class="mt-3 text-lg font-semibold text-slate-900">SEO basis</h3>
+            <p class="mt-2 text-sm text-slate-600">Goede structuur, metadata en technische fundamenten voor
+              vindbaarheid.</p><a href="#groei" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer
+              info</a>
+          </article>
+          <article data-reveal
+            class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
+            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" aria-hidden="true">
+              <path d="M12 3v18" />
+              <path d="M3 12h18" />
+              <circle cx="12" cy="12" r="8" />
+            </svg>
+            <h3 class="mt-3 text-lg font-semibold text-slate-900">Snelheid/Performance</h3>
+            <p class="mt-2 text-sm text-slate-600">Core Web Vitals in focus voor betere gebruikerservaring en SEO.</p>
+            <a href="#contact" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+          </article>
+          <article data-reveal
+            class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
+            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" aria-hidden="true">
+              <path d="M12 6v6l4 2" />
+              <circle cx="12" cy="12" r="9" />
+            </svg>
+            <h3 class="mt-3 text-lg font-semibold text-slate-900">Onderhoud</h3>
+            <p class="mt-2 text-sm text-slate-600">Doorlopend beheer, updates en support zonder technische ruis.</p><a
+              href="#contact" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="werk" class="scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Werk</p>
+            <h2
+              class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
+              Projecten die snelheid en conversie combineren.</h2>
+          </div><a href="#contact"
+            class="inline-flex items-center rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 transition hover:bg-slate-100">Vraag
+            offerte</a>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <button type="button" data-project-card data-project-title="Zaan Fit Club" data-project-client="Fitnessstudio"
+            data-project-summary="Nieuwe website gericht op proefles-aanvragen met duidelijke funnel."
+            data-project-results="+43% meer intake-aanvragen in 3 maanden." data-project-tags="Design,Build,SEO"
+            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            aria-label="Bekijk project Zaan Fit Club">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 01</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900">Zaan Fit Club</h3>
+            <p class="mt-2 text-sm text-slate-600">Sterke lokale propositie met snelle mobiele ervaring.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
+          </button>
+          <button type="button" data-project-card data-project-title="Studio Noorderlicht"
+            data-project-client="Interieurstudio"
+            data-project-summary="Portfolio-website met focus op premium uitstraling en contactmomenten."
+            data-project-results="Gemiddeld 2x langere sessieduur na livegang." data-project-tags="Design,Build"
+            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            aria-label="Bekijk project Studio Noorderlicht">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 02</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900">Studio Noorderlicht</h3>
+            <p class="mt-2 text-sm text-slate-600">Visuele storytelling met heldere call-to-actions.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span></div>
+          </button>
+          <button type="button" data-project-card data-project-title="Bouwgroep Delta" data-project-client="Aannemer"
+            data-project-summary="Conversiegerichte website met nadruk op offertes en projectpagina's."
+            data-project-results="+57% stijging in offerte-aanvragen via mobiel." data-project-tags="Build,SEO"
+            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            aria-label="Bekijk project Bouwgroep Delta">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 03</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900">Bouwgroep Delta</h3>
+            <p class="mt-2 text-sm text-slate-600">Heldere structuur voor diensten en regio's.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
+          </button>
+          <button type="button" data-project-card data-project-title="Atelier Bloom"
+            data-project-client="Creatieve studio"
+            data-project-summary="Minimalistisch design met geoptimaliseerde performance en schaalbaar CMS."
+            data-project-results="LCP verbeterd van 3.2s naar 1.5s." data-project-tags="Design,Build,SEO"
+            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            aria-label="Bekijk project Atelier Bloom">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 04</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900">Atelier Bloom</h3>
+            <p class="mt-2 text-sm text-slate-600">Premium uitstraling zonder zware assets.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
+          </button>
+          <button type="button" data-project-card data-project-title="Zaan Clinique" data-project-client="Praktijk"
+            data-project-summary="Strakke servicepagina's met lokale SEO-basis en snelle contactflow."
+            data-project-results="+38% meer contactformulieren in kwartaal 1." data-project-tags="Design,SEO"
+            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            aria-label="Bekijk project Zaan Clinique">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 05</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900">Zaan Clinique</h3>
+            <p class="mt-2 text-sm text-slate-600">Focus op vertrouwen, snelheid en afspraakconversie.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
+          </button>
+          <button type="button" data-project-card data-project-title="Nordic Solar"
+            data-project-client="Duurzame energie"
+            data-project-summary="Leadmachine met duidelijke ROI-propositie en geautomatiseerde intakeflow."
+            data-project-results="Verdubbeling van qualified leads in 10 weken." data-project-tags="Build,SEO"
+            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            aria-label="Bekijk project Nordic Solar">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 06</p>
+            <h3 class="mt-2 text-xl font-semibold text-slate-900">Nordic Solar</h3>
+            <p class="mt-2 text-sm text-slate-600">Technisch snel, inhoudelijk scherp en data-gedreven.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
+                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="proces" class="scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Proces</p>
+          <h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
+            Duidelijke stappen, geen onduidelijk traject.</h2>
+        </div>
+        <ol class="relative border-l border-slate-200 pl-6 sm:pl-8">
+          <li class="relative mb-8" data-reveal>
+            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-indigo-600"></div>
+            <h3 class="text-lg font-semibold">1. Intake</h3>
+            <p class="mt-1 text-slate-600">Doelen, doelgroep en scope scherp krijgen.</p>
+          </li>
+          <li class="relative mb-8" data-reveal>
+            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-indigo-500"></div>
+            <h3 class="text-lg font-semibold">2. Wireframe</h3>
+            <p class="mt-1 text-slate-600">Structuur bepalen op basis van conversieflow.</p>
+          </li>
+          <li class="relative mb-8" data-reveal>
+            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-sky-500"></div>
+            <h3 class="text-lg font-semibold">3. Design</h3>
+            <p class="mt-1 text-slate-600">Visuele richting met duidelijke merkuitstraling.</p>
+          </li>
+          <li class="relative mb-8" data-reveal>
+            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-cyan-500"></div>
+            <h3 class="text-lg font-semibold">4. Build</h3>
+            <p class="mt-1 text-slate-600">Snelle, responsive en onderhoudbare ontwikkeling.</p>
+          </li>
+          <li class="relative mb-8" data-reveal>
+            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-emerald-500"></div>
+            <h3 class="text-lg font-semibold">5. Live</h3>
+            <p class="mt-1 text-slate-600">Technische check, lancering en nazorg.</p>
+          </li>
+          <li class="relative" data-reveal>
+            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-slate-900"></div>
+            <h3 class="text-lg font-semibold">6. Groei en Optimalisatie</h3>
+            <p class="mt-1 text-slate-600">Met Rafael door op SEO, SEA, creatieve strategie en performance campagnes.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="reviews" class="scroll-mt-28 border-b border-slate-200/80 bg-white py-20 sm:py-24">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Reviews</p>
+          <h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
+            Lokale ondernemers over Rice Studio.</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg></div>
+            <p class="text-sm text-slate-700">"Scherp proces, snelle oplevering en merkbaar meer aanvragen."</p>
+            <p class="mt-4 text-sm font-semibold text-slate-900">Sanne - Assendelft</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg></div>
+            <p class="text-sm text-slate-700">"Maurice vertaalt strategie direct naar design en techniek. Dat werkt."
+            </p>
+            <p class="mt-4 text-sm font-semibold text-slate-900">Jeroen - Assendelft</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg></div>
+            <p class="text-sm text-slate-700">"Ook na livegang meteen doorgepakt op SEO en campagnes. Professioneel."
+            </p>
+            <p class="mt-4 text-sm font-semibold text-slate-900">Nadia - Assendelft</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
+              </svg></div>
+            <p class="text-sm text-slate-700">"Strak design, korte lijnen en direct bruikbare inzichten."</p>
+            <p class="mt-4 text-sm font-semibold text-slate-900">Tom - Assendelft</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="groei" class="scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
+      <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Groei en Performance</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 [font-family:'Space_Grotesk',sans-serif]">
+            Niet alleen live, maar ook doorgroeien.</h2>
+          <p class="mt-4 text-slate-600">Maurice leidt strategie, design en development. Daarmee staat er een
+            fundament
+            dat klaar is om op te schalen.</p>
+          <div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="font-semibold text-slate-900">Na oplevering met Rafael</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-600">
+              <li>- Geoptimaliseerde SEO (technisch en contentrichting)</li>
+              <li>- SEA / Google Ads met meetbare KPI's</li>
+              <li>- Creatieve strategie voor aanbod, hooks en landingspagina's</li>
+              <li>- Media buying en performance campagnes voor schaalbare groei</li>
+            </ul>
+          </div>
+          <p class="mt-5 text-sm font-semibold text-slate-800">Positionering: "We bouwen niet alleen je website. We
+            zorgen daarna ook voor groei."</p>
+        </article>
+        <aside
+          class="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 p-6 text-slate-100 shadow-xl"
+          data-reveal>
+          <h3 class="text-xl font-semibold">Groeitraject in de praktijk</h3>
+          <ul class="mt-5 space-y-4 text-sm leading-relaxed text-slate-200">
+            <li><span class="font-semibold text-white">Week 1-2:</span> tracking, doelen en meetplan op orde.</li>
+            <li><span class="font-semibold text-white">Week 3-6:</span> SEO-versterking en eerste campagne-tests.</li>
+            <li><span class="font-semibold text-white">Week 7+:</span> budget opschalen op winnende kanalen en
+              pagina's.
+            </li>
+          </ul><a href="#contact" class="btn btn-soft mt-8 px-5 py-3">Plan
+            een kennismaking</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="faq" class="scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
+      <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">FAQ</p>
+          <h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
+            Veelgestelde vragen</h2>
+        </div>
+        <div class="space-y-3">
+          <article class="rounded-xl border border-slate-200 bg-white">
+            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1"
+                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Wat
+                kost een website bij Rice Studio?<span class="text-slate-500">+</span></button></h3>
+            <div id="faq-panel-1" role="region" aria-labelledby="faq-btn-1"
+              class="hidden px-5 pb-4 text-sm text-slate-600">Afhankelijk van scope. De meeste websites starten tussen
+              EUR 1.450 en EUR 4.950. Je krijgt vooraf een duidelijke vaste offerte.</div>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white">
+            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2"
+                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Hoe
+                lang duurt een gemiddeld traject?<span class="text-slate-500">+</span></button></h3>
+            <div id="faq-panel-2" role="region" aria-labelledby="faq-btn-2"
+              class="hidden px-5 pb-4 text-sm text-slate-600">Een compacte website duurt vaak 2-4 weken. Grotere
+              trajecten met maatwerk duren gemiddeld 5-8 weken.</div>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white">
+            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3"
+                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Kan
+                ik onderhoud uitbesteden?<span class="text-slate-500">+</span></button></h3>
+            <div id="faq-panel-3" role="region" aria-labelledby="faq-btn-3"
+              class="hidden px-5 pb-4 text-sm text-slate-600">Ja. Updates, contentwijzigingen, monitoring en
+              performancechecks kunnen doorlopend worden verzorgd.</div>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white">
+            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4"
+                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Regelen
+                jullie hosting en domein?<span class="text-slate-500">+</span></button></h3>
+            <div id="faq-panel-4" role="region" aria-labelledby="faq-btn-4"
+              class="hidden px-5 pb-4 text-sm text-slate-600">Ja, dat kan volledig uit handen worden genomen.
+              Inclusief
+              SSL, back-ups en technische basisbeveiliging.</div>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white">
+            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5"
+                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Doen
+                jullie ook SEO en SEA na livegang?<span class="text-slate-500">+</span></button></h3>
+            <div id="faq-panel-5" role="region" aria-labelledby="faq-btn-5"
+              class="hidden px-5 pb-4 text-sm text-slate-600">Ja. Samen met Rafael bieden we groeitrajecten met SEO,
+              Google Ads en performance optimalisatie op KPI-niveau.</div>
+          </article>
+          <article class="rounded-xl border border-slate-200 bg-white">
+            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6"
+                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Kan
+                ik later nog aanpassingen doen?<span class="text-slate-500">+</span></button></h3>
+            <div id="faq-panel-6" role="region" aria-labelledby="faq-btn-6"
+              class="hidden px-5 pb-4 text-sm text-slate-600">Ja, de website wordt schaalbaar opgezet. Kleine of
+              grotere
+              iteraties kunnen daarna eenvoudig worden gepland.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="scroll-mt-28 py-20 sm:py-24">
+      <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Contact</p>
+          <h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
+            Start met een website die omzet oplevert.</h2>
+          <p class="mt-4 text-slate-600">Vertel kort je doel en planning. Je krijgt een helder voorstel zonder
+            verkooppraatjes.</p>
+          <form id="contact-form" novalidate
+            class="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div><label for="name" class="mb-1 block text-sm font-medium text-slate-700">Naam *</label><input id="name"
+                name="name" type="text" autocomplete="name"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                placeholder="Jouw naam" required>
+              <p id="name-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
+            </div>
+            <div><label for="email" class="mb-1 block text-sm font-medium text-slate-700">E-mail *</label><input
+                id="email" name="email" type="email" autocomplete="email"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                placeholder="jij@bedrijf.nl" required>
+              <p id="email-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
+            </div>
+            <div><label for="phone" class="mb-1 block text-sm font-medium text-slate-700">Telefoon
+                (optioneel)</label><input id="phone" name="phone" type="tel" autocomplete="tel"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                placeholder="06 12345678">
+              <p id="phone-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
+            </div>
+            <div><label for="budget" class="mb-1 block text-sm font-medium text-slate-700">Budget *</label><select
+                id="budget" name="budget"
+                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                required>
+                <option value="">Selecteer budget</option>
+                <option value="start">EUR 1.450 - EUR 2.500</option>
+                <option value="groei">EUR 2.500 - EUR 5.000</option>
+                <option value="pro">EUR 5.000+</option>
+              </select>
+              <p id="budget-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
+            </div>
+            <div><label for="message" class="mb-1 block text-sm font-medium text-slate-700">Bericht *</label><textarea
+                id="message" name="message" rows="5"
+                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                placeholder="Vertel kort over je bedrijf en doel." required></textarea>
+              <p id="message-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
+            </div><button type="submit" class="btn btn-primary w-full px-5 py-3.5">Verstuur
+              aanvraag</button>
+            <p id="form-success"
+              class="hidden rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700"
+              role="status" aria-live="polite">Bedankt. Je aanvraag is ontvangen. We reageren zo snel mogelijk.</p>
+          </form>
+        </div>
+        <aside class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:p-8">
+          <h3 class="text-xl font-semibold text-slate-900">Rice Studio</h3>
+          <p class="mt-2 text-sm text-slate-600">Assendelft, Nederland</p>
+          <div class="mt-6 space-y-4 text-sm text-slate-600">
+            <p><span class="font-semibold text-slate-900">E-mail:</span> TODO: info@rice-studio.nl</p>
+            <p><span class="font-semibold text-slate-900">Telefoon:</span> TODO: +31-XX-XXXXXXX</p>
+            <p><span class="font-semibold text-slate-900">Adres:</span> TODO: straat + huisnummer, Assendelft</p>
+            <p><span class="font-semibold text-slate-900">Openingstijden:</span> ma-vr 09:00-18:00</p>
+          </div>
+          <div class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+            <p class="font-semibold text-slate-900">Unieke belofte</p>
+            <p class="mt-1">Strak design + snelle, converterende websites.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <div>
+        <h3 class="text-lg font-bold [font-family:'Space_Grotesk',sans-serif]">Rice Studio</h3>
+        <p class="mt-3 max-w-sm text-sm text-slate-600">Webdesign en website ontwikkeling in Assendelft. Van strategie
+          en build tot groei via SEO/SEA performance.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Snelle links</h4>
+        <div class="mt-3 flex flex-col gap-2 text-sm"><a href="#diensten"
+            class="text-slate-700 transition hover:text-slate-900">Diensten</a><a href="#werk"
+            class="text-slate-700 transition hover:text-slate-900">Werk</a><a href="#proces"
+            class="text-slate-700 transition hover:text-slate-900">Proces</a><a href="#contact"
+            class="text-slate-700 transition hover:text-slate-900">Contact</a></div>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Volg Rice Studio</h4>
+        <div class="mt-3 flex items-center gap-3"><a href="#" aria-label="LinkedIn"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"><svg
+              class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M6.94 8.5H3.56v12h3.38v-12zM5.25 3a1.96 1.96 0 100 3.92A1.96 1.96 0 005.25 3zM20.44 13.5c0-3.57-1.9-5.23-4.43-5.23-2.04 0-2.95 1.12-3.46 1.92V8.5H9.17v12h3.38v-6.7c0-1.76.33-3.47 2.51-3.47 2.15 0 2.18 2.01 2.18 3.58v6.59h3.38v-7z" />
+            </svg></a><a href="#" aria-label="Instagram"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"><svg
+              class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+            </svg></a><a href="#" aria-label="Facebook"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"><svg
+              class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.6c0-.9.3-1.5 1.6-1.5h1.7V3.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v2.3H8v3.2h2.4V21h3.1z" />
+            </svg></a></div>
+      </div>
+    </div>
+    <div class="border-t border-slate-200">
+      <div
+        class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-sm text-slate-500 sm:flex-row sm:px-6 lg:px-8">
+        <p>&copy; <span id="year"></span> Rice Studio. Alle rechten voorbehouden.</p>
+        <p>Assendelft, Nederland</p>
+      </div>
+    </div>
+  </footer>
+  <button id="back-to-top" type="button" class="btn btn-primary btn-icon fixed bottom-4 right-4 z-40 hidden"
+    aria-label="Terug naar boven"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" aria-hidden="true">
+      <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg></button>
+  <div id="portfolio-modal"
+    class="fixed inset-0 z-[60] hidden items-end justify-center bg-slate-950/60 p-4 sm:items-center" role="dialog"
+    aria-modal="true" aria-labelledby="modal-title">
+    <div class="w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p id="modal-client" class="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600"></p>
+          <h3 id="modal-title" class="mt-1 text-2xl font-bold text-slate-900 [font-family:'Space_Grotesk',sans-serif]">
+          </h3>
+        </div><button id="modal-close" type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          aria-label="Sluit projectdetails">X</button>
+      </div>
+      <p id="modal-summary" class="mt-4 text-sm leading-relaxed text-slate-600"></p>
+      <p id="modal-results"
+        class="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
+      </p>
+      <div id="modal-tags" class="mt-4 flex flex-wrap gap-2"></div>
+    </div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+  <!--
+    Wat te vervangen:
+    - TODO telefoonnummer (LocalBusiness + contactsectie)
+    - TODO e-mailadres (LocalBusiness + contactsectie)
+    - TODO volledig adres + postcode
+    - OG URL en website URL naar definitieve domeinnaam
+    - Eventuele echte portfolio cases/reviews en social links
+  -->
+</body>
+
+</html>
