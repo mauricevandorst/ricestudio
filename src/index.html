@@ -13,11 +13,11 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.rice-studio.nl/">
   <meta property="og:locale" content="nl_NL">
-  <title>Rice Studio | Webdesign & Website Ontwikkeling in Assendelft</title>
+  <title>RICE Webdesign agency in Assendelft</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
   <script type="application/ld+json">
@@ -38,47 +38,66 @@
     </div>
   </div>
 
-  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white shadow-sm">
+  <header id="site-header" class="fixed inset-x-0 md:pt-5 z-50 border-b border-transparent bg-transparent shadow-none">
     <div class="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
       <a href="#top"
-        class="inline-flex items-center gap-2 text-lg font-bold tracking-tight text-slate-900 [font-family:'Space_Grotesk',sans-serif]"
+        class="site-header__logo inline-flex items-center gap-2 text-3xl font-bold uppercase tracking-tight [font-family:'Bricolage_Grotesque',sans-serif]"
         aria-label="Rice Studio home">
-        <span
-          class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 text-sm font-bold text-white shadow-lg shadow-indigo-200">RS</span>
-        Rice Studio
+        <!--<span
+          class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 text-sm font-bold text-white shadow-lg shadow-indigo-200">
+          RS
+        </span>-->
+        Rice
+        <span class="text-xl mt-2">Studio</span>
       </a>
-      <nav aria-label="Hoofdmenu" class="hidden items-center gap-1 md:flex">
-        <a data-nav-link href="#diensten"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
-        <a data-nav-link href="#werk"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
-        <a data-nav-link href="#proces"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
-        <a data-nav-link href="#reviews"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
-        <a data-nav-link href="#faq"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
-        <a data-nav-link href="#contact"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
-      </nav>
-      <div class="hidden md:block"><a href="#contact" class="btn btn-primary px-5 py-3">Plan
-          een kennismaking</a></div>
-      <button id="menu-toggle" type="button"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 md:hidden"
-        aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><svg class="h-5 w-5"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path>
-        </svg></button>
+      <div class="flex items-center gap-4">
+        <nav aria-label="Hoofdmenu" class="site-header__main-menu hidden items-center gap-1 bg-white border-[1px] border-white/30 rounded-full px-2 lg:flex">
+          <a data-nav-link href="#diensten"
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
+          <a data-nav-link href="#werk"
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
+          <a data-nav-link href="#proces"
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
+          <a data-nav-link href="#reviews"
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
+          <a data-nav-link href="#faq"
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
+          <a data-nav-link href="#contact"
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
+        </nav>
+        <div class="flex items-center gap-2 md:gap-4">
+          <button id="menu-toggle" type="button"
+            class="site-header__menu-toggle inline-flex h-11 w-11 items-center justify-center transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 lg:hidden"
+            aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><svg class="w-7 h-auto"
+              viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="style=stroke">
+                <g id="menu-hamburger">
+                  <path id="vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.25 6C2.25 5.58579 2.58579 5.25 3 5.25H21C21.4142 5.25 21.75 5.58579 21.75 6C21.75 6.41421 21.4142 6.75 21 6.75H3C2.58579 6.75 2.25 6.41421 2.25 6Z"
+                    fill="currentColor" />
+                  <path id="vector (Stroke)_2" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.25 12C2.25 11.5858 2.58579 11.25 3 11.25H21C21.4142 11.25 21.75 11.5858 21.75 12C21.75 12.4142 21.4142 12.75 21 12.75H3C2.58579 12.75 2.25 12.4142 2.25 12Z"
+                    fill="currentColor" />
+                  <path id="vector (Stroke)_3" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.25 18C2.25 17.5858 2.58579 17.25 3 17.25H21C21.4142 17.25 21.75 17.5858 21.75 18C21.75 18.4142 21.4142 18.75 21 18.75H3C2.58579 18.75 2.25 18.4142 2.25 18Z"
+                    fill="currentColor" />
+                </g>
+              </g>
+            </svg>
+          </button>
+          <div id="menu-cta" class="block"><a href="#contact" class="btn btn-soft text-xs px-5 py-2 rounded-full border-none shadow-none">Praten?</a></div>
+        </div>
+      </div>
     </div>
     <div id="mobile-overlay"
-      class="pointer-events-none fixed inset-0 z-40 hidden bg-slate-950/40 opacity-0 transition-opacity duration-300 md:hidden"
+      class="pointer-events-none fixed inset-0 z-40 hidden bg-slate-950/40 opacity-0 transition-opacity duration-300 lg:hidden"
       aria-hidden="true"></div>
     <nav id="mobile-menu"
-      class="fixed right-0 top-0 z-50 hidden h-full w-[84%] max-w-sm translate-x-full border-l border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-300 md:hidden"
+      class="fixed right-0 top-0 z-50 hidden h-full w-[84%] max-w-sm translate-x-full border-l border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-300 lg:hidden"
       aria-label="Mobiel menu">
       <div class="mb-8 flex items-center justify-between">
-        <p class="text-base font-bold [font-family:'Space_Grotesk',sans-serif]">Rice Studio</p><button id="menu-close"
-          type="button"
+        <p class="text-base font-bold [font-family:'Bricolage_Grotesque',sans-serif]">Rice Studio</p><button
+          id="menu-close" type="button"
           class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
           aria-label="Sluit menu"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" aria-hidden="true">
@@ -105,26 +124,61 @@
   </header>
 
   <main id="main-content">
-    <section id="top" class="scroll-mt-28 border-b border-slate-200/80 md:flex md:items-center">
-      <div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:px-8 lg:pb-24 lg:pt-20">
+    <section aria-label="Introductievideo" class="flex flex-col justify-between">
+      <div class="relative w-full overflow-hidden">
+        <div
+          class="after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(180deg,rgba(30,30,28,0.5),rgba(30,30,28,0.9)_70%)] after:content-[''] after:opacity-60">
+          <video class="h-[200px] w-full object-cover md:h-[50vh]" autoplay muted loop playsinline preload="metadata">
+            <source src="https://www.wauw.nl/wp-content/uploads/2025/09/wauw-digital-agency.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Logo sectie -->
+        <div
+          class="w-full left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-7xl px-4 sm:px-6 trust-badges absolute items-center bottom-[clamp(50px,2.6vw,9999px)] md:bottom-[clamp(70px,2.6vw,9999px)] flex gap-6 text-white">
+          <span class="trust-badge">
+            <img class="trust-badge__img" src="./assets/logos/google-search-console.png" alt="Google Search Console"
+              loading="eager" decoding="async" />
+          </span>
+          <span class="trust-badge">
+            <img class="trust-badge__img" src="./assets/logos/google-ads.png" alt="Google Ads" loading="eager"
+              decoding="async" />
+          </span>
+          <span class="trust-badge">
+            <img class="trust-badge__img" src="./assets/logos/meta-ads.png" alt="Meta Ads" loading="eager"
+              decoding="async" />
+          </span>
+        </div>
+        <div
+          class="bottom-0 pointer-events-none absolute left-1/2 z-10 w-screen -translate-x-1/2 overflow-hidden leading-none"
+          aria-hidden="true">
+          <img class="h-full w-full -left-3 max-w-none object-cover text-white" src="https://www.cebo.com/images/banners/banner-effect.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <section id="top" class="scroll-mt-28 bg-white md:flex md:items-center">
+      <div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
 
+        <!-- Garantie banner
         <div class="mb-10 lg:mb-12">
           <div
-            class="mx-auto flex w-full sm:w-max sm:min-w-[420px] max-w-3xl items-center gap-4 rounded-2xl border border-emerald-200 bg-emerald-50/80 px-4 py-4 text-slate-900 shadow-sm sm:pe-12">
+            class="mx-auto flex w-full sm:w-max sm:min-w-[420px] max-w-3xl items-center gap-4 rounded-2xl border border-emerald-200 bg-emerald-50/80 px-4 py-2 text-slate-900 shadow-sm sm:pe-12">
             <span
               class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-lg text-white">✓</span>
             <div class="min-w-0">
-              <p class="text-sm font-extrabold text-emerald-700">Betaalbare websites mét online ads</p>
+              <p class="text-sm font-extrabold text-emerald-700">
+                <span class="sm:hidden">Betaalbare websites mét online ads</span>
+                <span class="hidden sm:inline">Wij bouwen betaalbare websites mét online advertenties</span>
+              </p>
               <p class="text-sm font-semibold text-slate-900">Alles onder één dak. 🏠</p>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <div class="grid w-full gap-12 lg:grid-cols-2 lg:items-start">
           <div data-reveal class="opacity-0 translate-y-6 transition duration-700">
 
             <h1
-              class="inline-block sm:min-h-[96px] lg:min-h-[180px] text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl [font-family:'Space_Grotesk',sans-serif]">
+              class="inline-block sm:min-h-[96px] lg:min-h-[180px] text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl [font-family:'Bricolage_Grotesque',sans-serif]">
               <span class="inline">Wij bouwen </span><span class="inline">
                 <span id="typing-prefix" class="inline">websites die </span><span id="typing-highlight"
                   class="inline bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent">er
@@ -361,24 +415,28 @@
           </div>
 
           <div id="pricing-calculator" data-reveal
-            class="relative opacity-0 translate-y-6 transition delay-100 duration-700">
+            class="relative opacity-0 translate-y-6 transition delay-100 duration-700 lg:-top-8">
             <div
               class="pointer-events-none absolute -bottom-5 -left-5 h-40 w-40 rounded-2xl bg-gradient-to-br from-cyan-400/60 to-emerald-500/60 blur-xl">
             </div>
             <div
-              class="rounded-3xl border border-slate-300 bg-white/80 p-4 shadow-2xl shadow-slate-300/40 backdrop-blur-md sm:p-5 lg:max-h-[42rem] lg:overflow-y-auto">
+              class="flex flex-col gap-3 rounded-3xl border border-slate-300 bg-white/80 p-4 pt-6 shadow-2xl shadow-slate-300/40 backdrop-blur-md sm:p-5 lg:max-h-[42rem] lg:overflow-y-auto">
+              <div class="flex flex-col gap-2">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900">Snelle prijsindicatie?</h2>
+                <p class="text-sm text-slate-600">Bekijk een ruwe schatting van de kosten voor jouw project.</p>
+              </div>
               <div class="space-y-3" id="quick-pricing" data-quick-mode="website">
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3 space-y-3">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3 space-y-4 lg:space-y-5">
                   <div class="mb-1 flex flex-col gap-1">
                     <div class="flex justify-between items-center gap-3">
                       <p id="quick-tier-label" class="text-sm font-semibold text-slate-900">Startup website</p>
                       <div class="flex items-center gap-2">
-                        <span class="text-[11px] font-semibold text-slate-600">Online advertenties</span>
+                        <span class="text-[11px] font-semibold text-slate-600">Webshop</span>
                         <label class="relative inline-flex cursor-pointer items-center">
-                          <input id="quick-ads-toggle" type="checkbox" class="peer sr-only"
-                            aria-label="Switch online advertenties voor Google en Meta" />
+                          <input id="quick-mode-toggle" type="checkbox" class="peer sr-only"
+                            aria-label="Switch tussen website en webshop" />
                           <span
-                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-900 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
+                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-500 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
                           <span
                             class="pointer-events-none absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
                         </label>
@@ -387,17 +445,17 @@
                     <div class="flex justify-between items-center gap-3">
                       <div>
                         <p class="text-sm font-semibold text-slate-900">
-                          <span id="quick-tier-price">€ 1.450</span>
-                          (<span id="quick-tier-monthly">€ 79 p/m</span>)
+                          <span id="quick-tier-price">€ 750</span>
+                          (<span id="quick-tier-monthly">€ 29/m</span>)
                         </p>
                       </div>
                       <div class="flex items-center gap-2">
-                        <span class="text-[11px] font-semibold text-slate-600">Webshop</span>
+                        <span class="text-[11px] font-semibold text-slate-600 text-nowrap">Online advertenties</span>
                         <label class="relative inline-flex cursor-pointer items-center">
-                          <input id="quick-mode-toggle" type="checkbox" class="peer sr-only"
-                            aria-label="Switch tussen website en webshop" />
+                          <input id="quick-ads-toggle" type="checkbox" class="peer sr-only"
+                            aria-label="Switch online advertenties voor Google en Meta" />
                           <span
-                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-900 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
+                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-500 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
                           <span
                             class="pointer-events-none absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
                         </label>
@@ -406,7 +464,7 @@
                   </div>
                   <input id="quick-tier-slider" type="range" min="1" max="4" step="1" value="1"
                     class="quick-tier-slider h-2 w-full cursor-pointer" />
-                  <div class="flex justify-between text-xs font-medium text-slate-500">
+                  <div class="flex justify-between text-xs font-medium text-slate-500 !mt-1">
                     <span class="w-max">Startup</span>
                     <span class="w-max">Klein</span>
                     <span class="w-max">Uitgebreid</span>
@@ -414,22 +472,22 @@
                   </div>
                   <div class="grid grid-cols-2 gap-2 text-xs">
                     <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
-                      <p class="font-semibold text-slate-500">Pagina's</p>
-                      <p id="quick-pages" class="mt-0.5 font-semibold text-slate-900">Tot 5 pagina's</p>
+                      <p class="font-semibold text-slate-500 md:text-sm">Pagina's</p>
+                      <p id="quick-pages" class="mt-0.5 font-semibold text-slate-900 md:text-xs">Tot 5 pagina's</p>
                     </div>
                     <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
-                      <p class="font-semibold text-slate-500">Custom secties</p>
-                      <p id="quick-custom-sections" class="mt-0.5 font-semibold text-slate-900">3 secties</p>
+                      <p class="font-semibold text-slate-500 md:text-sm">Custom secties</p>
+                      <p id="quick-custom-sections" class="mt-0.5 font-semibold text-slate-900 md:text-xs">3 secties</p>
                     </div>
                   </div>
-                  <ul class="space-y-1 text-xs text-slate-600">
-                    <li id="quick-feature-1">Responsive design en basis SEO.</li>
-                    <li id="quick-feature-2">Contactformulier en analytics setup.</li>
-                    <li id="quick-feature-3">Handover met duidelijke uitleg.</li>
+                  <ul id="quick-feature-list" class="space-y-1 lg:space-y-2 text-xs md:text-sm text-slate-600">
+                    <li>Responsive design en basis SEO.</li>
+                    <li>Contactformulier en analytics setup.</li>
+                    <li>Handover met duidelijke uitleg.</li>
                   </ul>
                 </div>
                 <a href="#pricing-calculator" class="btn btn-primary w-full px-5 py-2.5">
-                  Vrijblijvende offerte
+                  Plan een gesprek in
                 </a>
               </div>
             </div>
@@ -439,7 +497,7 @@
       </div>
     </section>
 
-    <section id="trust" class="border-b border-slate-200/80 bg-white py-14 sm:py-16">
+    <section id="trust" class="border-b border-slate-200/80 bg-white pb-14 sm:pb-16">
       <div class="flex flex-col justify-center items-center mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mt-6 w-full max-w-lg flex flex-col overflow-hidden rounded-xl border border-slate-300 bg-slate-50">
           <div class="flex flex-row justify-center border-b border-slate-300">
@@ -472,51 +530,68 @@
           Vertrouwd door vooraanstaande oprichters en eigenaren.
         </p>
 
-        <div class="marquee-shell mt-4 max-w-7xl overflow-hidden">
+        <div class="marquee-shell">
           <div class="marquee relative z-10" aria-label="Merken waarmee we werken">
-            <div class="marquee__track">
+            <div class="marquee__track overflow-hidden">
               <ul class="marquee__content" aria-label="Merken">
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/google" alt="Google" loading="eager"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/hp" alt="HP" loading="eager"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/samsung" alt="Samsung" loading="eager"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/apple" alt="Apple" loading="eager"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/meta" alt="Meta" loading="eager"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/netflix" alt="Netflix" loading="eager"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/tesla" alt="Tesla" loading="eager"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/nike" alt="Nike" loading="eager"
-                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
+                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
+                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
+                    loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
+                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
+                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
+                    loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
+                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
+                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
+                    loading="eager" decoding="async" /></li>
               </ul>
 
               <ul class="marquee__content" aria-hidden="true">
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/google" alt="" loading="lazy"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/hp" alt="" loading="lazy"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/samsung" alt="" loading="lazy"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/apple" alt="" loading="lazy"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/meta" alt="" loading="lazy"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/netflix" alt="" loading="lazy"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/tesla" alt="" loading="lazy"
-                    decoding="async" /></li>
-                <li class="logo-tile"><img src="https://cdn.simpleicons.org/nike" alt="" loading="lazy"
-                    decoding="async" /></li>
+                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
+                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
+                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
+                    loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
+                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
+                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
+                    loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
+                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
+                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
+                <li class="logo-tile"><img
+                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
+                    loading="eager" decoding="async" /></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section id="diensten" class="scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
       <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-10 max-w-2xl" data-reveal>

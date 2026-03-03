@@ -18,9 +18,7 @@ function initQuickPricing() {
   const tierMonthly = document.getElementById("quick-tier-monthly");
   const quickPages = document.getElementById("quick-pages");
   const quickCustomSections = document.getElementById("quick-custom-sections");
-  const quickFeature1 = document.getElementById("quick-feature-1");
-  const quickFeature2 = document.getElementById("quick-feature-2");
-  const quickFeature3 = document.getElementById("quick-feature-3");
+  const quickFeatureList = document.getElementById("quick-feature-list");
 
   if (
     !modeToggle ||
@@ -31,9 +29,7 @@ function initQuickPricing() {
     !tierMonthly ||
     !quickPages ||
     !quickCustomSections ||
-    !quickFeature1 ||
-    !quickFeature2 ||
-    !quickFeature3
+    !quickFeatureList
   ) {
     return;
   }
@@ -47,16 +43,16 @@ function initQuickPricing() {
         monthly: 29,
         adsMonthlyAddOn: 350,
         pages: {
-          default: "1 pagina",
-          ads: "1 pagina + advertentie-lander",
+          default: "1-2 pagina's",
+          ads: "1-2 pagina's + advertentie-lander",
         },
         customSections: {
           default: "2 secties",
           ads: "2 secties + campagneblok",
         },
         features: {
-          default: ["One-pager met duidelijke call-to-actions.", "Responsief voor alle schermformaten.", "Basis contactoptie en technische setup."],
-          ads: ["Google/Meta ads basisinrichting inbegrepen.", "Pixel en conversiemeting gekoppeld.", "Korte campagne-overdracht na livegang."],
+          default: ["• One-pager met duidelijke call-to-actions.", "• Responsief voor alle schermformaten.", "• Basis contactoptie en technische setup."],
+          ads: ["• Google/Meta ads basisinrichting inbegrepen.", "• Pixel en conversiemeting gekoppeld.", "• Korte campagne-overdracht na livegang."],
         },
       },
       {
@@ -74,8 +70,8 @@ function initQuickPricing() {
           ads: "3 secties + campagneblok",
         },
         features: {
-          default: ["Responsive design en basis SEO.", "Contactformulier en analytics setup.", "Handover met duidelijke uitleg."],
-          ads: ["Google/Meta ads basisinrichting inbegrepen.", "Tracking met pixel en conversiemeting.", "Campagne-overdracht met korte uitleg."],
+          default: ["• Responsive design en basis SEO.", "• Contactformulier en analytics setup.", "• Handover met duidelijke uitleg."],
+          ads: ["• Google/Meta ads basisinrichting inbegrepen.", "• Tracking met pixel en conversiemeting.", "• Campagne-overdracht met korte uitleg."],
         },
       },
       {
@@ -93,8 +89,8 @@ function initQuickPricing() {
           ads: "8 secties + advertentieblokken",
         },
         features: {
-          default: ["Maatwerk pagina-opbouw met conversiefocus.", "Blog/nieuws + SEO templates inbegrepen.", "Koppelingen met agenda of CRM mogelijk."],
-          ads: ["Google/Meta ads setup voor meerdere funnels.", "Tracking, events en doelgroep-opbouw ingericht.", "Maand 1 optimalisatieplan voor campagnes."],
+          default: ["• Maatwerk pagina-opbouw met conversiefocus.", "• Blog/nieuws + SEO templates inbegrepen.", "• Koppelingen met agenda of CRM mogelijk.", "• Geavanceerde tools en calculators."],
+          ads: ["• Google/Meta ads setup voor meerdere funnels.", "• Tracking, events en doelgroep-opbouw ingericht.", "• Maand 1 optimalisatieplan voor campagnes."],
         },
       },
       {
@@ -112,8 +108,8 @@ function initQuickPricing() {
           ads: "12+ secties met CRO-focus",
         },
         features: {
-          default: ["Informatiearchitectuur en contentflow uitgewerkt.", "Geavanceerde formulieren en meerdere funnels.", "Performance optimalisatie en uitgebreide QA."],
-          ads: ["Google/Meta campagnestructuur op schaal.", "Geavanceerde tracking en leadkwalificatie-events.", "Funnelrapportage en optimalisatie-advies."],
+          default: ["• Informatiearchitectuur en contentflow uitgewerkt.", "• Geavanceerde formulieren en meerdere funnels.", "• Performance optimalisatie en uitgebreide QA."],
+          ads: ["• Google/Meta campagnestructuur op schaal.", "• Geavanceerde tracking en leadkwalificatie-events.", "• Funnelrapportage en optimalisatie-advies."],
         },
       },
     ],
@@ -133,8 +129,8 @@ function initQuickPricing() {
           ads: "3 secties + advertentieblok",
         },
         features: {
-          default: ["Compacte shop met basis checkout.", "Tot 10 producten en categorie-indeling.", "Snelle livegang met shopfunctionaliteit."],
-          ads: ["Google Shopping/Meta basiskoppeling.", "Tracking voor aankopen en add-to-cart.", "Campagne-overdracht met korte uitleg."],
+          default: ["• Compacte shop met basis checkout.", "• Tot 10 producten en categorie-indeling.", "• Snelle livegang met shopfunctionaliteit."],
+          ads: ["• Google Shopping/Meta basiskoppeling.", "• Tracking voor aankopen en add-to-cart.", "• Campagne-overdracht met korte uitleg."],
         },
       },
       {
@@ -152,8 +148,8 @@ function initQuickPricing() {
           ads: "4 secties + advertentieblok",
         },
         features: {
-          default: ["Checkout, betaalmethode en verzendzones.", "Categorieen en productfilters basis.", "Korte training voor beheer en orders."],
-          ads: ["Google Shopping en Meta catalogus basis.", "Conversietracking voor aankopen en add-to-cart.", "Campagne-overdracht met advertentieadvies."],
+          default: ["• Checkout, betaalmethode en verzendzones.", "• Categorieen en productfilters basis.", "• Korte training voor beheer en orders."],
+          ads: ["• Google Shopping en Meta catalogus basis.", "• Conversietracking voor aankopen en add-to-cart.", "• Campagne-overdracht met advertentieadvies."],
         },
       },
       {
@@ -171,8 +167,8 @@ function initQuickPricing() {
           ads: "10 secties + advertentieblokken",
         },
         features: {
-          default: ["Variaties, kortingsregels en bundels.", "E-mailflows voor verlaten winkelwagens.", "Koppeling met boekhouding of voorraad."],
-          ads: ["Google Shopping + Meta dynamic ads setup.", "Datalayers en tracking voor ROAS-sturing.", "Retargetingflow voor verlaten winkelwagens."],
+          default: ["• Variaties, kortingsregels en bundels.", "• E-mailflows voor verlaten winkelwagens.", "• Koppeling met boekhouding of voorraad."],
+          ads: ["• Google Shopping + Meta dynamic ads setup.", "• Datalayers en tracking voor ROAS-sturing.", "• Retargetingflow voor verlaten winkelwagens."],
         },
       },
       {
@@ -190,8 +186,8 @@ function initQuickPricing() {
           ads: "15+ secties met campagnefocus",
         },
         features: {
-          default: ["Complexe catalogus met faceted filtering.", "Maatwerk checkout en meerdere betaalstromen.", "Schaalbare setup voor campagnes en groei."],
-          ads: ["Cross-channel ads structuur (Google/Meta).", "Geavanceerde attributie en server-side tracking voorbereiding.", "Schaalbaar optimalisatieplan voor groei."],
+          default: ["• Complexe catalogus met faceted filtering.", "• Maatwerk checkout en meerdere betaalstromen.", "• Schaalbare setup voor campagnes en groei."],
+          ads: ["• Cross-channel ads structuur (Google/Meta).", "• Geavanceerde attributie en server-side tracking voorbereiding.", "• Schaalbaar optimalisatieplan voor groei."],
         },
       },
     ],
@@ -199,6 +195,14 @@ function initQuickPricing() {
 
   const getMode = () => (quickPricing.dataset.quickMode === "webshop" ? "webshop" : "website");
   const getAdsEnabled = () => quickPricing.dataset.quickAds === "enabled";
+  const updateTierSliderProgress = () => {
+    const min = Number(tierSlider.min || 1);
+    const max = Number(tierSlider.max || 4);
+    const value = clamp(Number(tierSlider.value || min), min, max);
+    const percent = ((value - min) / Math.max(max - min, 1)) * 100;
+
+    tierSlider.style.setProperty("--slider-progress", `${percent}%`);
+  };
 
   const updateQuickPricing = () => {
     const mode = getMode();
@@ -214,13 +218,17 @@ function initQuickPricing() {
 
     tierLabel.textContent = selected.label;
     tierPrice.textContent = `€ ${formatEur(totalPrice)}`;
-    tierMonthly.textContent = `€ ${formatEur(totalMonthly)} p/m`;
+    tierMonthly.textContent = `€ ${formatEur(totalMonthly)}/m`;
     quickPages.textContent = pages;
     quickCustomSections.textContent = customSections;
-    quickFeature1.textContent = features[0] || "";
-    quickFeature2.textContent = features[1] || "";
-    quickFeature3.textContent = features[2] || "";
+    quickFeatureList.replaceChildren();
+    features.forEach((feature) => {
+      const item = document.createElement("li");
+      item.textContent = feature;
+      quickFeatureList.appendChild(item);
+    });
     tierSlider.setAttribute("aria-valuetext", `${selected.label} (${mode}${adsEnabled ? ", met advertenties" : ""})`);
+    updateTierSliderProgress();
   };
 
   const setMode = (mode) => {
@@ -354,9 +362,9 @@ export function initWebsiteSimulator() {
     }
     if (simPagesValue) simPagesValue.textContent = `${pages} pagina's`;
     if (simBuildEstimate) simBuildEstimate.textContent = `EUR ${formatEur(oneTimeMin)} - ${formatEur(oneTimeMax)}`;
-    if (simMonthlyEstimate) simMonthlyEstimate.textContent = `EUR ${formatEur(monthlyMin)} - ${formatEur(monthlyMax)} p/m`;
+    if (simMonthlyEstimate) simMonthlyEstimate.textContent = `EUR ${formatEur(monthlyMin)} - ${formatEur(monthlyMax)}/m`;
     if (simAdBudget) {
-      simAdBudget.textContent = mediaBudgetRaw > 0 ? `EUR ${formatEur(mediaBudgetRaw)} p/m` : "Niet gekozen";
+      simAdBudget.textContent = mediaBudgetRaw > 0 ? `EUR ${formatEur(mediaBudgetRaw)}/m` : "Niet gekozen";
     }
     if (simTimeline) simTimeline.textContent = `${timelineMin}-${timelineMax} weken`;
     if (simFocus) {
@@ -381,4 +389,3 @@ export function initWebsiteSimulator() {
 
   updateSimulator();
 }
-

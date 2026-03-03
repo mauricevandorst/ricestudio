@@ -2,6 +2,7 @@
 import { initBackToTop } from "./modules/backToTop.js";
 import { initContactForm } from "./modules/contactForm.js";
 import { initFaqAccordion } from "./modules/faq.js";
+import { initHeaderScrollTheme } from "./modules/headerScrollTheme.js";
 import { initMobileMenu } from "./modules/mobileMenu.js";
 import { initNavObserver } from "./modules/navObserver.js";
 import { initPortfolioModal } from "./modules/portfolioModal.js";
@@ -15,6 +16,7 @@ import { initMarquee } from "./modules/marquee.js";
 // Bestand: js/main.js | Doel: Init van losse UI-modules.
 initYear();
 initTypingAnimation();
+initHeaderScrollTheme();
 const mobileMenu = initMobileMenu();
 initPortfolioModal();
 initSmoothScroll({

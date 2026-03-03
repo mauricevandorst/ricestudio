@@ -12,7 +12,7 @@ export function initTypingAnimation() {
     { prefix: "", highlight: "sites die aanvragen opleveren", suffix: "", suffixHighlight: "" },
     { prefix: "", highlight: "hand\u00ADgeschreven websites", suffix: "", suffixHighlight: "" },
     { prefix: "", highlight: "Google campagnes die leads opleveren", suffix: "", suffixHighlight: "" },
-    { prefix: "", highlight: "websites met prachtige animaties", suffix: "", suffixHighlight: "" },
+    { prefix: "", highlight: "prachtig geanimeerde sites", suffix: "", suffixHighlight: "" },
     { prefix: "hét ", highlight: "digitale visitekaartje van je bedrijf", suffix: "", suffixHighlight: "" },
     { prefix: "", highlight: "meta ads-campagnes voor jouw niche", suffix: "", suffixHighlight: "" },
   ];
