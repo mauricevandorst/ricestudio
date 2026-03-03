@@ -59,7 +59,7 @@ function initQuickPricing() {
         label: "Kleine website",
         price: 1450,
         adsAddOn: 300,
-        monthly: 39,
+        monthly: 29,
         adsMonthlyAddOn: 500,
         pages: {
           default: "Tot 5 pagina's",
@@ -97,7 +97,7 @@ function initQuickPricing() {
         label: "Grote website",
         price: 5950,
         adsAddOn: 750,
-        monthly: 149,
+        monthly: 59,
         adsMonthlyAddOn: 800,
         pages: {
           default: "15+ pagina's",

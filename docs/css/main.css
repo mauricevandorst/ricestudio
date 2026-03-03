@@ -1033,6 +1033,10 @@ video {
   left: -5rem;
 }
 
+.-left-3 {
+  left: -0.75rem;
+}
+
 .-left-5 {
   left: -1.25rem;
 }
@@ -1083,18 +1087,6 @@ video {
 
 .top-16 {
   top: 4rem;
-}
-
-.-left-1 {
-  left: -0.25rem;
-}
-
-.-left-2 {
-  left: -0.5rem;
-}
-
-.-left-3 {
-  left: -0.75rem;
 }
 
 .-z-10 {
