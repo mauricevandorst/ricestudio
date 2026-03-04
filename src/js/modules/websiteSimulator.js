@@ -41,7 +41,7 @@ function initQuickPricing() {
         price: 425,
         adsAddOn: 150,
         monthly: 19,
-        adsMonthlyAddOn: 300,
+        adsMonthlyAddOn: 350,
         pages: {
           default: "1 pagina",
           ads: "1 pagina + advertentie-lander",

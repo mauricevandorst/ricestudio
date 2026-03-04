@@ -7,6 +7,7 @@ import { initMobileMenu } from "./modules/mobileMenu.js";
 import { initNavObserver } from "./modules/navObserver.js";
 import { initPortfolioModal } from "./modules/portfolioModal.js";
 import { initRevealAnimations } from "./modules/reveal.js";
+import { initServicesModal } from "./modules/servicesModal.js";
 import { initSmoothScroll } from "./modules/smoothScroll.js";
 import { initTypingAnimation } from "./modules/typingAnimation.js";
 import { initWebsiteSimulator } from "./modules/websiteSimulator.js";
@@ -19,6 +20,7 @@ initTypingAnimation();
 initHeaderScrollTheme();
 const mobileMenu = initMobileMenu();
 initPortfolioModal();
+initServicesModal();
 initSmoothScroll({
   closeMobileMenu: mobileMenu.close,
   isMobileMenuOpen: mobileMenu.isOpen,
