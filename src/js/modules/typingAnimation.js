@@ -13,7 +13,7 @@ export function initTypingAnimation() {
     { prefix: "", highlight: "hand\u00ADgeschreven websites", suffix: "", suffixHighlight: "" },
     { prefix: "", highlight: "Google campagnes die klanten trekken", suffix: "", suffixHighlight: "" },
     { prefix: "", highlight: "sites met prachtige animaties", suffix: "", suffixHighlight: "" },
-    { prefix: "hét ", highlight: "digitale visitekaartje van je bedrijf", suffix: "", suffixHighlight: "" },
+    { prefix: "jouw  ", highlight: "digitale visite\u00ADkaartje", suffix: "", suffixHighlight: "" },
     { prefix: "", highlight: "meta ads-campagnes voor jouw niche", suffix: "", suffixHighlight: "" },
   ];
 
@@ -23,6 +23,9 @@ export function initTypingAnimation() {
   let timeoutId = null;
   let isInViewport = true;
   let isTabVisible = !document.hidden;
+  let hasBootstrapped = false;
+
+  const observerTarget = typingHighlightNode.closest("section") || typingHighlightNode;
 
   const shouldAnimate = () => isInViewport && isTabVisible;
 
@@ -86,6 +89,13 @@ export function initTypingAnimation() {
   const onVisibilityChange = () => {
     isTabVisible = !document.hidden;
     if (shouldAnimate()) {
+      if (!hasBootstrapped) {
+        hasBootstrapped = true;
+        typingPrefixNode.textContent = "";
+        typingHighlightNode.textContent = "";
+        typingSuffixNode.textContent = "";
+        typingSuffixHighlightNode.textContent = "";
+      }
       scheduleTick(0);
       return;
     }
@@ -95,11 +105,23 @@ export function initTypingAnimation() {
   document.addEventListener("visibilitychange", onVisibilityChange);
 
   if (typeof IntersectionObserver !== "undefined") {
-    const observerTarget = typingHighlightNode.closest("section") || typingHighlightNode;
+    const rect = observerTarget.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+    const visibilityRatio = rect.height > 0 ? visibleHeight / rect.height : 0;
+    isInViewport = visibilityRatio >= 0.1;
+
     const typingObserver = new IntersectionObserver(
       (entries) => {
         isInViewport = entries.some((entry) => entry.isIntersecting);
         if (shouldAnimate()) {
+          if (!hasBootstrapped) {
+            hasBootstrapped = true;
+            typingPrefixNode.textContent = "";
+            typingHighlightNode.textContent = "";
+            typingSuffixNode.textContent = "";
+            typingSuffixHighlightNode.textContent = "";
+          }
           scheduleTick(0);
           return;
         }
@@ -108,11 +130,16 @@ export function initTypingAnimation() {
       { threshold: 0.1 }
     );
     typingObserver.observe(observerTarget);
+  } else {
+    isInViewport = true;
   }
 
-  typingPrefixNode.textContent = "";
-  typingHighlightNode.textContent = "";
-  typingSuffixNode.textContent = "";
-  typingSuffixHighlightNode.textContent = "";
-  scheduleTick(350);
+  if (shouldAnimate()) {
+    hasBootstrapped = true;
+    typingPrefixNode.textContent = "";
+    typingHighlightNode.textContent = "";
+    typingSuffixNode.textContent = "";
+    typingSuffixHighlightNode.textContent = "";
+    scheduleTick(350);
+  }
 }

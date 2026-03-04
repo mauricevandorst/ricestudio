@@ -41,29 +41,28 @@
   <header id="site-header" class="fixed inset-x-0 md:pt-5 z-50 border-b border-transparent bg-transparent shadow-none">
     <div class="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
       <a href="#top"
-        class="site-header__logo inline-flex items-center gap-2 text-3xl font-bold uppercase tracking-tight [font-family:'Bricolage_Grotesque',sans-serif]"
+        class="site-header__logo text-3xl leading-[1.15rem] font-bold uppercase tracking-tight [font-family:'Bricolage_Grotesque',sans-serif]"
         aria-label="Rice Studio home">
-        <!--<span
-          class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 text-sm font-bold text-white shadow-lg shadow-indigo-200">
-          RS
-        </span>-->
-        Rice
-        <span class="text-xl mt-2">Studio</span>
+        <span class="site-header__logo-rice">RICE</span>
+        <span class="site-header__logo-studio-wrap !h-min">
+          <span class="site-header__logo-studio text-[1.19rem]">Studio</span>
+        </span>
       </a>
       <div class="flex items-center gap-4">
-        <nav aria-label="Hoofdmenu" class="site-header__main-menu hidden items-center gap-1 bg-white border-[1px] border-white/30 rounded-full px-2 lg:flex">
+        <nav aria-label="Hoofdmenu"
+          class="site-header__main-menu hidden items-center gap-1 bg-white rounded-full px-2 lg:flex">
           <a data-nav-link href="#diensten"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
           <a data-nav-link href="#werk"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
           <a data-nav-link href="#proces"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
           <a data-nav-link href="#reviews"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
           <a data-nav-link href="#faq"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
           <a data-nav-link href="#contact"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:bg-slate-100 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
+            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
         </nav>
         <div class="flex items-center gap-2 md:gap-4">
           <button id="menu-toggle" type="button"
@@ -85,15 +84,16 @@
               </g>
             </svg>
           </button>
-          <div id="menu-cta" class="block"><a href="#contact" class="btn btn-soft text-xs px-5 py-2 rounded-full border-none shadow-none">Praten?</a></div>
+          <div id="menu-cta" class="block"><a href="#contact"
+              class="btn btn-soft text-xs px-5 py-2 rounded-full shadow-none hover:!text-slate-300">Praten?</a></div>
         </div>
       </div>
     </div>
     <div id="mobile-overlay"
-      class="pointer-events-none fixed inset-0 z-40 hidden bg-slate-950/40 opacity-0 transition-opacity duration-300 lg:hidden"
+      class="pointer-events-none fixed inset-0 z-40 hidden h-dvh bg-slate-950/40 opacity-0 transition-opacity duration-300 lg:hidden"
       aria-hidden="true"></div>
     <nav id="mobile-menu"
-      class="fixed right-0 top-0 z-50 hidden h-full w-[84%] max-w-sm translate-x-full border-l border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-300 lg:hidden"
+      class="fixed right-0 top-0 z-50 hidden h-dvh rounded-l-[25px] w-[84%] max-w-sm translate-x-full border-l border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-300 lg:hidden"
       aria-label="Mobiel menu">
       <div class="mb-8 flex items-center justify-between">
         <p class="text-base font-bold [font-family:'Bricolage_Grotesque',sans-serif]">Rice Studio</p><button
@@ -128,13 +128,14 @@
       <div class="relative w-full overflow-hidden">
         <div
           class="after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(180deg,rgba(30,30,28,0.5),rgba(30,30,28,0.9)_70%)] after:content-[''] after:opacity-60">
-          <video class="h-[200px] w-full object-cover md:h-[50vh]" autoplay muted loop playsinline preload="metadata">
+          <video class="h-[200px] w-full object-cover md:h-[50vh] lg:h-[60vh]" autoplay muted loop playsinline
+            preload="metadata">
             <source src="https://www.wauw.nl/wp-content/uploads/2025/09/wauw-digital-agency.mp4" type="video/mp4">
           </video>
         </div>
         <!-- Logo sectie -->
         <div
-          class="w-full left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-7xl px-4 sm:px-6 trust-badges absolute items-center bottom-[clamp(50px,2.6vw,9999px)] md:bottom-[clamp(70px,2.6vw,9999px)] flex gap-6 text-white">
+          class="mx-auto w-full left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-7xl px-4 sm:px-6 trust-badges absolute items-center bottom-[clamp(35px,2.6vw,9999px)] sm:bottom-[clamp(50px,2.6vw,9999px)] md:bottom-[clamp(70px,2.6vw,9999px)] lg:bottom-[clamp(90px,2.6vw,9999px)] flex gap-6 text-white">
           <span class="trust-badge">
             <img class="trust-badge__img" src="./assets/logos/google-search-console.png" alt="Google Search Console"
               loading="eager" decoding="async" />
@@ -151,7 +152,8 @@
         <div
           class="bottom-0 pointer-events-none absolute left-1/2 z-10 w-screen -translate-x-1/2 overflow-hidden leading-none"
           aria-hidden="true">
-          <img class="h-full w-full -left-3 max-w-none object-cover text-white" src="https://www.cebo.com/images/banners/banner-effect.svg" alt="">
+          <img class="h-full w-full -left-3 max-w-none object-cover text-white"
+            src="./assets/icons/mountains-primary.svg" alt="">
         </div>
       </div>
     </section>
@@ -189,14 +191,14 @@
               </span>
             </h1>
 
-            <p class="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            <p class="mt-6 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600 sm:text-lg">
               Voor jonge ondernemers tot MKB's bouwen wij online strategie, design en development. Na livegang werken
-              wij met onze partners door op SEO, SEA en performance.
+              wij met onze partners door op online ads, gerichte campagnes en performance.
             </p>
 
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">Wij bouwen niet alleen je
-              website. We zorgen
-              daarna ook voor groei.
+            <p class="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600 sm:text-lg">Wij bouwen niet
+              alleen je
+              website. We zorgen daarna ook voor groei.
             </p>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -383,7 +385,7 @@
                 </svg>
                 Laten we praten
               </a>
-              <a href="#pricing-calculator" class="btn btn-secondary gap-0 px-6 py-3.5">
+              <a href="#pricing-calculator" class="btn btn-secondary gap-0 px-6 py-2.5">
                 <svg class="h-8 w-auto" viewBox="0 -15.5 1055 1055" class="icon" version="1.1"
                   xmlns="http://www.w3.org/2000/svg" fill="#000000">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -426,10 +428,10 @@
                 <p class="text-sm text-slate-600">Bekijk een ruwe schatting van de kosten voor jouw project.</p>
               </div>
               <div class="space-y-3" id="quick-pricing" data-quick-mode="website">
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3 space-y-4 lg:space-y-5">
-                  <div class="mb-1 flex flex-col gap-1">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3 space-y-5">
+                  <div class="mb-1 flex flex-col gap-2">
                     <div class="flex justify-between items-center gap-3">
-                      <p id="quick-tier-label" class="text-sm font-semibold text-slate-900">Startup website</p>
+                      <p id="quick-tier-label" class="text-sm font-semibold text-slate-900">Budget website</p>
                       <div class="flex items-center gap-2">
                         <span class="text-[11px] font-semibold text-slate-600">Webshop</span>
                         <label class="relative inline-flex cursor-pointer items-center">
@@ -444,9 +446,9 @@
                     </div>
                     <div class="flex justify-between items-center gap-3">
                       <div>
-                        <p class="text-sm font-semibold text-slate-900">
-                          <span id="quick-tier-price">€ 750</span>
-                          (<span id="quick-tier-monthly">€ 29/m</span>)
+                        <p class="flex flex-wrap gap-x-1 text-sm font-semibold text-slate-900">
+                          <span id="quick-tier-price">€ 425</span>
+                          <span>(<span id="quick-tier-monthly">€ 19/m</span>)</span>
                         </p>
                       </div>
                       <div class="flex items-center gap-2">
@@ -462,28 +464,30 @@
                       </div>
                     </div>
                   </div>
-                  <input id="quick-tier-slider" type="range" min="1" max="4" step="1" value="1"
+                  <input id="quick-tier-slider" type="range" min="1" max="5" step="1" value="1"
                     class="quick-tier-slider h-2 w-full cursor-pointer" />
                   <div class="flex justify-between text-xs font-medium text-slate-500 !mt-1">
-                    <span class="w-max">Startup</span>
+                    <span class="w-max">Budget</span>
                     <span class="w-max">Klein</span>
+                    <span class="w-max">Standaard</span>
                     <span class="w-max">Uitgebreid</span>
                     <span class="w-max">Groot</span>
                   </div>
                   <div class="grid grid-cols-2 gap-2 text-xs">
                     <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
                       <p class="font-semibold text-slate-500 md:text-sm">Pagina's</p>
-                      <p id="quick-pages" class="mt-0.5 font-semibold text-slate-900 md:text-xs">Tot 5 pagina's</p>
+                      <p id="quick-pages" class="mt-0.5 font-semibold text-slate-900 md:text-xs">1 pagina</p>
                     </div>
                     <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
                       <p class="font-semibold text-slate-500 md:text-sm">Custom secties</p>
-                      <p id="quick-custom-sections" class="mt-0.5 font-semibold text-slate-900 md:text-xs">3 secties</p>
+                      <p id="quick-custom-sections" class="mt-0.5 font-semibold text-slate-900 md:text-xs">1 custom
+                        sectie</p>
                     </div>
                   </div>
                   <ul id="quick-feature-list" class="space-y-1 lg:space-y-2 text-xs md:text-sm text-slate-600">
-                    <li>Responsive design en basis SEO.</li>
-                    <li>Contactformulier en analytics setup.</li>
-                    <li>Handover met duidelijke uitleg.</li>
+                    <li>Supersnelle one-pager met duidelijke call-to-action.</li>
+                    <li>Mobielvriendelijk en technisch netjes opgeleverd.</li>
+                    <li>Basis contactmogelijkheid en livegang inbegrepen.</li>
                   </ul>
                 </div>
                 <a href="#pricing-calculator" class="btn btn-primary w-full px-5 py-2.5">
@@ -497,105 +501,114 @@
       </div>
     </section>
 
-    <section id="trust" class="border-b border-slate-200/80 bg-white pb-14 sm:pb-16">
+    <section id="trust" class="relative border-b border-slate-200/80 bg-white pb-14 sm:pb-16 md:pb-24 lg:pb-36">
       <div class="flex flex-col justify-center items-center mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mt-6 w-full max-w-lg flex flex-col overflow-hidden rounded-xl border border-slate-300 bg-slate-50">
+        <div class="w-full max-w-lg flex flex-col overflow-hidden rounded-xl border border-slate-300 bg-slate-50">
           <div class="flex flex-row justify-center border-b border-slate-300">
             <div
               class="w-full flex flex-col gap-1 justify-center items-center border-r border-slate-300 px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
-              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+              <span class="text-base font-extrabold text-slate-900">Ads-ready basis</span>
+              <span class="text-xs text-slate-400">Landingspagina’s die direct inzetbaar zijn voor Meta- en Google
+                Ads.</span>
             </div>
             <div
               class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
-              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+              <span class="text-base font-extrabold text-slate-900">Extra klanten</span>
+              <span class="text-xs text-slate-400">Een website die klanten aantrekt en conversies verhoogt.</span>
             </div>
           </div>
           <div class="flex flex-row justify-center">
             <div
               class="w-full flex flex-col gap-1 justify-center items-center border-r border-slate-300 px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
-              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+              <span class="text-base font-extrabold text-slate-900">Performance-first</span>
+              <span class="text-xs text-slate-400">Core Web Vitals, snelle laadtijd en krachtige SEO-basis.</span>
             </div>
             <div
               class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">60+ projecten</span>
-              <span class="text-xs text-slate-400">Vertrouwd door 70+ klanten.</span>
+              <span class="text-base font-extrabold text-slate-900">Bouw een merk</span>
+              <span class="text-xs text-slate-400">Wij zorgen ervoor dat jouw merk online opvalt binnen jouw
+                markt.</span>
             </div>
           </div>
         </div>
 
-        <p class="mt-8 text-center text-sm font-medium text-slate-500">
-          Vertrouwd door vooraanstaande oprichters en eigenaren.
-        </p>
+        <div class="flex flex-col gap-3 w-full">
+          <p class="mt-8 text-center text-sm font-medium text-slate-500">
+            Wij ontwikkelen met moderne technologieën van wereldwijde platforms.
+          </p>
 
-        <div class="marquee-shell">
-          <div class="marquee relative z-10" aria-label="Merken waarmee we werken">
-            <div class="marquee__track overflow-hidden">
-              <ul class="marquee__content" aria-label="Merken">
-                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
-                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
-                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
-                    loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
-                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
-                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
-                    loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
-                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
-                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
-                    loading="eager" decoding="async" /></li>
-              </ul>
+          <div class="marquee-shell z-20">
+            <div class="marquee relative" aria-label="Technologieën waarmee we werken">
+              <div class="marquee__track overflow-hidden">
 
-              <ul class="marquee__content" aria-hidden="true">
-                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
-                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
-                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
-                    loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
-                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
-                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
-                    loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img src="https://mauricevandorst.com/studioieks/assets/images/logo.jpg"
-                    alt="StudioIEKS" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/Proper-Beauty-Salon-Sample/assets/images/logo.jpg"
-                    alt="Proper Beauty Salon" loading="eager" decoding="async" /></li>
-                <li class="logo-tile"><img
-                    src="https://mauricevandorst.com/klimazon/assets/images/logo/Klimazon-logo.png" alt="Klimazon"
-                    loading="eager" decoding="async" /></li>
-              </ul>
+                <ul class="marquee__content" aria-label="Technologie">
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" loading="eager"
+                      decoding="async" />
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="eager" decoding="async" />
+                  </li>
+                  </li>
+                </ul>
+
+                <ul class="marquee__content" aria-label="Technologie">
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" loading="eager"
+                      decoding="async" />
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" loading="eager" />
+                  </li>
+                  <li class="logo-tile">
+                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="eager" decoding="async" />
+                  </li>
+                  </li>
+                </ul>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div
+        class="-bottom-1 pointer-events-none absolute left-1/2 z-10 w-screen -translate-x-1/2 overflow-hidden leading-none"
+        aria-hidden="true">
+        <img class="h-full w-full -left-3 max-w-none object-cover text-white"
+          src="./assets/icons/mountains-secondary.svg" alt="">
+      </div>
     </section>
 
-    <section id="diensten" class="scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
+    <section id="diensten" class="scroll-mt-28 border-b border-slate-200/80 bg-[#edf8ff] py-20 sm:py-24">
       <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-10 max-w-2xl" data-reveal>
-          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Diensten</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-blue-600">Diensten</p>
           <h2
             class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
             Van eerste idee tot een schaalbare website.</h2>
@@ -606,18 +619,18 @@
         <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-5">
           <article data-reveal
             class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
-            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <svg class="h-7 w-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.8" aria-hidden="true">
               <path d="M3 5h18v14H3z" />
               <path d="M3 9h18" />
             </svg>
             <h3 class="mt-3 text-lg font-semibold text-slate-900">Webdesign</h3>
             <p class="mt-2 text-sm text-slate-600">Heldere layouts, sterke hierarchie en visuele rust die converteert.
-            </p><a href="#proces" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+            </p><a href="#proces" class="mt-4 inline-flex text-sm font-semibold text-blue-600">Meer info</a>
           </article>
           <article data-reveal
             class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
-            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <svg class="h-7 w-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.8" aria-hidden="true">
               <path d="M7 8l-4 4 4 4" />
               <path d="M17 8l4 4-4 4" />
@@ -625,11 +638,11 @@
             </svg>
             <h3 class="mt-3 text-lg font-semibold text-slate-900">Website ontwikkeling</h3>
             <p class="mt-2 text-sm text-slate-600">Schone code, snelle frontend en solide technische basis.</p><a
-              href="#proces" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+              href="#proces" class="mt-4 inline-flex text-sm font-semibold text-blue-600">Meer info</a>
           </article>
           <article data-reveal
             class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
-            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <svg class="h-7 w-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.8" aria-hidden="true">
               <path d="M4 12h16" />
               <path d="M4 6h10" />
@@ -637,12 +650,12 @@
             </svg>
             <h3 class="mt-3 text-lg font-semibold text-slate-900">SEO basis</h3>
             <p class="mt-2 text-sm text-slate-600">Goede structuur, metadata en technische fundamenten voor
-              vindbaarheid.</p><a href="#groei" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer
+              vindbaarheid.</p><a href="#groei" class="mt-4 inline-flex text-sm font-semibold text-blue-600">Meer
               info</a>
           </article>
           <article data-reveal
             class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
-            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <svg class="h-7 w-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.8" aria-hidden="true">
               <path d="M12 3v18" />
               <path d="M3 12h18" />
@@ -650,18 +663,18 @@
             </svg>
             <h3 class="mt-3 text-lg font-semibold text-slate-900">Snelheid/Performance</h3>
             <p class="mt-2 text-sm text-slate-600">Core Web Vitals in focus voor betere gebruikerservaring en SEO.</p>
-            <a href="#contact" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+            <a href="#contact" class="mt-4 inline-flex text-sm font-semibold text-blue-600">Meer info</a>
           </article>
           <article data-reveal
             class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg opacity-0 translate-y-6">
-            <svg class="h-7 w-7 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <svg class="h-7 w-7 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.8" aria-hidden="true">
               <path d="M12 6v6l4 2" />
               <circle cx="12" cy="12" r="9" />
             </svg>
             <h3 class="mt-3 text-lg font-semibold text-slate-900">Onderhoud</h3>
             <p class="mt-2 text-sm text-slate-600">Doorlopend beheer, updates en support zonder technische ruis.</p><a
-              href="#contact" class="mt-4 inline-flex text-sm font-semibold text-indigo-600">Meer info</a>
+              href="#contact" class="mt-4 inline-flex text-sm font-semibold text-blue-600">Meer info</a>
           </article>
         </div>
       </div>

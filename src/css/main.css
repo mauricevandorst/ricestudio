@@ -13,7 +13,6 @@
   #site-header .site-header__menu-toggle,
   #site-header #menu-cta {
     color: #ffffff;
-    margin-top: 0;
     transition: color 900ms cubic-bezier(0.22, 1, 0.36, 1),
       background-color 900ms cubic-bezier(0.22, 1, 0.36, 1),
       margin-top 700ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -31,6 +30,62 @@
       color 700ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+
+  #site-header .site-header__logo {
+    --logo-cycle: 8s;
+    display: inline-grid;
+    justify-items: center;
+  }
+
+  #site-header .site-header__logo-rice {
+    display: block;
+    grid-row: 1;
+    transform: translateY(0);
+  }
+
+  #site-header .site-header__logo-studio-wrap {
+    display: block;
+    grid-row: 2;
+    height: 1.2em;
+    overflow: hidden;
+  }
+
+  #site-header .site-header__logo-studio {
+    display: block;
+    transform: translateY(0);
+    will-change: transform, opacity;
+  }
+
+  @keyframes logo-studio-slide {
+    0%, 56%, 100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    66%, 84% {
+      transform: translateY(105%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes logo-rice-center {
+    0%, 56%, 100% {
+      transform: translateY(0);
+    }
+
+    66%, 84% {
+      transform: translateY(0.35em);
+    }
+  }
+
+  #site-header .site-header__logo-studio {
+    animation: logo-studio-slide var(--logo-cycle) cubic-bezier(0.3, 0, 0.2, 1) infinite;
+  }
+
+  #site-header .site-header__logo-rice {
+    animation: logo-rice-center var(--logo-cycle) cubic-bezier(0.3, 0, 0.2, 1) infinite;
+  }
+
   #site-header:not(.is-scrolled) .site-header__logo {
     color: #ffffff;
   }
@@ -46,11 +101,12 @@
   #site-header.is-scrolled .site-header__logo,
   #site-header.is-scrolled .site-header__menu-toggle,
   #site-header.is-scrolled #menu-cta {
-    color: #0f172a;
+    color: #363636;
   }
 
-  #site-header.is-scrolled .site-header__main-menu {
-    @apply bg-transparent border-none shadow-xl shadow-slate-900/10;
+  #site-header.is-scrolled .site-header__main-menu,
+  #site-header.is-scrolled #menu-cta .btn-soft {
+    @apply bg-transparent pulse-border;
   }
   
   #site-header.is-scrolled #menu-cta .btn-soft {
@@ -100,7 +156,7 @@
   }
 
   .btn-soft:hover {
-    @apply -translate-y-0.5 border-white bg-slate-100;
+    @apply border-white bg-slate-100;
   }
 
   .btn-icon {
@@ -329,4 +385,29 @@
     animation: none;
     transform: none;
   }
+
+  #site-header .site-header__logo-rice,
+  #site-header .site-header__logo-studio {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes pulseBorder {
+  0%,100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(102, 102, 102, 0.5);
+  }
+}
+
+.pulse-border {
+  animation: pulseBorder 5s ease-in-out infinite;
+}
+
+.reveal-instant {
+  transition: none !important;
+  animation: none !important;
 }

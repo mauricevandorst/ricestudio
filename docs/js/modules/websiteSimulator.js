@@ -37,7 +37,34 @@ function initQuickPricing() {
   const quickPricingData = {
     website: [
       {
-        label: "Startup website",
+        label: "Budget website",
+        price: 425,
+        adsAddOn: 150,
+        monthly: 19,
+        adsMonthlyAddOn: 300,
+        pages: {
+          default: "1 pagina",
+          ads: "1 pagina + advertentie-lander",
+        },
+        customSections: {
+          default: "1 sectie",
+          ads: "1 sectie + campagneblok",
+        },
+        features: {
+          default: [
+            "• Supersnelle one-pager met duidelijke call-to-action.",
+            "• Mobielvriendelijk en technisch netjes opgeleverd.",
+            "• Basis contactmogelijkheid en livegang inbegrepen.",
+          ],
+          ads: [
+            "• Google/Meta ads basisinrichting inbegrepen.",
+            "• Pixel en conversiemeting gekoppeld.",
+            "• Korte campagne-overdracht na livegang.",
+          ],
+        },
+      },
+      {
+        label: "Kleine website",
         price: 750,
         adsAddOn: 150,
         monthly: 29,
@@ -56,7 +83,7 @@ function initQuickPricing() {
         },
       },
       {
-        label: "Kleine website",
+        label: "Standaard website",
         price: 1450,
         adsAddOn: 300,
         monthly: 29,
@@ -115,7 +142,34 @@ function initQuickPricing() {
     ],
     webshop: [
       {
-        label: "Startup webshop",
+        label: "Budget webshop",
+        price: 950,
+        adsAddOn: 100,
+        monthly: 39,
+        adsMonthlyAddOn: 170,
+        pages: {
+          default: "1 pagina",
+          ads: "1 pagina + campagne-lander",
+        },
+        customSections: {
+          default: "1 custom sectie",
+          ads: "1 custom sectie + advertentieblok",
+        },
+        features: {
+          default: [
+            "• Compacte one-page shop met basis checkout.",
+            "• Startklaar voor een klein aanbod.",
+            "• Snelle livegang met duidelijke basisopzet.",
+          ],
+          ads: [
+            "• Google Shopping/Meta basiskoppeling.",
+            "• Tracking voor aankopen en add-to-cart.",
+            "• Campagne-overdracht met korte uitleg.",
+          ],
+        },
+      },
+      {
+        label: "Kleine webshop",
         price: 1450,
         adsAddOn: 250,
         monthly: 59,
@@ -134,10 +188,10 @@ function initQuickPricing() {
         },
       },
       {
-        label: "Kleine webshop",
+        label: "Standaard webshop",
         price: 2450,
         adsAddOn: 450,
-        monthly: 109,
+        monthly: 59,
         adsMonthlyAddOn: 220,
         pages: {
           default: "Tot 6 pagina's",
@@ -156,7 +210,7 @@ function initQuickPricing() {
         label: "Uitgebreide webshop",
         price: 5450,
         adsAddOn: 700,
-        monthly: 189,
+        monthly: 109,
         adsMonthlyAddOn: 300,
         pages: {
           default: "Tot 15 pagina's",
@@ -175,7 +229,7 @@ function initQuickPricing() {
         label: "Grote webshop",
         price: 12450,
         adsAddOn: 950,
-        monthly: 309,
+        monthly: 199,
         adsMonthlyAddOn: 420,
         pages: {
           default: "20+ pagina's",
@@ -195,9 +249,24 @@ function initQuickPricing() {
 
   const getMode = () => (quickPricing.dataset.quickMode === "webshop" ? "webshop" : "website");
   const getAdsEnabled = () => quickPricing.dataset.quickAds === "enabled";
+  const getTierRange = () => {
+    const mode = getMode();
+    const options = quickPricingData[mode] || [];
+    const min = 1;
+    const max = Math.max(options.length, min);
+
+    return { min, max };
+  };
+  const syncTierSliderRange = () => {
+    const { min, max } = getTierRange();
+    const value = clamp(Number(tierSlider.value || min), min, max);
+
+    tierSlider.min = String(min);
+    tierSlider.max = String(max);
+    tierSlider.value = String(value);
+  };
   const updateTierSliderProgress = () => {
-    const min = Number(tierSlider.min || 1);
-    const max = Number(tierSlider.max || 4);
+    const { min, max } = getTierRange();
     const value = clamp(Number(tierSlider.value || min), min, max);
     const percent = ((value - min) / Math.max(max - min, 1)) * 100;
 
@@ -207,7 +276,8 @@ function initQuickPricing() {
   const updateQuickPricing = () => {
     const mode = getMode();
     const options = quickPricingData[mode];
-    const tier = clamp(Number(tierSlider.value || 1), 1, 4);
+    const { min, max } = getTierRange();
+    const tier = clamp(Number(tierSlider.value || min), min, max);
     const selected = options[tier - 1] || options[0];
     const adsEnabled = getAdsEnabled();
     const totalPrice = selected.price + (adsEnabled ? selected.adsAddOn || 0 : 0);
@@ -234,6 +304,7 @@ function initQuickPricing() {
   const setMode = (mode) => {
     quickPricing.dataset.quickMode = mode;
     modeToggle.checked = mode === "webshop";
+    syncTierSliderRange();
 
     updateQuickPricing();
   };
