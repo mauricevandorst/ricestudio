@@ -13,6 +13,7 @@ import { initTypingAnimation } from "./modules/typingAnimation.js";
 import { initWebsiteSimulator } from "./modules/websiteSimulator.js";
 import { initYear } from "./modules/year.js";
 import { initMarquee } from "./modules/marquee.js";
+import { initProofCarousel } from "./modules/proofCarousel.js";
 
 // Bestand: js/main.js | Doel: Init van losse UI-modules.
 initYear();
@@ -30,5 +31,6 @@ initNavObserver();
 initRevealAnimations();
 initWebsiteSimulator();
 initMarquee();
+initProofCarousel();
 initContactForm();
 initBackToTop();

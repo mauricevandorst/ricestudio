@@ -5,26 +5,47 @@ export function initServicesModal() {
   const modalLabel = document.getElementById("services-modal-label");
   const modalTitle = document.getElementById("services-modal-title");
   const modalFocus = document.getElementById("services-modal-focus");
+  const modalFocus1 = document.getElementById("services-modal-focus-1");
+  const modalFocus2 = document.getElementById("services-modal-focus-2");
   const modalGoal = document.getElementById("services-modal-goal");
   const modalList = document.getElementById("services-modal-list");
+  const OPEN_CLASS = "is-open";
+  const CLOSE_DURATION_MS = 420;
 
   if (!modal) {
     return;
   }
 
   let lastFocusedElement = null;
+  let closeTimer = null;
   const lockBody = (lock) => body.classList.toggle("overflow-hidden", lock);
 
   const open = (button) => {
     if (!button) {
       return;
     }
+    if (closeTimer) {
+      window.clearTimeout(closeTimer);
+      closeTimer = null;
+    }
 
-    const { serviceLabel, serviceTitle, serviceFocus, serviceGoal, serviceItems } = button.dataset;
+    const { serviceLabel, serviceTitle, serviceFocus, serviceFocus1, serviceFocus2, serviceGoal, serviceItems } = button.dataset;
 
     if (modalLabel) modalLabel.textContent = serviceLabel || "Dienst";
     if (modalTitle) modalTitle.textContent = serviceTitle || "Onze dienst";
-    if (modalFocus) modalFocus.textContent = serviceFocus || "";
+    const primaryFocus = (serviceFocus1 || serviceFocus || "").trim();
+    const secondaryFocus = (serviceFocus2 || "").trim();
+    if (modalFocus) {
+      modalFocus.classList.toggle("hidden", !primaryFocus && !secondaryFocus);
+    }
+    if (modalFocus1) {
+      modalFocus1.textContent = primaryFocus;
+      modalFocus1.classList.toggle("hidden", !primaryFocus);
+    }
+    if (modalFocus2) {
+      modalFocus2.textContent = secondaryFocus;
+      modalFocus2.classList.toggle("hidden", !secondaryFocus);
+    }
     if (modalGoal) modalGoal.textContent = serviceGoal || "";
     if (modalList) {
       modalList.innerHTML = "";
@@ -32,10 +53,19 @@ export function initServicesModal() {
         .split("|")
         .map((item) => item.trim())
         .filter(Boolean)
-        .forEach((item) => {
+        .forEach((item, index) => {
           const listItem = document.createElement("li");
-          listItem.className = "rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700";
-          listItem.textContent = item;
+          const itemNumber = document.createElement("span");
+          const itemText = document.createElement("span");
+
+          listItem.className = "flex items-baseline gap-3 border-b border-slate-300/70 pb-3 text-base leading-relaxed text-slate-700 last:border-b-0 last:pb-0";
+          itemNumber.className = "shrink-0 text-xs font-semibold uppercase tracking-[0.14em] text-blue-600";
+          itemText.className = "text-slate-700";
+
+          itemNumber.textContent = String(index + 1).padStart(2, "0");
+          itemText.textContent = item;
+
+          listItem.append(itemNumber, itemText);
           modalList.appendChild(listItem);
         });
     }
@@ -43,6 +73,9 @@ export function initServicesModal() {
     lastFocusedElement = document.activeElement;
     modal.classList.remove("hidden");
     modal.classList.add("flex");
+    window.requestAnimationFrame(() => {
+      modal.classList.add(OPEN_CLASS);
+    });
     lockBody(true);
     if (modalClose) {
       modalClose.focus();
@@ -53,12 +86,16 @@ export function initServicesModal() {
     if (modal.classList.contains("hidden")) {
       return;
     }
-    modal.classList.remove("flex");
-    modal.classList.add("hidden");
+    modal.classList.remove(OPEN_CLASS);
     lockBody(false);
-    if (lastFocusedElement instanceof HTMLElement) {
-      lastFocusedElement.focus();
-    }
+    closeTimer = window.setTimeout(() => {
+      modal.classList.remove("flex");
+      modal.classList.add("hidden");
+      if (lastFocusedElement instanceof HTMLElement) {
+        lastFocusedElement.focus();
+      }
+      closeTimer = null;
+    }, CLOSE_DURATION_MS);
   };
 
   document.querySelectorAll("[data-service-card]").forEach((button) => {

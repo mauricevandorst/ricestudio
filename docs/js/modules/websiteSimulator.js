@@ -47,14 +47,14 @@ function initQuickPricing() {
           ads: "1 pagina + advertentie-lander",
         },
         customSections: {
-          default: "1 sectie",
+          default: "0 secties",
           ads: "1 sectie + campagneblok",
         },
         features: {
           default: [
-            "• Supersnelle one-pager met duidelijke call-to-action.",
-            "• Mobielvriendelijk en technisch netjes opgeleverd.",
-            "• Basis contactmogelijkheid en livegang inbegrepen.",
+            "• Mooie one-pager met strakke call-to-actions.",
+            "• Mobielvriendelijk en technisch supersnel.",
+            "• Basis contactmogelijkheid inbegrepen.",
           ],
           ads: [
             "• Google/Meta ads basisinrichting inbegrepen.",
@@ -70,8 +70,8 @@ function initQuickPricing() {
         monthly: 29,
         adsMonthlyAddOn: 350,
         pages: {
-          default: "1-2 pagina's",
-          ads: "1-2 pagina's + advertentie-lander",
+          default: "1-3 pagina's",
+          ads: "1-3 pagina's + advertentie-lander",
         },
         customSections: {
           default: "2 secties",
@@ -97,8 +97,17 @@ function initQuickPricing() {
           ads: "3 secties + campagneblok",
         },
         features: {
-          default: ["• Responsive design en basis SEO.", "• Contactformulier en analytics setup.", "• Handover met duidelijke uitleg."],
-          ads: ["• Google/Meta ads basisinrichting inbegrepen.", "• Tracking met pixel en conversiemeting.", "• Campagne-overdracht met korte uitleg."],
+          default: [
+            "• Responsive design en basis SEO.", 
+            "• Lokale SEO-pagina per regio.", 
+            "• Contactformulier en analytics setup.", 
+            "• Handover met duidelijke uitleg."
+          ],
+          ads: [
+            "• Google/Meta ads basisinrichting inbegrepen.", 
+            "• Tracking met pixel en conversiemeting.", 
+            "• Campagne-overdracht met korte uitleg."
+          ],
         },
       },
       {
@@ -119,26 +128,7 @@ function initQuickPricing() {
           default: ["• Maatwerk pagina-opbouw met conversiefocus.", "• Blog/nieuws + SEO templates inbegrepen.", "• Koppelingen met agenda of CRM mogelijk.", "• Geavanceerde tools en calculators."],
           ads: ["• Google/Meta ads setup voor meerdere funnels.", "• Tracking, events en doelgroep-opbouw ingericht.", "• Maand 1 optimalisatieplan voor campagnes."],
         },
-      },
-      {
-        label: "Grote website",
-        price: 5950,
-        adsAddOn: 750,
-        monthly: 59,
-        adsMonthlyAddOn: 800,
-        pages: {
-          default: "15+ pagina's",
-          ads: "15+ pagina's + dedicated campagneflows",
-        },
-        customSections: {
-          default: "12+ secties",
-          ads: "12+ secties met CRO-focus",
-        },
-        features: {
-          default: ["• Informatiearchitectuur en contentflow uitgewerkt.", "• Geavanceerde formulieren en meerdere funnels.", "• Performance optimalisatie en uitgebreide QA."],
-          ads: ["• Google/Meta campagnestructuur op schaal.", "• Geavanceerde tracking en leadkwalificatie-events.", "• Funnelrapportage en optimalisatie-advies."],
-        },
-      },
+      }
     ],
     webshop: [
       {
@@ -224,26 +214,7 @@ function initQuickPricing() {
           default: ["• Variaties, kortingsregels en bundels.", "• E-mailflows voor verlaten winkelwagens.", "• Koppeling met boekhouding of voorraad."],
           ads: ["• Google Shopping + Meta dynamic ads setup.", "• Datalayers en tracking voor ROAS-sturing.", "• Retargetingflow voor verlaten winkelwagens."],
         },
-      },
-      {
-        label: "Grote webshop",
-        price: 12450,
-        adsAddOn: 950,
-        monthly: 199,
-        adsMonthlyAddOn: 420,
-        pages: {
-          default: "20+ pagina's",
-          ads: "20+ pagina's + meerdere campagneflows",
-        },
-        customSections: {
-          default: "15+ secties",
-          ads: "15+ secties met campagnefocus",
-        },
-        features: {
-          default: ["• Complexe catalogus met faceted filtering.", "• Maatwerk checkout en meerdere betaalstromen.", "• Schaalbare setup voor campagnes en groei."],
-          ads: ["• Cross-channel ads structuur (Google/Meta).", "• Geavanceerde attributie en server-side tracking voorbereiding.", "• Schaalbaar optimalisatieplan voor groei."],
-        },
-      },
+      }
     ],
   };
 
@@ -346,7 +317,6 @@ export function initWebsiteSimulator() {
   const simFastTrack = document.getElementById("sim-fast-track");
 
   const simPreviewTitle = document.getElementById("sim-preview-title");
-  const simApproach = document.getElementById("sim-approach");
   const simBuildEstimate = document.getElementById("sim-build-estimate");
   const simMonthlyEstimate = document.getElementById("sim-monthly-estimate");
   const simAdBudget = document.getElementById("sim-ad-budget");
@@ -415,22 +385,7 @@ export function initWebsiteSimulator() {
     const timelineMin = clamp(timelineBase - (fastTrack ? 1 : 0), 2, 14);
     const timelineMax = clamp(timelineMin + 2, 3, 16);
 
-    const sizeLabel = {
-      small: "kleine website",
-      medium: "middelgrote website",
-      large: "uitgebreide website",
-    };
-    const stageLabel = {
-      start: "starter",
-      grow: "groeiende ondernemer",
-    };
-
     if (simPreviewTitle) simPreviewTitle.textContent = "Duidelijke prijsindicatie voor jouw situatie";
-    if (simApproach) {
-      simApproach.textContent =
-        `Voor een ${sizeLabel[size] || "website"} (${pages} pagina's) als ${stageLabel[stage] || "ondernemer"} met focus op ${goalFocus[goal] || "meer afspraken"}. ` +
-        `${maintenanceLabel[maintenanceLevel] || ""}`;
-    }
     if (simPagesValue) simPagesValue.textContent = `${pages} pagina's`;
     if (simBuildEstimate) simBuildEstimate.textContent = `EUR ${formatEur(oneTimeMin)} - ${formatEur(oneTimeMax)}`;
     if (simMonthlyEstimate) simMonthlyEstimate.textContent = `EUR ${formatEur(monthlyMin)} - ${formatEur(monthlyMax)}/m`;

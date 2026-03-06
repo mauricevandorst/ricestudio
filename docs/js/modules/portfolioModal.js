@@ -2,44 +2,74 @@ export function initPortfolioModal() {
   const body = document.body;
   const modal = document.getElementById("portfolio-modal");
   const modalClose = document.getElementById("modal-close");
+  const modalLabel = document.getElementById("modal-label");
   const modalTitle = document.getElementById("modal-title");
-  const modalClient = document.getElementById("modal-client");
-  const modalSummary = document.getElementById("modal-summary");
-  const modalResults = document.getElementById("modal-results");
-  const modalTags = document.getElementById("modal-tags");
+  const modalImage = document.getElementById("modal-image");
+  const modalImpactList = document.getElementById("modal-impact-list");
+  const modalStory = document.getElementById("modal-story");
+  const OPEN_CLASS = "is-open";
+  const CLOSE_DURATION_MS = 420;
 
   if (!modal) {
     return;
   }
 
   let lastFocusedElement = null;
+  let closeTimer = null;
   const lockBody = (lock) => body.classList.toggle("overflow-hidden", lock);
 
   const open = (button) => {
     if (!button) {
       return;
     }
-    const { projectTitle, projectClient, projectSummary, projectResults, projectTags } = button.dataset;
-    if (modalTitle) modalTitle.textContent = projectTitle || "Project";
-    if (modalClient) modalClient.textContent = projectClient || "";
-    if (modalSummary) modalSummary.textContent = projectSummary || "";
-    if (modalResults) modalResults.textContent = projectResults || "";
-    if (modalTags) {
-      modalTags.innerHTML = "";
-      (projectTags || "")
-        .split(",")
-        .map((tag) => tag.trim())
-        .filter(Boolean)
-        .forEach((tag) => {
-          const chip = document.createElement("span");
-          chip.className = "rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700";
-          chip.textContent = tag;
-          modalTags.appendChild(chip);
-        });
+    if (closeTimer) {
+      window.clearTimeout(closeTimer);
+      closeTimer = null;
     }
+    const { projectLabel, projectTitle, projectImpact, projectStory, projectImage } = button.dataset;
+    if (modalLabel) modalLabel.textContent = projectLabel || "Wat wij hebben betekend";
+    if (modalTitle) modalTitle.textContent = projectTitle || "Project";
+    if (modalImage) {
+      if (projectImage) {
+        modalImage.src = projectImage;
+        modalImage.alt = `Projectbeeld van ${projectTitle || "dit project"}`;
+        modalImage.classList.remove("hidden");
+      } else {
+        modalImage.removeAttribute("src");
+        modalImage.alt = "";
+        modalImage.classList.add("hidden");
+      }
+    }
+    if (modalImpactList) {
+      modalImpactList.innerHTML = "";
+      const impactItems = (projectImpact || "")
+        .split("|")
+        .map((item) => item.trim())
+        .filter(Boolean);
+
+      impactItems.forEach((item, index) => {
+        const listItem = document.createElement("li");
+        const itemNumber = document.createElement("span");
+        const itemText = document.createElement("span");
+
+        listItem.className = "flex items-baseline gap-3 border-b border-slate-300/70 pb-3 text-base leading-relaxed text-slate-700 last:border-b-0 last:pb-0";
+        itemNumber.className = "shrink-0 text-xs font-semibold uppercase tracking-[0.14em] text-blue-600";
+        itemText.className = "text-slate-700";
+
+        itemNumber.textContent = String(index + 1).padStart(2, "0");
+        itemText.textContent = item;
+
+        listItem.append(itemNumber, itemText);
+        modalImpactList.appendChild(listItem);
+      });
+    }
+    if (modalStory) modalStory.textContent = projectStory || "";
     lastFocusedElement = document.activeElement;
     modal.classList.remove("hidden");
     modal.classList.add("flex");
+    window.requestAnimationFrame(() => {
+      modal.classList.add(OPEN_CLASS);
+    });
     lockBody(true);
     if (modalClose) {
       modalClose.focus();
@@ -50,16 +80,26 @@ export function initPortfolioModal() {
     if (modal.classList.contains("hidden")) {
       return;
     }
-    modal.classList.remove("flex");
-    modal.classList.add("hidden");
+    modal.classList.remove(OPEN_CLASS);
     lockBody(false);
-    if (lastFocusedElement instanceof HTMLElement) {
-      lastFocusedElement.focus();
-    }
+    closeTimer = window.setTimeout(() => {
+      modal.classList.remove("flex");
+      modal.classList.add("hidden");
+      if (lastFocusedElement instanceof HTMLElement) {
+        lastFocusedElement.focus();
+      }
+      closeTimer = null;
+    }, CLOSE_DURATION_MS);
   };
 
-  document.querySelectorAll("[data-project-card]").forEach((button) => {
-    button.addEventListener("click", () => open(button));
+  document.querySelectorAll("[data-project-card], [data-proof-slide]").forEach((trigger) => {
+    trigger.addEventListener("click", () => open(trigger));
+    trigger.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        open(trigger);
+      }
+    });
   });
   if (modalClose) {
     modalClose.addEventListener("click", close);

@@ -25,7 +25,7 @@
   </script>
 </head>
 
-<body class="min-h-screen bg-slate-50 text-slate-900 antialiased [font-family:'Manrope',sans-serif]">
+<body class="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 antialiased [font-family:'Manrope',sans-serif]">
   <a href="#main-content"
     class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:ring-2 focus:ring-indigo-500">Ga
     direct naar de inhoud</a>
@@ -39,18 +39,18 @@
   </div>
 
   <header id="site-header" class="fixed inset-x-0 md:pt-5 z-50 border-b border-transparent bg-transparent shadow-none">
-    <div class="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto flex h-20 w-full max-w-[100rem] items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20">
       <a href="#top"
         class="site-header__logo text-3xl leading-[1.15rem] font-bold uppercase tracking-tight [font-family:'Bricolage_Grotesque',sans-serif]"
         aria-label="Rice Studio home">
-        <span class="site-header__logo-rice">RICE</span>
+        <span class="site-header__logo-rice lg:text-4xl lg:leading-[1.5rem]">RICE</span>
         <span class="site-header__logo-studio-wrap !h-min">
-          <span class="site-header__logo-studio text-[1.19rem]">Studio</span>
+          <span class="site-header__logo-studio text-[1.19rem] lg:text-[1.4rem]">Studio</span>
         </span>
       </a>
       <div class="flex items-center gap-4">
         <nav aria-label="Hoofdmenu"
-          class="site-header__main-menu hidden items-center gap-1 bg-white rounded-full px-2 lg:flex">
+          class="site-header__main-menu hidden items-center gap-1 bg-white rounded-full px-2 lg:py-2 lg:px-4 lg:flex">
           <a data-nav-link href="#diensten"
             class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
           <a data-nav-link href="#werk"
@@ -85,15 +85,15 @@
             </svg>
           </button>
           <div id="menu-cta" class="block"><a href="#contact"
-              class="btn btn-soft text-xs px-5 py-2 rounded-full shadow-none hover:!text-slate-300">Praten?</a></div>
+              class="btn btn-soft text-xs px-5 py-2 lg:px-7 lg:py-4 rounded-full shadow-none hover:!text-slate-300">Praten?</a>
+          </div>
         </div>
       </div>
     </div>
-    <div id="mobile-overlay"
-      class="pointer-events-none fixed inset-0 z-40 hidden h-dvh bg-slate-950/40 opacity-0 transition-opacity duration-300 lg:hidden"
+    <div id="mobile-overlay" class="pointer-events-none fixed inset-0 z-40 hidden h-dvh bg-slate-950/60 lg:hidden"
       aria-hidden="true"></div>
     <nav id="mobile-menu"
-      class="fixed right-0 top-0 z-50 hidden h-dvh rounded-l-[25px] w-[84%] max-w-sm translate-x-full border-l border-slate-200 bg-white p-6 shadow-2xl transition-transform duration-300 lg:hidden"
+      class="fixed right-0 top-0 z-50 hidden h-dvh w-full max-w-sm overflow-y-auto border-l border-slate-200 bg-[#edf8ff] p-6 pb-10 shadow-2xl lg:hidden"
       aria-label="Mobiel menu">
       <div class="mb-8 flex items-center justify-between">
         <p class="text-base font-bold [font-family:'Bricolage_Grotesque',sans-serif]">Rice Studio</p><button
@@ -135,7 +135,7 @@
         </div>
         <!-- Logo sectie -->
         <div
-          class="mx-auto w-full left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-7xl px-4 sm:px-6 trust-badges absolute items-center bottom-[clamp(35px,2.6vw,9999px)] sm:bottom-[clamp(50px,2.6vw,9999px)] md:bottom-[clamp(70px,2.6vw,9999px)] lg:bottom-[clamp(90px,2.6vw,9999px)] flex gap-6 text-white">
+          class="mx-auto w-full inset-x-0 max-w-[100rem] px-4 sm:px-6 md:px-12 lg:px-20 trust-badges absolute items-center bottom-[clamp(35px,2.6vw,9999px)] sm:bottom-[clamp(50px,2.6vw,9999px)] md:bottom-[clamp(70px,2.6vw,9999px)] lg:bottom-[clamp(120px,2.6vw,9999px)] flex gap-6 text-white">
           <span class="trust-badge">
             <img class="trust-badge__img" src="./assets/logos/google-search-console.png" alt="Google Search Console"
               loading="eager" decoding="async" />
@@ -149,240 +149,52 @@
               decoding="async" />
           </span>
         </div>
-        <div
-          class="bottom-0 pointer-events-none absolute left-1/2 z-10 w-screen -translate-x-1/2 overflow-hidden leading-none"
+        <div class="bottom-0 pointer-events-none absolute inset-x-0 z-10 w-full overflow-hidden leading-none"
           aria-hidden="true">
-          <img class="h-full w-full -left-3 max-w-none object-cover text-white"
-            src="./assets/icons/mountains-primary.svg" alt="">
+          <img class="h-full w-full max-w-none object-cover text-white" src="./assets/icons/mountains-primary.svg"
+            alt="">
         </div>
       </div>
     </section>
     <section id="top" class="scroll-mt-28 bg-white md:flex md:items-center">
-      <div class="mx-auto w-full max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
-
-        <!-- Garantie banner
-        <div class="mb-10 lg:mb-12">
-          <div
-            class="mx-auto flex w-full sm:w-max sm:min-w-[420px] max-w-3xl items-center gap-4 rounded-2xl border border-emerald-200 bg-emerald-50/80 px-4 py-2 text-slate-900 shadow-sm sm:pe-12">
-            <span
-              class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-lg text-white">✓</span>
-            <div class="min-w-0">
-              <p class="text-sm font-extrabold text-emerald-700">
-                <span class="sm:hidden">Betaalbare websites mét online ads</span>
-                <span class="hidden sm:inline">Wij bouwen betaalbare websites mét online advertenties</span>
-              </p>
-              <p class="text-sm font-semibold text-slate-900">Alles onder één dak. 🏠</p>
-            </div>
-          </div>
-        </div>-->
+      <div class="mx-auto w-full max-w-[100rem] px-4 sm:px-6 md:px-12 lg:px-20 pb-16 pt-12 sm:pt-16 lg:pb-24 lg:pt-20">
 
         <div class="grid w-full gap-12 lg:grid-cols-2 lg:items-start">
           <div data-reveal class="opacity-0 translate-y-6 transition duration-700">
 
-            <h1
-              class="inline-block sm:min-h-[96px] lg:min-h-[180px] text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl [font-family:'Bricolage_Grotesque',sans-serif]">
-              <span class="inline">Wij bouwen </span><span class="inline">
+            <h1 id="typing-interactive" role="button" tabindex="0" aria-pressed="false"
+              aria-label="Pauzeer type-animatie"
+              class="inline-block cursor-pointer text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl [font-family:'Bricolage_Grotesque',sans-serif] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+              <span class="inline">Wij </span><span class="inline">
                 <span id="typing-prefix" class="inline">websites die </span><span id="typing-highlight"
                   class="inline bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent">er
                   strak
                   uitzien</span><span id="typing-suffix" class="inline"></span><span id="typing-suffix-highlight"
                   class="inline bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent"></span><span
-                  aria-hidden="true" class="ml-1 inline animate-pulse text-cyan-500">|</span>.
+                  aria-hidden="true" class="ml-1 inline animate-pulse text-cyan-500">|</span>
+                <span id="typing-pause-indicator" class="typing-pause-indicator" aria-hidden="true">
+                  <img src="./assets/icons/play.svg" alt="" aria-hidden="true" class="h-6 w-6 lg:h-9 lg:w-9"
+                    loading="lazy" decoding="async">
+                </span>
               </span>
             </h1>
 
             <p class="mt-6 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600 sm:text-lg">
-              Voor jonge ondernemers tot MKB's bouwen wij online strategie, design en development. Na livegang werken
-              wij met onze partners door op online ads, gerichte campagnes en performance.
+              Van startende ondernemers tot MKB's - wij helpen jou met online strategie, design en development. Na
+              livegang
+              werken
+              wij met vertrouwde partners door op online ads, gerichte campagnes en performance.
             </p>
 
             <p class="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600 sm:text-lg">Wij bouwen niet
-              alleen je
-              website. We zorgen daarna ook voor groei.
+              alleen prachtige websites.
+              We zorgen daarna ook voor groei.
             </p>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a href="#contact" class="btn btn-primary gap-1 text-base px-6 py-4">
-                <svg class="h-6 w-auto" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      d="M26.5009 61.621C26.453 61.621 26.4007 61.6123 26.3484 61.5992C21.1 59.9994 15.4158 54.2629 14.1822 49.324C14.1124 49.0451 14.2824 48.7661 14.557 48.6963C14.836 48.6266 15.115 48.7966 15.1848 49.0712C16.3225 53.6264 21.7888 59.1232 26.6491 60.6097C26.9238 60.6925 27.0763 60.9802 26.9935 61.2548C26.9281 61.4771 26.7232 61.621 26.5009 61.621Z"
-                      fill="#f0f0f0"></path>
-                    <path
-                      d="M29.003 68.1292C28.9638 68.1292 28.9246 68.1249 28.8853 68.1161C24.5437 67.1048 19.4959 63.8617 15.0409 59.2149C10.8736 54.8733 8.17534 50.2526 8.00098 47.1577C7.98354 46.8743 8.20149 46.6259 8.48919 46.6128C8.77253 46.5954 9.021 46.8133 9.03408 47.101C9.19101 49.917 11.8413 54.3894 15.7863 58.5C20.1061 63.0073 24.9665 66.1415 29.1207 67.1092C29.3997 67.1746 29.5741 67.4536 29.5087 67.7325C29.452 67.9679 29.2384 68.1292 29.003 68.1292Z"
-                      fill="#f0f0f0"></path>
-                    <path
-                      d="M51.2562 22.834C51.0252 22.834 50.8159 22.6815 50.7549 22.4504C50.0269 19.6868 46.7184 15.72 43.7063 14.9441C43.4317 14.8743 43.2616 14.591 43.3358 14.312C43.4099 14.033 43.6888 13.8674 43.9678 13.9415C47.3592 14.8177 50.9423 19.0939 51.7575 22.1889C51.8316 22.4635 51.666 22.7468 51.387 22.8209C51.3434 22.8297 51.2998 22.834 51.2562 22.834Z"
-                      fill="#f0f0f0"></path>
-                    <path
-                      d="M57.7816 23.7536C57.5506 23.7536 57.3413 23.5967 57.2803 23.3656C55.3405 15.7285 48.087 9.76966 43.9459 9.02862C43.6625 8.97631 43.4794 8.71041 43.5274 8.42707C43.5797 8.14372 43.8456 7.96064 44.1289 8.00859C48.6406 8.81938 56.208 14.9613 58.2829 23.1084C58.3526 23.3874 58.187 23.6664 57.908 23.7362C57.8644 23.7492 57.8252 23.7536 57.7816 23.7536Z"
-                      fill="#f0f0f0"></path>
-                    <path
-                      d="M44.9005 37.3237C45.7331 38.2434 46.4829 39.4509 46.1646 39.7691C45.8464 40.0873 44.87 39.5119 44.1246 38.7621C43.3792 38.0167 41.5963 45.9503 41.422 46.3513C41.2912 46.6521 39.2163 49.0321 38.1309 51.2945C37.7691 52.0486 37.8214 54.3241 37.6862 54.4592C37.1414 55.0041 36.4483 54.9474 34.9531 53.6266C33.4579 52.3058 32.682 60.1739 34.4649 61.4163C37.5119 63.5435 43.6059 71.9958 51.6571 71.9958C60.9724 71.9958 69.5991 62.2794 69.5991 55.1479C69.5991 48.0165 67.5067 45.3138 67.6462 39.3375C67.7595 34.2767 71.4429 31.8617 71.4429 29.3335C71.4429 27.2062 68.2826 26.6875 67.2452 26.6875C65.4056 26.6875 60.6891 29.0458 60.6891 35.2531C60.6891 37.668 60.0004 39.8519 57.5288 39.8519C55.0572 39.8519 52.2979 36.4606 50.6283 33.8146"
-                      fill="url(#paint0_linear)"></path>
-                    <path
-                      d="M71.4388 29.3335C71.4388 28.1784 70.5016 27.4983 69.4815 27.1147C70.7064 31.173 64.4948 31.3474 64.4948 45.1744C64.4948 59.0014 56.4435 63.0248 53.1088 63.7179C49.7741 64.4067 43.8981 64.6072 39.4257 59.1191C38.0526 57.4321 36.1913 55.6013 34.1207 53.8708C33.2445 55.3311 33.0571 60.4356 34.4651 61.4163C37.5121 63.5436 43.606 71.9958 51.6573 71.9958C60.9726 71.9958 69.5992 62.2794 69.5992 55.148C69.5992 48.0165 67.5069 45.3139 67.6464 39.3376C67.7597 34.2767 71.4388 31.8618 71.4388 29.3335Z"
-                      fill="url(#paint1_linear)"></path>
-                    <path
-                      d="M34.9531 53.6267C33.458 52.3059 29.9227 48.5396 27.6212 46.6957C25.3196 44.8562 23.31 44.878 21.9282 46.9093C20.5464 48.9407 24.5742 52.5064 25.4939 53.4261C26.9019 54.8341 32.682 60.174 34.4649 61.4207"
-                      fill="url(#paint2_linear)"></path>
-                    <path
-                      d="M41.422 46.351C41.2476 46.7521 40.075 47.031 37.7429 44.4941C35.9601 42.5543 31.1869 36.979 28.3709 34.4507C25.5549 31.9225 23.3667 30.885 21.5271 32.2102C19.6876 33.5353 20.7338 36.2903 22.7913 38.5919C25.337 41.4383 28.2663 44.3415 31.0692 47.1313C33.2618 49.3108 38.2268 53.9184 37.6819 54.4633"
-                      fill="url(#paint3_linear)"></path>
-                    <path
-                      d="M31.0735 47.1271C33.1441 49.1846 37.6776 53.3998 37.7255 54.3283C38.3794 53.3083 37.185 50.2744 35.9208 49.2108C28.615 43.0601 21.5577 33.1432 20.6597 33.4396C20.2761 34.8825 21.2482 36.8615 22.7913 38.592C25.337 41.4342 28.2663 44.3417 31.0735 47.1271Z"
-                      fill="url(#paint4_linear)"></path>
-                    <path
-                      d="M50.624 33.819C48.9545 31.173 42.1107 22.6641 40.4455 20.2492C38.776 17.8342 36.5354 17.8342 34.9836 18.9284C33.4318 20.0225 32.9697 22.2064 36.4657 26.8488C38.6714 29.7781 40.5022 32.472 44.9049 37.328L50.0224 36.9706L50.624 33.819Z"
-                      fill="url(#paint5_linear)"></path>
-                    <path
-                      d="M44.1247 38.7622C43.3793 38.0168 36.7666 30.1792 35.2714 28.4966C32.4686 25.3493 28.9159 18.6058 24.6789 21.6092C22.4514 23.1872 23.6589 25.4757 24.2909 26.3955C24.923 27.3153 33.1442 36.805 33.9506 37.6071C34.7571 38.4135 41.5965 45.946 41.4265 46.347"
-                      fill="url(#paint6_linear)"></path>
-                    <path
-                      d="M44.9005 37.3233C45.7026 38.2082 46.4218 39.3546 46.1952 39.7252C48.8629 37.5805 43.2223 31.2773 40.0271 27.4936C37.5555 24.5643 36.8798 20.8373 35.11 18.8408C35.0664 18.867 35.0272 18.8975 34.9836 18.9236C33.4318 20.0178 32.9697 22.2017 36.4657 26.8441C38.667 29.7734 40.5022 32.4717 44.9005 37.3233Z"
-                      fill="url(#paint7_linear)"></path>
-                    <path
-                      d="M33.9462 37.6113C34.7526 38.4177 41.592 45.9502 41.422 46.3512C43.5361 43.5048 35.3411 35.1397 31.3743 30.9114C27.935 27.2454 27.3465 24.0371 23.99 22.2368C22.7433 23.7451 23.7328 25.5933 24.2864 26.3997C24.9185 27.3195 33.1441 36.8092 33.9462 37.6113Z"
-                      fill="url(#paint8_linear)"></path>
-                    <path
-                      d="M41.2693 46.5217C41.0296 46.6699 40.537 46.6829 39.7742 46.2427C40.3409 46.7004 40.8639 46.8747 41.2693 46.5217Z"
-                      fill="url(#paint9_linear)"></path>
-                    <path
-                      d="M67.729 27.5506C69.4857 27.2367 69.7952 27.4373 69.4813 27.1147C68.6269 26.7965 67.7115 26.6875 67.2408 26.6875C65.4012 26.6875 60.6847 29.0458 60.6847 35.2531C60.6847 37.668 59.996 39.8519 57.52 39.8519C56.5436 39.8519 55.5279 39.3245 54.5471 38.5224C58.8888 43.3305 62.2932 38.8014 62.8119 35.6977C63.3307 32.5941 62.5765 28.4747 67.729 27.5506Z"
-                      fill="url(#paint10_radial)"></path>
-                    <path
-                      d="M34.4518 19.3945C33.3795 20.6107 33.4144 22.7903 36.4614 26.8442C38.6671 29.7735 40.4979 32.4674 44.9006 37.3234C45.7331 38.2432 46.4829 39.4507 46.1647 39.7689C46.9014 34.7385 39.7394 29.7909 37.4117 25.9985C35.5678 22.9908 35.2016 21.2166 34.4518 19.3945Z"
-                      fill="url(#paint11_linear)"></path>
-                    <path
-                      d="M33.9462 37.6113C34.7526 38.4177 41.592 45.9502 41.422 46.3512C42.9302 45.2745 41.9015 43.5963 39.5694 41.2642C34.7875 36.4823 28.1312 30.057 25.4547 24.7651C25.2019 24.2638 24.7311 23.8933 24.1775 23.8235C22.7346 23.6361 23.807 25.6979 24.2908 26.3997C24.9185 27.3195 33.1441 36.8092 33.9462 37.6113Z"
-                      fill="url(#paint12_linear)"></path>
-                    <path
-                      d="M22.7913 38.5919C25.337 41.4384 28.2663 44.3415 31.0692 47.1314C33.2618 49.3109 38.2268 53.9184 37.6819 54.4633C40.7594 51.874 26.466 42.5151 20.6554 33.4438C20.2761 34.878 21.2482 36.8614 22.7913 38.5919Z"
-                      fill="url(#paint13_linear)"></path>
-                    <path
-                      d="M37.0543 54.9779C37.3463 54.8646 37.4989 54.7295 37.5468 54.5813C37.0194 54.9867 36.3263 54.8428 34.9532 53.6266C33.458 52.3058 29.9228 48.5396 27.6212 46.6957C26.6099 45.8893 25.6553 45.4403 24.7834 45.3618C26.0301 46.1421 25.4504 46.4211 28.2228 48.5483C29.7136 49.6904 35.1537 55.7233 37.0543 54.9779Z"
-                      fill="url(#paint14_linear)"></path>
-                    <path
-                      d="M33.4319 41.1772C35.4501 43.6357 39.3907 47.694 41.1605 46.5737C40.6723 46.7394 39.5607 46.4691 37.7473 44.4945C35.9645 42.5547 31.1913 36.9794 28.3753 34.4511C26.0955 32.4024 24.2255 31.3344 22.6213 31.7049C27.2899 33.2393 31.5182 38.8538 33.4319 41.1772Z"
-                      fill="url(#paint15_linear)"></path>
-                    <path
-                      d="M35.6158 30.5975C38.8371 34.1022 43.6191 41.055 46.0427 39.8388C45.646 39.9608 44.7916 39.4334 44.1247 38.7621C43.3793 38.0167 36.7666 30.1791 35.2714 28.4965C33.3273 26.3169 31.03 22.4112 28.3884 21.2168C31.0518 23.3179 33.0047 27.7598 35.6158 30.5975Z"
-                      fill="url(#paint16_linear)"></path>
-                    <path
-                      d="M54.5472 38.5266C54.5516 38.5266 54.5516 38.5266 54.5472 38.5266C53.0433 37.2973 51.631 35.4186 50.6197 33.8188C48.9545 31.1728 42.1108 22.6639 40.4456 20.249C39.9356 19.5123 39.3776 19.0023 38.7979 18.6797C39.5738 19.7956 40.014 21.3867 41.7707 23.357C44.5867 26.5173 48.2701 32.2103 49.5343 34.1675C50.794 36.116 52.8341 40.2397 54.5472 38.5266Z"
-                      fill="url(#paint17_linear)"></path>
-                    <path
-                      d="M63.7711 66.5906C62.7249 64.0449 61.1949 62.4931 58.9849 63.949C52.9562 67.9202 46.021 66.5776 37.3246 59.5507C29.5698 53.278 25.5594 48.7969 21.7845 47.1753C20.8778 49.2371 24.6092 52.5457 25.4897 53.4262C26.8977 54.8342 32.6778 60.1741 34.4607 61.4208C37.5077 63.548 43.6017 72.0002 51.6529 72.0002C56.1558 71.9959 60.4887 69.7335 63.7711 66.5906Z"
-                      fill="url(#paint18_linear)"></path>
-                    <path
-                      d="M67.642 39.3375C67.7553 34.2766 71.4388 31.8617 71.4388 29.3334C71.4388 28.588 71.0508 28.0432 70.5015 27.6465C71.1728 29.6168 69.5731 31.3648 67.1843 34.3377C64.595 37.559 64.024 42.5589 65.8025 47.5631C67.5853 52.5673 65.3404 59.4678 61.718 61.6517C58.0956 63.8356 53.2832 73.4386 39.5041 62.5889C39.4998 62.5845 39.4998 62.5845 39.4954 62.5801C38.6541 61.7999 37.8215 61.1068 36.9802 60.5837C31.1609 56.9787 27.8436 53.7356 25.3371 51.0112C24.8446 50.475 23.5194 48.4219 21.9414 49.0975C22.7304 50.8847 24.8533 52.7897 25.4897 53.4261C26.8977 54.8341 32.6778 60.1739 34.4607 61.4206C34.6917 61.5819 34.9445 61.7824 35.2104 62.0135C35.2802 62.0745 35.3499 62.1355 35.4197 62.1965C35.4371 62.214 35.4589 62.2314 35.4763 62.2445C35.5199 62.2837 35.5679 62.3273 35.6115 62.3666C35.6202 62.3753 35.6333 62.384 35.642 62.3971C37.451 64.0404 39.94 66.7605 42.9914 68.8834C42.9914 68.8834 42.9958 68.8834 42.9958 68.8877C43.2617 69.0752 43.5363 69.2583 43.8109 69.4326C43.8153 69.437 43.8196 69.437 43.824 69.4413C44.0986 69.6157 44.3776 69.7857 44.6566 69.947C44.6609 69.947 44.6609 69.9513 44.6653 69.9513C46.7751 71.1632 49.1159 72.0001 51.6442 72.0001C60.9595 72.0001 69.5861 62.2837 69.5861 55.1523C69.5861 48.0208 67.5069 45.3182 67.642 39.3375Z"
-                      fill="url(#paint19_radial)"></path>
-                    <defs>
-                      <linearGradient id="paint0_linear" x1="65.0704" y1="73.8405" x2="57.3943" y2="55.8565"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint1_linear" x1="66.5983" y1="61.3326" x2="50.4983" y2="42.1276"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint2_linear" x1="23.5643" y1="48.5465" x2="33.0518" y2="55.5328"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint3_linear" x1="20.1097" y1="30.055" x2="36.756" y2="47.4775"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint4_linear" x1="32.8886" y1="40.4011" x2="27.3859" y2="45.5848"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint5_linear" x1="38.0895" y1="21.8354" x2="47.7495" y2="37.0154"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint6_linear" x1="28.118" y1="24.3572" x2="41.228" y2="42.0672"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.00132565" stop-color="#c9c9c9"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint7_linear" x1="43.7096" y1="26.4938" x2="35.4296" y2="33.9688"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint8_linear" x1="36.0933" y1="31.8196" x2="24.7083" y2="40.1427"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint9_linear" x1="44.5743" y1="43.4211" x2="33.1893" y2="51.7442"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <radialGradient id="paint10_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                        gradientTransform="translate(59.5133 29.9083) scale(13.6681)">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </radialGradient>
-                      <linearGradient id="paint11_linear" x1="45.2249" y1="25.0259" x2="38.1524" y2="31.5809"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint12_linear" x1="39.8091" y1="28.5789" x2="30.4941" y2="36.9739"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint13_linear" x1="36.661" y1="37.6589" x2="25.161" y2="47.3189"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint14_linear" x1="24.1128" y1="44.6766" x2="37.4816" y2="55.5441"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint15_linear" x1="26.6716" y1="31.2062" x2="37.1079" y2="47.0762"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint16_linear" x1="34.8464" y1="32.3397" x2="37.7789" y2="30.0972"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#f0f0f0"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint17_linear" x1="49.3174" y1="41.1993" x2="45.4073" y2="22.5692"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </linearGradient>
-                      <linearGradient id="paint18_linear" x1="40.3917" y1="59.0796" x2="34.5267" y2="64.4703"
-                        gradientUnits="userSpaceOnUse">
-                        <stop offset="0.3118" stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </linearGradient>
-                      <radialGradient id="paint19_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                        gradientTransform="translate(44.2763 41.2639) rotate(48.1401) scale(39.6178 35.9605)">
-                        <stop offset="0.6134" stop-color="#c9c9c9" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#c9c9c9"></stop>
-                      </radialGradient>
-                    </defs>
-                  </g>
-                </svg>
+                <img class="h-6 w-auto"
+                  src="./assets/icons/wave-hand.svg" alt="">
                 Laten we praten
               </a>
               <a href="#pricing-calculator" class="btn btn-secondary gap-0 px-6 py-2.5">
@@ -467,11 +279,10 @@
                   <input id="quick-tier-slider" type="range" min="1" max="5" step="1" value="1"
                     class="quick-tier-slider h-2 w-full cursor-pointer" />
                   <div class="flex justify-between text-xs font-medium text-slate-500 !mt-1">
-                    <span class="w-max">Budget</span>
-                    <span class="w-max">Klein</span>
-                    <span class="w-max">Standaard</span>
-                    <span class="w-max">Uitgebreid</span>
-                    <span class="w-max">Groot</span>
+                    <span class="w-[25%] text-start">Budget</span>
+                    <span class="w-[20%] text-center">Klein</span>
+                    <span class="w-[30%] text-end">Standaard</span>
+                    <span class="w-[30%] text-end">Uitgebreid</span>
                   </div>
                   <div class="grid grid-cols-2 gap-2 text-xs">
                     <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
@@ -490,7 +301,7 @@
                     <li>Basis contactmogelijkheid en livegang inbegrepen.</li>
                   </ul>
                 </div>
-                <a href="#pricing-calculator" class="btn btn-primary w-full px-5 py-2.5">
+                <a href="#contact" class="btn btn-primary w-full px-5 py-2.5">
                   Plan een gesprek in
                 </a>
               </div>
@@ -502,14 +313,13 @@
     </section>
 
     <section id="trust" class="relative border-b border-slate-200/80 bg-white pb-14 sm:pb-16 md:pb-24 lg:pb-36">
-      <div class="flex flex-col justify-center items-center mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col justify-center items-center mx-auto w-full max-w-[100rem] px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-lg flex flex-col overflow-hidden rounded-xl border border-slate-300 bg-slate-50">
           <div class="flex flex-row justify-center border-b border-slate-300">
             <div
               class="w-full flex flex-col gap-1 justify-center items-center border-r border-slate-300 px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">Ads-ready basis</span>
-              <span class="text-xs text-slate-400">Landingspagina’s die direct inzetbaar zijn voor Meta- en Google
-                Ads.</span>
+              <span class="text-base font-extrabold text-slate-900">Ads-ready site</span>
+              <span class="text-xs text-slate-400">Een website die is geoptimaliseerd voor Meta/Google Ads.</span>
             </div>
             <div
               class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
@@ -526,8 +336,7 @@
             <div
               class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
               <span class="text-base font-extrabold text-slate-900">Bouw een merk</span>
-              <span class="text-xs text-slate-400">Wij zorgen ervoor dat jouw merk online opvalt binnen je
-                markt.</span>
+              <span class="text-xs text-slate-400">Wij zorgen dat jouw merk online opvalt binnen je markt.</span>
             </div>
           </div>
         </div>
@@ -537,7 +346,7 @@
             Wij ontwikkelen met moderne technologieën van wereldwijde platforms.
           </p>
 
-          <div class="marquee-shell z-20">
+          <div class="marquee-shell z-20 w-full lg:mx-auto">
             <div class="marquee relative" aria-label="Technologieën waarmee we werken">
               <div class="marquee__track overflow-hidden">
 
@@ -597,16 +406,153 @@
         </div>
       </div>
 
-      <div
-        class="-bottom-1 pointer-events-none absolute left-1/2 z-10 w-screen -translate-x-1/2 overflow-hidden leading-none"
+      <div class="-bottom-1 pointer-events-none absolute inset-x-0 z-10 w-full overflow-hidden leading-none"
         aria-hidden="true">
         <img class="h-full w-full -left-3 max-w-none object-cover text-white"
           src="./assets/icons/mountains-secondary.svg" alt="">
       </div>
     </section>
 
-    <section id="diensten" class="scroll-mt-28 border-b border-slate-200/80 bg-[#edf8ff] py-16 sm:py-20">
-      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="werk" class="proof-work-section bg-[#edf8ff] relative scroll-mt-28 py-16 sm:py-20">
+      <div class="proof-work-section__bg" aria-hidden="true"></div>
+      <div class="mx-auto w-full max-w-[100rem] px-4 sm:px-6 lg:px-20">
+        <div class="proof-carousel grid gap-8 lg:grid-cols-[minmax(17rem,25rem)_1fr] lg:items-start"
+          data-proof-carousel>
+          <div class="proof-carousel__intro flex flex-col gap-5">
+            <h2
+              class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl [font-family:'Bricolage_Grotesque',sans-serif]">
+              Interesse? Bekijk ons werk.
+            </h2>
+            <p class="text-sm lg:text-base leading-relaxed text-slate-600">
+              Geen standaardprojecten, wel maatwerk dat werkt. Van groei in leads tot merken die blijven plakken:
+              we maken goed werk van iedere ambitie.
+            </p>
+            <div class="mt-1 flex justify-between md:justify-start items-center gap-3">
+              <div class="flex gap-2">
+                <button type="button" class="proof-carousel__nav-btn" data-proof-prev aria-label="Vorige case">
+                  <span aria-hidden="true">&larr;</span>
+                </button>
+                <button type="button" class="proof-carousel__nav-btn" data-proof-next aria-label="Volgende case">
+                  <span aria-hidden="true">&rarr;</span>
+                </button>
+              </div>
+              <a href="#contact"
+                class="btn btn-secondary bg-transparent ml-2 rounded-full px-6 py-3 text-xs hover:bg-transparent">
+                Neem contact op
+              </a>
+            </div>
+          </div>
+
+          <div class="proof-carousel__viewport py-4">
+            <div class="proof-carousel__track" data-proof-track>
+              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
+                aria-label="Bekijk projectdetails van Proper Beauty Salon" data-project-title="Proper Beauty Salon"
+                data-project-label="Beauty Salon Website" data-project-image="./assets/projects/project-01.png"
+                data-project-impact="Google Calendar boekingsformulier|Lokaal SEO-kanon|Stijging van 263% in conversies|Persoonlijke huisstijl met animaties"
+                data-project-story="Chelsea kwam bij ons voor een website die mooi is én echt klanten oplevert. Door een slimme funnel-opzet richting het boekingsformulier te 
+                creëren en haar website als SEO-kanon in te richten steeg het aantal conversies met een meetbare stijging van 263% in de eerste 3 maanden na livegang.">
+                <div class="proof-slide__media proof-slide__media--img-a">
+                  <div class="proof-slide__badge">Proper Beauty Salon</div>
+                </div>
+                <div class="proof-slide__metric">
+                  <p class="proof-slide__usp">263%</p>
+                  <p class="proof-slide__copy">Meer conversies met slim klikbudget</p>
+                </div>
+              </article>
+
+              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
+                aria-label="Bekijk projectdetails van StudioIEKS" data-project-title="StudioIEKS"
+                data-project-label="Artiesten website" data-project-image="./assets/projects/project-02.png"
+                data-project-impact="Spotify & YouTube integraties|Custom animaties op het portrait| Strakke animaties over de gehele website|Gemiddelde orderwaarde groeide met 81%"
+                data-project-story="ST.van, de artiest achter StudioIEKS, wilde niet alleen een website die zijn muziek goed presenteert, maar ook een platform dat fans echt betrekt. 
+                Dit hebben wij kunnen ontwikkelen door Spotify en YouTube integraties te combineren met een visueel sterk design en animaties die de aandacht vasthouden.">
+                <div class="proof-slide__media proof-slide__media--img-b">
+                  <div class="proof-slide__badge">StudioIEKS</div>
+                </div>
+                <div class="proof-slide__metric">
+                  <p class="proof-slide__usp">+81%</p>
+                  <p class="proof-slide__copy">Hogere orderwaarde na CRO-aanpassingen</p>
+                </div>
+              </article>
+
+              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
+                aria-label="Bekijk projectdetails van Klimazon" data-project-title="Klimazon"
+                data-project-label="Onze bijdrage" data-project-image="./assets/projects/project-03.png"
+                data-project-impact="Funnel vereenvoudigd van eerste klik tot offerteformulier.|Advertentiegroepen gesplitst per dienst en regio.|Binnen 8 weken 2.9x meer offerte-aanvragen."
+                data-project-story="Het team wilde snel meer gekwalificeerde aanvragen zonder het budget fors op te schroeven. Met een strakkere pagina-opbouw en betere match tussen zoekterm en aanbod steeg de aanvraagkwaliteit direct.">
+                <div class="proof-slide__media proof-slide__media--img-c">
+                  <div class="proof-slide__badge">Klimazon</div>
+                </div>
+                <div class="proof-slide__metric">
+                  <p class="proof-slide__usp">2.9x</p>
+                  <p class="proof-slide__copy">Meer offerte-aanvragen in 8 weken</p>
+                </div>
+              </article>
+
+              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
+                aria-label="Bekijk projectdetails van Glamour by Tink" data-project-title="Glamour by Tink"
+                data-project-label="Resultaat van onze samenwerking"
+                data-project-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
+                data-project-impact="Merkstrategie vertaald naar een premium webconcept.|Maatwerk design + development in korte iteraties uitgerold.|Volledige livegang binnen 41 dagen."
+                data-project-story="De wens was een premium merkbeleving die direct vertrouwen uitstraalt. Door het proces strak te faseren en snel feedbackrondes te draaien stond er binnen zes weken een schaalbaar platform live.">
+                <div class="proof-slide__media proof-slide__media--img-d">
+                  <div class="proof-slide__badge">Glamour by Tink</div>
+                </div>
+                <div class="proof-slide__metric">
+                  <p class="proof-slide__usp">41 dagen</p>
+                  <p class="proof-slide__copy">Van kickoff tot livegang met maatwerk</p>
+                </div>
+              </article>
+
+              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
+                aria-label="Bekijk projectdetails van Oottattattoo" data-project-title="Oottattattoo"
+                data-project-label="Dit hebben we gerealiseerd"
+                data-project-image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80"
+                data-project-impact="Nieuwe visuele stijl ontwikkeld die past bij de doelgroep.|Boekingsflow vereenvoudigd voor snellere afspraken.|Studio online sterker gepositioneerd als premium merk."
+                data-project-story="De oude site gaf het werk van de studio onvoldoende karakter. Met een visuele stijl die beter past bij de doelgroep en een duidelijke boekingsflow staat het merk nu sterker online.">
+                <div class="proof-slide__media proof-slide__media--img-e">
+                  <div class="proof-slide__badge">Oottattattoo</div>
+                </div>
+                <div class="proof-slide__metric">
+                  <p class="proof-slide__usp">41 dagen</p>
+                  <p class="proof-slide__copy">Van kickoff tot livegang met maatwerk</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="proof-cta w-full mt-10 lg:mt-12" data-reveal>
+          <div class="flex w-full justify-center gap-3 items-center">
+            <img class="proof-cta__avatar" src="./assets/portraits/maurice-van-dorst.png"
+              alt="Profielfoto van Rice Studio" loading="lazy" decoding="async" />
+            <p class="text-xs text-slate-400">
+              <span class="font-bold">Maurice van Dorst</span>
+              <span class="font-normal">— Creative Director</span>
+            </p>
+          </div>
+          <div class="proof-cta__content">
+            <p class="proof-cta__text text-center max-w-2xl">
+              Benieuwd hoe wij jouw merk digitaal kunnen versterken?
+            </p>
+            <div class="w-full gap-2 sm:gap-3 flex flex-wrap justify-center">
+              <a href="#contact" class="btn btn-primary rounded-full text-xs md:text-sm text-nowrap px-5 py-4">
+                <img class="h-5 w-auto"
+                  src="./assets/icons/wave-hand.svg" alt="">
+                Laten we kennismaken
+              </a>
+              <a href="#partners" class="btn btn-secondary rounded-full text-xs md:text-sm px-5 py-4">
+                <img class="h-5 w-auto"
+                  src="./assets/icons/handshake.svg" alt="">
+                Bekijk onze partners
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diensten" class="scroll-mt-28 border-b border-slate-200/80 bg-white pt-8 pb-16 sm:pb-32 sm:pt-16">
+      <div class="mx-auto w-full max-w-[100rem] px-4 sm:px-6 lg:px-20">
         <div class="mb-10 w-full" data-reveal>
           <h2
             class="mt-3 w-full text-4xl text-center font-extrabold tracking-tight text-slate-950 sm:text-5xl [font-family:'Space_Grotesk',sans-serif]">
@@ -615,84 +561,143 @@
 
         <div class="flex flex-col justify-between md:flex-row gap-10 w-full">
           <div class="flex flex-col w-full md:w-1/2 mx-auto">
-            <p
-              class="mt-3 w-full text-lg font-extrabold tracking-tight text-slate-950 sm:text-xl [font-family:'Space_Grotesk',sans-serif]">
-              Webontwikkeling & technologie
-            </p>
+            <div class="flex flex-row-reverse gap-3 md:flex-row items-end">
+              <img class="w-12 h-12 max-w-none object-cover text-white" src="./assets/icons/laptop.svg" alt="">
+              <p
+                class="mt-3 w-full text-xl font-extrabold tracking-tight text-slate-950 sm:text-3xl [font-family:'Space_Grotesk',sans-serif]">
+                Technologie & web&shy;ontwikkeling
+              </p>
+            </div>
             <div class="flex flex-col">
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+              <button type="button" data-reveal data-service-card data-service-label="Standaard website ontwikkelen"
+                data-service-title="Snel online met een sterke basis?"
+                data-service-focus1="Wij bouwen een standaard website die professioneel oogt, snel laadt en direct vertrouwen uitstraalt."
+                data-service-focus2="Door te werken met een slimme structuur en bewezen bouwblokken staat jouw website snel live, zonder concessies op kwaliteit."
+                data-service-goal="Wij helpen ondernemers snel live te gaan met een betrouwbare website die klaar is voor groei."
+                data-service-items="Pagina-structuur en navigatie|Conversiegerichte teksten|Technische basis en snelheid|Onderhoud en doorontwikkeling"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
                 aria-label="Bekijk details over website ontwikkeling">
-                Websites ontwikkelen
+                Standaard websites ontwikkelen
               </button>
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+              <button type="button" data-reveal data-service-card data-service-label="Maatwerk website ontwikkelen"
+                data-service-title="Een website die precies bij jouw merk past?"
+                data-service-focus1="Wij ontwikkelen een maatwerk website die volledig aansluit op jouw merk, doelgroep en manier van verkopen."
+                data-service-focus2="Door design, content en techniek vanaf de basis op jouw bedrijf af te stemmen ontstaat een site die onderscheid maakt en converteert."
+                data-service-goal="Wij bouwen websites op maat die jouw merk sterker positioneren en meer aanvragen opleveren."
+                data-service-items="Maatwerk ontwerp en opbouw|Unieke pagina templates|Integraties met je tools|Schaalbare technische basis"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
                 aria-label="Bekijk details over website ontwikkeling">
-                Webshops ontwikkelen
+                Maatwerk websites ontwikkelen
               </button>
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+              <button type="button" data-reveal data-service-card data-service-label="Standaard webshop ontwikkelen"
+                data-service-title="Snel starten met online verkoop?"
+                data-service-focus1="Wij zetten een standaard webshop voor je neer waarmee je direct professioneel producten kunt verkopen."
+                data-service-focus2="Door een duidelijke shopstructuur en geoptimaliseerde checkout verlaag je uitval en verhoog je het aantal bestellingen."
+                data-service-goal="Wij helpen bedrijven snel omzet te draaien met een webshop die gebruiksvriendelijk en schaalbaar is."
+                data-service-items="Shopinrichting en categorieen|Productpagina optimalisatie|Betaal- en verzendinstellingen|Metingen en basisoptimalisatie"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
                 aria-label="Bekijk details over website ontwikkeling">
-                Webapps ontwikkelen
+                Standaard webshops ontwikkelen
+              </button>
+              <button type="button" data-reveal data-service-card data-service-label="Maatwerk webshop ontwikkelen"
+                data-service-title="Meer uit jouw webshop halen met maatwerk?"
+                data-service-focus1="Wij bouwen een maatwerk webshop die perfect aansluit op jouw assortiment, processen en groeidoelen."
+                data-service-focus2="Door slimme flows en technische optimalisaties creeer je een shopervaring die beter converteert en makkelijker te beheren is."
+                data-service-goal="Wij realiseren webshops op maat die zorgen voor hogere conversie, sterkere klantbeleving en meer omzet."
+                data-service-items="Maatwerk funnel en checkout|Koppelingen met voorraad en CRM|Performance optimalisatie|Doorlopende support en groei"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over website ontwikkeling">
+                Maatwerk webshops ontwikkelen
+              </button>
+              <button type="button" data-reveal data-service-card data-service-label="Maatwerk web app ontwikkelen"
+                data-service-title="Interne processen slimmer digitaliseren?"
+                data-service-focus1="Wij ontwikkelen maatwerk web apps die handmatige processen vervangen en jouw team sneller laten werken."
+                data-service-focus2="Door functionaliteiten te bouwen rond jouw workflow ontstaat een stabiele applicatie die echt waarde toevoegt in de praktijk."
+                data-service-goal="Wij bouwen web apps die tijd besparen, fouten verminderen en je organisatie schaalbaar maken."
+                data-service-items="Functioneel ontwerp op maat|Gebruikersrollen en rechten|Koppelingen met bestaande systemen|Doorontwikkeling en onderhoud"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over website ontwikkeling">
+                Maatwerk web apps ontwikkelen
               </button>
             </div>
           </div>
 
           <div class="flex flex-col w-full md:w-1/2 mx-auto">
-            <p
-              class="mt-3 w-full text-lg font-extrabold tracking-tight text-slate-950 sm:text-xl [font-family:'Space_Grotesk',sans-serif]">
-              Online marketing
-            </p>
+            <div class="flex flex-row-reverse gap-3 md:flex-row items-end">
+              <img class="w-12 h-12 max-w-none object-cover text-white" src="./assets/icons/marketing.svg" alt="">
+              <p
+                class="mt-3 w-full text-xl font-extrabold tracking-tight text-slate-950 sm:text-3xl [font-family:'Space_Grotesk',sans-serif]">
+                Online marketing
+              </p>
+            </div>
             <div class="flex flex-col">
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
+
+              <button type="button" data-reveal data-service-card data-service-label="Lokale SEO boosten"
+                data-service-title="Hoog scoren in jouw regio?"
+                data-service-focus1="Wij geven jouw onderneming een boost in lokale SEO om de zichtbaarheid in lokale zoekresultaten te vergroten."
+                data-service-focus2="Door jouw lokale seo te boosten verbeter je jouw online aanwezigheid in zoekopdrachten en scoor je hoger dan je concurrenten."
+                data-service-goal="Wij laten bedrijven hoger ranken in Google, Maps en lokale zoekopdrachten."
+                data-service-items="Regio's verwerken in jouw site|Google Business Profile optimaliseren|Lokale zoekwoordenstrategie|Lokale content en landingspagina’s"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over lokale SEO optimalisatie">
+                Lokale SEO boosten
+              </button>
+
+              <button type="button" data-reveal data-service-card data-service-label="Google Ads campagnes"
+                data-service-title="Direct aanvragen uit Google?"
+                data-service-focus1="Wij zetten Google Ads campagnes op die jouw bedrijf tonen op het moment dat potentiële klanten zoeken."
+                data-service-focus2="Door continu te sturen op zoekintentie, advertentieteksten en budget haal je meer clicks en betere leads uit je campagnes."
+                data-service-goal="Wij laten jouw bedrijf sneller groeien met Google Ads campagnes die resultaat opleveren."
+                data-service-items="Campagnestructuur en targeting|Zoekwoordonderzoek en advertentieteksten|Conversie-analyse & tracking|Kosten en rendement scherp bijhouden"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over Google Ads campagnes">
                 Google Ads campagnes
               </button>
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
+
+              <button type="button" data-reveal data-service-card data-service-label="Meta Ads campagnes"
+                data-service-title="Groeien via Insta & Facebook?"
+                data-service-focus1="Wij bouwen Meta Ads campagnes die jouw merk onder de aandacht brengen bij de juiste mensen."
+                data-service-focus2="Door creatieve formats te testen en te sturen op data verhogen we je bereik, betrokkenheid en het aantal kwalitatieve leads."
+                data-service-goal="Wij helpen bedrijven op schaal groeien met Meta campagnes die opvallen en converteren."
+                data-service-items="Campagnestrategie en funnelopzet|Doelgroepsegmentatie en retargeting|Creatieve advertentieformats|Optimalisatie op leads en omzet"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over Meta Ads campagnes">
                 Meta Ads campagnes
               </button>
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
+
+              <button type="button" data-reveal data-service-card data-service-label="SEO optimalisatie"
+                data-service-title="Organisch groeien in Google?"
+                data-service-focus1="Wij verbeteren jouw SEO zodat je website organisch groeit, en jij zonder extra moeite hoger scoort op relevante zoekwoorden in Google."
+                data-service-focus2="Door techniek, content en zoekintentie slim te combineren groeit jouw online positie vanzelf, zonder er extra moeite in te steken."
+                data-service-goal="Wij zorgen voor structurele SEO-groei waarmee je minder afhankelijk wordt van betaalde advertenties."
+                data-service-items="Technische SEO-audit en verbeterplan|Contentoptimalisatie per zoekintentie|Zoekwoordenstrategie en pagina-opbouw|Search Console analyse en monitoring"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over SEO optimalisatie">
                 SEO (zoekmachine) optimalisatie
               </button>
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
+
+              <button type="button" data-reveal data-service-card data-service-label="GEO optimalisatie"
+                data-service-title="GEO optimalisatie"
+                data-service-focus1="Wij maken jouw website beter vindbaar in AI-zoekmachines en generatieve antwoorden zoals ChatGPT en Google AI."
+                data-service-focus2="Door content en structuur af te stemmen op hoe AI-systemen bronnen selecteren, vergroot je de kans dat jouw merk wordt genoemd."
+                data-service-goal="Wij helpen bedrijven zichtbaar te worden in het nieuwe zoeklandschap van AI-gedreven resultaten."
+                data-service-items="GEO-structuur en contentmapping|Structured data en entiteiten versterken|Antwoordgerichte contentopbouw|Autoriteit en bronvermeldingen opbouwen"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over GEO optimalisatie">
                 GEO (AI-zoekmachine) optimalisatie
               </button>
-              <button type="button" data-reveal data-service-card data-service-label="Dienst 01"
-                data-service-title="Website ontwikkeling" data-service-focus="De kern van het bedrijf."
-                data-service-goal="Doel: bedrijven een snelle, conversiegerichte website geven."
-                data-service-items="Maatwerk websites|Landing pages|Technische website setup|Website onderhoud"
-                class="group text-sm text-left border-b-[1px] border-slate-200 px-1 py-2 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
+
+              <button type="button" data-reveal data-service-card data-service-label="Conversie optimalisatie"
+                data-service-title="Meer leads uit je huidige verkeer?"
+                data-service-focus1="Wij optimaliseren je website en funnel zodat meer bezoekers de stap zetten naar contact, aanvraag of aankoop."
+                data-service-focus2="Door gedrag te analyseren en gerichte verbeteringen door te voeren in UX, copy en call-to-actions stijgt je conversieratio merkbaar."
+                data-service-goal="Wij halen meer rendement uit bestaand verkeer door conversie stap voor stap te verhogen."
+                data-service-items="UX- en funnelanalyse|A/B-tests en hypothesevalidatie|Call-to-action en formulieroptimalisatie|Meten, rapporteren en doorverbeteren"
+                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
+                aria-label="Bekijk details over conversie optimalisatie">
                 Conversie optimalisatie
               </button>
+
             </div>
           </div>
         </div>
@@ -700,414 +705,9 @@
       </div>
     </section>
 
-    <section id="werk" class="hidden scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
-      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Werk</p>
-            <h2
-              class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
-              Projecten die snelheid en conversie combineren.</h2>
-          </div><a href="#contact"
-            class="inline-flex items-center rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 transition hover:bg-slate-100">Vraag
-            offerte</a>
-        </div>
-        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          <button type="button" data-project-card data-project-title="Zaan Fit Club" data-project-client="Fitnessstudio"
-            data-project-summary="Nieuwe website gericht op proefles-aanvragen met duidelijke funnel."
-            data-project-results="+43% meer intake-aanvragen in 3 maanden." data-project-tags="Design,Build,SEO"
-            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            aria-label="Bekijk project Zaan Fit Club">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 01</p>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900">Zaan Fit Club</h3>
-            <p class="mt-2 text-sm text-slate-600">Sterke lokale propositie met snelle mobiele ervaring.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
-          </button>
-          <button type="button" data-project-card data-project-title="Studio Noorderlicht"
-            data-project-client="Interieurstudio"
-            data-project-summary="Portfolio-website met focus op premium uitstraling en contactmomenten."
-            data-project-results="Gemiddeld 2x langere sessieduur na livegang." data-project-tags="Design,Build"
-            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            aria-label="Bekijk project Studio Noorderlicht">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 02</p>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900">Studio Noorderlicht</h3>
-            <p class="mt-2 text-sm text-slate-600">Visuele storytelling met heldere call-to-actions.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span></div>
-          </button>
-          <button type="button" data-project-card data-project-title="Bouwgroep Delta" data-project-client="Aannemer"
-            data-project-summary="Conversiegerichte website met nadruk op offertes en projectpagina's."
-            data-project-results="+57% stijging in offerte-aanvragen via mobiel." data-project-tags="Build,SEO"
-            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            aria-label="Bekijk project Bouwgroep Delta">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 03</p>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900">Bouwgroep Delta</h3>
-            <p class="mt-2 text-sm text-slate-600">Heldere structuur voor diensten en regio's.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
-          </button>
-          <button type="button" data-project-card data-project-title="Atelier Bloom"
-            data-project-client="Creatieve studio"
-            data-project-summary="Minimalistisch design met geoptimaliseerde performance en schaalbaar CMS."
-            data-project-results="LCP verbeterd van 3.2s naar 1.5s." data-project-tags="Design,Build,SEO"
-            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            aria-label="Bekijk project Atelier Bloom">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 04</p>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900">Atelier Bloom</h3>
-            <p class="mt-2 text-sm text-slate-600">Premium uitstraling zonder zware assets.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
-          </button>
-          <button type="button" data-project-card data-project-title="Zaan Clinique" data-project-client="Praktijk"
-            data-project-summary="Strakke servicepagina's met lokale SEO-basis en snelle contactflow."
-            data-project-results="+38% meer contactformulieren in kwartaal 1." data-project-tags="Design,SEO"
-            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            aria-label="Bekijk project Zaan Clinique">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 05</p>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900">Zaan Clinique</h3>
-            <p class="mt-2 text-sm text-slate-600">Focus op vertrouwen, snelheid en afspraakconversie.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Design</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
-          </button>
-          <button type="button" data-project-card data-project-title="Nordic Solar"
-            data-project-client="Duurzame energie"
-            data-project-summary="Leadmachine met duidelijke ROI-propositie en geautomatiseerde intakeflow."
-            data-project-results="Verdubbeling van qualified leads in 10 weken." data-project-tags="Build,SEO"
-            class="group text-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
-            aria-label="Bekijk project Nordic Solar">
-            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Case 06</p>
-            <h3 class="mt-2 text-xl font-semibold text-slate-900">Nordic Solar</h3>
-            <p class="mt-2 text-sm text-slate-600">Technisch snel, inhoudelijk scherp en data-gedreven.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs"><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">Build</span><span
-                class="rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-600">SEO</span></div>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="proces" class="hidden scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
-      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 max-w-3xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Proces</p>
-          <h2
-            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
-            Duidelijke stappen, geen onduidelijk traject.</h2>
-        </div>
-        <ol class="relative border-l border-slate-200 pl-6 sm:pl-8">
-          <li class="relative mb-8" data-reveal>
-            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-indigo-600"></div>
-            <h3 class="text-lg font-semibold">1. Intake</h3>
-            <p class="mt-1 text-slate-600">Doelen, doelgroep en scope scherp krijgen.</p>
-          </li>
-          <li class="relative mb-8" data-reveal>
-            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-indigo-500"></div>
-            <h3 class="text-lg font-semibold">2. Wireframe</h3>
-            <p class="mt-1 text-slate-600">Structuur bepalen op basis van conversieflow.</p>
-          </li>
-          <li class="relative mb-8" data-reveal>
-            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-sky-500"></div>
-            <h3 class="text-lg font-semibold">3. Design</h3>
-            <p class="mt-1 text-slate-600">Visuele richting met duidelijke merkuitstraling.</p>
-          </li>
-          <li class="relative mb-8" data-reveal>
-            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-cyan-500"></div>
-            <h3 class="text-lg font-semibold">4. Build</h3>
-            <p class="mt-1 text-slate-600">Snelle, responsive en onderhoudbare ontwikkeling.</p>
-          </li>
-          <li class="relative mb-8" data-reveal>
-            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-emerald-500"></div>
-            <h3 class="text-lg font-semibold">5. Live</h3>
-            <p class="mt-1 text-slate-600">Technische check, lancering en nazorg.</p>
-          </li>
-          <li class="relative" data-reveal>
-            <div class="absolute -left-[9px] mt-1 h-4 w-4 rounded-full bg-slate-900"></div>
-            <h3 class="text-lg font-semibold">6. Groei en Optimalisatie</h3>
-            <p class="mt-1 text-slate-600">Met Rafael door op SEO, SEA, creatieve strategie en performance campagnes.
-            </p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="reviews" class="hidden scroll-mt-28 border-b border-slate-200/80 bg-white py-20 sm:py-24">
-      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-10 max-w-2xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Reviews</p>
-          <h2
-            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
-            Lokale ondernemers over Rice Studio.</h2>
-        </div>
-        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
-                aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg></div>
-            <p class="text-sm text-slate-700">"Scherp proces, snelle oplevering en merkbaar meer aanvragen."</p>
-            <p class="mt-4 text-sm font-semibold text-slate-900">Sanne - Assendelft</p>
-          </article>
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
-                aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg></div>
-            <p class="text-sm text-slate-700">"Maurice vertaalt strategie direct naar design en techniek. Dat werkt."
-            </p>
-            <p class="mt-4 text-sm font-semibold text-slate-900">Jeroen - Assendelft</p>
-          </article>
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
-                aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg></div>
-            <p class="text-sm text-slate-700">"Ook na livegang meteen doorgepakt op SEO en campagnes. Professioneel."
-            </p>
-            <p class="mt-4 text-sm font-semibold text-slate-900">Nadia - Assendelft</p>
-          </article>
-          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <div class="mb-4 flex gap-1 text-amber-400"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"
-                aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.03 3.17a1 1 0 00.95.69h3.332c.969 0 1.371 1.24.588 1.81l-2.695 1.958a1 1 0 00-.364 1.118l1.03 3.17c.3.921-.755 1.688-1.539 1.118L10 13.347l-2.835 2.06c-.783.57-1.838-.197-1.539-1.118l1.03-3.17a1 1 0 00-.364-1.118L3.597 8.597c-.783-.57-.38-1.81.588-1.81h3.332a1 1 0 00.95-.69l1.03-3.17z" />
-              </svg></div>
-            <p class="text-sm text-slate-700">"Strak design, korte lijnen en direct bruikbare inzichten."</p>
-            <p class="mt-4 text-sm font-semibold text-slate-900">Tom - Assendelft</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="groei" class="hidden scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
-      <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-reveal>
-          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Groei en Performance</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 [font-family:'Space_Grotesk',sans-serif]">
-            Niet alleen live, maar ook doorgroeien.</h2>
-          <p class="mt-4 text-slate-600">Maurice leidt strategie, design en development. Daarmee staat er een
-            fundament
-            dat klaar is om op te schalen.</p>
-          <div class="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
-            <h3 class="font-semibold text-slate-900">Na oplevering met Rafael</h3>
-            <ul class="mt-3 space-y-2 text-sm text-slate-600">
-              <li>- Geoptimaliseerde SEO (technisch en contentrichting)</li>
-              <li>- SEA / Google Ads met meetbare KPI's</li>
-              <li>- Creatieve strategie voor aanbod, hooks en landingspagina's</li>
-              <li>- Media buying en performance campagnes voor schaalbare groei</li>
-            </ul>
-          </div>
-          <p class="mt-5 text-sm font-semibold text-slate-800">Positionering: "We bouwen niet alleen je website. We
-            zorgen daarna ook voor groei."</p>
-        </article>
-        <aside
-          class="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 p-6 text-slate-100 shadow-xl"
-          data-reveal>
-          <h3 class="text-xl font-semibold">Groeitraject in de praktijk</h3>
-          <ul class="mt-5 space-y-4 text-sm leading-relaxed text-slate-200">
-            <li><span class="font-semibold text-white">Week 1-2:</span> tracking, doelen en meetplan op orde.</li>
-            <li><span class="font-semibold text-white">Week 3-6:</span> SEO-versterking en eerste campagne-tests.</li>
-            <li><span class="font-semibold text-white">Week 7+:</span> budget opschalen op winnende kanalen en
-              pagina's.
-            </li>
-          </ul><a href="#contact" class="btn btn-soft mt-8 px-5 py-3">Plan
-            een kennismaking</a>
-        </aside>
-      </div>
-    </section>
-
-    <section id="faq" class="hidden scroll-mt-28 border-b border-slate-200/80 py-20 sm:py-24">
-      <div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-8">
-          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">FAQ</p>
-          <h2
-            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
-            Veelgestelde vragen</h2>
-        </div>
-        <div class="space-y-3">
-          <article class="rounded-xl border border-slate-200 bg-white">
-            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1"
-                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Wat
-                kost een website bij Rice Studio?<span class="text-slate-500">+</span></button></h3>
-            <div id="faq-panel-1" role="region" aria-labelledby="faq-btn-1"
-              class="hidden px-5 pb-4 text-sm text-slate-600">Afhankelijk van scope. De meeste websites starten tussen
-              EUR 1.450 en EUR 4.950. Je krijgt vooraf een duidelijke vaste offerte.</div>
-          </article>
-          <article class="rounded-xl border border-slate-200 bg-white">
-            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2"
-                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Hoe
-                lang duurt een gemiddeld traject?<span class="text-slate-500">+</span></button></h3>
-            <div id="faq-panel-2" role="region" aria-labelledby="faq-btn-2"
-              class="hidden px-5 pb-4 text-sm text-slate-600">Een compacte website duurt vaak 2-4 weken. Grotere
-              trajecten met maatwerk duren gemiddeld 5-8 weken.</div>
-          </article>
-          <article class="rounded-xl border border-slate-200 bg-white">
-            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3"
-                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Kan
-                ik onderhoud uitbesteden?<span class="text-slate-500">+</span></button></h3>
-            <div id="faq-panel-3" role="region" aria-labelledby="faq-btn-3"
-              class="hidden px-5 pb-4 text-sm text-slate-600">Ja. Updates, contentwijzigingen, monitoring en
-              performancechecks kunnen doorlopend worden verzorgd.</div>
-          </article>
-          <article class="rounded-xl border border-slate-200 bg-white">
-            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4"
-                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Regelen
-                jullie hosting en domein?<span class="text-slate-500">+</span></button></h3>
-            <div id="faq-panel-4" role="region" aria-labelledby="faq-btn-4"
-              class="hidden px-5 pb-4 text-sm text-slate-600">Ja, dat kan volledig uit handen worden genomen.
-              Inclusief
-              SSL, back-ups en technische basisbeveiliging.</div>
-          </article>
-          <article class="rounded-xl border border-slate-200 bg-white">
-            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5"
-                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Doen
-                jullie ook SEO en SEA na livegang?<span class="text-slate-500">+</span></button></h3>
-            <div id="faq-panel-5" role="region" aria-labelledby="faq-btn-5"
-              class="hidden px-5 pb-4 text-sm text-slate-600">Ja. Samen met Rafael bieden we groeitrajecten met SEO,
-              Google Ads en performance optimalisatie op KPI-niveau.</div>
-          </article>
-          <article class="rounded-xl border border-slate-200 bg-white">
-            <h3><button data-faq-button aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6"
-                class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Kan
-                ik later nog aanpassingen doen?<span class="text-slate-500">+</span></button></h3>
-            <div id="faq-panel-6" role="region" aria-labelledby="faq-btn-6"
-              class="hidden px-5 pb-4 text-sm text-slate-600">Ja, de website wordt schaalbaar opgezet. Kleine of
-              grotere
-              iteraties kunnen daarna eenvoudig worden gepland.</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="hidden scroll-mt-28 py-20 sm:py-24">
-      <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.14em] text-indigo-600">Contact</p>
-          <h2
-            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl [font-family:'Space_Grotesk',sans-serif]">
-            Start met een website die omzet oplevert.</h2>
-          <p class="mt-4 text-slate-600">Vertel kort je doel en planning. Je krijgt een helder voorstel zonder
-            verkooppraatjes.</p>
-          <form id="contact-form" novalidate
-            class="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <div><label for="name" class="mb-1 block text-sm font-medium text-slate-700">Naam *</label><input id="name"
-                name="name" type="text" autocomplete="name"
-                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                placeholder="Jouw naam" required>
-              <p id="name-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
-            </div>
-            <div><label for="email" class="mb-1 block text-sm font-medium text-slate-700">E-mail *</label><input
-                id="email" name="email" type="email" autocomplete="email"
-                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                placeholder="jij@bedrijf.nl" required>
-              <p id="email-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
-            </div>
-            <div><label for="phone" class="mb-1 block text-sm font-medium text-slate-700">Telefoon
-                (optioneel)</label><input id="phone" name="phone" type="tel" autocomplete="tel"
-                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                placeholder="06 12345678">
-              <p id="phone-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
-            </div>
-            <div><label for="budget" class="mb-1 block text-sm font-medium text-slate-700">Budget *</label><select
-                id="budget" name="budget"
-                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                required>
-                <option value="">Selecteer budget</option>
-                <option value="start">EUR 1.450 - EUR 2.500</option>
-                <option value="groei">EUR 2.500 - EUR 5.000</option>
-                <option value="pro">EUR 5.000+</option>
-              </select>
-              <p id="budget-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
-            </div>
-            <div><label for="message" class="mb-1 block text-sm font-medium text-slate-700">Bericht *</label><textarea
-                id="message" name="message" rows="5"
-                class="w-full rounded-xl border border-slate-300 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                placeholder="Vertel kort over je bedrijf en doel." required></textarea>
-              <p id="message-error" class="mt-1 hidden text-xs font-medium text-rose-600"></p>
-            </div><button type="submit" class="btn btn-primary w-full px-5 py-3.5">Verstuur
-              aanvraag</button>
-            <p id="form-success"
-              class="hidden rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700"
-              role="status" aria-live="polite">Bedankt. Je aanvraag is ontvangen. We reageren zo snel mogelijk.</p>
-          </form>
-        </div>
-        <aside class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:p-8">
-          <h3 class="text-xl font-semibold text-slate-900">Rice Studio</h3>
-          <p class="mt-2 text-sm text-slate-600">Assendelft, Nederland</p>
-          <div class="mt-6 space-y-4 text-sm text-slate-600">
-            <p><span class="font-semibold text-slate-900">E-mail:</span> TODO: info@rice-studio.nl</p>
-            <p><span class="font-semibold text-slate-900">Telefoon:</span> TODO: +31-XX-XXXXXXX</p>
-            <p><span class="font-semibold text-slate-900">Adres:</span> TODO: straat + huisnummer, Assendelft</p>
-            <p><span class="font-semibold text-slate-900">Openingstijden:</span> ma-vr 09:00-18:00</p>
-          </div>
-          <div class="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
-            <p class="font-semibold text-slate-900">Unieke belofte</p>
-            <p class="mt-1">Strak design + snelle, converterende websites.</p>
-          </div>
-        </aside>
-      </div>
-    </section>
   </main>
   <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto grid w-full max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
+    <div class="mx-auto grid w-full max-w-[100rem] gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
       <div>
         <h3 class="text-lg font-bold [font-family:'Space_Grotesk',sans-serif]">Rice Studio</h3>
         <p class="mt-3 max-w-sm text-sm text-slate-600">Webdesign en website ontwikkeling in Assendelft. Van strategie
@@ -1145,7 +745,7 @@
     </div>
     <div class="border-t border-slate-200">
       <div
-        class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-sm text-slate-500 sm:flex-row sm:px-6 lg:px-8">
+        class="mx-auto flex w-full max-w-[100rem] flex-col items-center justify-between gap-3 px-4 py-5 text-sm text-slate-500 sm:flex-row sm:px-6 lg:px-8">
         <p>&copy; <span id="year"></span> Rice Studio. Alle rechten voorbehouden.</p>
         <p>Assendelft, Nederland</p>
       </div>
@@ -1156,30 +756,32 @@
       stroke-width="2" aria-hidden="true">
       <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg></button>
-  <div id="portfolio-modal"
-    class="fixed inset-0 z-[60] hidden items-end justify-center bg-slate-950/60 p-4 sm:items-center" role="dialog"
-    aria-modal="true" aria-labelledby="modal-title">
-    <div class="w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl">
+  <div id="portfolio-modal" class="fixed inset-0 z-[60] hidden items-end justify-end bg-slate-950/60 sm:p-4"
+    role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="portfolio-modal-panel"
+      class="services-modal-panel w-full overflow-y-auto border-l border-slate-200 bg-[#edf8ff] p-6 pb-10 shadow-2xl sm:max-w-2xl sm:border sm:p-6">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <p id="modal-client" class="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600"></p>
+          <p id="modal-label" class="text-xs font-semibold uppercase tracking-[0.14em] text-blue-600">Wat wij hebben
+            betekend</p>
           <h3 id="modal-title" class="mt-1 text-2xl font-bold text-slate-900 [font-family:'Space_Grotesk',sans-serif]">
           </h3>
         </div><button id="modal-close" type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           aria-label="Sluit projectdetails">X</button>
       </div>
-      <p id="modal-summary" class="mt-4 text-sm leading-relaxed text-slate-600"></p>
-      <p id="modal-results"
-        class="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-700">
-      </p>
-      <div id="modal-tags" class="mt-4 flex flex-wrap gap-2"></div>
+      <div class="mt-5 overflow-hidden rounded-xl border border-slate-300/70 bg-white">
+        <img id="modal-image" src="" alt="" class="h-44 w-full object-cover sm:h-56" loading="lazy" decoding="async">
+      </div>
+      <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Het verhaal</p>
+      <p id="modal-story" class="mt-2 text-sm leading-relaxed text-slate-600"></p>
+      <ul id="modal-impact-list" class="mt-6 space-y-3"></ul>
     </div>
   </div>
-  <div id="services-modal"
-    class="fixed inset-0 z-[60] hidden items-end justify-center bg-slate-950/60 p-4 sm:items-center" role="dialog"
-    aria-modal="true" aria-labelledby="services-modal-title">
-    <div class="w-full max-w-2xl rounded-2xl border border-slate-200 bg-[#edf8ff] p-6 shadow-2xl">
+  <div id="services-modal" class="fixed inset-0 z-[60] hidden items-end justify-end bg-slate-950/60 sm:p-4"
+    role="dialog" aria-modal="true" aria-labelledby="services-modal-title">
+    <div id="services-modal-panel"
+      class="services-modal-panel w-full overflow-y-auto border-l border-slate-200 bg-[#edf8ff] p-6 pb-10 shadow-2xl sm:max-w-2xl sm:border sm:p-6">
       <div class="flex items-start justify-between gap-4">
         <div>
           <p id="services-modal-label" class="text-xs font-semibold uppercase tracking-[0.14em] text-blue-600"></p>
@@ -1189,10 +791,13 @@
           class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           aria-label="Sluit dienstdetails">X</button>
       </div>
-      <p id="services-modal-focus" class="mt-4 text-sm leading-relaxed text-slate-600"></p>
-      <ul id="services-modal-list" class="mt-4 grid gap-2 sm:grid-cols-2"></ul>
-      <p id="services-modal-goal"
-        class="mt-4 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-medium text-blue-700"></p>
+      <div id="services-modal-focus" class="mt-4 text-sm leading-relaxed text-slate-600">
+        <p id="services-modal-focus-1"></p>
+        <p id="services-modal-focus-2" class="mt-2 hidden"></p>
+      </div>
+      <ul id="services-modal-list" class="mt-6 space-y-3"></ul>
+      <p id="services-modal-goal" class="mt-6 border-l-2 border-blue-300 pl-4 text-base leading-relaxed text-blue-900">
+      </p>
     </div>
   </div>
   <script type="module" src="./js/main.js"></script>

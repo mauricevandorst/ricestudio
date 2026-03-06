@@ -3,18 +3,22 @@ export function initTypingAnimation() {
   const typingHighlightNode = document.getElementById("typing-highlight");
   const typingSuffixNode = document.getElementById("typing-suffix");
   const typingSuffixHighlightNode = document.getElementById("typing-suffix-highlight");
+  const typingInteractiveNode = document.getElementById("typing-interactive");
+  const typingPauseIndicatorNode = document.getElementById("typing-pause-indicator");
+  const typingPauseIndicatorIconNode = typingPauseIndicatorNode?.querySelector("img") || null;
 
   if (!typingPrefixNode || !typingHighlightNode || !typingSuffixNode || !typingSuffixHighlightNode) {
     return;
   }
 
   const propositions = [
-    { prefix: "", highlight: "sites die aanvragen opleveren", suffix: "", suffixHighlight: "" },
-    { prefix: "", highlight: "hand\u00ADgeschreven websites", suffix: "", suffixHighlight: "" },
-    { prefix: "", highlight: "Google campagnes die klanten trekken", suffix: "", suffixHighlight: "" },
-    { prefix: "", highlight: "sites met prachtige animaties", suffix: "", suffixHighlight: "" },
-    { prefix: "jouw  ", highlight: "digitale visite\u00ADkaartje", suffix: "", suffixHighlight: "" },
-    { prefix: "", highlight: "meta ads-campagnes voor jouw niche", suffix: "", suffixHighlight: "" },
+    { prefix: "maken ", highlight: "ads-geoptimaliseerde websites", suffix: ".", suffixHighlight: "" },
+    { prefix: "bouwen ", highlight: "hand\u00ADgeschreven websites", suffix: ".", suffixHighlight: "" },
+    { prefix: "maken ", highlight: "Google campagnes die klanten trekken", suffix: ".", suffixHighlight: "" },
+    { prefix: "ontwikkelen ", highlight: "sites die aanvragen opleveren", suffix: ".", suffixHighlight: "" },
+    { prefix: "ontwerpen ", highlight: "sites met prachtige animaties", suffix: ".", suffixHighlight: "" },
+    { prefix: "bouwen jouw  ", highlight: "digitale visite\u00ADkaartje", suffix: ".", suffixHighlight: "" },
+    { prefix: "zetten ", highlight: "gerichte meta ads-campagnes op", suffix: ".", suffixHighlight: "" },
   ];
 
   let phraseIndex = 0;
@@ -23,11 +27,77 @@ export function initTypingAnimation() {
   let timeoutId = null;
   let isInViewport = true;
   let isTabVisible = !document.hidden;
+  let isManuallyPaused = false;
   let hasBootstrapped = false;
+  let hasShownStartIndicator = false;
+  let isStartIndicatorVisible = false;
 
-  const observerTarget = typingHighlightNode.closest("section") || typingHighlightNode;
+  const START_INDICATOR_DURATION_MS = 900;
 
-  const shouldAnimate = () => isInViewport && isTabVisible;
+  const observerTarget = typingInteractiveNode || typingHighlightNode;
+  const VIEWPORT_RESUME_THRESHOLD = 0.2;
+
+  const shouldAnimate = () => isInViewport && isTabVisible && !isManuallyPaused;
+  const canTypeNow = () => shouldAnimate() && !isStartIndicatorVisible;
+
+  const showStartIndicator = () => {
+    if (hasShownStartIndicator || !typingPauseIndicatorNode) {
+      return false;
+    }
+    hasShownStartIndicator = true;
+    isStartIndicatorVisible = true;
+    updatePauseUi();
+
+    window.setTimeout(() => {
+      isStartIndicatorVisible = false;
+      updatePauseUi();
+      if (canTypeNow() && timeoutId === null) {
+        scheduleTick(0);
+      }
+    }, START_INDICATOR_DURATION_MS);
+    return true;
+  };
+
+  const bootstrapTyping = () => {
+    if (hasBootstrapped) {
+      return false;
+    }
+    hasBootstrapped = true;
+    typingPrefixNode.textContent = "";
+    typingHighlightNode.textContent = "";
+    typingSuffixNode.textContent = "";
+    typingSuffixHighlightNode.textContent = "";
+    return showStartIndicator();
+  };
+
+  const updatePauseUi = () => {
+    if (typingInteractiveNode) {
+      typingInteractiveNode.setAttribute("aria-pressed", String(isManuallyPaused));
+      typingInteractiveNode.setAttribute(
+        "aria-label",
+        isManuallyPaused ? "Hervat type-animatie" : "Pauzeer type-animatie"
+      );
+      typingInteractiveNode.setAttribute(
+        "title",
+        isManuallyPaused ? "Hervat type-animatie" : "Pauzeer type-animatie"
+      );
+    }
+
+    if (!typingPauseIndicatorNode) {
+      return;
+    }
+    if (typingPauseIndicatorIconNode) {
+      const nextIconPath = isManuallyPaused ? "./assets/icons/pause.svg" : "./assets/icons/play.svg";
+      if (typingPauseIndicatorIconNode.getAttribute("src") !== nextIconPath) {
+        typingPauseIndicatorIconNode.setAttribute("src", nextIconPath);
+      }
+    }
+
+    typingPauseIndicatorNode.classList.toggle(
+      "typing-pause-indicator--visible",
+      isManuallyPaused || isStartIndicatorVisible
+    );
+  };
 
   const pauseAnimation = () => {
     if (timeoutId !== null) {
@@ -38,14 +108,14 @@ export function initTypingAnimation() {
 
   const scheduleTick = (delay) => {
     pauseAnimation();
-    if (!shouldAnimate()) {
+    if (!canTypeNow()) {
       return;
     }
     timeoutId = window.setTimeout(tick, delay);
   };
 
   const tick = () => {
-    if (!shouldAnimate()) {
+    if (!canTypeNow()) {
       pauseAnimation();
       return;
     }
@@ -89,12 +159,8 @@ export function initTypingAnimation() {
   const onVisibilityChange = () => {
     isTabVisible = !document.hidden;
     if (shouldAnimate()) {
-      if (!hasBootstrapped) {
-        hasBootstrapped = true;
-        typingPrefixNode.textContent = "";
-        typingHighlightNode.textContent = "";
-        typingSuffixNode.textContent = "";
-        typingSuffixHighlightNode.textContent = "";
+      if (bootstrapTyping()) {
+        return;
       }
       scheduleTick(0);
       return;
@@ -103,31 +169,51 @@ export function initTypingAnimation() {
   };
 
   document.addEventListener("visibilitychange", onVisibilityChange);
+  updatePauseUi();
+
+  const toggleManualPause = () => {
+    isManuallyPaused = !isManuallyPaused;
+    updatePauseUi();
+    if (shouldAnimate()) {
+      scheduleTick(0);
+      return;
+    }
+    pauseAnimation();
+  };
+
+  if (typingInteractiveNode) {
+    typingInteractiveNode.addEventListener("click", toggleManualPause);
+    typingInteractiveNode.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+      event.preventDefault();
+      toggleManualPause();
+    });
+  }
 
   if (typeof IntersectionObserver !== "undefined") {
     const rect = observerTarget.getBoundingClientRect();
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
     const visibilityRatio = rect.height > 0 ? visibleHeight / rect.height : 0;
-    isInViewport = visibilityRatio >= 0.1;
+    isInViewport = visibilityRatio >= VIEWPORT_RESUME_THRESHOLD;
 
     const typingObserver = new IntersectionObserver(
       (entries) => {
-        isInViewport = entries.some((entry) => entry.isIntersecting);
+        isInViewport = entries.some(
+          (entry) => entry.isIntersecting && entry.intersectionRatio >= VIEWPORT_RESUME_THRESHOLD
+        );
         if (shouldAnimate()) {
-          if (!hasBootstrapped) {
-            hasBootstrapped = true;
-            typingPrefixNode.textContent = "";
-            typingHighlightNode.textContent = "";
-            typingSuffixNode.textContent = "";
-            typingSuffixHighlightNode.textContent = "";
+          if (bootstrapTyping()) {
+            return;
           }
           scheduleTick(0);
           return;
         }
         pauseAnimation();
       },
-      { threshold: 0.1 }
+      { threshold: [0, VIEWPORT_RESUME_THRESHOLD] }
     );
     typingObserver.observe(observerTarget);
   } else {
@@ -135,11 +221,9 @@ export function initTypingAnimation() {
   }
 
   if (shouldAnimate()) {
-    hasBootstrapped = true;
-    typingPrefixNode.textContent = "";
-    typingHighlightNode.textContent = "";
-    typingSuffixNode.textContent = "";
-    typingSuffixHighlightNode.textContent = "";
+    if (bootstrapTyping()) {
+      return;
+    }
     scheduleTick(350);
   }
 }
