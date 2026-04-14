@@ -1,814 +1,909 @@
 ﻿<!DOCTYPE html>
-<!-- Bestand: index.html | Doel: Complete, responsive en toegankelijke website voor Rice Studio. -->
 <html lang="nl" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rice Web | Maatwerk websites die leads opleveren</title>
   <meta name="description"
-    content="Rice Studio bouwt snelle, converterende websites in Assendelft. Strategie, design en development door Maurice, met groei via SEO/SEA en performance campagnes met Rafael.">
-  <meta property="og:title" content="Rice Studio | Webdesign & Website Ontwikkeling in Assendelft">
-  <meta property="og:description"
-    content="Strak design + snelle, converterende websites. Daarna ook groei via SEO, SEA en performance.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.rice-studio.nl/">
-  <meta property="og:locale" content="nl_NL">
-  <title>RICE Webdesign agency in Assendelft</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./css/main.css">
-  <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"LocalBusiness","name":"Rice Studio","url":"https://www.rice-studio.nl/","telephone":"TODO: +31-XX-XXXXXXX","email":"TODO: info@rice-studio.nl","address":{"@type":"PostalAddress","streetAddress":"TODO: Straat + huisnummer","addressLocality":"Assendelft","postalCode":"TODO: postcode","addressCountry":"NL"},"areaServed":["Assendelft","Zaanstad","Noord-Holland"],"priceRange":"EUR EUR","description":"Webdesign, website ontwikkeling, SEO basis, performance en onderhoud voor ondernemers in Assendelft en omgeving."}
-  </script>
+    content="Rice Web bouwt sinds 2014 maatwerk websites voor MKB-bedrijven die meer leads, betere conversie en schaalbare online groei willen." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <script type="module" src="./js/main.js" defer></script>
 </head>
 
-<body class="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 antialiased [font-family:'Manrope',sans-serif]">
-  <a href="#main-content"
-    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900 focus:ring-2 focus:ring-indigo-500">Ga
-    direct naar de inhoud</a>
-  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-200 selection:text-slate-900">
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,#f8fbff_0%,#eff6ff_36%,#f8fafc_100%)]"></div>
+    <div class="absolute left-[-8%] top-[-8rem] h-[28rem] w-[28rem] rounded-full bg-blue-200/50 blur-3xl"></div>
+    <div class="absolute right-[-10%] top-[8%] h-[30rem] w-[30rem] rounded-full bg-sky-200/40 blur-3xl"></div>
+    <div class="absolute bottom-[-12rem] left-[18%] h-[24rem] w-[24rem] rounded-full bg-indigo-200/35 blur-3xl"></div>
     <div
-      class="absolute -left-20 top-16 h-80 w-80 rounded-full bg-gradient-to-br from-indigo-200/60 to-cyan-100/20 blur-3xl">
-    </div>
-    <div
-      class="absolute right-0 top-1/3 h-96 w-96 rounded-full bg-gradient-to-tr from-emerald-200/50 to-sky-100/20 blur-3xl">
+      class="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(191,219,254,0.45),transparent_0,transparent_24%),radial-gradient(circle_at_18%_28%,rgba(186,230,253,0.28),transparent_0,transparent_22%),radial-gradient(circle_at_80%_22%,rgba(224,231,255,0.24),transparent_0,transparent_18%)]">
     </div>
   </div>
 
-  <header id="site-header" class="fixed inset-x-0 md:pt-5 z-50 border-b border-transparent bg-transparent shadow-none">
-    <div class="mx-auto flex h-20 w-full max-w-[100rem] items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20">
-      <a href="#top"
-        class="site-header__logo text-3xl leading-[1.15rem] font-bold uppercase tracking-tight [font-family:'Bricolage_Grotesque',sans-serif]"
-        aria-label="Rice Studio home">
-        <span class="site-header__logo-rice lg:text-4xl lg:leading-[1.5rem]">RICE</span>
-        <span class="site-header__logo-studio-wrap !h-min">
-          <span class="site-header__logo-studio text-[1.19rem] lg:text-[1.4rem]">Studio</span>
-        </span>
-      </a>
-      <div class="flex items-center gap-4">
-        <nav aria-label="Hoofdmenu"
-          class="site-header__main-menu hidden items-center gap-1 bg-white rounded-full px-2 lg:py-2 lg:px-4 lg:flex">
-          <a data-nav-link href="#diensten"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
-          <a data-nav-link href="#werk"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
-          <a data-nav-link href="#proces"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
-          <a data-nav-link href="#reviews"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
-          <a data-nav-link href="#faq"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
-          <a data-nav-link href="#contact"
-            class="rounded-lg px-3 py-2 text-xs font-semibold text-slate-800 transition hover:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
-        </nav>
-        <div class="flex items-center gap-2 md:gap-4">
-          <button id="menu-toggle" type="button"
-            class="site-header__menu-toggle inline-flex h-11 w-11 items-center justify-center transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 lg:hidden"
-            aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><svg class="w-7 h-auto"
-              viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="style=stroke">
-                <g id="menu-hamburger">
-                  <path id="vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M2.25 6C2.25 5.58579 2.58579 5.25 3 5.25H21C21.4142 5.25 21.75 5.58579 21.75 6C21.75 6.41421 21.4142 6.75 21 6.75H3C2.58579 6.75 2.25 6.41421 2.25 6Z"
-                    fill="currentColor" />
-                  <path id="vector (Stroke)_2" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M2.25 12C2.25 11.5858 2.58579 11.25 3 11.25H21C21.4142 11.25 21.75 11.5858 21.75 12C21.75 12.4142 21.4142 12.75 21 12.75H3C2.58579 12.75 2.25 12.4142 2.25 12Z"
-                    fill="currentColor" />
-                  <path id="vector (Stroke)_3" fill-rule="evenodd" clip-rule="evenodd"
-                    d="M2.25 18C2.25 17.5858 2.58579 17.25 3 17.25H21C21.4142 17.25 21.75 17.5858 21.75 18C21.75 18.4142 21.4142 18.75 21 18.75H3C2.58579 18.75 2.25 18.4142 2.25 18Z"
-                    fill="currentColor" />
-                </g>
-              </g>
+  <header class="fixed inset-x-0 top-0 z-50 bg-transparent" data-site-header>
+    <div
+      class="border-b border-blue-200/70 bg-blue-300 text-center text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-slate-600">
+      <div class="mx-auto flex max-w-7xl items-center justify-center gap-3 px-4 py-2 sm:px-6 lg:px-8">
+        <i class="fa-brands fa-pagelines scale-x-[-1]" aria-hidden="true"></i>
+        <span>Strategie, design en development voor websites die voelen als een merk</span>
+        <i class="fa-brands fa-pagelines" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="mx-auto px-4 pt-4 sm:px-6 lg:px-8">
+      <div class="rounded-[1.75rem] px-4 py-3 sm:px-5 lg:px-6">
+        <div class="flex items-center gap-4 lg:gap-6">
+          <a href="/" class="shrink-0 text-slate-900">
+            <span class="block text-[1.95rem] me-8 font-black leading-none tracking-[-0.08em] sm:text-[2.1rem]">RICE</span>
+          </a>
+
+          <div class="hidden min-w-0 flex-1 items-center gap-6 md:flex lg:gap-8">
+            <nav class="flex min-w-0 items-center gap-5 text-lg tracking-[-0.05em] font-medium text-slate-600 lg:gap-7 lg:text-2xl">
+              <a class="transition hover:text-blue-500" href="/">op Sector</a>
+              <a class="transition hover:text-blue-500" href="/diensten">Diensten</a>
+              <a class="transition hover:text-blue-500" href="/over-ons">About</a>
+              <a class="transition hover:text-blue-500" href="/werkwijze">Proces</a>
+            </nav>
+
+            <nav class="ml-auto flex items-center gap-5 text-[0.95rem] font-medium text-slate-600 lg:gap-7 lg:text-[1rem]">
+              <a class="transition hover:text-blue-500" href="/cases">Case studies</a>
+            </nav>
+          </div>
+
+          <div class="hidden items-center gap-2 md:flex lg:gap-3">
+            <a href="/pricing"
+              class="inline-flex items-center rounded-[1.15rem] border border-slate-200 bg-white px-4 py-3 text-[0.95rem] font-semibold text-slate-700 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500 lg:px-5 lg:text-base">
+              Action plan
+            </a>
+            <a href="/contact"
+              class="inline-flex items-center rounded-[1.15rem] bg-blue-500 px-4 py-3 text-[0.95rem] font-semibold text-white shadow-[0_14px_35px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 hover:bg-blue-500 lg:px-5 lg:text-base">
+              Contact
+            </a>
+          </div>
+
+          <button type="button"
+            class="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-[1rem] border border-slate-200 text-slate-900 md:hidden"
+            data-menu-button aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="1.9">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6.75h18M8 12h13M3 17.25h18" />
             </svg>
           </button>
-          <div id="menu-cta" class="block"><a href="#contact"
-              class="btn btn-soft text-xs px-5 py-2 lg:px-7 lg:py-4 rounded-full shadow-none hover:!text-slate-300">Praten?</a>
-          </div>
         </div>
       </div>
     </div>
-    <div id="mobile-overlay" class="pointer-events-none fixed inset-0 z-40 hidden h-dvh bg-slate-950/60 lg:hidden"
-      aria-hidden="true"></div>
-    <nav id="mobile-menu"
-      class="fixed right-0 top-0 z-50 hidden h-dvh w-full max-w-sm overflow-y-auto border-l border-slate-200 bg-[#edf8ff] p-6 pb-10 shadow-2xl lg:hidden"
-      aria-label="Mobiel menu">
-      <div class="mb-8 flex items-center justify-between">
-        <p class="text-base font-bold [font-family:'Bricolage_Grotesque',sans-serif]">Rice Studio</p><button
-          id="menu-close" type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-          aria-label="Sluit menu"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"></path>
-          </svg></button>
+
+    <div id="mobile-menu" class="hidden px-4 pb-4 pt-2 md:hidden sm:px-6 lg:px-8" data-mobile-menu>
+      <div class="mx-auto max-w-7xl rounded-[1.5rem] border border-slate-200 bg-white/95 p-4 shadow-lg shadow-blue-100/50 backdrop-blur-xl">
+        <div class="space-y-1 text-sm text-slate-700">
+        <a class="block rounded-xl px-3 py-2 transition hover:bg-blue-50 hover:text-blue-500" href="/">Home</a>
+        <a class="block rounded-xl px-3 py-2 transition hover:bg-blue-50 hover:text-blue-500"
+          href="/diensten">Diensten</a>
+        <a class="block rounded-xl px-3 py-2 transition hover:bg-blue-50 hover:text-blue-500" href="/over-ons">About</a>
+        <a class="block rounded-xl px-3 py-2 transition hover:bg-blue-50 hover:text-blue-500"
+          href="/werkwijze">Proces</a>
+        <a class="block rounded-xl px-3 py-2 transition hover:bg-blue-50 hover:text-blue-500" href="/cases">Case
+          studies</a>
+        <a class="block rounded-xl px-3 py-2 transition hover:bg-blue-50 hover:text-blue-500"
+          href="/pricing">Action plan</a>
+        <a class="block rounded-xl px-3 py-2 transition hover:bg-blue-50 hover:text-blue-500"
+          href="/contact">Contact</a>
+        <a class="mt-3 inline-flex w-full items-center justify-center rounded-[1.1rem] bg-blue-500 px-4 py-3 font-semibold text-white"
+          href="/contact">
+          Plan een gesprek
+        </a>
+        </div>
       </div>
-      <div class="flex flex-col gap-2">
-        <a data-nav-link href="#diensten"
-          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Diensten</a>
-        <a data-nav-link href="#werk"
-          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Werk</a>
-        <a data-nav-link href="#proces"
-          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Proces</a>
-        <a data-nav-link href="#reviews"
-          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Reviews</a>
-        <a data-nav-link href="#faq"
-          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">FAQ</a>
-        <a data-nav-link href="#contact"
-          class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">Contact</a>
-      </div>
-      <a href="#contact" class="btn btn-primary mt-8 w-full px-5 py-3">Vraag
-        offerte</a>
-    </nav>
+    </div>
   </header>
 
-  <main id="main-content">
-    <section aria-label="Introductievideo" class="flex flex-col justify-between">
-      <div class="relative w-full overflow-hidden">
-        <div
-          class="after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(180deg,rgba(30,30,28,0.5),rgba(30,30,28,0.9)_70%)] after:content-[''] after:opacity-60">
-          <video class="h-[200px] w-full object-cover md:h-[50vh] lg:h-[60vh]" autoplay muted loop playsinline
-            preload="metadata">
-            <source src="https://www.wauw.nl/wp-content/uploads/2025/09/wauw-digital-agency.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- Logo sectie -->
-        <div
-          class="mx-auto w-full inset-x-0 max-w-[100rem] px-4 sm:px-6 md:px-12 lg:px-20 trust-badges absolute items-center bottom-[clamp(35px,2.6vw,9999px)] sm:bottom-[clamp(50px,2.6vw,9999px)] md:bottom-[clamp(70px,2.6vw,9999px)] lg:bottom-[clamp(120px,2.6vw,9999px)] flex gap-6 text-white">
-          <span class="trust-badge">
-            <img class="trust-badge__img" src="./assets/logos/google-search-console.png" alt="Google Search Console"
-              loading="eager" decoding="async" />
-          </span>
-          <span class="trust-badge">
-            <img class="trust-badge__img" src="./assets/logos/google-ads.png" alt="Google Ads" loading="eager"
-              decoding="async" />
-          </span>
-          <span class="trust-badge">
-            <img class="trust-badge__img" src="./assets/logos/meta-ads.png" alt="Meta Ads" loading="eager"
-              decoding="async" />
-          </span>
-        </div>
-        <div class="bottom-0 pointer-events-none absolute inset-x-0 z-10 w-full overflow-hidden leading-none"
-          aria-hidden="true">
-          <img class="h-full w-full max-w-none object-cover text-white" src="./assets/icons/mountains-primary.svg"
-            alt="">
-        </div>
+  <main>
+    <section class="relative isolate overflow-hidden">
+      <div aria-hidden="true" class="absolute inset-0 -z-10">
+        <video class="h-full w-full object-cover opacity-10" autoplay muted loop playsinline preload="metadata"
+          data-hero-video>
+          <source src="./assets/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
       </div>
-    </section>
-    <section id="top" class="scroll-mt-28 bg-white md:flex md:items-center">
-      <div class="mx-auto w-full max-w-[100rem] px-4 sm:px-6 md:px-12 lg:px-20 pb-16 pt-12 sm:pt-16 lg:pb-24 lg:pt-20">
+      <div
+        class="mx-auto flex h-[100svh] max-w-7xl flex-col px-4 pb-10 pt-[calc(var(--header-height,0px)+1.5rem)] sm:px-6 sm:pb-12 sm:pt-[calc(var(--header-height,0px)+2rem)] lg:px-8 lg:pb-16 lg:pt-[calc(var(--header-height,0px)+3.5rem)]">
+        <div class="flex flex-1 flex-col justify-between gap-10 lg:gap-16">
+          <div class="mx-auto w-full">
+            <div class="flex max-w-[30rem] flex-wrap items-center justify-start gap-1 lg:max-w-none lg:justify-center"
+              data-reveal>
+              <span
+                class="rounded-xl border border-blue-100 bg-white/30 backdrop-blur-sm px-3 py-1 text-xs font-medium text-slate-700 shadow-sm">Strategie</span>
+              <span
+                class="rounded-xl border border-blue-100 bg-white/30 backdrop-blur-sm px-3 py-1 text-xs font-medium text-slate-700 shadow-sm">UX/UI
+                Design</span>
+              <span
+                class="rounded-xl border border-blue-100 bg-white/30 backdrop-blur-sm px-3 py-1 text-xs font-medium text-slate-700 shadow-sm">Development</span>
+              <span
+                class="rounded-xl border border-blue-100 bg-white/30 backdrop-blur-sm px-3 py-1 text-xs font-medium text-slate-700 shadow-sm">SEO
+                & Support</span>
+            </div>
 
-        <div class="grid w-full gap-12 lg:grid-cols-2 lg:items-start">
-          <div data-reveal class="opacity-0 translate-y-6 transition duration-700">
-
-            <h1 id="typing-interactive" role="button" tabindex="0" aria-pressed="false"
-              aria-label="Pauzeer type-animatie"
-              class="inline-block cursor-pointer text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl [font-family:'Bricolage_Grotesque',sans-serif] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
-              <span class="inline">Wij </span><span class="inline">
-                <span id="typing-prefix" class="inline">websites die </span><span id="typing-highlight"
-                  class="inline bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent">er
-                  strak
-                  uitzien</span><span id="typing-suffix" class="inline"></span><span id="typing-suffix-highlight"
-                  class="inline bg-gradient-to-r from-indigo-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent"></span><span
-                  aria-hidden="true" class="ml-1 inline animate-pulse text-cyan-500">|</span>
-                <span id="typing-pause-indicator" class="typing-pause-indicator" aria-hidden="true">
-                  <img src="./assets/icons/play.svg" alt="" aria-hidden="true" class="h-6 w-6 lg:h-9 lg:w-9"
-                    loading="lazy" decoding="async">
-                </span>
-              </span>
+            <h1
+              class="mt-8 text-left text-[3rem] font-black text-slate-600 leading-[1.05] tracking-[-0.05em] text-slate-700 sm:text-[4rem] lg:mx-auto lg:text-center lg:text-[5.5rem]"
+              data-reveal>
+              <span class="text-blue-500">Strategische websites</span> voor ambitieuze<span class="text-blue-500">
+                ondernemers</span>
             </h1>
 
-            <p class="mt-6 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600 sm:text-lg">
-              Van startende ondernemers tot MKB's - wij helpen jou met online strategie, design en development. Na
-              livegang
-              werken
-              wij met vertrouwde partners door op online ads, gerichte campagnes en performance.
+            <p class="mt-8 max-w-[55rem] text-left text-base leading-2 text-slate-700 sm:text-lg lg:mx-auto lg:text-center"
+              data-reveal>
+              Van contentstrategie en UX tot custom development en SEO. We bouwen high-performing websites die
+              vertrouwen geven, meetbare groei opleveren en klaar zijn om door te schalen.
             </p>
 
-            <p class="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600 sm:text-lg">Wij bouwen niet
-              alleen prachtige websites.
-              We zorgen daarna ook voor groei.
-            </p>
-
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="#contact" class="btn btn-primary gap-1 text-base px-6 py-4">
-                <img class="h-6 w-auto"
-                  src="./assets/icons/wave-hand.svg" alt="">
-                Laten we praten
-              </a>
-              <a href="#pricing-calculator" class="btn btn-secondary gap-0 px-6 py-2.5">
-                <svg class="h-8 w-auto" viewBox="0 -15.5 1055 1055" class="icon" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      d="M573.213047 261.967704s125.388395 185.46511 206.373624 190.700075c0 0 23.510324-133.22517 2.617483-193.301884-0.015674-0.015674-99.276262-28.74529-208.991107 2.601809zM264.961352 460.504554l86.204521 23.510324 52.23994-91.423814c0.015674-0.015674-135.826979 47.004975-138.444461 67.91349zM562.75879 679.934245l15.673549 86.204521 23.510324-20.908515 39.183873-70.530972 2.617483-47.020648zM406.023296 538.8723l-86.204521 33.964582 13.056066 23.510324-39.183873 104.495553 5.219292 18.291032 20.892841-7.836774 62.694197 15.673549s57.474905 15.673549 83.587039-10.454257l33.964582-41.801356 5.219292-28.729616-99.244915-107.113037z"
-                      fill="#e3e3e3"></path>
-                    <path
-                      d="M558.840402 472.259716m-82.286134 0a82.286134 82.286134 0 1 0 164.572268 0 82.286134 82.286134 0 1 0-164.572268 0Z"
-                      fill="#e3e3e3"></path>
-                    <path
-                      d="M553.480048 698.961933a15.673549 15.673549 0 0 1-11.081199-4.592349L343.093995 495.049056a15.673549 15.673549 0 0 1-3.322792-17.256577c32.444247-75.703243 140.403655-181.734805 211.624263-222.439013 21.378721-12.209695 51.26818-19.999449 88.837678-23.165506a15.689223 15.689223 0 0 1 2.633156 31.253058c-32.992821 2.774218-58.540707 9.216047-75.922673 19.137403-62.223991 35.563283-160.058286 131.030873-193.928826 198.082317l183.772366 183.78804c67.051444-33.886214 162.534707-131.720509 198.082317-193.9445 30.720157-53.775948 19.372507-166.970321 14.811504-202.768708a736.609799 736.609799 0 0 0-64.12049-5.376027 15.673549 15.673549 0 0 1-15.046608-16.269145 15.375752 15.375752 0 0 1 16.269145-15.046607c36.284267 1.410619 66.111031 5.407375 76.063735 6.865015a14.184562 14.184562 0 0 1 5.172271 0.689636c3.13471 1.003107 5.877581 2.86826 7.852448 5.329007a15.124975 15.124975 0 0 1 2.946627 5.313333c0.595595 1.880826 0.846372 3.824346 0.752331 5.736519 3.84002 26.284542 21.378721 163.020587-17.507355 231.059464-40.704208 71.220608-146.735769 179.19569-222.439012 211.639937a15.266037 15.266037 0 0 1-6.144032 1.285231z"
-                      fill="#525252"></path>
-                    <path
-                      d="M354.190868 499.641406a15.673549 15.673549 0 0 1-3.683284-0.438859l-89.99752-21.660845a15.673549 15.673549 0 0 1-7.962163-25.751642c67.317894-74.402339 153.36568-73.383558 156.954923-73.493273a15.673549 15.673549 0 0 1 15.344405 16.002694 15.783264 15.783264 0 0 1-15.94 15.344405c-0.799351-0.015674-59.700549-0.329145-113.241394 44.121041l62.17697 14.96824a15.657876 15.657876 0 0 1-3.651937 30.908239zM579.168996 792.987556a15.642202 15.642202 0 0 1-15.23469-12.005939l-21.660845-89.99752a15.673549 15.673549 0 1 1 30.46938-7.335221l14.968239 62.17697c44.387492-53.462477 44.136715-112.583105 44.121042-113.241394a15.673549 15.673549 0 0 1 15.407099-15.908653h0.282123a15.673549 15.673549 0 0 1 15.67355 15.328732c0.062694 3.62059 0.956087 89.590008-73.493273 156.954923a15.845958 15.845958 0 0 1-10.532625 4.028102zM770.825157 481.303354a15.673549 15.673549 0 0 1-8.495063-2.507768c-133.287864-86.047786-198.975709-197.267292-201.718581-201.969357a15.689223 15.689223 0 0 1 27.083894-15.783264c0.642616 1.081475 64.951189 109.620804 191.640488 191.405384a15.689223 15.689223 0 0 1-8.510738 28.855005zM559.169547 574.451257a100.201001 100.201001 0 0 1-71.079547-29.387905 100.63986 100.63986 0 0 1 0-142.174766 15.657876 15.657876 0 1 1 22.162399 22.162399 69.277088 69.277088 0 0 0 0 97.849969 69.261415 69.261415 0 0 0 97.834295 0 69.277088 69.277088 0 0 0 0-97.849969 69.230068 69.230068 0 0 0-42.83581-19.999449 15.673549 15.673549 0 0 1 2.727198-31.22171 100.624187 100.624187 0 0 1 62.271011 29.05876 100.63986 100.63986 0 0 1 0 142.174766 100.201001 100.201001 0 0 1-71.079546 29.387905z"
-                      fill="#525252"></path>
-                    <path
-                      d="M459.611161 738.725728a15.673549 15.673549 0 0 1-7.382241-29.49762c20.077817-10.720708 33.933234-32.914454 41.174414-65.969969a15.673549 15.673549 0 0 1 30.626115 6.708279c-9.310088 42.443972-28.494513 71.690815-57.05172 86.925505a15.595182 15.595182 0 0 1-7.366568 1.833805zM384.503513 744.070409a15.595182 15.595182 0 0 1-3.871367-0.485881c-18.291032-4.655044-31.002281-11.049852-31.535181-11.316302a16.457227 16.457227 0 0 1-2.194297-1.347925c-9.059312-6.645585-32.162123 1.959194-44.904719 9.858662a15.673549 15.673549 0 1 1-23.949183-13.588967c1.253884-68.900923 22.930403-110.420155 38.886076-131.783203a71.283302 71.283302 0 0 1-11.128221-10.140787 15.673549 15.673549 0 0 1 0.454533-21.143618c44.136715-46.221297 102.222889-34.434788 104.667963-33.91756 8.463717 1.818132 13.855418 10.140786 12.052959 18.620176a15.736244 15.736244 0 0 1-18.526135 12.068633c-1.520334-0.313471-32.63233-6.26942-61.518681 13.056067l0.391839 0.015673a15.673549 15.673549 0 0 1 9.560865 28.102674c-1.441967 1.159843-34.199685 28.243736-41.926745 100.138307 16.128082-5.485742 36.832841-8.526411 53.196027 2.539115 2.774218 1.300905 11.958918 5.360354 24.215633 8.47939a15.673549 15.673549 0 0 1 11.331977 19.059036 15.736244 15.736244 0 0 1-15.203343 11.78651z"
-                      fill="#525252"></path>
-                    <path
-                      d="M360.303553 683.836958a15.689223 15.689223 0 0 1-13.02472-24.372369c3.260098-4.890147 8.040531-10.203481 13.839744-15.407099a15.657876 15.657876 0 1 1 20.939862 23.322242c-5.140924 4.608024-7.664366 7.915142-8.69882 9.482497a15.673549 15.673549 0 0 1-13.056066 6.974729zM409.612539 648.806576a15.673549 15.673549 0 0 1-4.513982-30.68881c9.999724-3.009321 19.043362-3.463854 26.84879-1.332252 2.366706-1.598702 9.090659-14.560727 11.958918-25.579232a15.673549 15.673549 0 0 1 30.328318 7.915142c-1.473314 5.642478-9.748948 34.35642-27.867571 44.842025a29.168475 29.168475 0 0 1-22.663952 3.072015c-0.70531-0.203756-3.542222-0.70531-9.576539 1.112822a15.971347 15.971347 0 0 1-4.513982 0.65829z"
-                      fill="#525252"></path>
-                  </g>
-                </svg>
-                Bekijk wat het kost
-              </a>
-            </div>
-          </div>
-
-          <div id="pricing-calculator" data-reveal
-            class="relative opacity-0 translate-y-6 transition delay-100 duration-700 lg:-top-8">
-            <div
-              class="pointer-events-none absolute -bottom-5 -left-5 h-40 w-40 rounded-2xl bg-gradient-to-br from-cyan-400/60 to-emerald-500/60 blur-xl">
-            </div>
-            <div
-              class="flex flex-col gap-3 rounded-3xl border border-slate-300 bg-white/80 p-4 pt-6 shadow-2xl shadow-slate-300/40 backdrop-blur-md sm:p-5 lg:max-h-[42rem] lg:overflow-y-auto">
-              <div class="flex flex-col gap-2">
-                <h2 class="text-xl md:text-2xl font-bold text-slate-900">Snelle prijsindicatie?</h2>
-                <p class="text-sm text-slate-600">Bekijk een ruwe schatting van de kosten voor jouw project.</p>
-              </div>
-              <div class="space-y-3" id="quick-pricing" data-quick-mode="website">
-                <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3 space-y-5">
-                  <div class="mb-1 flex flex-col gap-2">
-                    <div class="flex justify-between items-center gap-3">
-                      <p id="quick-tier-label" class="text-sm font-semibold text-slate-900">Budget website</p>
-                      <div class="flex items-center gap-2">
-                        <span class="text-[11px] font-semibold text-slate-600">Webshop</span>
-                        <label class="relative inline-flex cursor-pointer items-center">
-                          <input id="quick-mode-toggle" type="checkbox" class="peer sr-only"
-                            aria-label="Switch tussen website en webshop" />
-                          <span
-                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-500 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
-                          <span
-                            class="pointer-events-none absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="flex justify-between items-center gap-3">
-                      <div>
-                        <p class="flex flex-wrap gap-x-1 text-sm font-semibold text-slate-900">
-                          <span id="quick-tier-price">€ 425</span>
-                          <span>(<span id="quick-tier-monthly">€ 19/m</span>)</span>
-                        </p>
-                      </div>
-                      <div class="flex items-center gap-2">
-                        <span class="text-[11px] font-semibold text-slate-600 text-nowrap">Online advertenties</span>
-                        <label class="relative inline-flex cursor-pointer items-center">
-                          <input id="quick-ads-toggle" type="checkbox" class="peer sr-only"
-                            aria-label="Switch online advertenties voor Google en Meta" />
-                          <span
-                            class="h-5 w-9 rounded-full bg-slate-300 transition peer-checked:bg-slate-500 peer-focus-visible:ring-2 peer-focus-visible:ring-indigo-500"></span>
-                          <span
-                            class="pointer-events-none absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4"></span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <input id="quick-tier-slider" type="range" min="1" max="5" step="1" value="1"
-                    class="quick-tier-slider h-2 w-full cursor-pointer" />
-                  <div class="flex justify-between text-xs font-medium text-slate-500 !mt-1">
-                    <span class="w-[25%] text-start">Budget</span>
-                    <span class="w-[20%] text-center">Klein</span>
-                    <span class="w-[30%] text-end">Standaard</span>
-                    <span class="w-[30%] text-end">Uitgebreid</span>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2 text-xs">
-                    <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
-                      <p class="font-semibold text-slate-500 md:text-sm">Pagina's</p>
-                      <p id="quick-pages" class="mt-0.5 font-semibold text-slate-900 md:text-xs">1 pagina</p>
-                    </div>
-                    <div class="rounded-lg border border-slate-200/80 bg-white/80 px-3 py-2">
-                      <p class="font-semibold text-slate-500 md:text-sm">Custom secties</p>
-                      <p id="quick-custom-sections" class="mt-0.5 font-semibold text-slate-900 md:text-xs">1 custom
-                        sectie</p>
-                    </div>
-                  </div>
-                  <ul id="quick-feature-list" class="space-y-1 lg:space-y-2 text-xs md:text-sm text-slate-600">
-                    <li>Supersnelle one-pager met duidelijke call-to-action.</li>
-                    <li>Mobielvriendelijk en technisch netjes opgeleverd.</li>
-                    <li>Basis contactmogelijkheid en livegang inbegrepen.</li>
-                  </ul>
-                </div>
-                <a href="#contact" class="btn btn-primary w-full px-5 py-2.5">
-                  Plan een gesprek in
+            <div class="flex flex-col gap-4 md:items-center">
+              <div class="mt-10 flex items-center gap-3 sm:gap-4 lg:justify-center" data-reveal>
+                <a href="/contact"
+                  class="inline-flex items-center justify-center gap-3 rounded-xl bg-white px-3 py-4 text-base lg:text-lg font-semibold text-slate-700 shadow-[0_18px_60px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 sm:flex-none sm:px-6">
+                  <i class="fa-regular fa-calendar text-lg" aria-hidden="true"></i>
+                  <span>Plan een gesprek</span>
+                </a>
+                <a href="/contact"
+                  class="relative inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-[1rem] bg-blue-500 text-blue-500 shadow-[0_18px_45px_rgba(59,130,246,0.16)] transition hover:-translate-y-0.5 hover:bg-blue-100"
+                  aria-label="Plan een gesprek met Rice Web">
+                  <img src="./assets/images/portrait.jpg" alt="Portret van Rice Web"
+                    class="h-full w-full rounded-[1rem] object-cover border-[2px] border-blue-500" />
+                  <span
+                    class="absolute right-[-1px] top-[-1px] h-3 w-3 rounded-full border-[1px] border-white bg-blue-500"></span>
                 </a>
               </div>
             </div>
           </div>
 
+          <div class="space-y-6">
+            <div
+              class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-slate-200 pt-6 text-sm font-semibold text-slate-400 sm:text-base lg:justify-center lg:gap-10"
+              data-reveal>
+              <span>HubSpot</span>
+              <span>WordPress</span>
+              <span>Webflow</span>
+              <span>Google Ads</span>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
 
-    <section id="trust" class="relative border-b border-slate-200/80 bg-white pb-14 sm:pb-16 md:pb-24 lg:pb-36">
-      <div class="flex flex-col justify-center items-center mx-auto w-full max-w-[100rem] px-4 sm:px-6 lg:px-8">
-        <div class="w-full max-w-lg flex flex-col overflow-hidden rounded-xl border border-slate-300 bg-slate-50">
-          <div class="flex flex-row justify-center border-b border-slate-300">
-            <div
-              class="w-full flex flex-col gap-1 justify-center items-center border-r border-slate-300 px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">Ads-ready site</span>
-              <span class="text-xs text-slate-400">Een website die is geoptimaliseerd voor Meta/Google Ads.</span>
+    <section class="border-y border-slate-200 bg-white py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <div class="min-w-0 space-y-6">
+            <div class="max-w-xl" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Technologie & fundament</p>
+              <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">De stack achter een website die snel laadt,
+                vertrouwen uitstraalt en mee kan groeien.</h2>
+              <p class="mt-4 text-lg text-slate-600">
+                Achter een sterke website zit een technisch fundament dat rust geeft. Daarom kiezen we voor bewezen
+                tooling die snelheid,
+                onderhoud en uitbreiding eenvoudig houdt — zonder onnodige complexiteit.
+              </p>
             </div>
-            <div
-              class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">Extra klanten</span>
-              <span class="text-xs text-slate-400">Een website die klanten aantrekt en conversies verhoogt.</span>
+
+            <article class="rounded-[1.5rem] border border-blue-200 bg-blue-50 p-5 sm:p-6" data-reveal>
+              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Wat je hiervan merkt</p>
+              <p class="mt-3 text-sm leading-7 text-slate-700">
+                Geen trage, logge website, maar een basis die snel live kan, professioneel aanvoelt en klaar is voor
+                extra pagina’s,
+                campagnes en optimalisaties.
+              </p>
+            </article>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <article class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4" data-reveal>
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-blue-500">Snel live</p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Strakke tooling en korte iteraties zorgen voor een
+                  vlotte livegang.</p>
+              </article>
+              <article class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4" data-reveal>
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-blue-500">SEO-ready</p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Schone code, performance en semantiek als sterke
+                  technische basis.</p>
+              </article>
+              <article class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4" data-reveal>
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-blue-500">Schaalbaar</p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Eenvoudig uitbreiden met extra pagina’s, formulieren,
+                  tracking of campagnes.</p>
+              </article>
+              <article class="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4" data-reveal>
+                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-blue-500">Onderhoudsvriendelijk
+                </p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Een nette basis zonder onnodige lock-in of technische
+                  ballast.</p>
+              </article>
             </div>
           </div>
-          <div class="flex flex-row justify-center">
-            <div
-              class="w-full flex flex-col gap-1 justify-center items-center border-r border-slate-300 px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">Mobile-first</span>
-              <span class="text-xs text-slate-400">Ontworpen voor mobiel, omdat daar het verkeer zit.</span>
-            </div>
-            <div
-              class="w-full flex flex-col gap-1 justify-center items-center px-3 py-2 text-center text-xs font-medium">
-              <span class="text-base font-extrabold text-slate-900">Bouw een merk</span>
-              <span class="text-xs text-slate-400">Wij zorgen dat jouw merk online opvalt binnen je markt.</span>
+
+          <div
+            class="min-w-0 overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-blue-100/80 backdrop-blur sm:p-5"
+            data-brand-carousel data-reveal aria-label="Merken en technologieën waarmee Rice Web ontwikkelt"
+            tabindex="0">
+            <div class="relative">
+              <div
+                class="flex flex-col gap-4 border-b border-slate-200 pb-4 sm:flex-row sm:items-end sm:justify-between">
+                <div class="max-w-md">
+                  <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Stack waarmee we bouwen</p>
+                  <p class="mt-1 text-sm text-slate-600">Van frontend tot deployment — gekozen voor performance,
+                    betrouwbaarheid en een schaalbare basis.</p>
+                </div>
+
+                <div class="flex items-center gap-2 self-start sm:self-auto">
+                  <button type="button"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                    data-brand-prev aria-label="Vorige merk">
+                    <span aria-hidden="true">←</span>
+                  </button>
+                  <button type="button"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                    data-brand-next aria-label="Volgende merk">
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-5 overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-out will-change-transform" data-brand-track>
+                  <article class="min-w-full px-1 py-2 sm:px-2 sm:py-3" data-brand-slide data-brand-name="Node.js"
+                    data-brand-summary="Backend en tooling die razendsnel meeschalen.">
+                    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-center">
+                      <div class="order-2 lg:order-1">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Backend &
+                          tooling</p>
+                        <p class="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">Node.js</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-600">Backend en tooling die razendsnel meeschalen.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">API-ready</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Schaalbaar</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Stabiel</span>
+                        </div>
+                      </div>
+                      <div
+                        class="order-1 mx-auto flex w-full max-w-[11rem] flex-col items-center rounded-[1.5rem] border border-blue-100 bg-blue-50 p-4 text-center lg:order-2">
+                        <div
+                          class="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-900/30">
+                          <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" loading="eager"
+                            class="h-full w-full" />
+                        </div>
+                        <span
+                          class="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Performance</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="min-w-full px-1 py-2 sm:px-2 sm:py-3" data-brand-slide data-brand-name="Tailwind CSS"
+                    data-brand-summary="Designsystemen die snel en consistent leveren.">
+                    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-center">
+                      <div class="order-2 lg:order-1">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">UI & design
+                          system</p>
+                        <p class="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">Tailwind CSS</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-600">Designsystemen die snel en consistent leveren.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Consistent</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Responsive</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Snel
+                            itereren</span>
+                        </div>
+                      </div>
+                      <div
+                        class="order-1 mx-auto flex w-full max-w-[11rem] flex-col items-center rounded-[1.5rem] border border-blue-100 bg-blue-50 p-4 text-center lg:order-2">
+                        <div
+                          class="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-900/30">
+                          <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="lazy"
+                            decoding="async" class="h-full w-full" />
+                        </div>
+                        <span class="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">UI
+                          snelheid</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="min-w-full px-1 py-2 sm:px-2 sm:py-3" data-brand-slide data-brand-name="GitHub"
+                    data-brand-summary="Versiebeheer en workflows voor betrouwbaarheid.">
+                    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-center">
+                      <div class="order-2 lg:order-1">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Versiebeheer
+                        </p>
+                        <p class="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">GitHub</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-600">Versiebeheer en workflows voor betrouwbaarheid.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Samenwerken</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Deploy flow</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Transparant</span>
+                        </div>
+                      </div>
+                      <div
+                        class="order-1 mx-auto flex w-full max-w-[11rem] flex-col items-center rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 text-center lg:order-2">
+                        <div
+                          class="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-900/30">
+                          <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" loading="lazy"
+                            decoding="async" class="h-full w-full" />
+                        </div>
+                        <span
+                          class="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-slate-700">Workflow</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="min-w-full px-1 py-2 sm:px-2 sm:py-3" data-brand-slide data-brand-name="Cloudflare"
+                    data-brand-summary="Snelle levering, security en edge performance.">
+                    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-center">
+                      <div class="order-2 lg:order-1">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Delivery &
+                          security</p>
+                        <p class="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">Cloudflare</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-600">Snelle levering, security en edge performance.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">CDN</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Edge caching</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Bescherming</span>
+                        </div>
+                      </div>
+                      <div
+                        class="order-1 mx-auto flex w-full max-w-[11rem] flex-col items-center rounded-[1.5rem] border border-blue-100 bg-blue-50 p-4 text-center lg:order-2">
+                        <div
+                          class="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-900/30">
+                          <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" loading="lazy"
+                            decoding="async" class="h-full w-full" />
+                        </div>
+                        <span
+                          class="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Security</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="min-w-full px-1 py-2 sm:px-2 sm:py-3" data-brand-slide data-brand-name="JavaScript"
+                    data-brand-summary="Interactieve websites met een strakke gebruikersflow.">
+                    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-center">
+                      <div class="order-2 lg:order-1">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Interactie &
+                          UX</p>
+                        <p class="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">JavaScript</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-600">Interactieve websites met een strakke
+                          gebruikersflow.</p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">UX</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Conversie</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Dynamisch</span>
+                        </div>
+                      </div>
+                      <div
+                        class="order-1 mx-auto flex w-full max-w-[11rem] flex-col items-center rounded-[1.5rem] border border-blue-100 bg-blue-50 p-4 text-center lg:order-2">
+                        <div
+                          class="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-900/30">
+                          <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" loading="lazy"
+                            decoding="async" class="h-full w-full" />
+                        </div>
+                        <span
+                          class="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Interactie</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="min-w-full px-1 py-2 sm:px-2 sm:py-3" data-brand-slide data-brand-name="Vite"
+                    data-brand-summary="Moderne build tooling voor supersnelle ontwikkelsnelheid.">
+                    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-center">
+                      <div class="order-2 lg:order-1">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Build tooling
+                        </p>
+                        <p class="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">Vite</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-600">Moderne build tooling voor supersnelle
+                          ontwikkelsnelheid.</p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Snelle
+                            builds</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">DX</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Modern</span>
+                        </div>
+                      </div>
+                      <div
+                        class="order-1 mx-auto flex w-full max-w-[11rem] flex-col items-center rounded-[1.5rem] border border-blue-100 bg-blue-50 p-4 text-center lg:order-2">
+                        <div
+                          class="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-900/30">
+                          <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" loading="lazy" decoding="async"
+                            class="h-full w-full" />
+                        </div>
+                        <span
+                          class="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Tooling</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="min-w-full px-1 py-2 sm:px-2 sm:py-3" data-brand-slide data-brand-name="HTML5"
+                    data-brand-summary="Semantische basis die SEO en toegankelijkheid versterkt.">
+                    <div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_11rem] lg:items-center">
+                      <div class="order-2 lg:order-1">
+                        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">SEO fundament
+                        </p>
+                        <p class="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">HTML5</p>
+                        <p class="mt-2 text-sm leading-7 text-slate-600">Semantische basis die SEO en toegankelijkheid
+                          versterkt.</p>
+                        <div class="mt-4 flex flex-wrap gap-2 text-xs text-slate-600">
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">SEO</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Toegankelijk</span>
+                          <span class="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">Semantisch</span>
+                        </div>
+                      </div>
+                      <div
+                        class="order-1 mx-auto flex w-full max-w-[11rem] flex-col items-center rounded-[1.5rem] border border-blue-100 bg-blue-50 p-4 text-center lg:order-2">
+                        <div
+                          class="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/95 p-4 shadow-lg shadow-slate-900/30">
+                          <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="lazy"
+                            decoding="async" class="h-full w-full" />
+                        </div>
+                        <span
+                          class="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue-500">Fundament</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div class="mt-5 flex gap-2 overflow-x-auto pb-2 sm:flex-wrap" data-brand-dots
+                aria-label="Carousel navigatie">
+                <button type="button"
+                  class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                  data-brand-dot aria-label="Toon Node.js">
+                  <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" class="h-4 w-4" aria-hidden="true" />
+                  <span>Node.js</span>
+                </button>
+                <button type="button"
+                  class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                  data-brand-dot aria-label="Toon Tailwind CSS">
+                  <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="" class="h-4 w-4" aria-hidden="true" />
+                  <span>Tailwind CSS</span>
+                </button>
+                <button type="button"
+                  class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                  data-brand-dot aria-label="Toon GitHub">
+                  <img src="https://cdn.simpleicons.org/github/181717" alt="" class="h-4 w-4" aria-hidden="true" />
+                  <span>GitHub</span>
+                </button>
+                <button type="button"
+                  class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                  data-brand-dot aria-label="Toon Cloudflare">
+                  <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="" class="h-4 w-4" aria-hidden="true" />
+                  <span>Cloudflare</span>
+                </button>
+                <button type="button"
+                  class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                  data-brand-dot aria-label="Toon JavaScript">
+                  <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" class="h-4 w-4" aria-hidden="true" />
+                  <span>JavaScript</span>
+                </button>
+                <button type="button"
+                  class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                  data-brand-dot aria-label="Toon Vite">
+                  <img src="https://cdn.simpleicons.org/vite/646CFF" alt="" class="h-4 w-4" aria-hidden="true" />
+                  <span>Vite</span>
+                </button>
+                <button type="button"
+                  class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+                  data-brand-dot aria-label="Toon HTML5">
+                  <img src="https://cdn.simpleicons.org/html5/E34F26" alt="" class="h-4 w-4" aria-hidden="true" />
+                  <span>HTML5</span>
+                </button>
+              </div>
+
+              <div class="mt-4 grid gap-2 text-xs text-slate-500 sm:grid-cols-[1fr_auto] sm:items-center">
+                <p aria-live="polite" data-brand-status>Node.js · Backend en tooling die razendsnel meeschalen.</p>
+                <p class="font-semibold text-slate-700" data-brand-counter>01 / 07</p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="flex flex-col gap-3 lg:gap-5 w-full">
-          <p class="mt-8 lg:mt-12 text-center text-sm font-medium text-slate-500">
-            Wij ontwikkelen met moderne technologieën van wereldwijde platforms.
+    <section class="py-20 sm:py-24" id="diensten">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl" data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Diensten</p>
+            <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Geen losse website. Wel een complete
+              groeibasis.</h2>
+            <p class="mt-4 text-lg text-slate-600">
+              Van een sterke single page tot een premium site met maximaal 10 pagina’s, UX/UI, SEO en CRO. Elk traject
+              start bij je doel,
+              niet bij een template.
+            </p>
+          </div>
+
+          <a href="/diensten"
+            class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+            data-reveal>
+            Bekijk alle diensten
+          </a>
+        </div>
+
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">Ontwikkeling</p>
+            <h3 class="mt-2 text-xl font-bold text-slate-900">Van compact tot premium</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Lean single pages vanaf €500, schaalbare 3- en 5-pagers en premium websites tot 10 pagina’s vanaf €1.800.
+            </p>
+          </article>
+
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">UX/UI & copy</p>
+            <h3 class="mt-2 text-xl font-bold text-slate-900">Meer dan mooi</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Strakke interfaces, slimme copy en CRO-fixes die bezoekers sneller richting contact of offerte sturen.
+            </p>
+          </article>
+
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">SEO, SEA & media buying</p>
+            <h3 class="mt-2 text-xl font-bold text-slate-900">Meer relevante traffic</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Basis of uitgebreide SEO, performance optimalisatie en advertentiebudget slimmer inzetten voor meetbare
+              groei.
+            </p>
+          </article>
+
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">Onderhoud</p>
+            <h3 class="mt-2 text-xl font-bold text-slate-900">Rust na livegang</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Van essential support tot enterprise support. Updates, monitoring en doorontwikkeling zonder losse
+              verrassingen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50/80 py-20 sm:py-24" id="werkwijze">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl" data-reveal>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Werkwijze</p>
+          <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Snel, scherp en gebouwd om te verkopen.</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            Geen eindeloze trajecten. Wel een duidelijke aanpak waarmee je site sneller live staat en beter presteert
+            vanaf dag één.
           </p>
-
-          <div class="marquee-shell z-20 w-full lg:mx-auto">
-            <div class="marquee relative" aria-label="Technologieën waarmee we werken">
-              <div class="marquee__track overflow-hidden">
-
-                <ul class="marquee__content" aria-label="Technologie">
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" loading="eager"
-                      decoding="async" />
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="eager" decoding="async" />
-                  </li>
-                  </li>
-                </ul>
-
-                <ul class="marquee__content" aria-label="Technologie">
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" loading="eager"
-                      decoding="async" />
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" loading="eager" />
-                  </li>
-                  <li class="logo-tile">
-                    <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="eager" decoding="async" />
-                  </li>
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
 
-      <div class="-bottom-1 pointer-events-none absolute inset-x-0 z-10 w-full overflow-hidden leading-none"
-        aria-hidden="true">
-        <img class="h-full w-full -left-3 max-w-none object-cover text-white"
-          src="./assets/icons/mountains-secondary.svg" alt="">
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">01</p>
+            <h3 class="mt-3 text-xl font-bold text-slate-900">Positionering</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">We scherpen je aanbod, doelgroep en funnel aan vóór we gaan
+              ontwerpen.</p>
+          </article>
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">02</p>
+            <h3 class="mt-3 text-xl font-bold text-slate-900">UX/UI & content</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">We vertalen je propositie naar een premium interface met
+              focus op actie.</p>
+          </article>
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">03</p>
+            <h3 class="mt-3 text-xl font-bold text-slate-900">Build & optimalisatie</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">Snel, licht en future-proof. Inclusief performance,
+              formulieren en tracking.</p>
+          </article>
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <p class="text-sm font-semibold text-blue-500">04</p>
+            <h3 class="mt-3 text-xl font-bold text-slate-900">Launch & groei</h3>
+            <p class="mt-2 text-sm leading-7 text-slate-600">Daarna schalen we verder met SEO, SEA, CRO of structureel
+              onderhoud.</p>
+          </article>
+        </div>
+
+        <div class="mt-8" data-reveal>
+          <a href="/werkwijze"
+            class="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500">
+            Bekijk de volledige aanpak
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="werk" class="proof-work-section bg-[#edf8ff] relative scroll-mt-28 py-16 sm:py-20">
-      <div class="proof-work-section__bg" aria-hidden="true"></div>
-      <div class="mx-auto w-full max-w-[100rem] px-4 sm:px-6 lg:px-20">
-        <div class="proof-carousel grid gap-8 lg:grid-cols-[minmax(17rem,25rem)_1fr] lg:items-start"
-          data-proof-carousel>
-          <div class="proof-carousel__intro flex flex-col gap-5">
-            <h2
-              class="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl [font-family:'Bricolage_Grotesque',sans-serif]">
-              Interesse? Bekijk ons werk.
+    <section class="py-20 sm:py-24" id="cases">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl" data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Case studies</p>
+            <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Resultaten die de investering rechtvaardigen.
             </h2>
-            <p class="text-sm lg:text-base leading-relaxed text-slate-600">
-              Geen standaardprojecten, wel maatwerk dat werkt. Van groei in leads tot merken die blijven plakken:
-              we maken goed werk van iedere ambitie.
+            <p class="mt-4 text-lg text-slate-600">
+              Mooie websites zijn het begin. De echte winst zit in betere leadkwaliteit, meer aanvragen en een sterkere
+              online positie.
             </p>
-            <div class="mt-1 flex justify-between md:justify-start items-center gap-3">
-              <div class="flex gap-2">
-                <button type="button" class="proof-carousel__nav-btn" data-proof-prev aria-label="Vorige case">
-                  <span aria-hidden="true">&larr;</span>
-                </button>
-                <button type="button" class="proof-carousel__nav-btn" data-proof-next aria-label="Volgende case">
-                  <span aria-hidden="true">&rarr;</span>
-                </button>
-              </div>
-              <a href="#contact"
-                class="btn btn-secondary bg-transparent ml-2 rounded-full px-6 py-3 text-xs hover:bg-transparent">
-                Neem contact op
-              </a>
+          </div>
+
+          <a href="/cases"
+            class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500"
+            data-reveal>
+            Meer cases bekijken
+          </a>
+        </div>
+
+        <div class="mt-10 grid gap-4 lg:grid-cols-3">
+          <article class="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <div class="flex items-center justify-between gap-4">
+              <p class="text-sm font-semibold text-blue-500">Installatiebedrijf</p>
+              <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-500">+37% leads</span>
+            </div>
+            <h3 class="mt-4 text-2xl font-bold text-slate-900">Van verouderde uitstraling naar een site die verkoopt.
+            </h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Nieuwe positionering, snellere pagina’s en heldere CTA-structuur zorgden voor meer serieuze
+              offerte-aanvragen binnen 90 dagen.
+            </p>
+          </article>
+
+          <article class="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <div class="flex items-center justify-between gap-4">
+              <p class="text-sm font-semibold text-blue-500">Zakelijke dienstverlening</p>
+              <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-500">2.4x
+                leadkwaliteit</span>
+            </div>
+            <h3 class="mt-4 text-2xl font-bold text-slate-900">Meer vertrouwen aan de voorkant, minder frictie in de
+              funnel.</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Met betere copy, slimmere contactmomenten en CRO-aanpassingen werd het aantal relevante gesprekken
+              merkbaar hoger.
+            </p>
+          </article>
+
+          <article class="rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <div class="flex items-center justify-between gap-4">
+              <p class="text-sm font-semibold text-blue-500">Campagne landing pages</p>
+              <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-500">-42% CPC</span>
+            </div>
+            <h3 class="mt-4 text-2xl font-bold text-slate-900">Sterkere landingspagina’s, slimmere
+              advertentieprestaties.</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Door design, performance en message match te verbeteren daalden kosten per klik en steeg de conversiekans
+              per bezoeker.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50/80 py-20 sm:py-24" id="pricing">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Pricing / investering</p>
+            <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Niet de goedkoopste. Wel de slimste
+              investering als leads tellen.</h2>
+            <p class="mt-4 text-lg text-slate-600">
+              De juiste website betaalt zichzelf terug. Daarom framen we trajecten op impact: wat moet de site
+              opleveren, hoe snel kan dat,
+              en wat is daarvoor nodig?
+            </p>
+            <div class="mt-6 rounded-[1.5rem] border border-blue-200 bg-blue-50 p-5 text-sm text-slate-700">
+              Veel trajecten starten klein en groeien door met extra pagina’s, SEO, performance-optimalisatie,
+              copywriting of CRO.
             </div>
           </div>
 
-          <div class="proof-carousel__viewport py-4">
-            <div class="proof-carousel__track" data-proof-track>
-              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
-                aria-label="Bekijk projectdetails van Proper Beauty Salon" data-project-title="Proper Beauty Salon"
-                data-project-label="Beauty Salon Website" data-project-image="./assets/projects/project-01.png"
-                data-project-impact="Google Calendar boekingsformulier|Lokaal SEO-kanon|Stijging van 263% in conversies|Persoonlijke huisstijl met animaties"
-                data-project-story="Chelsea kwam bij ons voor een website die mooi is én echt klanten oplevert. Door een slimme funnel-opzet richting het boekingsformulier te 
-                creëren en haar website als SEO-kanon in te richten steeg het aantal conversies met een meetbare stijging van 263% in de eerste 3 maanden na livegang.">
-                <div class="proof-slide__media proof-slide__media--img-a">
-                  <div class="proof-slide__badge">Proper Beauty Salon</div>
-                </div>
-                <div class="proof-slide__metric">
-                  <p class="proof-slide__usp">263%</p>
-                  <p class="proof-slide__copy">Meer conversies met slim klikbudget</p>
-                </div>
-              </article>
+          <div class="grid gap-4 md:grid-cols-3" data-reveal>
+            <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
+              <p class="text-sm font-semibold text-blue-500">Start</p>
+              <h3 class="mt-2 text-xl font-bold text-slate-900">Voor snelle validatie</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Single page of compacte 3-pager voor een scherpe
+                propositie en directe actie.</p>
+            </article>
 
-              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
-                aria-label="Bekijk projectdetails van StudioIEKS" data-project-title="StudioIEKS"
-                data-project-label="Artiesten website" data-project-image="./assets/projects/project-02.png"
-                data-project-impact="Spotify & YouTube integraties|Custom animaties op het portrait| Strakke animaties over de gehele website|Gemiddelde orderwaarde groeide met 81%"
-                data-project-story="ST.van, de artiest achter StudioIEKS, wilde niet alleen een website die zijn muziek goed presenteert, maar ook een platform dat fans echt betrekt. 
-                Dit hebben wij kunnen ontwikkelen door Spotify en YouTube integraties te combineren met een visueel sterk design en animaties die de aandacht vasthouden.">
-                <div class="proof-slide__media proof-slide__media--img-b">
-                  <div class="proof-slide__badge">StudioIEKS</div>
-                </div>
-                <div class="proof-slide__metric">
-                  <p class="proof-slide__usp">+81%</p>
-                  <p class="proof-slide__copy">Hogere orderwaarde na CRO-aanpassingen</p>
-                </div>
-              </article>
+            <article class="rounded-[1.5rem] border border-blue-200 bg-blue-50 p-5 shadow-sm">
+              <p class="text-sm font-semibold text-blue-500">Growth</p>
+              <h3 class="mt-2 text-xl font-bold text-slate-900">Voor bedrijven in beweging</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-700">5 pagina’s, strategische UX, SEO-basis en een funnel die
+                beter converteert.</p>
+            </article>
 
-              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
-                aria-label="Bekijk projectdetails van Klimazon" data-project-title="Klimazon"
-                data-project-label="Onze bijdrage" data-project-image="./assets/projects/project-03.png"
-                data-project-impact="Funnel vereenvoudigd van eerste klik tot offerteformulier.|Advertentiegroepen gesplitst per dienst en regio.|Binnen 8 weken 2.9x meer offerte-aanvragen."
-                data-project-story="Het team wilde snel meer gekwalificeerde aanvragen zonder het budget fors op te schroeven. Met een strakkere pagina-opbouw en betere match tussen zoekterm en aanbod steeg de aanvraagkwaliteit direct.">
-                <div class="proof-slide__media proof-slide__media--img-c">
-                  <div class="proof-slide__badge">Klimazon</div>
-                </div>
-                <div class="proof-slide__metric">
-                  <p class="proof-slide__usp">2.9x</p>
-                  <p class="proof-slide__copy">Meer offerte-aanvragen in 8 weken</p>
-                </div>
-              </article>
-
-              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
-                aria-label="Bekijk projectdetails van Glamour by Tink" data-project-title="Glamour by Tink"
-                data-project-label="Resultaat van onze samenwerking"
-                data-project-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
-                data-project-impact="Merkstrategie vertaald naar een premium webconcept.|Maatwerk design + development in korte iteraties uitgerold.|Volledige livegang binnen 41 dagen."
-                data-project-story="De wens was een premium merkbeleving die direct vertrouwen uitstraalt. Door het proces strak te faseren en snel feedbackrondes te draaien stond er binnen zes weken een schaalbaar platform live.">
-                <div class="proof-slide__media proof-slide__media--img-d">
-                  <div class="proof-slide__badge">Glamour by Tink</div>
-                </div>
-                <div class="proof-slide__metric">
-                  <p class="proof-slide__usp">41 dagen</p>
-                  <p class="proof-slide__copy">Van kickoff tot livegang met maatwerk</p>
-                </div>
-              </article>
-
-              <article class="proof-slide" data-proof-slide tabindex="0" role="button"
-                aria-label="Bekijk projectdetails van Oottattattoo" data-project-title="Oottattattoo"
-                data-project-label="Dit hebben we gerealiseerd"
-                data-project-image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80"
-                data-project-impact="Nieuwe visuele stijl ontwikkeld die past bij de doelgroep.|Boekingsflow vereenvoudigd voor snellere afspraken.|Studio online sterker gepositioneerd als premium merk."
-                data-project-story="De oude site gaf het werk van de studio onvoldoende karakter. Met een visuele stijl die beter past bij de doelgroep en een duidelijke boekingsflow staat het merk nu sterker online.">
-                <div class="proof-slide__media proof-slide__media--img-e">
-                  <div class="proof-slide__badge">Oottattattoo</div>
-                </div>
-                <div class="proof-slide__metric">
-                  <p class="proof-slide__usp">41 dagen</p>
-                  <p class="proof-slide__copy">Van kickoff tot livegang met maatwerk</p>
-                </div>
-              </article>
-            </div>
+            <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
+              <p class="text-sm font-semibold text-blue-500">Premium</p>
+              <h3 class="mt-2 text-xl font-bold text-slate-900">Voor serieuze groei</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Tot 10 pagina’s, premium UI, content, CRO en performance
+                als complete lead engine.</p>
+            </article>
           </div>
         </div>
-        <div class="proof-cta w-full mt-10 lg:mt-12" data-reveal>
-          <div class="flex w-full justify-center gap-3 items-center">
-            <img class="proof-cta__avatar" src="./assets/portraits/maurice-van-dorst.png"
-              alt="Profielfoto van Rice Studio" loading="lazy" decoding="async" />
-            <p class="text-xs text-slate-400">
-              <span class="font-bold">Maurice van Dorst</span>
-              <span class="font-normal">— Creative Director</span>
+      </div>
+    </section>
+
+    <section class="py-20 sm:py-24" id="waarom-ons">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl" data-reveal>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Waarom ons</p>
+          <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Premium uitstraling is niet genoeg. De site
+            moet ook presteren.</h2>
+        </div>
+
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <h3 class="text-xl font-bold text-slate-900">Sinds 2014</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Ervaring in webdesign, conversie en online groei voor
+              MKB-bedrijven.</p>
+          </article>
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <h3 class="text-xl font-bold text-slate-900">Geen templates</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Elk ontwerp sluit aan op je merk, markt en gewenste
+              klantreis.</p>
+          </article>
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <h3 class="text-xl font-bold text-slate-900">Marketing-first</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">SEO, SEA, CRO en media buying zijn geen extraatjes maar
+              groeiknoppen.</p>
+          </article>
+          <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm" data-reveal>
+            <h3 class="text-xl font-bold text-slate-900">Future-proof</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Klaar voor extra pagina’s, campagnes, landingspagina’s en
+              schaalbare uitbreiding.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50/80 py-20 sm:py-24" id="support">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div data-reveal>
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Onderhoud & support</p>
+            <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Live is geen eindpunt. Het is waar groei
+              begint.</h2>
+            <p class="mt-4 text-lg text-slate-600">
+              Kies voor rust en continuïteit. Van een lichte essential formule vanaf €29 p/m tot enterprise support met
+              prioriteit,
+              monitoring en doorontwikkeling.
             </p>
           </div>
-          <div class="proof-cta__content">
-            <p class="proof-cta__text text-center max-w-2xl">
-              Benieuwd hoe wij jouw merk digitaal kunnen versterken?
-            </p>
-            <div class="w-full gap-2 sm:gap-3 flex flex-wrap justify-center">
-              <a href="#contact" class="btn btn-primary rounded-full text-xs md:text-sm text-nowrap px-5 py-4">
-                <img class="h-5 w-auto"
-                  src="./assets/icons/wave-hand.svg" alt="">
-                Laten we kennismaken
+
+          <div class="grid gap-4 md:grid-cols-2" data-reveal>
+            <article class="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm">
+              <h3 class="text-xl font-bold text-slate-900">Essential & Professional</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Voor updates, kleine wijzigingen en stabiele basiszorg
+                zonder losse onderhoudsstress.</p>
+            </article>
+            <article class="rounded-[1.5rem] border border-blue-200 bg-blue-50 p-5 shadow-sm">
+              <h3 class="text-xl font-bold text-slate-900">Business & Enterprise</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-700">Voor teams die willen opschalen met support,
+                optimalisatie en vaste ontwikkelcapaciteit.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 sm:py-24" id="faq">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center" data-reveal>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">FAQ</p>
+          <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Korte antwoorden voor snelle beslissers.</h2>
+        </div>
+
+        <div class="mt-10 space-y-3">
+          <article class="rounded-[1.25rem] border border-slate-200 bg-white shadow-sm" data-reveal>
+            <button type="button" class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              data-faq-button>
+              <span class="text-base font-semibold text-slate-900">Werken jullie met templates?</span>
+              <span class="text-blue-500" data-faq-icon>+</span>
+            </button>
+            <div class="hidden px-5 pb-5 text-sm leading-7 text-slate-600" data-faq-panel>
+              Nee. Elke site wordt maatwerk opgezet op basis van je positionering, doelen en gewenste funnel.
+            </div>
+          </article>
+
+          <article class="rounded-[1.25rem] border border-slate-200 bg-white shadow-sm" data-reveal>
+            <button type="button" class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              data-faq-button>
+              <span class="text-base font-semibold text-slate-900">Kunnen jullie ook SEO, advertenties en CRO
+                meenemen?</span>
+              <span class="text-blue-500" data-faq-icon>+</span>
+            </button>
+            <div class="hidden px-5 pb-5 text-sm leading-7 text-slate-600" data-faq-panel>
+              Ja. We koppelen webdesign aan SEO, SEA, CRO en media buying zodat je site niet alleen mooi is, maar ook
+              rendeert.
+            </div>
+          </article>
+
+          <article class="rounded-[1.25rem] border border-slate-200 bg-white shadow-sm" data-reveal>
+            <button type="button" class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              data-faq-button>
+              <span class="text-base font-semibold text-slate-900">Wat kost een website gemiddeld?</span>
+              <span class="text-blue-500" data-faq-icon>+</span>
+            </button>
+            <div class="hidden px-5 pb-5 text-sm leading-7 text-slate-600" data-faq-panel>
+              Dat hangt af van je scope. Een compacte site kan snel starten, terwijl een premium lead engine meer
+              inhoud, UX en optimalisatie vraagt.
+            </div>
+          </article>
+
+          <article class="rounded-[1.25rem] border border-slate-200 bg-white shadow-sm" data-reveal>
+            <button type="button" class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              data-faq-button>
+              <span class="text-base font-semibold text-slate-900">Hoe snel kunnen we live?</span>
+              <span class="text-blue-500" data-faq-icon>+</span>
+            </button>
+            <div class="hidden px-5 pb-5 text-sm leading-7 text-slate-600" data-faq-panel>
+              Compacte projecten gaan sneller live. Grotere trajecten plannen we strak in, maar we werken bewust met
+              beperkte plekken per maand.
+            </div>
+          </article>
+
+          <article class="rounded-[1.25rem] border border-slate-200 bg-white shadow-sm" data-reveal>
+            <button type="button" class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              data-faq-button>
+              <span class="text-base font-semibold text-slate-900">Is onderhoud verplicht?</span>
+              <span class="text-blue-500" data-faq-icon>+</span>
+            </button>
+            <div class="hidden px-5 pb-5 text-sm leading-7 text-slate-600" data-faq-panel>
+              Niet verplicht, wel slim. Zeker als je structureel wilt optimaliseren, veilig wilt blijven draaien en snel
+              wilt kunnen doorpakken.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-20 pt-6 sm:pb-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div
+          class="overflow-hidden rounded-[2rem] border border-blue-200 bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(239,246,255,0.96),rgba(219,234,254,0.92))] p-6 shadow-[0_24px_70px_rgba(59,130,246,0.14)] sm:p-8 lg:p-10"
+          data-reveal>
+          <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-blue-500">Klaar om serieus te groeien?
+              </p>
+              <h2 class="mt-3 text-3xl font-bold text-slate-600 sm:text-4xl">Dan is dit het moment om je website als
+                groeimotor neer te zetten.</h2>
+              <p class="mt-4 max-w-2xl text-lg text-slate-600">
+                We starten bewust maar een beperkt aantal trajecten tegelijk. Wil je een premium site die vertrouwen
+                uitstraalt en actie uitlokt?
+                Dan plannen we graag een eerste intake.
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-3 lg:items-end">
+              <a href="/contact"
+                class="inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-500">
+                Vraag een offerte aan
               </a>
-              <a href="#partners" class="btn btn-secondary rounded-full text-xs md:text-sm px-5 py-4">
-                <img class="h-5 w-auto"
-                  src="./assets/icons/handshake.svg" alt="">
-                Bekijk onze partners
+              <a href="/pricing"
+                class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-blue-200 hover:bg-blue-50 hover:text-blue-500">
+                Bekijk pricing
               </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="diensten" class="scroll-mt-28 border-b border-slate-200/80 bg-white pt-8 pb-16 sm:pb-32 sm:pt-16">
-      <div class="mx-auto w-full max-w-[100rem] px-4 sm:px-6 lg:px-20">
-        <div class="mb-10 w-full" data-reveal>
-          <h2
-            class="mt-3 w-full text-4xl text-center font-extrabold tracking-tight text-slate-950 sm:text-5xl [font-family:'Space_Grotesk',sans-serif]">
-            Onze diensten</h2>
-        </div>
-
-        <div class="flex flex-col justify-between md:flex-row gap-10 w-full">
-          <div class="flex flex-col w-full md:w-1/2 mx-auto">
-            <div class="flex flex-row-reverse gap-3 md:flex-row items-end">
-              <img class="w-12 h-12 max-w-none object-cover text-white" src="./assets/icons/laptop.svg" alt="">
-              <p
-                class="mt-3 w-full text-xl font-extrabold tracking-tight text-slate-950 sm:text-3xl [font-family:'Space_Grotesk',sans-serif]">
-                Technologie & web&shy;ontwikkeling
-              </p>
-            </div>
-            <div class="flex flex-col">
-              <button type="button" data-reveal data-service-card data-service-label="Standaard website ontwikkelen"
-                data-service-title="Snel online met een sterke basis?"
-                data-service-focus1="Wij bouwen een standaard website die professioneel oogt, snel laadt en direct vertrouwen uitstraalt."
-                data-service-focus2="Door te werken met een slimme structuur en bewezen bouwblokken staat jouw website snel live, zonder concessies op kwaliteit."
-                data-service-goal="Wij helpen ondernemers snel live te gaan met een betrouwbare website die klaar is voor groei."
-                data-service-items="Pagina-structuur en navigatie|Conversiegerichte teksten|Technische basis en snelheid|Onderhoud en doorontwikkeling"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
-                Standaard websites ontwikkelen
-              </button>
-              <button type="button" data-reveal data-service-card data-service-label="Maatwerk website ontwikkelen"
-                data-service-title="Een website die precies bij jouw merk past?"
-                data-service-focus1="Wij ontwikkelen een maatwerk website die volledig aansluit op jouw merk, doelgroep en manier van verkopen."
-                data-service-focus2="Door design, content en techniek vanaf de basis op jouw bedrijf af te stemmen ontstaat een site die onderscheid maakt en converteert."
-                data-service-goal="Wij bouwen websites op maat die jouw merk sterker positioneren en meer aanvragen opleveren."
-                data-service-items="Maatwerk ontwerp en opbouw|Unieke pagina templates|Integraties met je tools|Schaalbare technische basis"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
-                Maatwerk websites ontwikkelen
-              </button>
-              <button type="button" data-reveal data-service-card data-service-label="Standaard webshop ontwikkelen"
-                data-service-title="Snel starten met online verkoop?"
-                data-service-focus1="Wij zetten een standaard webshop voor je neer waarmee je direct professioneel producten kunt verkopen."
-                data-service-focus2="Door een duidelijke shopstructuur en geoptimaliseerde checkout verlaag je uitval en verhoog je het aantal bestellingen."
-                data-service-goal="Wij helpen bedrijven snel omzet te draaien met een webshop die gebruiksvriendelijk en schaalbaar is."
-                data-service-items="Shopinrichting en categorieen|Productpagina optimalisatie|Betaal- en verzendinstellingen|Metingen en basisoptimalisatie"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
-                Standaard webshops ontwikkelen
-              </button>
-              <button type="button" data-reveal data-service-card data-service-label="Maatwerk webshop ontwikkelen"
-                data-service-title="Meer uit jouw webshop halen met maatwerk?"
-                data-service-focus1="Wij bouwen een maatwerk webshop die perfect aansluit op jouw assortiment, processen en groeidoelen."
-                data-service-focus2="Door slimme flows en technische optimalisaties creeer je een shopervaring die beter converteert en makkelijker te beheren is."
-                data-service-goal="Wij realiseren webshops op maat die zorgen voor hogere conversie, sterkere klantbeleving en meer omzet."
-                data-service-items="Maatwerk funnel en checkout|Koppelingen met voorraad en CRM|Performance optimalisatie|Doorlopende support en groei"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
-                Maatwerk webshops ontwikkelen
-              </button>
-              <button type="button" data-reveal data-service-card data-service-label="Maatwerk web app ontwikkelen"
-                data-service-title="Interne processen slimmer digitaliseren?"
-                data-service-focus1="Wij ontwikkelen maatwerk web apps die handmatige processen vervangen en jouw team sneller laten werken."
-                data-service-focus2="Door functionaliteiten te bouwen rond jouw workflow ontstaat een stabiele applicatie die echt waarde toevoegt in de praktijk."
-                data-service-goal="Wij bouwen web apps die tijd besparen, fouten verminderen en je organisatie schaalbaar maken."
-                data-service-items="Functioneel ontwerp op maat|Gebruikersrollen en rechten|Koppelingen met bestaande systemen|Doorontwikkeling en onderhoud"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over website ontwikkeling">
-                Maatwerk web apps ontwikkelen
-              </button>
-            </div>
-          </div>
-
-          <div class="flex flex-col w-full md:w-1/2 mx-auto">
-            <div class="flex flex-row-reverse gap-3 md:flex-row items-end">
-              <img class="w-12 h-12 max-w-none object-cover text-white" src="./assets/icons/marketing.svg" alt="">
-              <p
-                class="mt-3 w-full text-xl font-extrabold tracking-tight text-slate-950 sm:text-3xl [font-family:'Space_Grotesk',sans-serif]">
-                Online marketing
-              </p>
-            </div>
-            <div class="flex flex-col">
-
-              <button type="button" data-reveal data-service-card data-service-label="Lokale SEO boosten"
-                data-service-title="Hoog scoren in jouw regio?"
-                data-service-focus1="Wij geven jouw onderneming een boost in lokale SEO om de zichtbaarheid in lokale zoekresultaten te vergroten."
-                data-service-focus2="Door jouw lokale seo te boosten verbeter je jouw online aanwezigheid in zoekopdrachten en scoor je hoger dan je concurrenten."
-                data-service-goal="Wij laten bedrijven hoger ranken in Google, Maps en lokale zoekopdrachten."
-                data-service-items="Regio's verwerken in jouw site|Google Business Profile optimaliseren|Lokale zoekwoordenstrategie|Lokale content en landingspagina’s"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over lokale SEO optimalisatie">
-                Lokale SEO boosten
-              </button>
-
-              <button type="button" data-reveal data-service-card data-service-label="Google Ads campagnes"
-                data-service-title="Direct aanvragen uit Google?"
-                data-service-focus1="Wij zetten Google Ads campagnes op die jouw bedrijf tonen op het moment dat potentiële klanten zoeken."
-                data-service-focus2="Door continu te sturen op zoekintentie, advertentieteksten en budget haal je meer clicks en betere leads uit je campagnes."
-                data-service-goal="Wij laten jouw bedrijf sneller groeien met Google Ads campagnes die resultaat opleveren."
-                data-service-items="Campagnestructuur en targeting|Zoekwoordonderzoek en advertentieteksten|Conversie-analyse & tracking|Kosten en rendement scherp bijhouden"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over Google Ads campagnes">
-                Google Ads campagnes
-              </button>
-
-              <button type="button" data-reveal data-service-card data-service-label="Meta Ads campagnes"
-                data-service-title="Groeien via Insta & Facebook?"
-                data-service-focus1="Wij bouwen Meta Ads campagnes die jouw merk onder de aandacht brengen bij de juiste mensen."
-                data-service-focus2="Door creatieve formats te testen en te sturen op data verhogen we je bereik, betrokkenheid en het aantal kwalitatieve leads."
-                data-service-goal="Wij helpen bedrijven op schaal groeien met Meta campagnes die opvallen en converteren."
-                data-service-items="Campagnestrategie en funnelopzet|Doelgroepsegmentatie en retargeting|Creatieve advertentieformats|Optimalisatie op leads en omzet"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over Meta Ads campagnes">
-                Meta Ads campagnes
-              </button>
-
-              <button type="button" data-reveal data-service-card data-service-label="SEO optimalisatie"
-                data-service-title="Organisch groeien in Google?"
-                data-service-focus1="Wij verbeteren jouw SEO zodat je website organisch groeit, en jij zonder extra moeite hoger scoort op relevante zoekwoorden in Google."
-                data-service-focus2="Door techniek, content en zoekintentie slim te combineren groeit jouw online positie vanzelf, zonder er extra moeite in te steken."
-                data-service-goal="Wij zorgen voor structurele SEO-groei waarmee je minder afhankelijk wordt van betaalde advertenties."
-                data-service-items="Technische SEO-audit en verbeterplan|Contentoptimalisatie per zoekintentie|Zoekwoordenstrategie en pagina-opbouw|Search Console analyse en monitoring"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over SEO optimalisatie">
-                SEO (zoekmachine) optimalisatie
-              </button>
-
-              <button type="button" data-reveal data-service-card data-service-label="GEO optimalisatie"
-                data-service-title="GEO optimalisatie"
-                data-service-focus1="Wij maken jouw website beter vindbaar in AI-zoekmachines en generatieve antwoorden zoals ChatGPT en Google AI."
-                data-service-focus2="Door content en structuur af te stemmen op hoe AI-systemen bronnen selecteren, vergroot je de kans dat jouw merk wordt genoemd."
-                data-service-goal="Wij helpen bedrijven zichtbaar te worden in het nieuwe zoeklandschap van AI-gedreven resultaten."
-                data-service-items="GEO-structuur en contentmapping|Structured data en entiteiten versterken|Antwoordgerichte contentopbouw|Autoriteit en bronvermeldingen opbouwen"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over GEO optimalisatie">
-                GEO (AI-zoekmachine) optimalisatie
-              </button>
-
-              <button type="button" data-reveal data-service-card data-service-label="Conversie optimalisatie"
-                data-service-title="Meer leads uit je huidige verkeer?"
-                data-service-focus1="Wij optimaliseren je website en funnel zodat meer bezoekers de stap zetten naar contact, aanvraag of aankoop."
-                data-service-focus2="Door gedrag te analyseren en gerichte verbeteringen door te voeren in UX, copy en call-to-actions stijgt je conversieratio merkbaar."
-                data-service-goal="Wij halen meer rendement uit bestaand verkeer door conversie stap voor stap te verhogen."
-                data-service-items="UX- en funnelanalyse|A/B-tests en hypothesevalidatie|Call-to-action en formulieroptimalisatie|Meten, rapporteren en doorverbeteren"
-                class="group text-sm md:text-base text-left border-b-[1px] border-slate-200 px-1 py-3 transition duration-300 hover:border-slate-300 hover:text-slate-400 opacity-0 translate-y-6"
-                aria-label="Bekijk details over conversie optimalisatie">
-                Conversie optimalisatie
-              </button>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
   </main>
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto grid w-full max-w-[100rem] gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
-      <div>
-        <h3 class="text-lg font-bold [font-family:'Space_Grotesk',sans-serif]">Rice Studio</h3>
-        <p class="mt-3 max-w-sm text-sm text-slate-600">Webdesign en website ontwikkeling in Assendelft. Van strategie
-          en build tot groei via SEO/SEA performance.</p>
-      </div>
-      <div>
-        <h4 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Snelle links</h4>
-        <div class="mt-3 flex flex-col gap-2 text-sm"><a href="#diensten"
-            class="text-slate-700 transition hover:text-slate-900">Diensten</a><a href="#werk"
-            class="text-slate-700 transition hover:text-slate-900">Werk</a><a href="#proces"
-            class="text-slate-700 transition hover:text-slate-900">Proces</a><a href="#contact"
-            class="text-slate-700 transition hover:text-slate-900">Contact</a></div>
-      </div>
-      <div>
-        <h4 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-500">Volg Rice Studio</h4>
-        <div class="mt-3 flex items-center gap-3"><a href="#" aria-label="LinkedIn"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"><svg
-              class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M6.94 8.5H3.56v12h3.38v-12zM5.25 3a1.96 1.96 0 100 3.92A1.96 1.96 0 005.25 3zM20.44 13.5c0-3.57-1.9-5.23-4.43-5.23-2.04 0-2.95 1.12-3.46 1.92V8.5H9.17v12h3.38v-6.7c0-1.76.33-3.47 2.51-3.47 2.15 0 2.18 2.01 2.18 3.58v6.59h3.38v-7z" />
-            </svg></a><a href="#" aria-label="Instagram"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"><svg
-              class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-              aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
-            </svg></a><a href="#" aria-label="Facebook"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"><svg
-              class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.6c0-.9.3-1.5 1.6-1.5h1.7V3.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v2.3H8v3.2h2.4V21h3.1z" />
-            </svg></a></div>
-      </div>
-    </div>
-    <div class="border-t border-slate-200">
-      <div
-        class="mx-auto flex w-full max-w-[100rem] flex-col items-center justify-between gap-3 px-4 py-5 text-sm text-slate-500 sm:flex-row sm:px-6 lg:px-8">
-        <p>&copy; <span id="year"></span> Rice Studio. Alle rechten voorbehouden.</p>
-        <p>Assendelft, Nederland</p>
+
+  <footer class="border-t border-slate-200 bg-white py-8">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <p>© <span id="year"></span> Rice Web. Maatwerk websites voor groeiend MKB.</p>
+      <div class="flex flex-wrap gap-4">
+        <a class="transition hover:text-blue-500" href="/diensten">Diensten</a>
+        <a class="transition hover:text-blue-500" href="/cases">Cases</a>
+        <a class="transition hover:text-blue-500" href="/pricing">Pricing</a>
+        <a class="transition hover:text-blue-500" href="/over-ons">Over ons</a>
+        <a class="transition hover:text-blue-500" href="/contact">Contact</a>
       </div>
     </div>
   </footer>
-  <button id="back-to-top" type="button" class="btn btn-primary btn-icon fixed bottom-4 right-4 z-40 hidden"
-    aria-label="Terug naar boven"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" aria-hidden="true">
-      <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg></button>
-  <div id="portfolio-modal" class="fixed inset-0 z-[60] hidden items-end justify-end bg-slate-950/60 sm:p-4"
-    role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div id="portfolio-modal-panel"
-      class="services-modal-panel w-full overflow-y-auto border-l border-slate-200 bg-[#edf8ff] p-6 pb-10 shadow-2xl sm:max-w-2xl sm:border sm:p-6">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <p id="modal-label" class="text-xs font-semibold uppercase tracking-[0.14em] text-blue-600">Wat wij hebben
-            betekend</p>
-          <h3 id="modal-title" class="mt-1 text-2xl font-bold text-slate-900 [font-family:'Space_Grotesk',sans-serif]">
-          </h3>
-        </div><button id="modal-close" type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          aria-label="Sluit projectdetails">X</button>
-      </div>
-      <div class="mt-5 overflow-hidden rounded-xl border border-slate-300/70 bg-white">
-        <img id="modal-image" src="" alt="" class="h-44 w-full object-cover sm:h-56" loading="lazy" decoding="async">
-      </div>
-      <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Het verhaal</p>
-      <p id="modal-story" class="mt-2 text-sm leading-relaxed text-slate-600"></p>
-      <ul id="modal-impact-list" class="mt-6 space-y-3"></ul>
-    </div>
-  </div>
-  <div id="services-modal" class="fixed inset-0 z-[60] hidden items-end justify-end bg-slate-950/60 sm:p-4"
-    role="dialog" aria-modal="true" aria-labelledby="services-modal-title">
-    <div id="services-modal-panel"
-      class="services-modal-panel w-full overflow-y-auto border-l border-slate-200 bg-[#edf8ff] p-6 pb-10 shadow-2xl sm:max-w-2xl sm:border sm:p-6">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <p id="services-modal-label" class="text-xs font-semibold uppercase tracking-[0.14em] text-blue-600"></p>
-          <h3 id="services-modal-title"
-            class="mt-1 text-2xl font-bold text-slate-900 [font-family:'Space_Grotesk',sans-serif]"></h3>
-        </div><button id="services-modal-close" type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-          aria-label="Sluit dienstdetails">X</button>
-      </div>
-      <div id="services-modal-focus" class="mt-4 text-sm leading-relaxed text-slate-600">
-        <p id="services-modal-focus-1"></p>
-        <p id="services-modal-focus-2" class="mt-2 hidden"></p>
-      </div>
-      <ul id="services-modal-list" class="mt-6 space-y-3"></ul>
-      <p id="services-modal-goal" class="mt-6 border-l-2 border-blue-300 pl-4 text-base leading-relaxed text-blue-900">
-      </p>
-    </div>
-  </div>
-  <script type="module" src="./js/main.js"></script>
-  <!--
-    Wat te vervangen:
-    - TODO telefoonnummer (LocalBusiness + contactsectie)
-    - TODO e-mailadres (LocalBusiness + contactsectie)
-    - TODO volledig adres + postcode
-    - OG URL en website URL naar definitieve domeinnaam
-    - Eventuele echte portfolio cases/reviews en social links
-  -->
 </body>
 
 </html>
