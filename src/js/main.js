@@ -1,4 +1,5 @@
 ﻿import { initBrandCarousel } from "./modules/brand-carousel.js";
+import { initMarquee } from "./modules/marquee.js";
 import { initYear } from "./modules/year.js";
 
 function initHeroVideo() {
@@ -173,4 +174,5 @@ initRevealAnimations();
 initFaq();
 initHeaderState();
 initHeroVideo();
+initMarquee();
 initBrandCarousel();
