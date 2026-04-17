@@ -161,6 +161,7 @@ function initHeaderState() {
   const header = document.querySelector("[data-site-header]");
   const headerShell = document.querySelector("[data-header-shell]");
   const headerTextTargets = [...document.querySelectorAll("[data-header-text]")];
+  const headerLogo = document.querySelector("[data-header-logo]");
 
   if (!header || !headerShell) {
     return;
@@ -182,6 +183,18 @@ function initHeaderState() {
       target.classList.toggle("text-black/80", compact);
       target.classList.toggle("text-[#bba0f9]", !compact);
     });
+
+    if (headerLogo instanceof HTMLImageElement) {
+      const defaultLogo = headerLogo.dataset.logoDefault;
+      const compactLogo = headerLogo.dataset.logoCompact;
+
+      headerLogo.classList.toggle("opacity-80", compact);
+      headerLogo.classList.toggle("opacity-100", !compact);
+
+      if (defaultLogo && compactLogo) {
+        headerLogo.src = compact ? compactLogo : defaultLogo;
+      }
+    }
   };
 
   const updateHeader = () => {
