@@ -866,6 +866,10 @@ video {
   min-height: calc(var(--viewport-height,100svh) - var(--header-height,0px));
 }
 
+.min-h-\[var\(--viewport-height\)\] {
+  min-height: var(--viewport-height);
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1393,6 +1397,10 @@ video {
 
 .pt-\[calc\(var\(--header-height\2c 0px\)\+0\.25rem\)\] {
   padding-top: calc(var(--header-height,0px) + 0.25rem);
+}
+
+.pt-\[var\(--header-height\)\] {
+  padding-top: var(--header-height);
 }
 
 .text-left {
@@ -1951,6 +1959,10 @@ video {
     min-height: calc(100svh - var(--header-height,0px));
   }
 
+  .md\:min-h-\[100svh\] {
+    min-height: 100svh;
+  }
+
   .md\:w-\[20rem\] {
     width: 20rem;
   }
@@ -1999,6 +2011,22 @@ video {
 
   .md\:pt-\[calc\(var\(--header-height\2c 0px\)\+2\.5rem\)\] {
     padding-top: calc(var(--header-height,0px) + 2.5rem);
+  }
+
+  .md\:pt-\[var\(--header-height\)\] {
+    padding-top: var(--header-height);
+  }
+
+  .md\:pt-\[calc\(var\(--header-height\2c 25px\)\)\] {
+    padding-top: calc(var(--header-height,25px));
+  }
+
+  .md\:pt-\[calc\(var\(--header-height\+25px\)\)\] {
+    padding-top: calc(var(--header-height+25px));
+  }
+
+  .md\:pt-\[calc\(var\(--header-height\)\+2\.5rem\)\] {
+    padding-top: calc(var(--header-height) + 2.5rem);
   }
 
   .md\:text-base {
