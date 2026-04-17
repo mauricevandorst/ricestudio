@@ -862,6 +862,10 @@ video {
   min-height: 100svh;
 }
 
+.min-h-\[calc\(var\(--viewport-height\2c 100svh\)-var\(--header-height\2c 0px\)\)\] {
+  min-height: calc(var(--viewport-height,100svh) - var(--header-height,0px));
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1941,6 +1945,10 @@ video {
 
   .md\:h-7 {
     height: 1.75rem;
+  }
+
+  .md\:min-h-\[calc\(100svh-var\(--header-height\2c 0px\)\)\] {
+    min-height: calc(100svh - var(--header-height,0px));
   }
 
   .md\:w-\[20rem\] {

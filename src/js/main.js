@@ -23,6 +23,10 @@ function initViewportMetrics() {
   const root = document.documentElement;
 
   const updateMetrics = () => {
+    const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
+
+    root.style.setProperty("--viewport-height", `${viewportHeight}px`);
+
     if (header) {
       root.style.setProperty("--header-height", `${header.offsetHeight}px`);
     }
