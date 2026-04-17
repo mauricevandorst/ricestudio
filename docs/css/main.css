@@ -1817,10 +1817,6 @@ video {
     display: none;
   }
 
-  .sm\:h-11 {
-    height: 2.75rem;
-  }
-
   .sm\:w-\[16rem\] {
     width: 16rem;
   }
@@ -1931,6 +1927,10 @@ video {
     display: none;
   }
 
+  .md\:h-7 {
+    height: 1.75rem;
+  }
+
   .md\:w-\[20rem\] {
     width: 20rem;
   }
@@ -1987,6 +1987,10 @@ video {
 
   .lg\:mt-4 {
     margin-top: 1rem;
+  }
+
+  .lg\:h-8 {
+    height: 2rem;
   }
 
   .lg\:w-\[25rem\] {
