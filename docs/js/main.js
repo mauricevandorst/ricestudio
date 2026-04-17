@@ -21,24 +21,8 @@ function initHeroVideo() {
 function initViewportMetrics() {
   const header = document.querySelector("[data-site-header]");
   const root = document.documentElement;
-  let stableViewportHeight = 0;
-  let lastViewportWidth = 0;
 
   const updateMetrics = () => {
-    const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
-    const viewportWidth = window.visualViewport?.width ?? window.innerWidth;
-    const widthChanged = Math.abs(viewportWidth - lastViewportWidth) > 2;
-
-    if (widthChanged || stableViewportHeight === 0) {
-      stableViewportHeight = viewportHeight;
-    } else {
-      stableViewportHeight = Math.max(stableViewportHeight, viewportHeight);
-    }
-
-    lastViewportWidth = viewportWidth;
-
-    root.style.setProperty("--viewport-height", `${stableViewportHeight}px`);
-
     if (header) {
       root.style.setProperty("--header-height", `${header.offsetHeight}px`);
     }
