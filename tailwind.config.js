@@ -6,6 +6,7 @@ module.exports = {
       colors: {
       },
       fontFamily: {
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
       keyframes: {
       },
