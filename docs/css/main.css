@@ -1383,6 +1383,14 @@ video {
   padding-top: 1.5rem;
 }
 
+.pt-\[calc\(var\(--header-height\2c 0px\)\+2rem\)\] {
+  padding-top: calc(var(--header-height,0px) + 2rem);
+}
+
+.pt-\[calc\(var\(--header-height\2c 0px\)\+0\.25rem\)\] {
+  padding-top: calc(var(--header-height,0px) + 0.25rem);
+}
+
 .text-left {
   text-align: left;
 }
@@ -1898,6 +1906,10 @@ video {
     padding-bottom: 6rem;
   }
 
+  .sm\:pt-8 {
+    padding-top: 2rem;
+  }
+
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1957,12 +1969,28 @@ video {
     align-items: center;
   }
 
+  .md\:justify-center {
+    justify-content: center;
+  }
+
   .md\:pb-8 {
     padding-bottom: 2rem;
   }
 
   .md\:pt-36 {
     padding-top: 9rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .md\:pt-\[calc\(var\(--header-height\2c 0px\)\+3rem\)\] {
+    padding-top: calc(var(--header-height,0px) + 3rem);
+  }
+
+  .md\:pt-\[calc\(var\(--header-height\2c 0px\)\+2\.5rem\)\] {
+    padding-top: calc(var(--header-height,0px) + 2.5rem);
   }
 
   .md\:text-base {
