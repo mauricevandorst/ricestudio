@@ -29,6 +29,12 @@ function initViewportMetrics() {
   };
 
   updateMetrics();
+
+  if (header && "ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(updateMetrics);
+    resizeObserver.observe(header);
+  }
+
   window.addEventListener("resize", updateMetrics, { passive: true });
   window.visualViewport?.addEventListener("resize", updateMetrics, { passive: true });
 }
@@ -153,18 +159,56 @@ function initFaq() {
 
 function initHeaderState() {
   const header = document.querySelector("[data-site-header]");
+  const headerShell = document.querySelector("[data-header-shell]");
+  const headerTextTargets = [...document.querySelectorAll("[data-header-text]")];
 
-  if (!header) {
+  if (!header || !headerShell) {
     return;
   }
 
-  const updateHeader = () => {
-    header.classList.toggle("shadow-lg", window.scrollY > 16);
-    header.classList.toggle("shadow-blue-200/70", window.scrollY > 16);
+  let isCompact = false;
+  let frameId = 0;
+
+  const applyState = (compact) => {
+    isCompact = compact;
+
+    headerShell.classList.toggle("py-0", compact);
+    headerShell.classList.toggle("py-3", !compact);
+    headerShell.classList.toggle("bg-white", compact);
+    headerShell.classList.toggle("shadow-lg", compact);
+    headerShell.classList.toggle("shadow-slate-900/10", compact);
+
+    headerTextTargets.forEach((target) => {
+      target.classList.toggle("text-black/80", compact);
+      target.classList.toggle("text-[#bba0f9]", !compact);
+    });
   };
 
-  updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
+  const updateHeader = () => {
+    const shouldBeCompact = window.scrollY > 8;
+
+    if (shouldBeCompact === isCompact) {
+      return;
+    }
+
+    applyState(shouldBeCompact);
+  };
+
+  applyState(window.scrollY > 8);
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (frameId) {
+        return;
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        frameId = 0;
+        updateHeader();
+      });
+    },
+    { passive: true },
+  );
 }
 
 initYear();

@@ -90,7 +90,7 @@
 		height: var(--logo-h);
 		width: auto;
 		max-width: 100%;
-		filter: grayscale(1);
+		filter: brightness(0) invert(1);
 		opacity: 0.78;
 		transition: filter 280ms ease, opacity 280ms ease, transform 280ms ease;
 	}
@@ -104,7 +104,7 @@
 
 	.logo-tile:hover img,
 	.logo-tile:focus-within img {
-		filter: grayscale(0);
+		filter: none;
 		opacity: 1;
 		transform: scale(1.03);
 	}
