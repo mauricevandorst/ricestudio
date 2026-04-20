@@ -6,6 +6,7 @@ module.exports = {
       colors: {
       },
       fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
         sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
       keyframes: {
