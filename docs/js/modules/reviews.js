@@ -3,6 +3,7 @@ export function initReviews() {
   const wall = root?.querySelector("[data-review-wall]");
   const triggers = root ? [...root.querySelectorAll("[data-review-trigger]")] : [];
   const card = root?.querySelector("[data-review-card]");
+  const closeButton = root?.querySelector("[data-review-card-close]");
   const name = root?.querySelector("[data-review-name-display]");
   const role = root?.querySelector("[data-review-role-display]");
   const quote = root?.querySelector("[data-review-quote-display]");
@@ -19,7 +20,7 @@ export function initReviews() {
     return `“${unwrappedValue}”`;
   };
 
-  if (!root || !wall || !triggers.length || !card || !name || !role || !quote) {
+  if (!root || !wall || !triggers.length || !card || !closeButton || !name || !role || !quote) {
     return;
   }
 
@@ -29,34 +30,44 @@ export function initReviews() {
 
   const clearReview = () => {
     triggers.forEach((button) => {
-      const avatar = getAvatarElement(button);
-
       button.setAttribute("aria-pressed", "false");
-      avatar.classList.remove("ring-[#bba0f9]");
-      avatar.classList.add("ring-slate-200");
     });
 
     root.style.paddingBottom = "0px";
     card.setAttribute("aria-hidden", "true");
-    card.classList.add("pointer-events-none", "invisible", "opacity-0", "-translate-x-3");
-    card.classList.remove("opacity-100", "translate-x-0");
+    card.classList.add("pointer-events-none", "invisible", "opacity-0", "-translate-y-3");
+    card.classList.remove("opacity-100", "translate-y-0");
   };
 
   const positionCard = (trigger) => {
     const rootRect = root.getBoundingClientRect();
     const wallRect = wall.getBoundingClientRect();
     const triggerRect = trigger.getBoundingClientRect();
-    const gap = 12;
+    const avatarRect = getAvatarElement(trigger).getBoundingClientRect();
+    const gap = 14;
+    const viewportPadding = 12;
+    const overlapOffset = Math.min(avatarRect.height * 0.7, 56);
 
     card.style.top = "0px";
     card.style.left = "0px";
 
     const cardRect = card.getBoundingClientRect();
+    const triggerCenter = avatarRect.left - rootRect.left + avatarRect.width / 2;
+    const minLeft = viewportPadding - rootRect.left;
+    const maxLeft = window.innerWidth - viewportPadding - rootRect.left - cardRect.width;
 
-    let left = triggerRect.left - rootRect.left;
-    let top = triggerRect.bottom - rootRect.top + gap;
+    let left = triggerCenter - cardRect.width / 2;
+    let top = avatarRect.top - rootRect.top - cardRect.height + overlapOffset;
 
-    left = Math.max(0, Math.min(left, rootRect.width - cardRect.width));
+    left = Math.max(minLeft, Math.min(left, maxLeft));
+
+    if (top < 0) {
+      top = avatarRect.top - rootRect.top + avatarRect.height / 2 - cardRect.height / 2;
+    }
+
+    if (top < 0) {
+      top = triggerRect.top - rootRect.top - cardRect.height + overlapOffset;
+    }
 
     card.style.left = `${left}px`;
     card.style.top = `${top}px`;
@@ -69,11 +80,8 @@ export function initReviews() {
   const updateReview = (trigger) => {
     triggers.forEach((button) => {
       const isActive = button === trigger;
-      const avatar = getAvatarElement(button);
 
       button.setAttribute("aria-pressed", String(isActive));
-      avatar.classList.toggle("ring-[#bba0f9]", isActive);
-      avatar.classList.toggle("ring-slate-200", !isActive);
     });
 
     name.textContent = trigger.dataset.reviewName ?? "";
@@ -81,8 +89,8 @@ export function initReviews() {
     quote.textContent = formatReviewQuote(trigger.dataset.reviewQuote ?? "");
 
     card.setAttribute("aria-hidden", "false");
-    card.classList.remove("pointer-events-none", "invisible", "opacity-0", "-translate-x-3");
-    card.classList.add("opacity-100", "translate-x-0");
+    card.classList.remove("pointer-events-none", "invisible", "opacity-0", "-translate-y-3");
+    card.classList.add("opacity-100", "translate-y-0");
     positionCard(trigger);
   };
 
@@ -96,14 +104,6 @@ export function initReviews() {
       }
 
       updateReview(trigger);
-    });
-
-    trigger.addEventListener("pointerleave", () => {
-      if (!desktopReviewHoverQuery.matches) {
-        return;
-      }
-
-      clearReview();
     });
 
     trigger.addEventListener("click", () => {
@@ -122,18 +122,24 @@ export function initReviews() {
     });
   });
 
-  root.addEventListener("focusout", (event) => {
-    const nextFocusedElement = event.relatedTarget;
-
-    if (nextFocusedElement instanceof Node && root.contains(nextFocusedElement)) {
-      return;
-    }
-
+  closeButton.addEventListener("click", () => {
     clearReview();
   });
 
-  root.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") {
+  document.addEventListener("pointerdown", (event) => {
+    const activeTrigger = triggers.find((trigger) => trigger.getAttribute("aria-pressed") === "true");
+
+    if (!activeTrigger) {
+      return;
+    }
+
+    const target = event.target;
+
+    if (!(target instanceof Node)) {
+      return;
+    }
+
+    if (card.contains(target) || activeTrigger.contains(target)) {
       return;
     }
 
@@ -146,11 +152,6 @@ export function initReviews() {
       const activeTrigger = triggers.find((trigger) => trigger.getAttribute("aria-pressed") === "true");
 
       if (!activeTrigger) {
-        return;
-      }
-
-      if (!desktopReviewHoverQuery.matches && document.activeElement !== activeTrigger) {
-        clearReview();
         return;
       }
 
