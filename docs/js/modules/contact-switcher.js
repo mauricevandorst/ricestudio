@@ -256,4 +256,14 @@ export function initContactSwitcher() {
 
   const defaultTab = tabs.find((tab) => tab.hasAttribute("data-contact-default")) ?? tabs[0];
   activateTab(defaultTab.dataset.contactTab);
+
+  document.querySelectorAll("[data-contact-open]").forEach((link) => {
+    link.addEventListener("click", () => {
+      const tabName = link.dataset.contactOpen;
+
+      if (tabName) {
+        activateTab(tabName);
+      }
+    });
+  });
 }

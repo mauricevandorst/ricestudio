@@ -30,7 +30,7 @@
   <header class="fixed inset-x-0 top-0 z-50 bg-transparent" data-site-header>
     <div class="bg-[#bba0f9] text-center text-xs font-regular text-black/80">
       <div
-        class="mx-auto flex max-w-7xl flex-row justify-center items-center gap-3 overflow-hidden px-4 py-1 sm:px-6 lg:px-8">
+        class="mx-auto flex flex-row justify-center items-center gap-3 overflow-hidden px-4 py-1 sm:max-w-7xl lg:px-8">
         <svg class="h-5 w-4 shrink-0 fill-current" viewBox="0 0 17 24" aria-hidden="true">
           <path
             d="M5.724 9.767s.523-1.244-.377-2.537C4.445 5.94 3.09 5.72 3.09 5.72s-.575 1.47.304 2.729c.878 1.259 2.329 1.318 2.329 1.318zM8.139 9.904s1.368-.486 1.833-1.95c.466-1.463-.52-2.696-.52-2.696s-1.227.611-1.705 2.113c-.478 1.501.392 2.533.392 2.533zM8.72 11.517c-.277 1.55.72 2.461.72 2.461s1.294-.661 1.564-2.171c.269-1.512-.87-2.605-.87-2.605s-1.136.764-1.413 2.315zM12.178 11.78s-1.06.87-1.19 2.438c-.131 1.572.946 2.383.946 2.383s1.224-.78 1.352-2.31c.127-1.529-1.108-2.511-1.108-2.511zM15.2 19.045s.95-1.1.631-2.601c-.32-1.502-1.786-2.086-1.786-2.086s-.764 1.138-.438 2.679c.328 1.54 1.594 2.008 1.594 2.008zM6.767 6.533s1.126-.745 1.093-2.319C7.828 2.64 6.824 1.706 6.824 1.706s-1.293.904-1.262 2.44c.032 1.534 1.205 2.387 1.205 2.387zM6.564 12.907s.132-1.343-1.109-2.311c-1.242-.969-2.6-.78-2.6-.78S2.74 11.39 3.95 12.334c1.21.946 2.614.573 2.614.573zM8.456 15.852s-.17-1.339-1.595-2.007c-1.426-.669-2.708-.183-2.708-.183s.237 1.561 1.626 2.213c1.39.65 2.677-.023 2.677-.023zM10.725 18.098s-.565-1.225-2.126-1.43c-1.563-.205-2.636.646-2.636.646s.698 1.416 2.22 1.617c1.521.2 2.542-.833 2.542-.833zM11.705 19.02c-1.575-.016-2.54.957-2.54.957s.862 1.322 2.396 1.34c1.536.016 2.426-1.13 2.426-1.13s-.707-1.15-2.282-1.166z" />
@@ -124,100 +124,123 @@
           </div>
 
           <button type="button"
-              class="ml-auto inline-flex h-11 w-11 items-center justify-center rounded-full text-[#bba0f9]transition-colors duration-300 md:hidden"
+            class="ml-auto inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full text-[#bba0f9] transition-colors duration-300 md:hidden"
             data-menu-button data-header-text aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="1.9" data-menu-open-icon>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="1.9" data-menu-open-icon>
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 6.75h18M8 12h13M3 17.25h18" />
             </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="1.9" data-menu-close-icon>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
-              </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="1.9" data-menu-close-icon>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+            </svg>
           </button>
         </div>
       </div>
     </div>
 
-      <div id="mobile-menu" class="fixed inset-0 z-[70] hidden md:hidden" data-mobile-menu>
-        <div class="absolute inset-0 bg-[#34343f]/92 backdrop-blur-md"></div>
-        <div class="relative flex min-h-full flex-col bg-[#34343f] px-4 pb-6 pt-5 text-white sm:px-5">
-          <div class="flex items-center justify-end gap-4">
-            <button type="button"
-              class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#bba0f9] shadow-sm backdrop-blur-sm transition hover:border-[#bba0f9]/40 hover:bg-white/10 hover:text-[#f9eaa0]"
-              data-menu-close-button aria-label="Sluit menu">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="1.8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
-              </svg>
-            </button>
-          </div>
+    <div id="mobile-menu" class="fixed inset-0 z-[70] hidden md:hidden" data-mobile-menu>
 
-          <div class="mt-6 flex flex-1 flex-col">
-            <nav class="space-y-2" aria-label="Mobiele navigatie">
-              <a class="flex items-center justify-between rounded-[1.4rem] border border-[#bba0f9]/20 bg-[#bba0f9]/12 px-4 py-4 text-[1.55rem] font-medium tracking-[-0.05em] text-white shadow-[0_18px_40px_rgba(17,24,39,0.28)]"
-                href="./#">
-                <span>Startpagina</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 15l6-6 6 6" />
-                </svg>
-              </a>
-              <a class="flex items-center justify-between rounded-[1.4rem] border border-transparent px-4 py-4 text-[1.55rem] font-medium tracking-[-0.05em] text-white/82 transition hover:border-[#bba0f9]/20 hover:bg-white/5 hover:text-[#f9eaa0]"
-                href="/diensten">
-                <span>Diensten</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
-                </svg>
-              </a>
-              <a class="flex items-center justify-between rounded-[1.4rem] border border-transparent px-4 py-4 text-[1.55rem] font-medium tracking-[-0.05em] text-white/82 transition hover:border-[#bba0f9]/20 hover:bg-white/5 hover:text-[#f9eaa0]"
-                href="/over-ons">
-                <span>Over ons</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
-                </svg>
-              </a>
-              <a class="flex items-center justify-between rounded-[1.4rem] border border-transparent px-4 py-4 text-[1.55rem] font-medium tracking-[-0.05em] text-white/82 transition hover:border-[#bba0f9]/20 hover:bg-white/5 hover:text-[#f9eaa0]"
-                href="/cases">
-                <span>Projecten</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
-                </svg>
-              </a>
-              <a class="flex items-center justify-between rounded-[1.4rem] border border-transparent px-4 py-4 text-[1.55rem] font-medium tracking-[-0.05em] text-white/82 transition hover:border-[#bba0f9]/20 hover:bg-white/5 hover:text-[#f9eaa0]"
-                href="#contact">
-                <span>Contact</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
-                </svg>
-              </a>
-            </nav>
+      <div class="absolute inset-0 bg-[#34343f]/95" data-mobile-menu-backdrop></div>
 
-            <a href="/pricing"
-              class="mt-8 block rounded-[1.6rem] border border-[#bba0f9]/20 bg-white/5 p-3 shadow-[0_18px_50px_rgba(15,23,42,0.22)] backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-[#f9eaa0]/40 hover:shadow-[0_24px_60px_rgba(15,23,42,0.28)]">
-              <div class="relative overflow-hidden rounded-[1.2rem]">
-                <img src="./assets/images/klimazon.jpg" alt="Partnership traject van Rice Web"
-                  class="h-40 w-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#34343f] via-[#34343f]/20 to-transparent"></div>
-                <div class="absolute inset-x-4 bottom-4">
-                  <span class="text-[1.7rem] font-black tracking-[-0.06em] text-[#bba0f9]">Rice Web</span>
-                </div>
-              </div>
-              <div class="mt-3 flex items-center justify-between gap-3 px-1">
-                <span class="text-lg font-medium tracking-[-0.04em] text-white">Ontdek Partnership+</span>
-                <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#bba0f9] text-black/80 transition group-hover:bg-[#f9eaa0]">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+      <div class="relative z-10 flex h-full flex-col" data-mobile-menu-container>
+        <div class="px-4 py-2 flex items-center justify-center gap-4 text-[13px]">
+          <a href="./#contact" data-contact-open="message"
+            class="inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
+            <i class="fa-solid fa-comment h-[0.8em] w-[0.8em] mb-[2px] shrink-0"></i>
+            Bericht versturen
+          </a>
+          <a href="./#contact" data-contact-open="call"
+            class="inline-flex items-center justify-center gap-2 rounded-full font-medium text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
+            <i class="fa-solid fa-phone h-[0.6em] w-[0.6em] mb-[5px] shrink-0"></i>
+            Plan een call
+          </a>
+        </div>
+
+        <div
+          class="relative -mb-16 h-[calc((var(--vh-locked,1dvh)*100)+80px)] [--tw-skew-y:-3deg] [transform:translate(var(--tw-translate-x),var(--tw-translate-y))_rotate(var(--tw-rotate))_skewX(var(--tw-skew-x))_skewY(var(--tw-skew-y))_scaleX(var(--tw-scale-x))_scaleY(var(--tw-scale-y))]">
+          <div class="h-full overflow-hidden rounded-tl-[2rem] rounded-tr-[2.75rem] bg-white shadow-2xl"
+            data-mobile-menu-panel>
+            <div
+              class="h-full overflow-y-auto px-3 pb-8 pt-3 [--tw-skew-y:3deg] [transform:translate(var(--tw-translate-x),var(--tw-translate-y))_rotate(var(--tw-rotate))_skewX(var(--tw-skew-x))_skewY(var(--tw-skew-y))_scaleX(var(--tw-scale-x))_scaleY(var(--tw-scale-y))]">
+              <div class="mb-5 flex justify-end" data-mobile-menu-item>
+                <button type="button"
+                  class="inline-flex h-10 w-10 touch-manipulation items-center justify-center rounded-full text-[#34343f] transition hover:bg-[#bba0f9]/10"
+                  data-menu-close aria-label="Menu sluiten">
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                   </svg>
-                </span>
+                </button>
               </div>
-            </a>
+              <nav class="flex flex-col gap-2">
+                <button type="button"
+                  class="inline-flex items-center justify-between rounded-lg bg-[#bba0f9]/15 px-4 py-2 text-xl font-medium text-[#34343f]"
+                  data-mobile-submenu-toggle data-mobile-menu-item aria-expanded="true"
+                  aria-controls="mobile-startpagina-submenu">
+                  <span>Startpagina</span>
+                  <svg class="h-5 w-5 rotate-180 transition-transform duration-200" data-mobile-submenu-icon
+                    viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <div id="mobile-startpagina-submenu" class="space-y-1 pl-2">
+                  <a href="#"
+                    class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
+                    data-mobile-menu-item>
+                    Diensten
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <a href="#"
+                    class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
+                    data-mobile-menu-item>
+                    Over ons
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <a href="#"
+                    class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
+                    data-mobile-menu-item>
+                    Projecten
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <a href="#"
+                    class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
+                    data-mobile-menu-item>
+                    Contact
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+              </nav>
+              <article class="mt-5 overflow-hidden rounded-[10px] bg-[#bba0f9]/15 p-2" data-mobile-menu-item>
+                <div class="relative h-40 overflow-hidden rounded-[3px]">
+                  <img src="./assets/images/oottat-tattoo.jpg" alt="Elektrische installatie in uitvoering"
+                    class="h-full w-full object-cover" />
+                  <div class="absolute inset-0 bg-[#34343f]/50" aria-hidden="true"></div>
+                  <p
+                    class="absolute inset-0 flex items-center justify-center text-center text-2xl font-brand font-extrabold text-[#f9eaa0]">
+                    Rice Partner</p>
+                </div>
+                <a href="#"
+                  class="mt-3 inline-flex w-full items-center justify-between px-2 pb-1 text-sm font-medium text-[#34343f] hover:text-[#bba0f9] transition-colors">
+                  Ontdek Partnership+
+                  <span class="opacity-50" aria-hidden="true">→</span>
+                </a>
+              </article>
+            </div>
           </div>
+        </div>
       </div>
     </div>
   </header>
@@ -265,7 +288,7 @@
 
             <div class="flex flex-col gap-4 md:items-center">
               <div class="group mt-10 flex items-center gap-2 sm:gap-4 lg:justify-center w-max">
-                <a href="#contact"
+                <a href="#contact" data-contact-open="call"
                   class="inline-flex items-center justify-center h-12 gap-3 rounded-xl bg-white px-5 text-sm font-semibold text-black shadow-[0_18px_60px_rgba(37,99,235,0.22)] transform-gpu transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-white/90 lg:text-base sm:flex-none sm:px-6 motion-safe:group-hover:-translate-x-0.5 motion-safe:group-focus-within:-translate-x-0.5">
                   <i class="fa-regular fa-calendar text-lg" aria-hidden="true"></i>
                   <span>Plan Een Call</span>
@@ -340,16 +363,16 @@
               </div>
             </div>
 
-            <div data-reveal class="flex mr-auto">
+            <div data-reveal class="flex mr-auto sm:mx-auto">
               <a href="#cases"
-                class="group mx-auto flex w-[225px] items-center justify-between rounded-xl bg-[#4a4a55]/90 px-6 py-3 text-base font-medium text-white transition-colors duration-300 ease-out hover:bg-[#bba0f9] hover:text-black/80 sm:w-[18rem] sm:px-8">
+                class="group mx-auto flex w-[225px] items-center justify-between rounded-xl bg-[#4a4a55]/90 px-6 py-3 text-base font-medium text-white transition-colors duration-300 ease-out hover:bg-[#bba0f9] hover:text-black/80 sm:w-[16rem] sm:px-8">
                 <span class="font-bold">Bekijk ons werk</span>
                 <span class="relative inline-flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden"
                   aria-hidden="true">
                   <img src="./assets/icons/arrow-down-white.svg" alt=""
-                    class="absolute inset-0 block h-7 w-7 opacity-100 transition duration-300 ease-out group-hover:rotate-[20deg] group-hover:opacity-0" />
+                    class="absolute inset-0 block h-7 w-7 opacity-100 transition duration-300 ease-out group-hover:-rotate-[20deg] group-hover:opacity-0" />
                   <img src="./assets/icons/arrow-down-dark.svg" alt=""
-                    class="absolute inset-0 block h-7 w-7 opacity-0 transition duration-300 ease-out group-hover:rotate-[20deg] group-hover:opacity-100" />
+                    class="absolute inset-0 block h-7 w-7 opacity-0 transition duration-300 ease-out group-hover:-rotate-[20deg] group-hover:opacity-100" />
                 </span>
               </a>
             </div>
@@ -402,8 +425,8 @@
 
           <div class="relative z-10 flex w-full flex-col justify-between gap-8 sm:gap-10">
             <div class="sm:w-1/2 text-[0.9rem] leading-5 text-[#bba0f9] font-medium sm:text-base lg:text-2xl">
-              <span class="text-white">Onze oplossingen bieden snelheid en performance.</span> Daarna monitoren wij met
-              gerichte tracking.
+              <span class="text-white">Onze oplossingen bieden snelheid en performance.</span> Daarna monitoren wij, en
+              regelen wij online advertenties.
             </div>
 
             <div class="flex flex-col gap-10 sm:gap-12">
@@ -472,6 +495,23 @@
             data-reveal>
             <div>
               <h3 class="max-w-[12rem] text-[1.8rem] font-black leading-[0.94] tracking-[-0.06em] text-slate-950">
+                Online Advertenties
+              </h3>
+              <p class="mt-4 text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
+                Wij verzorgen naast websites ook online advertenties via Google en social media. We zetten campagnes op,
+                beheren je budget en optimaliseren continu op wat klanten oplevert.
+              </p>
+            </div>
+            <div class="text-[1.75rem] text-slate-700">
+              <i class="fa-solid fa-chart-line" aria-hidden="true" style="color: #bba0f9;"></i>
+            </div>
+          </article>
+
+          <article
+            class="flex min-h-[300px] flex-col md:w-[calc(50%-0.25rem)] justify-between rounded-[2rem] bg-white px-5 py-6 shadow-sm sm:px-6 lg:basis-[calc(50%-0.25rem)] lg:px-7 lg:py-7"
+            data-reveal>
+            <div>
+              <h3 class="max-w-[12rem] text-[1.8rem] font-black leading-[0.94] tracking-[-0.06em] text-slate-950">
                 Custom UX/UI Design
               </h3>
               <p class="mt-4 text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
@@ -488,34 +528,16 @@
             class="flex min-h-[300px] flex-col md:w-[calc(50%-0.25rem)] justify-between rounded-[2rem] bg-white px-5 py-6 shadow-sm sm:px-6 lg:basis-[calc(50%-0.25rem)] lg:px-7 lg:py-7"
             data-reveal>
             <div>
-              <h3
-                class="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] font-black leading-[0.94] tracking-[-0.06em] text-slate-950">
+              <h3 class="max-w-[12rem] text-[1.8rem] font-black leading-[0.94] tracking-[-0.06em] text-slate-950">
                 Strategische Aanpak
               </h3>
               <p class="mt-4 text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
                 Voordat wij beginnen starten we altijd met een plan. Pas zodra de bedrijfsdoelen duidelijk zijn,
-                gaan wij dit vertalen naar een werkend ontwerp.
+                en de scope van het project is bepaald, gaan wij dit vertalen naar een weloverwogen ontwerp.
               </p>
             </div>
             <div class="text-[1.75rem] text-slate-700">
               <i class="fa-solid fa-compass-drafting" aria-hidden="true" style="color: #bba0f9;"></i>
-            </div>
-          </article>
-
-          <article
-            class="flex min-h-[300px] flex-col md:w-[calc(50%-0.25rem)] justify-between rounded-[2rem] bg-white px-5 py-6 shadow-sm sm:px-6 lg:basis-[calc(50%-0.25rem)] lg:px-7 lg:py-7"
-            data-reveal>
-            <div>
-              <h3 class="max-w-[14rem] text-[2rem] font-black leading-[0.94] tracking-[-0.06em] text-slate-950">
-                Performance & Schaalbaarheid
-              </h3>
-              <p class="mt-4 text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                Omdat onze websites met de hand geschreven zijn, garanderen wij een website die snel en optimaal werkt,
-                goed vindbaar is en met je bedrijf meegroeit.
-              </p>
-            </div>
-            <div class="text-[1.75rem] text-slate-700">
-              <i class="fa-solid fa-gauge-high" aria-hidden="true" style="color: #bba0f9;"></i>
             </div>
           </article>
         </div>
@@ -541,7 +563,7 @@
                 data-review-quote="Rice vertaalde onze positionering razendsnel naar een site die direct scherper verkoopt en veel serieuzere aanvragen oplevert."
                 aria-pressed="false">
                 <span
-                  class="relative h-20 w-20 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
+                  class="relative h-28 w-28 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
                   data-review-avatar>
                   <img src="./assets/images/guido.jpg" alt="Portret van Guido."
                     class="h-full w-full object-cover [overflow-clip-margin:unset]" loading="lazy" />
@@ -554,7 +576,7 @@
                 data-review-quote="De samenwerking was strak en snel, maar nooit stroef. Juist in details voelde je de senioriteit."
                 aria-pressed="false">
                 <span
-                  class="relative h-20 w-20 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
+                  class="relative h-28 w-28 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
                   data-review-avatar>
                   <img src="./assets/images/inti.jpg" alt="Portret van Inti."
                     class="h-full w-full object-cover [overflow-clip-margin:unset]" loading="lazy" />
@@ -567,7 +589,7 @@
                 data-review-quote="Rice herbouwde onze funnel slim en strak, waardoor we eindelijk veel betere leads kregen vanuit exact dezelfde doelgroep."
                 aria-pressed="false">
                 <span
-                  class="relative h-20 w-20 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
+                  class="relative h-28 w-28 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
                   data-review-avatar>
                   <img src="./assets/images/john-doe.jpg" alt="Portret van Boy."
                     class="h-full w-full object-cover [overflow-clip-margin:unset]" loading="lazy" />
@@ -581,7 +603,7 @@
                 data-review-quote="Van intake tot livegang voelde het als een senior intern team: snel, helder en zonder eindeloze correctierondes."
                 aria-pressed="false">
                 <span
-                  class="relative h-20 w-20 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
+                  class="relative h-28 w-28 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
                   data-review-avatar>
                   <img src="./assets/images/marissa.jpg" alt="Portret van Marissa."
                     class="h-full w-full object-cover [overflow-clip-margin:unset]" loading="lazy" />
@@ -595,7 +617,7 @@
                 data-review-quote="Ze ontwierpen geen losse pagina's, maar slimme beslismomenten. Daardoor voelt de site rustiger en overtuigender tegelijk."
                 aria-pressed="false">
                 <span
-                  class="relative h-20 w-20 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
+                  class="relative h-28 w-28 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
                   data-review-avatar>
                   <img src="./assets/images/petra.jpg" alt="Portret van Petra."
                     class="h-full w-full object-cover [overflow-clip-margin:unset]" loading="lazy" />
@@ -608,7 +630,7 @@
                 data-review-quote="De samenwerking was strak en snel, maar nooit stroef. Juist in details voelde je de senioriteit."
                 aria-pressed="false">
                 <span
-                  class="relative h-20 w-20 overflow-hidden rounded-full border-[4px] border-[#bba0f9] bg-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
+                  class="relative h-28 w-28 overflow-hidden rounded-full border-[4px] border-[#bba0f9] bg-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
                   data-review-avatar>
                   <img src="./assets/images/john-doe.jpg" alt="Portret van Chelsea."
                     class="h-full w-full object-cover [overflow-clip-margin:unset]" loading="lazy" />
@@ -630,28 +652,27 @@
                 </svg>
               </button>
               <p class="leading-none font-bold text-xs text-slate-500">
-                <span class="text-sm font-semibold text-slate-950" data-review-name-display>Alessio M.</span>
+                <span class="text-sm font-semibold text-slate-950" data-review-name-display>Maurice van D.</span>
                 <span class="mx-1"></span>
-                <span class="text-[#bba0f9]" data-review-role-display>Cloudtap99</span>
+                <span class="text-[#bba0f9]" data-review-role-display>Rice Web</span>
               </p>
               <p class="mt-2 font-roboto text-sm leading-5 text-slate-700" data-review-quote-display>
-                “Rice Web is een prettige samenwerkingspartner. Samen met Rice hebben wij diverse klanten
-                onze positionering razendsnel naar een site die direct scherper verkoopt en veel
-                serieuzere aanvragen oplevert.”
+                “Bij Rice Web maken we goede sites die snel werken. Het bedrijf schakelt snel, denkt met je mee en
+                levert wat er is afgesproken. Geen mooie praatjes, maar duidelijk werk waar je op kunt bouwen.”
               </p>
             </article>
           </div>
 
           <div class="flex w-full justify-center">
-            <a href="#contact"
+            <a href="#contact" data-contact-open="call"
               class="group inline-flex min-h-12 items-center justify-center gap-2 rounded-[1rem] bg-black/80 px-5 py-3 text-sm font-semibold text-white transition-colors duration-300 ease-out hover:bg-[#bba0f9] hover:text-slate-950 sm:text-base">
               <span>Plan Een Call</span>
               <span class="relative inline-flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden"
                 aria-hidden="true">
                 <img src="./assets/icons/arrow-down-white.svg" alt=""
-                  class="absolute inset-0 block h-6 w-6 rotate-90 scale-y-[-1] scale-x-[-1] opacity-100 transition duration-300 ease-out group-hover:rotate-[110deg] group-hover:opacity-0" />
+                  class="absolute inset-0 block h-6 w-6 opacity-100 transition duration-300 ease-out group-hover:-rotate-[20deg] group-hover:opacity-0" />
                 <img src="./assets/icons/arrow-down-dark.svg" alt=""
-                  class="absolute inset-0 block h-6 w-6 rotate-90 scale-y-[-1] scale-x-[-1] opacity-0 transition duration-300 ease-out group-hover:rotate-[110deg] group-hover:opacity-100" />
+                  class="absolute inset-0 block h-6 w-6 opacity-0 transition duration-300 ease-out group-hover:-rotate-[20deg] group-hover:opacity-100" />
               </span>
             </a>
           </div>
@@ -790,7 +811,7 @@
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
                   Dan starten we met de campagnes. We zetten gerichte campagnes op via Google Ads en Meta Ads Manager,
-                  gekoppeld aan tracking.
+                  en monitoren we de resultaten via gerichte tracking.
                 </p>
               </article>
 
@@ -803,8 +824,8 @@
                   Lancering & Groei
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Na livegang blijft alles actief doorontwikkelen. Gericht op stabiele groei via zowel organisch verkeer
-                  als verkeer vanuit campagnes.
+                  Na livegang blijft jouw website actief doorontwikkelen. Met onze strategische aanpak verzorgen wij
+                  groei via zowel organisch verkeer als verkeer vanuit online advertenties.
                 </p>
               </article>
 
@@ -938,8 +959,7 @@
                 </h2>
                 <p class="max-w-xl text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
                   Ben je op zoek naar een website, een redesign, helemaal opnieuw beginnen of heb je een ander
-                  project? Wij denken graag met je mee. Neem contact op voor een gratis introductiegesprek. Geen druk,
-                  gewoon een gefocust gesprek.
+                  project? Wij denken graag met je mee. Stuur ons een bericht, of plan een call in.
                 </p>
               </div>
             </div>
@@ -953,12 +973,16 @@
                 <i class="fa-solid fa-star text-sm" aria-hidden="true"></i>
               </div>
               <p class="mt-6 max-w-[28rem] text-sm leading-6 text-slate-800 sm:text-base">
-                Als marketingpartner werk ik regelmatig met klanten die hun website door Rice hebben laten bouwen.
-                Wat Rice bouwt sluit direct goed aan op strategische marketing. Fijne samenwerking en sterk werk.”
+                “Als partner van Rice werk ik regelmatig met websites die door hen gebouwd zijn. De creaties van Rice
+                zijn precies ingericht zodat wij strategische online ads kunnen inzetten.
+              </p>
+              <p class="mt-2 max-w-[28rem] text-sm leading-6 text-slate-800 sm:text-base">
+                Rice biedt mooie sites, die absoluut een goede basis vormen voor online groei.”
               </p>
               <div class="mt-8">
                 <p class="text-[1.35rem] font-black leading-none tracking-[-0.05em] text-slate-950">Rafael Bossto</p>
-                <p class="mt-2 text-sm leading-5 text-slate-700 sm:text-base">Marketing Partner, Media Buying Firma</p>
+                <p class="mt-2 text-sm leading-5 text-slate-700 sm:text-base">Marketing Partner <span
+                    class="mx-2">—</span><span class="text-slate-400">Bossto Media Buying</span></p>
               </div>
             </article>
           </div>
@@ -1128,10 +1152,10 @@
       class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
       <p>© <span id="year"></span> Rice Web. Maatwerk websites voor groeiend MKB.</p>
       <div class="flex flex-wrap gap-4">
-        <a class="transition hover:text-[#bba0f9]" href="/diensten">Diensten</a>
-        <a class="transition hover:text-[#bba0f9]" href="/cases">Cases</a>
-        <a class="transition hover:text-[#bba0f9]" href="/pricing">Pricing</a>
-        <a class="transition hover:text-[#bba0f9]" href="/over-ons">Over ons</a>
+        <a class="transition hover:text-[#bba0f9]" href="#">Diensten</a>
+        <a class="transition hover:text-[#bba0f9]" href="#">Cases</a>
+        <a class="transition hover:text-[#bba0f9]" href="#">Pricing</a>
+        <a class="transition hover:text-[#bba0f9]" href="#">Over ons</a>
         <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>
       </div>
     </div>

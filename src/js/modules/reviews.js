@@ -77,7 +77,7 @@ export function initReviews() {
     root.style.paddingBottom = `${requiredPadding}px`;
   };
 
-  const updateReview = (trigger) => {
+  const updateReview = (trigger, scrollToCard = false) => {
     triggers.forEach((button) => {
       const isActive = button === trigger;
 
@@ -92,6 +92,17 @@ export function initReviews() {
     card.classList.remove("pointer-events-none", "invisible", "opacity-0", "-translate-y-3");
     card.classList.add("opacity-100", "translate-y-0");
     positionCard(trigger);
+
+    if (scrollToCard) {
+      const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-height")) || 0;
+      const cardRect = card.getBoundingClientRect();
+      const isOutOfView = cardRect.bottom > window.innerHeight || cardRect.top < headerHeight;
+
+      if (isOutOfView) {
+        const targetY = window.scrollY + cardRect.top - headerHeight - 16;
+        window.scrollTo({ top: targetY, behavior: "smooth" });
+      }
+    }
   };
 
   card.classList.add("transform-gpu", "transition-all", "duration-300", "ease-out");
@@ -107,7 +118,7 @@ export function initReviews() {
     });
 
     trigger.addEventListener("click", () => {
-      updateReview(trigger);
+      updateReview(trigger, true);
     });
 
     trigger.addEventListener("focus", () => {
@@ -117,7 +128,7 @@ export function initReviews() {
     trigger.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        updateReview(trigger);
+        updateReview(trigger, true);
       }
     });
   });
