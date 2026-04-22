@@ -1,4 +1,34 @@
-const USE_FAKE_CONTACT_SUBMIT = true;
+const USE_FAKE_CONTACT_SUBMIT = false;
+const DUTCH_FORM_FIELD_NAMES = {
+  name: "Naam",
+  phone: "Telefoonnummer",
+  company: "Bedrijfsnaam",
+  email: "E-mailadres",
+  message: "Bericht",
+};
+
+function localizeFormDataFieldNames(formData) {
+  Object.entries(DUTCH_FORM_FIELD_NAMES).forEach(([originalName, dutchName]) => {
+    if (!formData.has(originalName)) {
+      return;
+    }
+
+    const values = formData.getAll(originalName);
+    formData.delete(originalName);
+
+    values.forEach((value) => {
+      formData.append(dutchName, value);
+    });
+  });
+}
+
+function fillEmptyFormDataValues(formData) {
+  for (const [name, value] of Array.from(formData.entries())) {
+    if (typeof value === "string" && value.trim() === "") {
+      formData.set(name, "(leeg)");
+    }
+  }
+}
 
 export function initContactSwitcher() {
   const root = document.querySelector("[data-contact-switcher]");
@@ -12,7 +42,6 @@ export function initContactSwitcher() {
   const messageForm = root.querySelector('form[action="https://api.web3forms.com/submit"]');
   const feedbackModal = root.querySelector("[data-contact-feedback]");
   const feedbackDialog = root.querySelector("[data-contact-feedback-dialog]");
-  const feedbackBadge = root.querySelector("[data-contact-feedback-badge]");
   const feedbackTitle = root.querySelector("#contact-feedback-title");
   const feedbackMessage = root.querySelector("[data-contact-feedback-message]");
   const feedbackCloseButtons = [
@@ -41,13 +70,9 @@ export function initContactSwitcher() {
     }
   };
 
-  const openFeedbackModal = ({ badge, title, message }) => {
+  const openFeedbackModal = ({ title, message }) => {
     if (!(feedbackModal instanceof HTMLElement) || !(feedbackDialog instanceof HTMLElement)) {
       return;
-    }
-
-    if (feedbackBadge instanceof HTMLElement) {
-      feedbackBadge.textContent = badge;
     }
 
     if (feedbackTitle instanceof HTMLElement) {
@@ -106,6 +131,14 @@ export function initContactSwitcher() {
       }
 
       const formData = new FormData(messageForm);
+      const replyToValue = formData.get("email");
+
+      if (typeof replyToValue === "string" && replyToValue.trim() !== "") {
+        formData.set("replyto", replyToValue.trim());
+      }
+
+  localizeFormDataFieldNames(formData);
+      fillEmptyFormDataValues(formData);
       const action = messageForm.getAttribute("action");
       const method = messageForm.getAttribute("method") ?? "POST";
 
@@ -122,9 +155,8 @@ export function initContactSwitcher() {
 
           messageForm.reset();
           openFeedbackModal({
-            badge: "Testmodus",
-            title: "Fake submit voltooid",
-            message: "Testmodus staat aan: het formulier is nep verstuurd en er is geen API-call gedaan.",
+            title: "Er is geen bericht verstuurd",
+            message: "De test-modus is ingeschakeld. Dit betekent dat het formulier niet is ingediend en er is geen e-mail verstuurd.",
           });
         } finally {
           if (submitButton instanceof HTMLButtonElement) {
@@ -138,7 +170,6 @@ export function initContactSwitcher() {
 
       if (!action) {
         openFeedbackModal({
-          badge: "Fout",
           title: "Verzenden niet mogelijk",
           message: "Het formulier kon niet worden verzonden. Probeer het later opnieuw.",
         });
@@ -164,9 +195,8 @@ export function initContactSwitcher() {
         if (response.ok && result.success) {
           messageForm.reset();
           openFeedbackModal({
-            badge: "Succes",
-            title: "Bericht verstuurd",
-            message: "Je bericht is succesvol verstuurd. We nemen snel contact met je op.",
+            title: "Bedankt voor je bericht!",
+            message: "Je bericht is verstuurd. We nemen snel contact met je op, vrijwel altijd binnen 1 werkdag.",
           });
           return;
         }
@@ -176,13 +206,11 @@ export function initContactSwitcher() {
           : "Het versturen van je bericht is niet gelukt. Probeer het opnieuw.";
 
         openFeedbackModal({
-          badge: "Fout",
           title: "Verzenden mislukt",
           message: errorMessage,
         });
       } catch {
         openFeedbackModal({
-          badge: "Fout",
           title: "Netwerkfout",
           message: "Er ging iets mis bij het versturen. Controleer je verbinding en probeer opnieuw.",
         });

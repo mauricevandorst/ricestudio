@@ -22,7 +22,7 @@
   <script type="module" src="./js/main.js" defer></script>
 </head>
 
-<body class="bg-slate-50 font-sans text-slate-900 antialiased selection:bg-blue-200 selection:text-slate-900">
+<body class="bg-slate-100 font-sans text-slate-900 antialiased selection:bg-blue-200 selection:text-slate-900">
   <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
     <div class="absolute inset-0 bg-black/80"></div>
   </div>
@@ -141,7 +141,7 @@
 
     <div id="mobile-menu" class="fixed inset-0 z-[70] hidden md:hidden" data-mobile-menu>
 
-      <div class="absolute inset-0 bg-[#34343f]/95" data-mobile-menu-backdrop></div>
+      <div class="absolute inset-0 bg-[#34343f]" data-mobile-menu-backdrop></div>
 
       <div class="relative z-10 flex h-full flex-col" data-mobile-menu-container>
         <div class="px-4 py-2 flex items-center justify-center gap-4 text-[13px]">
@@ -849,10 +849,10 @@
 
     <section class="bg-white py-3" id="cases">
       <div class="mx-auto max-w-7xl rounded-[2rem] px-4 py-8 sm:px-6 lg:px-8 lg:py-12 xl:px-10">
-        <div class="flex flex-col gap-16">
-          <div class="flex flex-col gap-4 lg:max-w-3xl" data-reveal>
+        <div class="flex flex-col gap-8 lg:gap-16">
+          <div class="flex flex-col gap-4 lg:w-full" data-reveal>
             <h2
-              class="text-[2.6rem] font-black leading-[0.9] tracking-[-0.05em] text-slate-950 sm:max-w-[30rem] sm:text-[4rem] lg:max-w-[38rem] lg:text-[4.75rem]">
+              class="text-[1.8rem] font-black leading-[0.9] tracking-[-0.05em] text-slate-950 sm:max-w-[30rem] sm:text-[3rem] lg:text-center lg:max-w-full lg:text-[4.75rem]">
               Ons recente werk
             </h2>
           </div>
@@ -973,11 +973,13 @@
                 <i class="fa-solid fa-star text-sm" aria-hidden="true"></i>
               </div>
               <p class="mt-6 max-w-[28rem] text-sm leading-6 text-slate-800 sm:text-base">
-                “Als partner van Rice werk ik regelmatig met websites die door hen gebouwd zijn. De creaties van Rice
-                zijn precies ingericht zodat wij strategische online ads kunnen inzetten.
+                “Als partner van Rice werk ik regelmatig met hun websites. De basis van de sites
+                zijn zo opgezet dat wij online advertenties en tracking snel en zonder technische
+                bottlenecks kunnen implementeren.
               </p>
               <p class="mt-2 max-w-[28rem] text-sm leading-6 text-slate-800 sm:text-base">
-                Rice biedt mooie sites, die absoluut een goede basis vormen voor online groei.”
+                Dit maakt het heel eenvoudig om campagnes te optimaliseren en te schalen. Een sterke basis voor online
+                groei.”
               </p>
               <div class="mt-8">
                 <p class="text-[1.35rem] font-black leading-none tracking-[-0.05em] text-slate-950">Rafael Bossto</p>
@@ -1012,9 +1014,9 @@
                 aria-labelledby="contact-tab-message">
                 <form class="grid gap-2 px-0 py-3 sm:py-4" action="https://api.web3forms.com/submit" method="POST"
                   data-reveal>
-                  <input type="hidden" name="access_key" value="e5363797-eb6e-4857-ab03-f5a2dc65c8f1" />
-                  <input type="hidden" name="subject" value="Nieuw contactformulier bericht via Rice Web" />
-                  <input type="hidden" name="from_name" value="Rice Web contactformulier" />
+                  <input type="hidden" name="access_key" value="5b98ad79-4ffd-4da5-a210-e242f77ed351" />
+                  <input type="hidden" name="subject" value="Nieuw bericht (contactformulier)" />
+                  <input type="hidden" name="from_name" value="Rice Web" />
                   <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
 
                   <label class="block px-0">
@@ -1024,7 +1026,7 @@
                       <span class="text-sm font-medium text-slate-950 sm:text-base">Wat is je naam? <span
                           class="text-rose-700">*</span></span>
                     </div>
-                    <input type="text" name="name" placeholder="Jan Jansen" autocomplete="name" required
+                    <input type="text" name="name" placeholder="Jan Jansen" autocomplete="off" required
                       class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
@@ -1034,7 +1036,7 @@
                         class="inline-flex h-8 min-w-10 items-center justify-center rounded-full border border-slate-300 px-2 text-xs font-medium text-slate-700">02</span>
                       <span class="text-sm font-medium text-slate-950 sm:text-base">Je telefoonnummer</span>
                     </div>
-                    <input type="tel" name="phone" placeholder="Telefoonnummer" autocomplete="tel"
+                    <input type="tel" name="phone" placeholder="Telefoonnummer" autocomplete="off"
                       class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
@@ -1044,7 +1046,7 @@
                         class="inline-flex h-8 min-w-10 items-center justify-center rounded-full border border-slate-300 px-2 text-xs font-medium text-slate-700">03</span>
                       <span class="text-sm font-medium text-slate-950 sm:text-base">Bedrijfsnaam</span>
                     </div>
-                    <input type="text" name="company" placeholder="Bedrijf" autocomplete="organization"
+                    <input type="text" name="company" placeholder="Bedrijf" autocomplete="off"
                       class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
@@ -1055,7 +1057,7 @@
                       <span class="text-sm font-medium text-slate-950 sm:text-base">Je e-mailadres <span
                           class="text-rose-700">*</span></span>
                     </div>
-                    <input type="email" name="email" placeholder="info@bedrijf.nl" autocomplete="email" required
+                    <input type="email" name="email" placeholder="info@bedrijf.nl" autocomplete="off" required
                       class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
@@ -1090,7 +1092,7 @@
 
               <div id="contact-panel-call" class="hidden" data-contact-panel="call" role="tabpanel"
                 aria-labelledby="contact-tab-call">
-                <div class="flex min-h-[28rem] flex-col justify-between rounded-[1.5rem] bg-slate-50">
+                <div class="flex min-h-[28rem] flex-col justify-between rounded-[1.5rem] bg-slate-100">
                   <span class="h-42">
                     <div style="width:100%;height:500px;" data-fillout-id="mY6VB6gP6sus"
                       data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize>
@@ -1105,21 +1107,18 @@
               class="pointer-events-none fixed inset-0 z-[70] hidden items-end justify-center bg-slate-950/55 px-4 pb-4 pt-10 opacity-0 transition duration-300 ease-out sm:items-center sm:p-6"
               data-contact-feedback aria-hidden="true">
               <div
-                class="w-full max-w-md translate-y-6 rounded-[1.75rem] bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.28)] transition duration-300 ease-out sm:p-6"
+                class="w-full max-w-md translate-y-6 rounded-lg bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.28)] transition duration-300 ease-out sm:p-6"
                 role="dialog" aria-modal="true" aria-labelledby="contact-feedback-title"
                 aria-describedby="contact-feedback-message" data-contact-feedback-dialog>
                 <div class="flex items-start justify-between gap-4">
                   <div>
-                    <span
-                      class="inline-flex rounded-full bg-[#bba0f9]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#bba0f9]"
-                      data-contact-feedback-badge>Status</span>
                     <h3 id="contact-feedback-title"
-                      class="mt-4 text-[1.8rem] font-black leading-[0.94] tracking-[-0.06em] text-slate-950">
+                      class="mt-2 text-[1.8rem] font-black leading-[0.94] tracking-[-0.06em] text-slate-950">
                       Bericht verstuurd
                     </h3>
                   </div>
                   <button type="button"
-                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-slate-300 hover:text-slate-950"
+                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-500 transition hover:border-slate-300 hover:text-slate-950"
                     data-contact-feedback-close aria-label="Sluit melding">
                     <svg viewBox="0 0 20 20" class="h-4 w-4" fill="none" aria-hidden="true">
                       <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" />
@@ -1147,16 +1146,104 @@
 
   </main>
 
-  <footer class="border-t border-slate-200 bg-white py-8">
+  <footer class="bg-slate-100 flex flex-col gap-4">
     <div
-      class="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-      <p>© <span id="year"></span> Rice Web. Maatwerk websites voor groeiend MKB.</p>
-      <div class="flex flex-wrap gap-4">
-        <a class="transition hover:text-[#bba0f9]" href="#">Diensten</a>
-        <a class="transition hover:text-[#bba0f9]" href="#">Cases</a>
-        <a class="transition hover:text-[#bba0f9]" href="#">Pricing</a>
-        <a class="transition hover:text-[#bba0f9]" href="#">Over ons</a>
-        <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>
+      class="mx-auto grid w-full lg:justify-between grid-cols-1 gap-12 rounded-xl bg-[#292938] shadow-xl px-4 py-8 text-sm text-white/50 lg:grid-cols-2 lg:text-base lg:px-[6rem] lg:py-10 lg:gap-0">
+      <!-- Footer top section -->
+      <div class="order-1 lg:col-span-2">
+        <div class="flex flex-col items-center gap-6 lg:items-start lg:justify-between lg:gap-4">
+          <img src="./assets/icons/rice-logo.svg" alt="Rice Web" class="block h-7 w-auto opacity-85 transition-all duration-300" />
+        </div>
+      </div>
+
+      <!-- Footer middle section -->
+      <div class="order-3 w-full lg:order-2 lg:mt-8">
+        <div class="flex flex-col items-center gap-6 lg:items-start lg:justify-between lg:gap-4">
+          <div class="flex flex-col items-center gap-4 lg:items-start lg:gap-3">
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 lg:justify-start">
+              <a class="transition hover:text-[#bba0f9]" href="#">Diensten</a>
+              <a class="transition hover:text-[#bba0f9]" href="#">Cases</a>
+              <a class="transition hover:text-[#bba0f9]" href="#">Pricing</a>
+              <a class="transition hover:text-[#bba0f9]" href="#">Over ons</a>
+              <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>
+            </div>
+            <p class="text-center lg:text-left">
+              © <span id="year"></span> Rice Web — B2B Web Agency
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer bottom section -->
+      <div class="order-2 w-full flex lg:order-3 lg:justify-end">
+
+        <div class="w-full flex flex-col gap-12 text-white/70 lg:gap-16 lg:w-max lg:flex-row">
+          <div class="w-full flex flex-col items-center lg:items-start lg:justify-start">
+            <img class="mb-3 h-8 w-8" src="https://flagcdn.com/nl.svg" alt="Netherlands flag">
+            <div class="w-full flex flex-col items-center lg:items-start">
+              <span class="w-max">
+                Bestevaerstraat 16
+              </span>
+              <span class="w-max">
+                Assendelft, 1566DG
+              </span>
+              <span class="w-max">
+                Nederland
+              </span>
+              <a href="tel:+31648866195" class="w-max">
+                +31 6 488 661 95
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full flex flex-col items-center gap-4 lg:items-start lg:justify-start">
+            <p class="text-center text-2xl lg:text-left">👋
+            </p>
+            <a href="mailto:contact@riceweb.nl" class="text-center lg:text-left"></a>
+              contact@riceweb.nl
+            </p>
+            <div class="w-full flex justify-center gap-2 lg:justify-start">
+              <a href="https://www.facebook.com/rice-web" target="_blank" rel="noopener noreferrer"
+                class="bg-white/50 w-8 h-8 flex items-center justify-center rounded-full text-[#292938] hover:text-[#bba0f9] transition-colors duration-300">
+                <span class="sr-only">Facebook</span>
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/riceweb/" target="_blank" rel="noopener noreferrer"
+                class="bg-white/50 w-8 h-8 flex items-center justify-center rounded-full text-[#292938] hover:text-[#bba0f9] transition-colors duration-300">
+                <span class="sr-only">Instagram</span>
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/rice-web" target="_blank" rel="noopener noreferrer"
+                class="bg-white/50 w-8 h-8 flex items-center justify-center rounded-full text-[#292938] hover:text-[#bba0f9] transition-colors duration-300">
+                <span class="sr-only">LinkedIn</span>
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto py-4">
+      <div class="flex gap-3 items-start text-slate-700 leading-none">
+        <div class="mt-1 flex flex-col gap-1 items-end">
+          <span class="text-[0.55rem] font-semibold uppercase tracking-[0.13em] text-slate-500">
+            Reviewed On
+          </span>
+          <img src="./assets/logos/google-logo.jpg" alt="Google logo" aria-hidden="true"
+            class="block h-[1.55rem] w-auto transition-all duration-300" />
+        </div>
+        <div class="mt-[0.1rem] flex flex-col items-center gap-[0.35rem]">
+          <span class="text-yellow-500 flex gap-2" aria-label="5 uit 5 sterren">
+            <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
+            <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
+            <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
+            <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
+            <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
+          </span>
+          <span class="w-full text-[0.70rem] text-center font-medium uppercase tracking-[0.05em] text-slate-600">
+            5.0 rating
+          </span>
+        </div>
       </div>
     </div>
   </footer>
