@@ -27,6 +27,58 @@
     <div class="absolute inset-0 bg-black/80"></div>
   </div>
 
+  <div
+    class="fixed inset-0 z-[140] flex items-center justify-center overflow-hidden bg-[#0e0f16] opacity-100 transition-opacity duration-500 ease-out"
+    data-intro-overlay aria-hidden="true">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div
+        class="absolute left-1/2 top-1/2 h-[38rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 bg-[radial-gradient(circle,rgba(187,160,249,0.32)_0%,rgba(24,26,38,0)_67%)]"
+        data-intro-glow></div>
+      <div
+        class="absolute inset-0 bg-[linear-gradient(115deg,rgba(187,160,249,0.1)_0%,rgba(15,23,42,0.92)_48%,rgba(20,20,28,1)_100%)]">
+      </div>
+      <div
+        class="absolute inset-0 mix-blend-screen opacity-0 [background-size:170px_170px] [background-image:radial-gradient(rgba(187,160,249,0.2)_1px,transparent_1px)]"
+        data-intro-grain></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center gap-3 px-6 opacity-0" data-intro-logo-shell>
+      <img src="./assets/icons/rice-logo.svg" alt="Rice Web" class="block h-8 w-auto opacity-0 md:h-12 lg:h-16"
+        data-intro-logo />
+      <span class="inline-flex -ml-4 md:-ml-6 h-[1.1rem] items-center lg:h-[1.35rem]">
+        <span
+          class="inline-flex items-center gap-[0.1rem] md:gap-1.5 leading-none text-[0.7rem] font-black uppercase tracking-[0.22em] text-[#bba0f9] opacity-0 lg:gap-2 lg:text-[0.9rem]"
+          data-intro-badge>
+          <svg viewBox="0 0 24 24"
+            class="block h-[1.5rem] w-[1.5rem] shrink-0 overflow-visible lg:h-[1.8rem] lg:w-[1.8rem]" aria-hidden="true"
+            data-intro-globe>
+            <g data-intro-globe-rotor>
+              <circle cx="12" cy="12" r="8.5" fill="none" stroke="#bba0f980" stroke-width="1.05"></circle>
+              <path d="M3.5 12h17" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.1"
+                opacity="0.88"></path>
+              <path d="M5.4 7.7c1.9.9 4.1 1.35 6.6 1.35s4.7-.45 6.6-1.35" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-width="1.05" opacity="0.52"></path>
+              <path d="M5.4 16.3c1.9-.9 4.1-1.35 6.6-1.35s4.7.45 6.6 1.35" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-width="1.05" opacity="0.52"></path>
+              <g>
+                <ellipse cx="12" cy="12" rx="8.5" ry="8.5" fill="none" stroke="currentColor" stroke-width="1.15"
+                  vector-effect="non-scaling-stroke" data-intro-globe-meridian></ellipse>
+                <ellipse cx="12" cy="12" rx="6.01" ry="8.5" fill="none" stroke="currentColor" stroke-width="1.15"
+                  vector-effect="non-scaling-stroke" data-intro-globe-meridian></ellipse>
+                <ellipse cx="12" cy="12" rx="0.9" ry="8.5" fill="none" stroke="currentColor" stroke-width="1.15"
+                  vector-effect="non-scaling-stroke" data-intro-globe-meridian></ellipse>
+                <ellipse cx="12" cy="12" rx="6.01" ry="8.5" fill="none" stroke="currentColor" stroke-width="1.15"
+                  vector-effect="non-scaling-stroke" data-intro-globe-meridian></ellipse>
+              </g>
+            </g>
+          </svg>
+          <span class="leading-none mt-[1px] opacity-0 text-sm md:text-base lg:text-lg"
+            data-intro-badge-label>WEB</span>
+        </span>
+      </span>
+    </div>
+  </div>
+
   <header class="fixed inset-x-0 top-0 z-50 bg-transparent" data-site-header>
     <div class="bg-[#bba0f9] text-center text-xs font-regular text-black/80">
       <div
@@ -98,26 +150,26 @@
             <nav
               class="flex min-w-0 items-center gap-5 text-lg tracking-[-0.05em] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-2xl"
               data-header-text>
-              <a class="transition hover:text-[#bba0f9]" href="/">op Sector</a>
-              <a class="transition hover:text-[#bba0f9]" href="/diensten">op Dienst</a>
-              <a class="transition hover:text-[#bba0f9]" href="/over-ons">Over</a>
-              <a class="transition hover:text-[#bba0f9]" href="/werkwijze">Proces</a>
+              <a class="transition hover:text-[#bba0f9]" href="#reviews">Ervaringen</a>
+              <a class="transition hover:text-[#bba0f9]" href="#kernwaarden">Proces</a>
+              <a class="transition hover:text-[#bba0f9]" href="#cases">Ons werk</a>
+              <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>
             </nav>
 
             <nav
               class="ml-auto flex items-center gap-5 text-[0.95rem] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-[1rem]"
               data-header-text>
-              <a class="transition hover:text-[#bba0f9]" href="/cases">Case studies</a>
+              <a class="transition hover:text-[#bba0f9]" href="#cases">Ons werk</a>
             </nav>
           </div>
 
           <div class="hidden items-center gap-2 md:flex lg:gap-3">
-            <a href="/pricing"
+            <a href="#contact-panel" data-contact-open="call"
               class="inline-flex items-center rounded-[1.15rem] border-solid border-[0px] border-[#bba0f9]/70 bg-white/10 backdrop-blur-xl px-4 py-3 text-[0.95rem] font-bold text-[#bba0f9] shadow-sm transition-[border-width,border-color,background-color,color] duration-400 ease-in-out hover:border-blue-200 hover:text-[#f9eaa0] hover:bg-slate-600 lg:px-5 lg:text-lg"
               data-header-outline-button>
-              Actie plan
+              Plan een call
             </a>
-            <a href="#contact"
+            <a href="#contact-panel" data-contact-open="message"
               class="inline-flex items-center rounded-[1.15rem] bg-[#bba0f9] px-4 py-3 text-[0.95rem] font-semibold text-black/80 shadow-[0_14px_35px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 hover:bg-[#f9eaa0] hover:text-black lg:px-5 lg:text-lg">
               Contact
             </a>
@@ -145,12 +197,12 @@
 
       <div class="relative z-10 flex h-full flex-col" data-mobile-menu-container>
         <div class="px-4 py-2 flex items-center justify-center gap-4 text-[13px]">
-          <a href="./#contact" data-contact-open="message"
+          <a href="#contact-panel" data-contact-open="message"
             class="inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
             <i class="fa-solid fa-comment h-[0.8em] w-[0.8em] mb-[2px] shrink-0"></i>
             Bericht versturen
           </a>
-          <a href="./#contact" data-contact-open="call"
+          <a href="#contact-panel" data-contact-open="call"
             class="inline-flex items-center justify-center gap-2 rounded-full font-medium text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
             <i class="fa-solid fa-phone h-[0.6em] w-[0.6em] mb-[5px] shrink-0"></i>
             Plan een call
@@ -185,34 +237,34 @@
                   </svg>
                 </button>
                 <div id="mobile-startpagina-submenu" class="space-y-1 pl-2">
-                  <a href="#"
+                  <a href="#reviews"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Diensten
+                    Ervaringen
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
                   </a>
-                  <a href="#"
+                  <a href="#kernwaarden"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Over ons
+                    Proces
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
                   </a>
-                  <a href="#"
+                  <a href="#cases"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Projecten
+                    Ons werk
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
                   </a>
-                  <a href="#"
+                  <a href="#contact"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
                     Contact
@@ -229,7 +281,7 @@
                     class="h-full w-full object-cover" />
                   <div class="absolute inset-0 bg-[#34343f]/50" aria-hidden="true"></div>
                   <p
-                    class="absolute inset-0 flex items-center justify-center text-center text-2xl font-brand font-extrabold text-[#f9eaa0]">
+                    class="absolute inset-0 flex items-center justify-center text-center text-2xl font-brand font-extrabold text-[#bba0f9]">
                     Rice Partner</p>
                 </div>
                 <a href="#"
@@ -288,7 +340,7 @@
 
             <div class="flex flex-col gap-4 md:items-center">
               <div class="group mt-10 flex items-center gap-2 sm:gap-4 lg:justify-center w-max">
-                <a href="#contact" data-contact-open="call"
+                <a href="#contact-panel" data-contact-open="call"
                   class="inline-flex items-center justify-center h-12 gap-3 rounded-xl bg-white px-5 text-sm font-semibold text-black shadow-[0_18px_60px_rgba(37,99,235,0.22)] transform-gpu transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-white/90 lg:text-base sm:flex-none sm:px-6 motion-safe:group-hover:-translate-x-0.5 motion-safe:group-focus-within:-translate-x-0.5">
                   <i class="fa-regular fa-calendar text-lg" aria-hidden="true"></i>
                   <span>Plan Een Call</span>
@@ -560,7 +612,7 @@
               data-review-wall data-reveal>
               <button type="button" class="group flex flex-col mx-auto items-center text-center outline-none"
                 data-review-trigger data-review-name="Guido" data-review-role="Tattoo Artiest"
-                data-review-quote="Rice vertaalde onze positionering razendsnel naar een site die direct scherper verkoopt en veel serieuzere aanvragen oplevert."
+                data-review-quote="Vanaf moment één liep het contact met Maurice super goed. Hij weet duidelijk waar hij het over heeft en denkt echt met je mee. Professioneel advies, snel schakelen, sterke eigen input en vooral heel creatief. Ik ben ontzettend blij met mijn website echt WAUW!"
                 aria-pressed="false">
                 <span
                   class="relative h-28 w-28 overflow-hidden rounded-full border-[4px] border-[#bba0f9] transform-gpu transition-[box-shadow,background-color,transform] duration-300 ease-out sm:h-24 sm:w-24"
@@ -664,7 +716,7 @@
           </div>
 
           <div class="flex w-full justify-center">
-            <a href="#contact" data-contact-open="call"
+            <a href="#contact-panel" data-contact-open="call"
               class="group inline-flex min-h-12 items-center justify-center gap-2 rounded-[1rem] bg-black/80 px-5 py-3 text-sm font-semibold text-white transition-colors duration-300 ease-out hover:bg-[#bba0f9] hover:text-slate-950 sm:text-base">
               <span>Plan Een Call</span>
               <span class="relative inline-flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden"
@@ -861,7 +913,7 @@
             class="grid grid-cols-2 items-start gap-x-3 gap-y-6 sm:gap-x-4 sm:gap-y-8 lg:gap-x-8 lg:gap-y-12 xl:gap-x-10">
 
             <article class="group mx-auto flex w-full max-w-[34rem] pb-8 flex-col gap-3 sm:gap-4" data-reveal>
-              <a href="/cases"
+              <a href="https://oottattattoo.nl/"
                 class="block w-full overflow-hidden rounded-[5px] bg-[#3b2b1f] shadow-[0_14px_40px_rgba(15,23,42,0.08)] lg:rounded-[10px]">
                 <div class="h-[13rem] overflow-hidden sm:h-[24rem] lg:h-[28rem] xl:h-[32rem]">
                   <img src="./assets/images/oottat-tattoo.jpg"
@@ -882,7 +934,7 @@
             </article>
 
             <article class="group mx-auto flex w-full max-w-[34rem] pb-8 flex-col gap-3 sm:gap-4" data-reveal>
-              <a href="/cases"
+              <a href="https://studioieks.nl/"
                 class="block w-full overflow-hidden rounded-[5px] bg-[#2b1b18] shadow-[0_14px_40px_rgba(15,23,42,0.08)] lg:rounded-[10px]">
                 <div class="h-[13rem] overflow-hidden sm:h-[24rem] lg:h-[28rem] xl:h-[32rem]">
                   <img src="./assets/images/studio-ieks.jpg" alt="Portfolio project voor Studio IEKS"
@@ -902,7 +954,7 @@
             </article>
 
             <article class="group mx-auto flex w-full max-w-[34rem] pb-8 flex-col gap-3 sm:gap-4" data-reveal>
-              <a href="/cases"
+              <a href="https://glamourbytink.nl/"
                 class="block w-full overflow-hidden rounded-[5px] bg-[#3b2b1f] shadow-[0_14px_40px_rgba(15,23,42,0.08)] lg:rounded-[10px]">
                 <div class="h-[13rem] overflow-hidden sm:h-[24rem] lg:h-[28rem] xl:h-[32rem]">
                   <img src="./assets/images/glamour-by-tink.jpg"
@@ -923,7 +975,7 @@
             </article>
 
             <article class="group mx-auto flex w-full max-w-[34rem] pb-8 flex-col gap-3 sm:gap-4" data-reveal>
-              <a href="/cases"
+              <a href="https://klimazon.nl/"
                 class="block w-full overflow-hidden rounded-[5px] bg-[#f2eadf] shadow-[0_14px_40px_rgba(15,23,42,0.08)] lg:rounded-[10px]">
                 <div class="h-[13rem] overflow-hidden sm:h-[24rem] lg:h-[28rem] xl:h-[32rem]">
                   <img src="./assets/images/klimazon.jpg" alt="Portfolio project voor Klimazon"
@@ -955,7 +1007,7 @@
               <div class="space-y-6 lg:space-y-8">
                 <h2
                   class="max-w-[18rem] text-[2.6rem] font-black leading-[0.92] tracking-[-0.06em] text-slate-950 sm:max-w-[22rem] sm:text-[3.8rem] lg:text-[4.5rem]">
-                  Contact opnemen
+                  Contact
                 </h2>
                 <p class="max-w-xl text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
                   Ben je op zoek naar een website, een redesign, helemaal opnieuw beginnen of heb je een ander
@@ -974,8 +1026,7 @@
               </div>
               <p class="mt-6 max-w-[28rem] text-sm leading-6 text-slate-800 sm:text-base">
                 “Als partner van Rice werk ik regelmatig met hun websites. De basis van de sites
-                zijn zo opgezet dat wij online advertenties en tracking snel en zonder technische
-                bottlenecks kunnen implementeren.
+                zijn goed opgezet, waardoor wij online advertenties en tracking snel kunnen implementeren.
               </p>
               <p class="mt-2 max-w-[28rem] text-sm leading-6 text-slate-800 sm:text-base">
                 Dit maakt het heel eenvoudig om campagnes te optimaliseren en te schalen. Een sterke basis voor online
@@ -989,7 +1040,7 @@
             </article>
           </div>
 
-          <div class="rounded-[1.75rem] bg-white" data-contact-switcher>
+          <div id="contact-panel" class="rounded-[1.75rem] bg-white" data-contact-switcher>
             <div class="px-1 pt-1 pb-8 sm:px-2 sm:pt-2">
               <div
                 class="flex flex-col sm:flex-row sm:items-center gap-2 gap-x-4 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
@@ -1152,7 +1203,8 @@
       <!-- Footer top section -->
       <div class="order-1 lg:col-span-2">
         <div class="flex flex-col items-center gap-6 lg:items-start lg:justify-between lg:gap-4">
-          <img src="./assets/icons/rice-logo.svg" alt="Rice Web" class="block h-7 w-auto opacity-85 transition-all duration-300" />
+          <img src="./assets/icons/rice-logo.svg" alt="Rice Web"
+            class="block h-7 w-auto opacity-85 transition-all duration-300" />
         </div>
       </div>
 
@@ -1161,10 +1213,9 @@
         <div class="flex flex-col items-center gap-6 lg:items-start lg:justify-between lg:gap-4">
           <div class="flex flex-col items-center gap-4 lg:items-start lg:gap-3">
             <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 lg:justify-start">
-              <a class="transition hover:text-[#bba0f9]" href="#">Diensten</a>
-              <a class="transition hover:text-[#bba0f9]" href="#">Cases</a>
-              <a class="transition hover:text-[#bba0f9]" href="#">Pricing</a>
-              <a class="transition hover:text-[#bba0f9]" href="#">Over ons</a>
+                <a class="transition hover:text-[#bba0f9]" href="#reviews">Ervaringen</a>
+                <a class="transition hover:text-[#bba0f9]" href="#kernwaarden">Proces</a>
+                <a class="transition hover:text-[#bba0f9]" href="#cases">Ons werk</a>
               <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>
             </div>
             <p class="text-center lg:text-left">
@@ -1200,7 +1251,7 @@
             <p class="text-center text-2xl lg:text-left">👋
             </p>
             <a href="mailto:contact@riceweb.nl" class="text-center lg:text-left"></a>
-              contact@riceweb.nl
+            contact@riceweb.nl
             </p>
             <div class="w-full flex justify-center gap-2 lg:justify-start">
               <a href="https://www.facebook.com/rice-web" target="_blank" rel="noopener noreferrer"
@@ -1240,7 +1291,7 @@
             <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
             <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
           </span>
-          <span class="w-full text-[0.70rem] text-center font-medium uppercase tracking-[0.05em] text-slate-600">
+          <span class="w-full text-[0.70rem] text-center font-medium uppercase tracking-[0.05em] text-slate-600/70">
             5.0 rating
           </span>
         </div>

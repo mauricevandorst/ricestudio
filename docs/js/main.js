@@ -5,6 +5,7 @@ import { initHeaderBadgeAnimation } from "./modules/header-badge-animation.js";
 import { initHeaderGlobe } from "./modules/header-globe.js";
 import { initHeaderState } from "./modules/header-state.js";
 import { initHeroVideo } from "./modules/hero-video.js";
+import { initIntroOverlay } from "./modules/intro-overlay.js";
 import { initMarquee } from "./modules/marquee.js";
 import { initMobileMenu } from "./modules/mobile-menu.js";
 import { initRevealAnimations } from "./modules/reveal-animations.js";
@@ -16,6 +17,7 @@ import { initYear } from "./modules/year.js";
 
 initYear();
 initViewportMetrics();
+initIntroOverlay();
 initMobileMenu();
 initRevealAnimations();
 initFaq();
