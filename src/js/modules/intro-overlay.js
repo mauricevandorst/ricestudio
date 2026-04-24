@@ -54,6 +54,10 @@ export function initIntroOverlay() {
     unlockScroll();
     root.classList.remove("intro-running");
 
+    if (header instanceof HTMLElement) {
+      header.style.transition = "";
+    }
+
     if (showOncePerSession) {
       window.sessionStorage.setItem(sessionFlag, "1");
     }
@@ -61,7 +65,16 @@ export function initIntroOverlay() {
     overlay.remove();
   };
 
+  const header = document.querySelector("[data-intro-header]");
+
+  if (header instanceof HTMLElement) {
+    header.style.transform = "translateY(-100%)";
+  }
+
   const finishEarly = () => {
+    if (header instanceof HTMLElement) {
+      header.style.transform = "";
+    }
     overlay.classList.add("pointer-events-none", "opacity-0");
     window.setTimeout(cleanup, 220);
   };
@@ -84,9 +97,16 @@ export function initIntroOverlay() {
     grain.style.opacity = "0.18";
 
     window.setTimeout(() => {
-      overlay.classList.add("pointer-events-none");
-      overlay.classList.add("opacity-0");
-      window.setTimeout(cleanup, 280);
+      if (header instanceof HTMLElement) {
+        header.style.transition = "transform 500ms cubic-bezier(0.16, 1, 0.3, 1)";
+        header.style.transform = "translateY(0)";
+      }
+
+      window.setTimeout(() => {
+        overlay.classList.add("pointer-events-none");
+        overlay.classList.add("opacity-0");
+        window.setTimeout(cleanup, 280);
+      }, 500);
     }, 700);
   };
 
@@ -216,27 +236,34 @@ export function initIntroOverlay() {
     window.setTimeout(() => {
       overlay.classList.add("pointer-events-none");
 
-      overlay.animate(
-        [
-          { opacity: 1, transform: "scale3d(1, 1, 1)", filter: "blur(0px)" },
-          { opacity: 0, transform: "scale3d(1.02, 1.02, 1)", filter: "blur(5px)" },
-        ],
-        {
-          duration: 700,
-          easing: "cubic-bezier(0.35, 0, 0.25, 1)",
-          fill: "forwards",
-        },
-      );
+      if (header instanceof HTMLElement) {
+        header.style.transition = "transform 500ms cubic-bezier(0.16, 1, 0.3, 1)";
+        header.style.transform = "translateY(0)";
+      }
 
       window.setTimeout(() => {
-        stopped = true;
+        overlay.animate(
+          [
+            { opacity: 1, transform: "scale3d(1, 1, 1)", filter: "blur(0px)" },
+            { opacity: 0, transform: "scale3d(1.02, 1.02, 1)", filter: "blur(5px)" },
+          ],
+          {
+            duration: 700,
+            easing: "cubic-bezier(0.35, 0, 0.25, 1)",
+            fill: "forwards",
+          },
+        );
 
-        if (frameId) {
-          window.cancelAnimationFrame(frameId);
-        }
+        window.setTimeout(() => {
+          stopped = true;
 
-        cleanup();
-      }, 760);
+          if (frameId) {
+            window.cancelAnimationFrame(frameId);
+          }
+
+          cleanup();
+        }, 760);
+      }, 500);
     }, 2550);
   };
 
