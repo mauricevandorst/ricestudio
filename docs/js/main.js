@@ -14,7 +14,14 @@ import { initReviews } from "./modules/reviews.js";
 import { initValuesCarousel } from "./modules/values-carousel.js";
 import { initViewportMetrics } from "./modules/viewport-metrics.js";
 import { initYear } from "./modules/year.js";
+import { initCasesGallery } from "./modules/cases-gallery.js";
+import { initOpposingParallaxGallery } from "./modules/opposing-parallax-gallery.js";
+import { initPageVisibilityTitle } from "./modules/page-visibility-title.js";
 
+initPageVisibilityTitle({
+	delayToHiddenMs: 10500,
+	delayToOriginalMs: 5500,
+});
 initYear();
 initViewportMetrics();
 initIntroOverlay();
@@ -31,3 +38,5 @@ initBrandCarousel();
 initValuesCarousel();
 initReviews();
 initContactSwitcher();
+initCasesGallery();
+initOpposingParallaxGallery();

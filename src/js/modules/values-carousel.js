@@ -11,8 +11,8 @@ export function initValuesCarousel() {
     return;
   }
 
-  let currentPage = 0;
-  let pageCount = 1;
+  let currentIndex = 0;
+  let maxIndex = 0;
   let slidesPerView = 1;
   let dotButtons = [];
   let isMobileViewport = false;
@@ -40,24 +40,24 @@ export function initValuesCarousel() {
 
   const buildDots = () => {
     dotsContainer.innerHTML = "";
-    dotButtons = Array.from({ length: pageCount }, (_, index) => {
+    dotButtons = Array.from({ length: maxIndex + 1 }, (_, index) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "h-2.5 rounded-full bg-black/20 transition-all duration-300 hover:bg-black/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35";
-      button.setAttribute("aria-label", `Ga naar pagina ${index + 1}`);
-      button.setAttribute("aria-pressed", index === currentPage ? "true" : "false");
+      button.setAttribute("aria-label", `Ga naar item ${index + 1}`);
+      button.setAttribute("aria-pressed", index === currentIndex ? "true" : "false");
       button.addEventListener("click", () => {
-        goToPage(index, "smooth");
+        goToIndex(index, "smooth");
       });
       dotsContainer.appendChild(button);
       return button;
     });
   };
 
-  const getPageOffset = (pageIndex) => {
+  const getSlideOffset = (slideIndex) => {
     const baseSlide = slides[0];
-    const startIndex = Math.min(pageIndex * slidesPerView, slides.length - 1);
-    const slide = slides[startIndex];
+    const clampedIndex = Math.min(slideIndex, slides.length - 1);
+    const slide = slides[clampedIndex];
 
     if (!(baseSlide instanceof HTMLElement) || !(slide instanceof HTMLElement)) {
       return 0;
@@ -66,28 +66,28 @@ export function initValuesCarousel() {
     return Math.max(slide.offsetLeft - baseSlide.offsetLeft, 0);
   };
 
-  const getClosestPageIndex = () => {
-    let closestPage = 0;
+  const getClosestIndex = () => {
+    let closestIndex = 0;
     let closestDistance = Number.POSITIVE_INFINITY;
 
-    for (let index = 0; index < pageCount; index += 1) {
-      const distance = Math.abs(getPageOffset(index) - viewport.scrollLeft);
+    for (let index = 0; index <= maxIndex; index += 1) {
+      const distance = Math.abs(getSlideOffset(index) - viewport.scrollLeft);
 
       if (distance < closestDistance) {
         closestDistance = distance;
-        closestPage = index;
+        closestIndex = index;
       }
     }
 
-    return closestPage;
+    return closestIndex;
   };
 
   const updateControls = () => {
-    prevButton.disabled = currentPage === 0;
-    nextButton.disabled = currentPage === pageCount - 1;
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === maxIndex;
 
     dotButtons.forEach((button, index) => {
-      const isActive = index === currentPage;
+      const isActive = index === currentIndex;
       button.style.width = isActive ? "2.5rem" : "0.625rem";
       button.classList.toggle("bg-black", isActive);
       button.classList.toggle("bg-black/20", !isActive);
@@ -96,7 +96,7 @@ export function initValuesCarousel() {
   };
 
   const update = (behavior = "auto") => {
-    const offset = getPageOffset(currentPage);
+    const offset = getSlideOffset(currentIndex);
 
     if (isMobileViewport) {
       track.style.transform = "";
@@ -108,8 +108,8 @@ export function initValuesCarousel() {
     updateControls();
   };
 
-  const goToPage = (pageIndex, behavior = "auto") => {
-    currentPage = Math.max(0, Math.min(pageIndex, pageCount - 1));
+  const goToIndex = (slideIndex, behavior = "auto") => {
+    currentIndex = Math.max(0, Math.min(slideIndex, maxIndex));
     update(behavior);
   };
 
@@ -120,44 +120,44 @@ export function initValuesCarousel() {
 
     window.clearTimeout(snapTimeout);
     snapTimeout = window.setTimeout(() => {
-      const nearestPage = getClosestPageIndex();
+      const nearestIndex = getClosestIndex();
 
-      if (Math.abs(getPageOffset(nearestPage) - viewport.scrollLeft) <= 2) {
+      if (Math.abs(getSlideOffset(nearestIndex) - viewport.scrollLeft) <= 2) {
         return;
       }
 
-      goToPage(nearestPage, "smooth");
+      goToIndex(nearestIndex, "smooth");
     }, 90);
   };
 
   const refresh = () => {
     syncViewportMode();
     slidesPerView = getSlidesPerView();
-    pageCount = Math.max(Math.ceil(slides.length / slidesPerView), 1);
+    maxIndex = Math.max(slides.length - slidesPerView, 0);
 
     if (isMobileViewport) {
-      currentPage = getClosestPageIndex();
+      currentIndex = getClosestIndex();
     }
 
-    currentPage = Math.min(currentPage, pageCount - 1);
+    currentIndex = Math.min(currentIndex, maxIndex);
     buildDots();
     update();
   };
 
   prevButton.addEventListener("click", () => {
-    if (currentPage === 0) {
+    if (currentIndex === 0) {
       return;
     }
 
-    goToPage(currentPage - 1, "smooth");
+    goToIndex(currentIndex - 1, "smooth");
   });
 
   nextButton.addEventListener("click", () => {
-    if (currentPage >= pageCount - 1) {
+    if (currentIndex >= maxIndex) {
       return;
     }
 
-    goToPage(currentPage + 1, "smooth");
+    goToIndex(currentIndex + 1, "smooth");
   });
 
   root.addEventListener("keydown", (event) => {
@@ -192,13 +192,13 @@ export function initValuesCarousel() {
 
       scrollFrame = window.requestAnimationFrame(() => {
         scrollFrame = 0;
-        const nextPage = getClosestPageIndex();
+        const nextIndex = getClosestIndex();
 
-        if (nextPage === currentPage) {
+        if (nextIndex === currentIndex) {
           return;
         }
 
-        currentPage = nextPage;
+        currentIndex = nextIndex;
         updateControls();
       });
 
