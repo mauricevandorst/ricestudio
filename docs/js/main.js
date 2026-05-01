@@ -1,4 +1,5 @@
-﻿import { initBrandCarousel } from "./modules/brand-carousel.js";
+﻿import { initSmoothScroll } from "./modules/smooth-scroll.js";
+import { initBrandCarousel } from "./modules/brand-carousel.js";
 import { initContactSwitcher } from "./modules/contact-switcher.js";
 import { initFaq } from "./modules/faq.js";
 import { initHeaderBadgeAnimation } from "./modules/header-badge-animation.js";
@@ -22,6 +23,7 @@ initPageVisibilityTitle({
 	delayToHiddenMs: 10500,
 	delayToOriginalMs: 5500,
 });
+initSmoothScroll();
 initYear();
 initViewportMetrics();
 initIntroOverlay();
