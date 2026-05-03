@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#bba0f9" />
-  <title>Rice | Websites die klanten opleveren</title>
+  <title>Rice Web | Websites die klanten opleveren</title>
   <meta name="description"
     content="Rice Web bouwt sinds 2020 maatwerk websites voor MKB-bedrijven die meer leads, betere conversie en schaalbare online groei willen." />
   <link rel="icon" type="image/png" href="./assets/logos/rice-web-icon.png" />
@@ -173,7 +173,7 @@
               class="flex min-w-0 items-center gap-5 text-lg tracking-[-0.05em] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-2xl"
               data-header-text>
               <a class="transition hover:text-[#bba0f9]" href="#diensten">Diensten</a>
-              <a class="transition hover:text-[#bba0f9]" href="#kernwaarden">Proces</a>
+              <a class="transition hover:text-[#bba0f9]" href="./proces">Proces</a>
               <a class="transition hover:text-[#bba0f9]" href="#cases">Ons werk</a>
               <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>
             </nav>
@@ -187,12 +187,12 @@
 
           <div class="hidden items-center gap-2 md:flex lg:gap-3">
             <a href="#contact-panel" data-contact-open="call"
-              class="inline-flex items-center rounded-[1.15rem] border-solid border-[0px] border-[#bba0f9]/70 bg-white/10 backdrop-blur-xl px-4 py-3 text-[0.95rem] font-bold text-[#bba0f9] shadow-sm transition-[border-width,border-color,background-color,color] duration-400 ease-in-out hover:border-blue-200 hover:text-[#f9eaa0] hover:bg-slate-600 lg:px-5 lg:text-lg"
+              class="inline-flex items-center rounded-[1.15rem] border-solid border-[0px] border-[#bba0f9]/70 bg-white/10 backdrop-blur-xl px-4 py-3 text-[0.95rem] font-bold text-[#bba0f9] shadow-sm transition-[border-width,border-color,background-color,color] duration-400 ease-in-out hover:border-blue-200 hover:text-[#daf9a0] hover:bg-slate-600 lg:px-5 lg:text-lg"
               data-header-outline-button>
               Plan een call
             </a>
             <a href="#contact-panel" data-contact-open="message"
-              class="inline-flex items-center rounded-[1.15rem] bg-[#bba0f9] px-4 py-3 text-[0.95rem] font-semibold text-black/80 shadow-[0_14px_35px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 hover:bg-[#f9eaa0] hover:text-black lg:px-5 lg:text-lg">
+              class="inline-flex items-center rounded-[1.15rem] bg-[#bba0f9] px-4 py-3 text-[0.95rem] font-semibold text-black/80 shadow-[0_14px_35px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 hover:bg-[#daf9a0] hover:text-black lg:px-5 lg:text-lg">
               Contact
             </a>
           </div>
@@ -220,12 +220,12 @@
       <div class="relative z-10 flex h-full flex-col" data-mobile-menu-container>
         <div class="px-4 py-2 flex items-center justify-center gap-4 text-[13px]">
           <a href="#contact-panel" data-contact-open="message"
-            class="inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
+            class="inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#daf9a0]">
             <i class="fa-solid fa-comment h-[0.8em] w-[0.8em] mb-[2px] shrink-0"></i>
             Bericht versturen
           </a>
           <a href="#contact-panel" data-contact-open="call"
-            class="inline-flex items-center justify-center gap-2 rounded-full font-medium text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
+            class="inline-flex items-center justify-center gap-2 rounded-full font-medium text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#daf9a0]">
             <i class="fa-solid fa-phone h-[0.6em] w-[0.6em] mb-[5px] shrink-0"></i>
             Plan een call
           </a>
@@ -247,31 +247,35 @@
                 </button>
               </div>
               <nav class="flex flex-col gap-2">
-                <button type="button"
-                  class="inline-flex items-center justify-between rounded-lg bg-[#bba0f9]/15 px-4 py-2 text-xl font-medium text-[#34343f]"
-                  data-mobile-submenu-toggle data-mobile-menu-item aria-expanded="true"
-                  aria-controls="mobile-startpagina-submenu">
-                  <span>Startpagina</span>
-                  <svg class="h-5 w-5 rotate-180 transition-transform duration-200" data-mobile-submenu-icon
-                    viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </button>
-                <div id="mobile-startpagina-submenu" class="space-y-1 pl-2">
+                <div class="flex items-center gap-2 rounded-lg bg-[#bba0f9]/15" data-mobile-menu-item>
+                  <a href="./"
+                    class="min-w-0 flex-1 rounded-lg px-4 py-2 text-xl font-medium text-[#34343f] transition hover:bg-[#bba0f9]/10">
+                    Home
+                  </a>
+                  <button type="button" class="inline-flex items-center justify-center self-stretch px-4 text-[#34343f]"
+                    data-mobile-submenu-toggle aria-expanded="true" aria-controls="mobile-home-submenu"
+                    aria-label="Home submenu tonen of verbergen">
+                    <svg class="h-5 w-5 rotate-180 transition-transform duration-200" data-mobile-submenu-icon
+                      viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+                <div id="mobile-home-submenu" class="space-y-1 pl-2">
                   <a href="#services"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Diensten
+                    Onze Diensten
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
                   </a>
-                  <a href="#kernwaarden"
+                  <a href="./proces"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Proces
+                    Design Proces
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -280,7 +284,7 @@
                   <a href="#cases"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Ons werk
+                    Bekijk ons Portfolio
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -322,11 +326,13 @@
   <main>
     <section class="relative isolate overflow-hidden bg-[#34343f]">
       <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-0">
-        <video class="h-full w-full object-cover [overflow-clip-margin:unset] opacity-15 lg:opacity-10" autoplay muted
-          loop playsinline preload="metadata" data-hero-video>
+        <video class="h-full w-full opacity-[80%] object-cover [overflow-clip-margin:unset]" autoplay muted loop
+          playsinline preload="metadata" data-hero-video>
           <source src="./assets/videos/hero-bg.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 bg-black/30"></div>
+        <div
+          class="absolute inset-0 bg-[#3d3a42ed] motion-safe:transition-colors motion-safe:duration-[4000ms] motion-safe:ease-in-out"
+          data-hero-overlay></div>
       </div>
       <div
         class="relative z-10 mx-auto flex max-w-7xl flex-col px-4 pb-10 pt-[calc(var(--header-height,0px)+0.75rem)] sm:px-6 sm:pb-12 md:min-h-[calc(100svh-var(--header-height,0px))] md:pt-[calc(var(--header-height,0px)+2.5rem)] lg:px-8 lg:pb-16">
@@ -342,7 +348,7 @@
                 Ads
               </span>
               <span
-                class="rounded-xl bg-[#bba0f9]/10 backdrop-blur-sm px-3 py-1 text-xs font-medium text-[#bba0f9]">Maatwerk
+                class="rounded-xl bg-[#bba0f9]/10 backdrop-blur-sm px-3 py-1 text-xs font-medium text-[#bba0f9]">Hand&shy;geschreven
               </span>
               <span class="rounded-xl bg-[#bba0f9]/10 backdrop-blur-sm px-3 py-1 text-xs font-medium text-[#bba0f9]">SEO
                 & Tracking</span>
@@ -369,10 +375,10 @@
                   <span>Plan Een Call</span>
                 </a>
                 <div
-                  class="group relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] bg-[#bba0f9] text-blue-400 shadow-[0_18px_45px_rgba(59,130,246,0.16)] transform-gpu transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#f9eaa0] motion-safe:group-hover:translate-x-0.5 motion-safe:group-focus-within:translate-x-0.5"
+                  class="group relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] bg-[#bba0f9] text-blue-400 shadow-[0_18px_45px_rgba(59,130,246,0.16)] transform-gpu transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#daf9a0] motion-safe:group-hover:translate-x-0.5 motion-safe:group-focus-within:translate-x-0.5"
                   aria-label="Plan een gesprek met Maurice">
                   <img src="./assets/images/portrait.png" alt="Portret van Maurice"
-                    class="h-full w-full rounded-[1rem] object-cover [overflow-clip-margin:unset] border-[3px] lg:border-[3px] border-[#bba0f9] group-hover:border-[#f9eaa0] transition-colors" />
+                    class="h-full w-full rounded-[1rem] object-cover [overflow-clip-margin:unset] border-[3px] lg:border-[3px] border-[#bba0f9] group-hover:border-[#daf9a0] transition-colors" />
                   <span
                     class="absolute right-[-2px] top-[-2px] h-3 w-3 rounded-full border-[1px] border-black/80 bg-green-300"></span>
                 </div>
@@ -440,7 +446,7 @@
 
             <div data-reveal class="flex mr-auto sm:mx-auto">
               <a href="#cases"
-                class="group mx-auto flex w-[225px] items-center justify-between rounded-xl bg-[#4a4a55]/90 px-6 py-3 text-base font-medium text-white transition-colors duration-300 ease-out hover:bg-[#bba0f9] hover:text-black/80 sm:w-[16rem] sm:px-8">
+                class="group mx-auto flex w-[205px] items-center justify-between rounded-xl bg-[#4a4a55]/90 px-6 py-3 text-base font-medium text-white transition-colors duration-300 ease-out hover:bg-[#bba0f9] hover:text-black/80 sm:w-[16rem] sm:px-8">
                 <span class="font-bold">Bekijk ons werk</span>
                 <span class="relative inline-flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden"
                   aria-hidden="true">
@@ -745,9 +751,9 @@
               <span class="relative inline-flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden"
                 aria-hidden="true">
                 <img src="./assets/icons/arrow-down-white.svg" alt=""
-                  class="absolute inset-0 block h-6 w-6 opacity-100 transition duration-300 ease-out group-hover:-rotate-[20deg] group-hover:opacity-0" />
+                  class="absolute inset-0 block h-6 w-6 opacity-100 rotate-[320deg] transition duration-300 ease-out group-hover:rotate-[359deg] group-hover:opacity-0" />
                 <img src="./assets/icons/arrow-down-dark.svg" alt=""
-                  class="absolute inset-0 block h-6 w-6 opacity-0 transition duration-300 ease-out group-hover:-rotate-[20deg] group-hover:opacity-100" />
+                  class="absolute inset-0 block h-6 w-6 opacity-0 rotate-[320deg] transition duration-300 ease-out group-hover:rotate-[359deg] group-hover:opacity-100" />
               </span>
             </a>
           </div>
@@ -755,7 +761,7 @@
       </div>
     </section>
 
-    <section class="bg-slate-100 py-3" id="kernwaarden">
+    <section class="bg-slate-100 py-3" id="proces">
       <div class="mx-auto rounded-[2rem] bg-[#bba0f9] px-4 py-8 sm:px-6 lg:px-8 lg:py-10" data-values-carousel
         data-reveal>
         <div class="flex flex-col gap-8">
@@ -771,13 +777,13 @@
               <div class="flex items-center gap-2">
                 <button type="button"
                   class="inline-flex h-12 w-12 items-center justify-center text-black transition disabled:cursor-not-allowed disabled:opacity-35"
-                  data-values-prev aria-label="Vorige kernwaarden">
+                  data-values-prev aria-label="Vorige proces">
                   <img src="./assets/icons/arrow-down-dark.svg" alt="" aria-hidden="true"
                     class="h-12 w-12 rotate-90 scale-x-[-1] transition duration-300 ease-out hover:rotate-[70deg]" />
                 </button>
                 <button type="button"
                   class="inline-flex h-12 w-12 items-center justify-center text-black transition disabled:cursor-not-allowed disabled:opacity-35"
-                  data-values-next aria-label="Volgende kernwaarden">
+                  data-values-next aria-label="Volgende proces">
                   <img src="./assets/icons/arrow-down-dark.svg" alt="" aria-hidden="true"
                     class="h-12 w-12 rotate-90 scale-y-[-1] scale-x-[-1] transition duration-300 ease-out hover:rotate-[110deg]" />
                 </button>
@@ -797,12 +803,12 @@
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">01</div>
                 <h3
                   class="mt-4 max-w-[15rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Strategie & Analyse
+                  Ontdekkings&shy;sessie
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  We beginnen door scherp in kaart te brengen wie de doelgroep is, wat je verkoopt en wat succes
-                  betekent.
-                  Dit wordt namelijk de basis voor alle vervolg beslissingen.
+                  We starten met een heldere <span
+                    class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">ontdekkingssessie</span>, zodat we
+                  je business precies begrijpen, wie je wilt bereiken en wat jouw website moet opleveren.
                 </p>
               </article>
 
@@ -812,11 +818,12 @@
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">02</div>
                 <h3
                   class="mt-4 max-w-[12rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Structuur
+                  Wireframes
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Daarna vertalen we de strategie naar structuur: wireframes, sitemaps en flows. Hiermee creëren we
-                  de route voor het omzetten van bezoekers naar klanten.
+                  Daarna ontwikkelen we een logische indeling met
+                  <span class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">wireframes</span>
+                  zodat bezoekers snel kunnen vinden wat ze zoeken en makkelijker actie onder&shy;nemen.
                 </p>
               </article>
 
@@ -825,12 +832,15 @@
                 data-values-slide tabindex="0">
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">03</div>
                 <h3
-                  class="mt-4 max-w-[12rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Design op maat
+                  class="mt-4 max-w-[13rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
+                  Copy & Content&shy;strategie
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Dan gaan we ontwerpen. Elk scherm wordt vanaf nul ontworpen. Volledig afgestemd op merk,
-                  type bezoeker en de verwachte actie van de bezoekers.
+                  We schrijven sterke teksten (ook wel
+                  <span class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">copy</span><span
+                    class="text-[#bba0f9] bg-[#daf9a0] pb-[2px]">&amp;</span><span
+                    class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">content</span>
+                  genoemd), die jouw verhaal duidelijk vertelt en bezoekers overtuigt om contact op te nemen.
                 </p>
               </article>
 
@@ -840,11 +850,13 @@
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">04</div>
                 <h3
                   class="mt-4 max-w-[12rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Development & Performance
+                  Visueel Design
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Tijdens het bouwen testen wij continu of de website supersnel blijft werken en er goed uit
-                  blijft zien op alle scherm&shy;formaten.
+                  We ontwerpen een <span class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">unieke</span>
+                  <span class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">uitstraling</span>
+                  die vertrouwen wekt en bezoekers richting de juiste actie begeleidt. Elk onderdeel wordt bewust
+                  vormgegeven.
                 </p>
               </article>
 
@@ -854,11 +866,13 @@
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">05</div>
                 <h3
                   class="mt-4 max-w-[12rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Tracking & Data Setup
+                  Development & SEO
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Na het bouwen implementeren wij volledige tracking (events, conversies, pixels). Hiervoor gebruiken
-                  wij professionele tools zodat wij datagedreven kunnen sturen.
+                  Tijdens de bouw zorgen we voor snelheid, veiligheid, goede weergave op
+                  alle schermformaten en een technische basis die <span
+                    class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">zoekmachines</span> goed kunnen
+                  begrijpen.
                 </p>
               </article>
 
@@ -868,11 +882,13 @@
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">06</div>
                 <h3
                   class="mt-4 max-w-[12rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Livegang
+                  Livegang & Tracking
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Dan is het zover, de website gaat live. Alles wordt zorgvuldig gecontroleerd, getest en de puntjes
-                  worden op de i gezet. De website is dan direct klaar om bezoekers te ontvangen.
+                  Voor de website live gaat implementeren wij <span
+                    class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">meetpunten</span>, testen we
+                  functionaliteit,
+                  snelheid, formulieren, links en responsive gedrag.
                 </p>
               </article>
 
@@ -882,11 +898,14 @@
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">07</div>
                 <h3
                   class="mt-4 max-w-[12rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Ads & Traffic (Google + Meta)
+                  Ads & Traffic
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Dan starten we met de campagnes. We zetten gerichte campagnes op via Google Ads en Meta Ads Manager,
-                  en monitoren we de resultaten via gerichte tracking.
+                  Na livegang kunnen we <span
+                    class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">advertenties</span> opzetten via
+                  Google en social media. We sturen op zichtbaarheid,
+                  meetpunten en resultaat, analyseren wat bezoekers doen en verbeteren campagnes op basis van die
+                  gegevens.
                 </p>
               </article>
 
@@ -896,11 +915,13 @@
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">08</div>
                 <h3
                   class="mt-4 max-w-[12rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Lancering & Groei
+                  Onderhoud & Groei
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  Na livegang blijft jouw website actief doorontwikkelen. Met onze strategische aanpak verzorgen wij
-                  groei via zowel organisch verkeer als verkeer vanuit online advertenties.
+                  Na oplevering stopt het werk niet. Met <span
+                    class="text-[#bba0f9] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">onderhoud</span>, updates,
+                  beveiliging, backups, performance monitoring en doorlopende optimalisatie zorgen we dat je website
+                  blijft presteren en meegroeit met je bedrijf.
                 </p>
               </article>
 
@@ -922,9 +943,9 @@
       </div>
     </section>
 
-    <section class="bg-slate-100 py-3 lg:px-2" id="cases">
+    <section class="flex flex-col justify-center bg-slate-100 py-3 lg:px-2" id="cases">
       <div class="mx-auto bg-white rounded-[2rem] overflow-hidden pt-8 lg:pt-12">
-        <div class="flex flex-col gap-8">
+        <div class="flex flex-col">
           <div class="flex flex-col gap-4 px-4 sm:px-6 lg:px-8 xl:px-10 lg:w-full" data-reveal>
             <h2
               class="mt-3 max-w-[18rem] text-[2.6rem] font-black font-extrabold leading-[0.9] tracking-[-0.04em] text-black sm:max-w-none sm:text-[4rem] lg:text-[4.75rem]">
@@ -932,7 +953,7 @@
             </h2>
           </div>
 
-          <div class="w-full" data-opposing-parallax data-distance-mobile="120" data-distance-desktop="250"
+          <div class="mt-8 w-full" data-opposing-parallax data-distance-mobile="120" data-distance-desktop="250"
             data-distance-breakpoint="1024">
             <div class="overflow-hidden py-4">
               <div
@@ -957,8 +978,20 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
+
+      <a href="./portfolio"
+        class="relative group inline-flex mx-auto -top-[25px] gap-2 items-center justify-center rounded-[1rem] bg-[#daf9a0] px-5 py-3 text-base font-semibold text-slate-700 z-[1] transition hover:bg-[#bba0f9] hover:text-slate-950 sm:text-lg">
+        <span>Bekijk ons portfolio</span>
+        <span class="relative inline-flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden"
+          aria-hidden="true">
+          <img src="./assets/icons/arrow-down-dark.svg" alt=""
+            class="absolute inset-0 block h-7 w-7 rotate-[90deg] scale-y-[-1] scale-x-[-1] transition duration-300 ease-out group-hover:rotate-[130deg]" />
+        </span>
+      </a>
+
     </section>
 
     <section class="bg-slate-100 py-3 lg:px-2" id="contact">
@@ -972,7 +1005,7 @@
                   Contact
                 </h2>
                 <p class="max-w-xl text-sm leading-6 text-slate-700 sm:text-base sm:leading-7">
-                  Ben je op zoek naar een website, een redesign, helemaal opnieuw beginnen of heb je een ander
+                  Ben je op zoek naar een website, een redesign, wil je online opnieuw beginnen of heb je een ander
                   project? Wij denken graag met je mee. Stuur ons een bericht, of plan een call in.
                 </p>
               </div>
@@ -1176,7 +1209,7 @@
           <div class="flex flex-col items-center gap-4 lg:items-start lg:gap-3">
             <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 lg:justify-start">
               <a class="transition hover:text-[#bba0f9]" href="#diensten">Diensten</a>
-              <a class="transition hover:text-[#bba0f9]" href="#kernwaarden">Proces</a>
+              <a class="transition hover:text-[#bba0f9]" href="./proces">Proces</a>
               <a class="transition hover:text-[#bba0f9]" href="#cases">Ons werk</a>
               <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>
             </div>
@@ -1212,9 +1245,9 @@
           <div class="w-full flex flex-col items-center gap-4 lg:items-start lg:justify-start">
             <p class="text-center text-2xl lg:text-left">👋
             </p>
-            <a href="mailto:contact@riceweb.nl" class="text-center lg:text-left"></a>
-            contact@riceweb.nl
-            </p>
+            <a href="mailto:contact@riceweb.nl" class="text-center lg:text-left">
+              contact@riceweb.nl
+            </a>
             <div class="w-full flex justify-center gap-2 lg:justify-start">
               <a href="https://www.facebook.com/rice-web" target="_blank" rel="noopener noreferrer"
                 class="bg-white/50 w-8 h-8 flex items-center justify-center rounded-full text-[#292938] hover:text-[#bba0f9] transition-colors duration-300">

@@ -3,9 +3,9 @@
 		return;
 	}
 
-	const hiddenTitle = options.hiddenTitle ?? "Vergeet je me niet?";
-	const delayToHiddenMs = Number.isFinite(options.delayToHiddenMs) ? Math.max(0, options.delayToHiddenMs) : 10500;
-	const delayToOriginalMs = Number.isFinite(options.delayToOriginalMs) ? Math.max(0, options.delayToOriginalMs) : 5500;
+	const hiddenTitle = options.hiddenTitle ?? "Je koffie wordt koud ☕";
+	const delayToHiddenMs = Number.isFinite(options.delayToHiddenMs) ? Math.max(0, options.delayToHiddenMs) : 7500;
+	const delayToOriginalMs = Number.isFinite(options.delayToOriginalMs) ? Math.max(0, options.delayToOriginalMs) : 1000;
 	const originalTitle = document.title;
 	let activeTimer = null;
 

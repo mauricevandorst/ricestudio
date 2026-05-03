@@ -1,8 +1,17 @@
 export function initIntroOverlay() {
-  const showOncePerSession = false;
+  const showOncePerSession = true;
   const overlay = document.querySelector("[data-intro-overlay]");
+  const header = document.querySelector("[data-intro-header]");
+
+  const revealHeader = () => {
+    if (header instanceof HTMLElement) {
+      header.style.transition = "";
+      header.style.transform = "translateY(0)";
+    }
+  };
 
   if (!(overlay instanceof HTMLElement)) {
+    revealHeader();
     return;
   }
 
@@ -30,6 +39,7 @@ export function initIntroOverlay() {
     || !(rotor instanceof SVGGElement)
     || meridians.length !== 4
   ) {
+    revealHeader();
     overlay.remove();
     return;
   }
@@ -38,6 +48,7 @@ export function initIntroOverlay() {
   const shouldSkip = showOncePerSession && window.sessionStorage.getItem(sessionFlag) === "1";
 
   if (shouldSkip) {
+    revealHeader();
     overlay.remove();
     return;
   }
@@ -64,8 +75,6 @@ export function initIntroOverlay() {
 
     overlay.remove();
   };
-
-  const header = document.querySelector("[data-intro-header]");
 
   if (header instanceof HTMLElement) {
     header.style.transform = "translateY(-100%)";

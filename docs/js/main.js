@@ -18,6 +18,7 @@ import { initYear } from "./modules/year.js";
 import { initCasesGallery } from "./modules/cases-gallery.js";
 import { initOpposingParallaxGallery } from "./modules/opposing-parallax-gallery.js";
 import { initPageVisibilityTitle } from "./modules/page-visibility-title.js";
+import { initProcesNav } from "./modules/proces-nav.js";
 
 initPageVisibilityTitle({
 	delayToHiddenMs: 10500,
@@ -38,6 +39,7 @@ initHeroVideo();
 initMarquee();
 initBrandCarousel();
 initValuesCarousel();
+initProcesNav();
 initReviews();
 initContactSwitcher();
 initCasesGallery();

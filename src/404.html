@@ -21,12 +21,12 @@
   <script type="module" src="./js/main.js" defer></script>
 </head>
 
-<body class="bg-slate-100 font-sans text-slate-900 antialiased selection:bg-blue-200 selection:text-slate-900">
+<body class="bg-slate-100 font-sans text-slate-900 antialiased selection:bg-blue-200 selection:text-slate-900" data-page="404">
   <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
     <div class="absolute inset-0 bg-black/80"></div>
   </div>
 
-  <header class="fixed inset-x-0 top-0 z-[150] bg-transparent" data-site-header>
+  <header class="fixed inset-x-0 top-0 z-[150] bg-transparent" data-site-header data-change-text-color="false">
     <div class="bg-[#bba0f9] text-center text-xs font-regular text-black/80">
       <div
         class="mx-auto flex flex-row justify-center items-center gap-3 overflow-hidden px-4 py-1 sm:max-w-7xl lg:px-8">
@@ -56,20 +56,20 @@
             data-header-brand>
             <span class="inline-flex transition-transform duration-700 ease-out will-change-transform"
               data-header-logo-shell>
-              <img src="./assets/icons/rice-logo.svg" alt="Rice Web"
+              <img src="./assets/icons/rice-logo-dark.svg" alt="Rice Web"
                 class="block h-5 w-auto transition-all duration-300 md:h-7 lg:h-8" data-header-logo
-                data-logo-default="./assets/icons/rice-logo.svg"
+                data-logo-default="./assets/icons/rice-logo-dark.svg"
                 data-logo-compact="./assets/icons/rice-logo-dark.svg" />
             </span>
             <span class="inline-flex h-[0.85rem] items-center overflow-hidden lg:h-[1rem]">
               <span
-                class="inline-flex items-center gap-1 ml-[2px] leading-none text-[0.55rem] font-black uppercase tracking-[0.22em] text-[#bba0f9] transition-colors duration-300 will-change-transform lg:gap-1.5 lg:text-[0.75rem] lg:ml-[4px]"
+                class="inline-flex items-center gap-1 ml-[2px] leading-none text-[0.55rem] font-black uppercase tracking-[0.22em] text-black/80 transition-colors duration-300 will-change-transform lg:gap-1.5 lg:text-[0.75rem] lg:ml-[4px]"
                 data-header-text data-header-badge>
                 <svg viewBox="0 0 24 24"
                   class="block h-[0.85rem] w-[0.85rem] shrink-0 overflow-visible lg:h-[1rem] lg:w-[1rem]"
                   aria-hidden="true" data-header-globe>
                   <g data-header-globe-rotor>
-                    <circle cx="12" cy="12" r="8.5" fill="none" stroke="#bba0f980" stroke-width="1.05"></circle>
+                    <circle cx="12" cy="12" r="8.5" fill="none" stroke="#0f172a80" stroke-width="1.05"></circle>
                     <path d="M3.5 12h17" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.1"
                       opacity="0.88"></path>
                     <path d="M5.4 7.7c1.9.9 4.1 1.35 6.6 1.35s4.7-.45 6.6-1.35" fill="none" stroke="currentColor"
@@ -95,35 +95,35 @@
 
           <div class="hidden min-w-0 flex-1 items-center gap-6 md:flex lg:gap-8">
             <nav
-              class="flex min-w-0 items-center gap-5 text-lg tracking-[-0.05em] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-2xl"
+              class="flex min-w-0 items-center gap-5 text-lg tracking-[-0.05em] font-medium text-black/80 transition-colors duration-300 lg:gap-7 lg:text-2xl"
               data-header-text>
-              <a class="transition hover:text-[#bba0f9]" href="./#diensten">Diensten</a>
-              <a class="transition hover:text-[#bba0f9]" href="./#kernwaarden">Proces</a>
-              <a class="transition hover:text-[#bba0f9]" href="./#cases">Ons werk</a>
-              <a class="transition hover:text-[#bba0f9]" href="./#contact">Contact</a>
+              <a class="transition hover:text-black" href="./#diensten">Diensten</a>
+              <a class="transition hover:text-black" href="./#kernwaarden">Proces</a>
+              <a class="transition hover:text-black" href="./#cases">Ons werk</a>
+              <a class="transition hover:text-black" href="./#contact">Contact</a>
             </nav>
 
             <nav
-              class="ml-auto flex items-center gap-5 text-[0.95rem] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-[1rem]"
+              class="ml-auto flex items-center gap-5 text-[0.95rem] font-medium text-black/80 transition-colors duration-300 lg:gap-7 lg:text-[1rem]"
               data-header-text>
-              <a class="transition hover:text-[#bba0f9]" href="./#cases">Ons werk</a>
+              <a class="transition hover:text-black" href="./#cases">Ons werk</a>
             </nav>
           </div>
 
           <div class="hidden items-center gap-2 md:flex lg:gap-3">
             <a href="./#contact-panel" data-contact-open="call"
-              class="inline-flex items-center rounded-[1.15rem] border-solid border-[0px] border-[#bba0f9]/70 bg-white/10 backdrop-blur-xl px-4 py-3 text-[0.95rem] font-bold text-[#bba0f9] shadow-sm transition-[border-width,border-color,background-color,color] duration-400 ease-in-out hover:border-blue-200 hover:text-[#f9eaa0] hover:bg-slate-600 lg:px-5 lg:text-lg"
+              class="inline-flex items-center rounded-[1.15rem] border-solid border-[0px] border-black/30 bg-white/50 backdrop-blur-xl px-4 py-3 text-[0.95rem] font-bold text-black/80 shadow-sm transition-[border-width,border-color,background-color,color] duration-400 ease-in-out hover:border-black/80 hover:text-black hover:bg-white lg:px-5 lg:text-lg"
               data-header-outline-button>
               Plan een call
             </a>
             <a href="./#contact-panel" data-contact-open="message"
-              class="inline-flex items-center rounded-[1.15rem] bg-[#bba0f9] px-4 py-3 text-[0.95rem] font-semibold text-black/80 shadow-[0_14px_35px_rgba(37,99,235,0.22)] transition hover:-translate-y-0.5 hover:bg-[#f9eaa0] hover:text-black lg:px-5 lg:text-lg">
+              class="inline-flex items-center rounded-[1.15rem] bg-black/80 px-4 py-3 text-[0.95rem] font-semibold text-white shadow-[0_14px_35px_rgba(15,23,42,0.22)] transition hover:-translate-y-0.5 hover:bg-black hover:text-white lg:px-5 lg:text-lg">
               Contact
             </a>
           </div>
 
           <button type="button"
-            class="ml-auto inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full text-[#bba0f9] transition-colors duration-300 md:hidden"
+            class="ml-auto inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full text-black/80 transition-colors duration-300 md:hidden"
             data-menu-button data-header-text aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" stroke-width="1.9" data-menu-open-icon>
@@ -145,12 +145,12 @@
       <div class="relative z-10 flex h-full flex-col" data-mobile-menu-container>
         <div class="px-4 py-2 flex items-center justify-center gap-4 text-[13px]">
           <a href="./#contact-panel" data-contact-open="message"
-            class="inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
+            class="inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none text-black/80 backdrop-blur-sm transition hover:text-black">
             <i class="fa-solid fa-comment h-[0.8em] w-[0.8em] mb-[2px] shrink-0"></i>
             Bericht versturen
           </a>
           <a href="./#contact-panel" data-contact-open="call"
-            class="inline-flex items-center justify-center gap-2 rounded-full font-medium text-[#bba0f9]/80 backdrop-blur-sm transition hover:text-[#f9eaa0]">
+            class="inline-flex items-center justify-center gap-2 rounded-full font-medium text-black/80 backdrop-blur-sm transition hover:text-black">
             <i class="fa-solid fa-phone h-[0.6em] w-[0.6em] mb-[5px] shrink-0"></i>
             Plan een call
           </a>
@@ -172,22 +172,27 @@
                 </button>
               </div>
               <nav class="flex flex-col gap-2">
-                <button type="button"
-                  class="inline-flex items-center justify-between rounded-lg bg-[#bba0f9]/15 px-4 py-2 text-xl font-medium text-[#34343f]"
-                  data-mobile-submenu-toggle data-mobile-menu-item aria-expanded="true"
-                  aria-controls="mobile-startpagina-submenu">
-                  <span>Startpagina</span>
-                  <svg class="h-5 w-5 rotate-180 transition-transform duration-200" data-mobile-submenu-icon
-                    viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </button>
-                <div id="mobile-startpagina-submenu" class="space-y-1 pl-2">
+                <div class="flex items-center gap-2 rounded-lg bg-[#bba0f9]/15" data-mobile-menu-item>
+                  <a href="./"
+                    class="min-w-0 flex-1 rounded-lg px-4 py-2 text-xl font-medium text-[#34343f] transition hover:bg-[#bba0f9]/10">
+                    Home
+                  </a>
+                  <button type="button"
+                    class="inline-flex items-center justify-center self-stretch px-4 text-[#34343f]"
+                    data-mobile-submenu-toggle aria-expanded="true" aria-controls="mobile-home-submenu"
+                    aria-label="Home submenu tonen of verbergen">
+                    <svg class="h-5 w-5 rotate-180 transition-transform duration-200" data-mobile-submenu-icon
+                      viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+                <div id="mobile-home-submenu" class="space-y-1 pl-2">
                   <a href="./#diensten"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Diensten
+                    Onze Diensten
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -196,7 +201,7 @@
                   <a href="./#kernwaarden"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Proces
+                    Ons Design Proces
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -310,9 +315,9 @@
           <div class="w-full flex flex-col items-center gap-4 lg:items-start lg:justify-start">
             <p class="text-center text-2xl lg:text-left">👋
             </p>
-            <a href="mailto:contact@riceweb.nl" class="text-center lg:text-left"></a>
-            contact@riceweb.nl
-            </p>
+            <a href="mailto:contact@riceweb.nl" class="text-center lg:text-left">
+              contact@riceweb.nl
+            </a>
             <div class="w-full flex justify-center gap-2 lg:justify-start">
               <a href="https://www.facebook.com/rice-web" target="_blank" rel="noopener noreferrer"
                 class="bg-white/50 w-8 h-8 flex items-center justify-center rounded-full text-[#292938] hover:text-[#bba0f9] transition-colors duration-300">

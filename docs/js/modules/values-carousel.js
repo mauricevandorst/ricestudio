@@ -43,7 +43,7 @@ export function initValuesCarousel() {
     dotButtons = Array.from({ length: maxIndex + 1 }, (_, index) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "h-2.5 rounded-full bg-black/20 transition-all duration-300 hover:bg-black/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35";
+      button.className = "h-2.5 rounded-full bg-black/20 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35";
       button.setAttribute("aria-label", `Ga naar item ${index + 1}`);
       button.setAttribute("aria-pressed", index === currentIndex ? "true" : "false");
       button.addEventListener("click", () => {

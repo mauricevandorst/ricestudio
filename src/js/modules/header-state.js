@@ -4,6 +4,7 @@ export function initHeaderState() {
   const headerTextTargets = [...document.querySelectorAll("[data-header-text]")];
   const headerLogo = document.querySelector("[data-header-logo]");
   const headerOutlineButtons = [...document.querySelectorAll("[data-header-outline-button]")];
+  const shouldChangeTextColor = header?.dataset.changeTextColor !== "false";
 
   if (!header || !headerShell) {
     return;
@@ -23,10 +24,12 @@ export function initHeaderState() {
     headerShell.classList.toggle("shadow-lg", compact);
     headerShell.classList.toggle("shadow-slate-900/10", compact);
 
-    headerTextTargets.forEach((target) => {
-      target.classList.toggle("text-black/80", compact);
-      target.classList.toggle("text-[#bba0f9]", !compact);
-    });
+    if (shouldChangeTextColor) {
+      headerTextTargets.forEach((target) => {
+        target.classList.toggle("text-black/80", compact);
+        target.classList.toggle("text-[#bba0f9]", !compact);
+      });
+    }
 
     headerOutlineButtons.forEach((button) => {
       button.style.borderWidth = compact ? "1px" : "0px";
