@@ -70,7 +70,7 @@ function renderParallaxGalleryImages() {
 		for (let repeatIndex = 0; repeatIndex < LOOP_REPEATS; repeatIndex += 1) {
 			columnImages.forEach(({ src, alt }) => {
 				const linkButton = document.createElement("a");
-				linkButton.href = "./#cases";
+				linkButton.href = "../portfolio";
 				linkButton.className = "block overflow-hidden bg-slate-900/70";
 				linkButton.setAttribute("aria-label", `${alt} - bekijk cases`);
 

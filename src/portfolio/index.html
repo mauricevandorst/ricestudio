@@ -263,9 +263,50 @@
       </div>
     </section>
 
-    <!-- TODO:  -->
+    <!-- TODO: Add a portfolio section.
+     The section must match the layout of the provided reference image.
+
+     Requirements:
+     - Create a portfolio section with a responsive grid.
+     - On small screens: show 1 portfolio item per row.
+     - On medium screens and larger: show 2 portfolio items per row.
+     - Each portfolio item must contain:
+       - an image
+       - a title
+       - a subtitle
+     - The image should appear above the title and subtitle.
+     - Titles should be large, bold, and visually prominent.
+     - Subtitles should be smaller and placed directly below the title.
+     - Use consistent spacing between portfolio items.
+     - The layout should feel clean, modern, and similar to the reference image.
+
+     JavaScript requirements:
+     - Portfolio items must be loaded dynamically from a JavaScript array.
+     - Do not hardcode the portfolio item HTML manually in the page.
+     - Each item in the array should contain:
+       - title
+       - subtitle
+       - imageUrl
+     - JavaScript should loop through the array and render the portfolio cards into the section.
+
+     Example data structure:
+     const portfolioItems = [
+       {
+         title: "LedgerBee",
+         subtitle: "AI-Native ERP for SaaS & Subscription Businesses",
+         imageUrl: "/images/portfolio/ledgerbee.png"
+       },
+       {
+         title: "ESEYE",
+         subtitle: "Global IoT Connectivity & eSIM Orchestration",
+         imageUrl: "/images/portfolio/eseye.png"
+       }
+     ];
+-->
     <section class="w-full rounded-3xl bg-white py-12 sm:py-20 md:py-24 my-4">
-      
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12" data-portfolio-grid></div>
+      </div>
     </section>
 
   </main>
