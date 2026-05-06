@@ -1,6 +1,6 @@
 ﻿import { initSmoothScroll } from "./modules/smooth-scroll.js";
 import { initBrandCarousel } from "./modules/brand-carousel.js";
-import { initContactSwitcher } from "./modules/contact-switcher.js";
+import { initContactTabs } from "./modules/contact-tabs.js";
 import { initFaq } from "./modules/faq.js";
 import { initHeaderBadgeAnimation } from "./modules/header-badge-animation.js";
 import { initHeaderGlobe } from "./modules/header-globe.js";
@@ -42,7 +42,7 @@ initBrandCarousel();
 initValuesCarousel();
 initProcesNav();
 initReviews();
-initContactSwitcher();
+initContactTabs();
 initCasesGallery();
 initOpposingParallaxGallery();
 initPortfolio();

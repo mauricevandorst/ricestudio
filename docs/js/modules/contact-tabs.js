@@ -1,5 +1,5 @@
 const USE_FAKE_CONTACT_SUBMIT = false;
-const DUTCH_FORM_FIELD_NAMES = {
+const CONTACT_FIELD_LABELS = {
   name: "Naam",
   phone: "Telefoonnummer",
   company: "Bedrijfsnaam",
@@ -7,8 +7,8 @@ const DUTCH_FORM_FIELD_NAMES = {
   message: "Bericht",
 };
 
-function localizeFormDataFieldNames(formData) {
-  Object.entries(DUTCH_FORM_FIELD_NAMES).forEach(([originalName, dutchName]) => {
+function localizeFieldNames(formData) {
+  Object.entries(CONTACT_FIELD_LABELS).forEach(([originalName, localizedName]) => {
     if (!formData.has(originalName)) {
       return;
     }
@@ -17,12 +17,12 @@ function localizeFormDataFieldNames(formData) {
     formData.delete(originalName);
 
     values.forEach((value) => {
-      formData.append(dutchName, value);
+      formData.append(localizedName, value);
     });
   });
 }
 
-function fillEmptyFormDataValues(formData) {
+function fillEmptyValues(formData) {
   for (const [name, value] of Array.from(formData.entries())) {
     if (typeof value === "string" && value.trim() === "") {
       formData.set(name, "(leeg)");
@@ -30,16 +30,7 @@ function fillEmptyFormDataValues(formData) {
   }
 }
 
-export function initContactSwitcher() {
-  const root = document.querySelector("[data-contact-switcher]");
-
-  if (!root) {
-    return;
-  }
-
-  const tabs = [...root.querySelectorAll("[data-contact-tab]")];
-  const panels = [...root.querySelectorAll("[data-contact-panel]")];
-  const messageForm = root.querySelector('form[action="https://api.web3forms.com/submit"]');
+function createFeedbackController(root) {
   const feedbackModal = root.querySelector("[data-contact-feedback]");
   const feedbackDialog = root.querySelector("[data-contact-feedback-dialog]");
   const feedbackTitle = root.querySelector("#contact-feedback-title");
@@ -48,20 +39,15 @@ export function initContactSwitcher() {
     ...root.querySelectorAll("[data-contact-feedback-close], [data-contact-feedback-confirm]"),
   ];
 
-  if (!tabs.length || !panels.length) {
-    return;
-  }
-
   let lastFocusedElement = null;
 
-  const closeFeedbackModal = () => {
+  const close = () => {
     if (!(feedbackModal instanceof HTMLElement) || !(feedbackDialog instanceof HTMLElement)) {
       return;
     }
 
-    feedbackModal.classList.add("pointer-events-none", "opacity-0");
+    feedbackModal.classList.add("pointer-events-none", "opacity-0", "hidden");
     feedbackModal.classList.remove("flex");
-    feedbackModal.classList.add("hidden");
     feedbackDialog.classList.add("translate-y-6");
     feedbackModal.setAttribute("aria-hidden", "true");
 
@@ -70,7 +56,7 @@ export function initContactSwitcher() {
     }
   };
 
-  const openFeedbackModal = ({ title, message }) => {
+  const open = ({ title, message }) => {
     if (!(feedbackModal instanceof HTMLElement) || !(feedbackDialog instanceof HTMLElement)) {
       return;
     }
@@ -99,13 +85,13 @@ export function initContactSwitcher() {
   };
 
   feedbackCloseButtons.forEach((button) => {
-    button.addEventListener("click", closeFeedbackModal);
+    button.addEventListener("click", close);
   });
 
   if (feedbackModal instanceof HTMLElement) {
     feedbackModal.addEventListener("click", (event) => {
       if (event.target === feedbackModal) {
-        closeFeedbackModal();
+        close();
       }
     });
   }
@@ -116,113 +102,105 @@ export function initContactSwitcher() {
     }
 
     if (feedbackModal instanceof HTMLElement && feedbackModal.getAttribute("aria-hidden") === "false") {
-      closeFeedbackModal();
+      close();
     }
   });
 
-  if (messageForm) {
-    const submitButton = messageForm.querySelector('button[type="submit"]');
+  return { open };
+}
 
-    messageForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
+function wireMessageForm(messageForm, feedback) {
+  if (!(messageForm instanceof HTMLFormElement)) {
+    return;
+  }
 
-      if (!(messageForm instanceof HTMLFormElement)) {
-        return;
-      }
+  const submitButton = messageForm.querySelector('button[type="submit"]');
 
-      const formData = new FormData(messageForm);
-      const replyToValue = formData.get("email");
+  messageForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-      if (typeof replyToValue === "string" && replyToValue.trim() !== "") {
-        formData.set("replyto", replyToValue.trim());
-      }
+    const formData = new FormData(messageForm);
+    const replyToValue = formData.get("email");
 
-  localizeFormDataFieldNames(formData);
-      fillEmptyFormDataValues(formData);
-      const action = messageForm.getAttribute("action");
-      const method = messageForm.getAttribute("method") ?? "POST";
+    if (typeof replyToValue === "string" && replyToValue.trim() !== "") {
+      formData.set("replyto", replyToValue.trim());
+    }
 
+    localizeFieldNames(formData);
+    fillEmptyValues(formData);
+
+    const action = messageForm.getAttribute("action");
+    const method = messageForm.getAttribute("method") ?? "POST";
+
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
+
+    try {
       if (USE_FAKE_CONTACT_SUBMIT) {
-        if (submitButton instanceof HTMLButtonElement) {
-          submitButton.disabled = true;
-          submitButton.setAttribute("aria-busy", "true");
-        }
+        await new Promise((resolve) => {
+          window.setTimeout(resolve, 500);
+        });
 
-        try {
-          await new Promise((resolve) => {
-            window.setTimeout(resolve, 500);
-          });
-
-          messageForm.reset();
-          openFeedbackModal({
-            title: "Er is geen bericht verstuurd",
-            message: "De test-modus is ingeschakeld. Dit betekent dat het formulier niet is ingediend en er is geen e-mail verstuurd.",
-          });
-        } finally {
-          if (submitButton instanceof HTMLButtonElement) {
-            submitButton.disabled = false;
-            submitButton.removeAttribute("aria-busy");
-          }
-        }
-
+        messageForm.reset();
+        feedback.open({
+          title: "Er is geen bericht verstuurd",
+          message: "De test-modus is ingeschakeld. Dit betekent dat het formulier niet is ingediend en er is geen e-mail verstuurd.",
+        });
         return;
       }
 
       if (!action) {
-        openFeedbackModal({
+        feedback.open({
           title: "Verzenden niet mogelijk",
           message: "Het formulier kon niet worden verzonden. Probeer het later opnieuw.",
         });
         return;
       }
 
+      const response = await fetch(action, {
+        method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        messageForm.reset();
+        feedback.open({
+          title: "Bedankt voor je bericht!",
+          message: "Je bericht is verstuurd. We nemen snel contact met je op, vrijwel altijd binnen 1 werkdag.",
+        });
+        return;
+      }
+
+      const errorMessage = typeof result.message === "string" && result.message
+        ? result.message
+        : "Het versturen van je bericht is niet gelukt. Probeer het opnieuw.";
+
+      feedback.open({
+        title: "Verzenden mislukt",
+        message: errorMessage,
+      });
+    } catch {
+      feedback.open({
+        title: "Netwerkfout",
+        message: "Er ging iets mis bij het versturen. Controleer je verbinding en probeer opnieuw.",
+      });
+    } finally {
       if (submitButton instanceof HTMLButtonElement) {
-        submitButton.disabled = true;
-        submitButton.setAttribute("aria-busy", "true");
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
       }
+    }
+  });
+}
 
-      try {
-        const response = await fetch(action, {
-          method,
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        });
-
-        const result = await response.json();
-
-        if (response.ok && result.success) {
-          messageForm.reset();
-          openFeedbackModal({
-            title: "Bedankt voor je bericht!",
-            message: "Je bericht is verstuurd. We nemen snel contact met je op, vrijwel altijd binnen 1 werkdag.",
-          });
-          return;
-        }
-
-        const errorMessage = typeof result.message === "string" && result.message
-          ? result.message
-          : "Het versturen van je bericht is niet gelukt. Probeer het opnieuw.";
-
-        openFeedbackModal({
-          title: "Verzenden mislukt",
-          message: errorMessage,
-        });
-      } catch {
-        openFeedbackModal({
-          title: "Netwerkfout",
-          message: "Er ging iets mis bij het versturen. Controleer je verbinding en probeer opnieuw.",
-        });
-      } finally {
-        if (submitButton instanceof HTMLButtonElement) {
-          submitButton.disabled = false;
-          submitButton.removeAttribute("aria-busy");
-        }
-      }
-    });
-  }
-
+function wireTabs({ tabs, panels }) {
   const activateTab = (tabName) => {
     tabs.forEach((tab) => {
       const isActive = tab.dataset.contactTab === tabName;
@@ -294,4 +272,25 @@ export function initContactSwitcher() {
       }
     });
   });
+}
+
+export function initContactTabs() {
+  const root = document.querySelector("[data-contact-switcher]");
+
+  if (!(root instanceof HTMLElement)) {
+    return;
+  }
+
+  const tabs = [...root.querySelectorAll("[data-contact-tab]")];
+  const panels = [...root.querySelectorAll("[data-contact-panel]")];
+
+  if (!tabs.length || !panels.length) {
+    return;
+  }
+
+  const feedback = createFeedbackController(root);
+  const messageForm = root.querySelector("[data-contact-message-form]") ?? root.querySelector("form");
+
+  wireMessageForm(messageForm, feedback);
+  wireTabs({ tabs, panels });
 }
