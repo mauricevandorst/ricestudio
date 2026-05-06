@@ -1,39 +1,46 @@
-const REVIEWS = [
+const REVIEWS_TOP = [
   {
     name: "Inti K.",
     company: "Studio IEKS",
     quote: "Ik twijfelde lang of een nieuwe website echt nodig was, maar dit heeft mijn bedrijf echt een boost gegeven. Alles klopt — van de uitstraling tot de manier waarop klanten nu binnenkomen.",
-    color: "#daf9a0",
   },
   {
     name: "Chelsea J.",
     company: "Proper Beauty Salon",
     quote: "Rice heeft precies begrepen wat ik wilde, zonder dat ik het zelf goed kon omschrijven. Het resultaat voelt als ik, maar dan professioneel. Mijn klanten reageren er constant positief op.",
-    color: "#bba0f9",
   },
   {
     name: "Boy B.",
     company: "Klimazon",
     quote: "Snelle communicatie, denken écht mee en leveren wat ze beloven. De website staat er en doet wat hij moet doen. Meer kan ik niet vragen.",
-    color: "#daf9a0",
   },
+  {
+    name: "Rafael B.",
+    company: "Marketing Partner",
+    quote: "Als partner van Rice werk ik regelmatig met hun websites. De basis van de sites zijn slim opgezet, waardoor wij online advertenties en tracking snel kunnen implementeren.",
+  },
+];
+
+const REVIEWS_BOTTOM = [
   {
     name: "Guido P.",
     company: "Oottat Tattoo",
     quote: "Professioneel advies, snel schakelen, sterke eigen input en vooral heel creatief. Ik ben ontzettend blij met mijn website echt WAUW!",
-    color: "#bba0f9",
   },
   {
     name: "Petra V.",
     company: "Petra's Laser & Beauty",
     quote: "Ik had wel wat ideeën maar wist niet hoe ik dat moest vertalen. Rice heeft dat voor me gedaan en het ziet er geweldig uit. Klanten vinden de site nu veel fijner en boeken sneller.",
-    color: "#bba0f9",
   },
   {
     name: "Marissa P.",
     company: "Glamour by Tink",
     quote: "Fijn contact, eerlijk advies en een eindresultaat waar ik trots op ben. Ze dachten mee over dingen waar ik zelf nooit aan had gedacht. Absoluut een aanrader.",
-    color: "#daf9a0",
+  },
+  {
+    name: "Rafael B.",
+    company: "Marketing Partner",
+    quote: "Als partner van Rice werk ik regelmatig met hun websites. De basis van de sites zijn slim opgezet, waardoor wij online advertenties en tracking snel kunnen implementeren.",
   },
 ];
 
@@ -57,11 +64,11 @@ function getInitials(name) {
 function createCard({ name, company, quote, color }) {
   const article = document.createElement("article");
   article.className =
-    "flex-shrink-0 w-[17rem] sm:w-[18.75rem] rounded-lg bg-slate-50 skew-x-[-4deg] select-none snap-start snap-always";
+    "flex-shrink-0 w-[17rem] sm:w-[18.75rem] rounded-lg bg-slate-50 skew-x-[-4deg] select-none";
 
   const surface = document.createElement("div");
   surface.className =
-    "p-5 flex flex-col gap-3 skew-x-[4deg]";
+    "pt-8 px-5 pb-8 flex flex-col gap-3 skew-x-[4deg]";
   article.appendChild(surface);
 
   const header = document.createElement("div");
@@ -95,30 +102,34 @@ function createCard({ name, company, quote, color }) {
   return article;
 }
 
-function buildTrack(trackEl, avatarColor) {
+function buildTrack(trackEl, reviews) {
+  const colors = ["#bba0f9", "#daf9a0"];
+  let cardIndex = 0;
+  
   for (let i = 0; i < COPIES; i++) {
-    REVIEWS.forEach((review) => {
+    reviews.forEach((review) => {
+      const avatarColor = colors[cardIndex % 2];
       trackEl.appendChild(createCard({ ...review, color: avatarColor }));
+      cardIndex++;
     });
   }
 }
 
-function measureSetWidth(trackEl) {
+function measureSetWidth(trackEl, reviewCount) {
   const totalChildren = trackEl.children.length;
-  const setChildCount = REVIEWS.length;
 
-  if (totalChildren === 0 || setChildCount === 0) {
+  if (totalChildren === 0 || reviewCount === 0) {
     return 0;
   }
 
   const gap = parseFloat(getComputedStyle(trackEl).gap) || 16;
   let width = 0;
 
-  for (let i = 0; i < setChildCount; i++) {
+  for (let i = 0; i < reviewCount; i++) {
     width += trackEl.children[i].offsetWidth;
   }
 
-  width += gap * (setChildCount - 1) + gap;
+  width += gap * (reviewCount - 1) + gap;
 
   return width;
 }
@@ -147,8 +158,8 @@ export function initReviewCarousel() {
       return;
     }
 
-    const avatarColor = index === 0 ? "#bba0f9" : "#daf9a0";
-    buildTrack(track, avatarColor);
+    const reviews = index === 0 ? REVIEWS_TOP : REVIEWS_BOTTOM;
+    buildTrack(track, reviews);
   });
 
   if (prefersReducedMotion) {
@@ -156,22 +167,25 @@ export function initReviewCarousel() {
   }
 
   const rowStates = rows
-    .map((row) => {
+    .map((row, index) => {
       const track = row.querySelector("[data-review-track]");
 
       if (!track) {
         return null;
       }
 
+      const reviews = index === 0 ? REVIEWS_TOP : REVIEWS_BOTTOM;
       const direction = row.dataset.direction === "right" ? 1 : -1;
-      const setWidth = measureSetWidth(track);
+      const setWidth = measureSetWidth(track, reviews.length);
 
       if (setWidth <= 0) {
         return null;
       }
 
-      // Start in the middle copy so there is room to scroll both ways.
-      const initialScrollLeft = setWidth;
+      // First row (direction -1) starts at beginning, second row (direction 1) starts at end
+      const initialScrollLeft = direction === 1 
+        ? 2 * setWidth - row.offsetWidth
+        : setWidth;
       row.scrollLeft = initialScrollLeft;
 
       return {
@@ -179,6 +193,7 @@ export function initReviewCarousel() {
         track,
         direction,
         setWidth,
+        reviewCount: reviews.length,
         currentScrollLeft: initialScrollLeft,
         targetScrollLeft: initialScrollLeft,
         isDragging: false,
@@ -297,7 +312,9 @@ export function initReviewCarousel() {
       // direction -1 ("left"): scrollLeft increases on scroll down.
       // direction  1 ("right"): scrollLeft decreases on scroll down.
       rowStates.forEach((state) => {
-        state.targetScrollLeft += delta * -state.direction * 0.35;
+        if (state.isVisible) {
+          state.targetScrollLeft += delta * -state.direction * 0.35;
+        }
       });
 
       requestUpdate();
@@ -309,7 +326,7 @@ export function initReviewCarousel() {
     "resize",
     () => {
       rowStates.forEach((state) => {
-        state.setWidth = measureSetWidth(state.track);
+        state.setWidth = measureSetWidth(state.track, state.reviewCount);
       });
     },
     { passive: true },

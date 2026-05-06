@@ -172,7 +172,7 @@
             <nav
               class="flex min-w-0 items-center gap-5 text-lg tracking-[-0.05em] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-2xl"
               data-header-text>
-              <a class="transition duration-300 hover:text-[#daf9a0]" href="#diensten">Diensten</a>
+              <a class="transition duration-300 hover:text-[#daf9a0]" href="./">Home</a>
               <a class="transition duration-300 hover:text-[#daf9a0]" href="./proces/">Proces</a>
               <a class="transition duration-300 hover:text-[#daf9a0]" href="./portfolio/">Ons werk</a>
               <a class="transition duration-300 hover:text-[#daf9a0]" href="#contact">Contact</a>
@@ -263,15 +263,6 @@
                   </button>
                 </div>
                 <div id="mobile-home-submenu" class="space-y-1 pl-2">
-                  <a href="#services"
-                    class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
-                    data-mobile-menu-item>
-                    Onze Diensten
-                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                      <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </a>
                   <a href="./proces"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
@@ -284,7 +275,7 @@
                   <a href="./portfolio/"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
-                    Bekijk ons Portfolio
+                    Ons Werk
                     <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -299,20 +290,38 @@
                         stroke-linejoin="round" />
                     </svg>
                   </a>
+                  <a href="#contact-panel" data-contact-open="message"
+                    class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
+                    data-mobile-menu-item>
+                    Stuur een Bericht
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <a href="#contact-panel" data-contact-open="call"
+                    class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
+                    data-mobile-menu-item>
+                    Plan een Call
+                    <svg class="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
                 </div>
               </nav>
-              <article class="mt-5 overflow-hidden rounded-[10px] bg-[#bba0f9]/15 p-2" data-mobile-menu-item>
+              <article class="mt-5 overflow-hidden rounded-[10px] bg-[#daf9a0]/35 p-2" data-mobile-menu-item>
                 <div class="relative h-40 overflow-hidden rounded-[3px]">
                   <img src="./assets/images/oottat-tattoo.jpg" alt="Elektrische installatie in uitvoering"
                     class="h-full w-full object-cover" />
                   <div class="absolute inset-0 bg-[#34343f]/50" aria-hidden="true"></div>
                   <p
-                    class="absolute inset-0 flex items-center justify-center text-center text-2xl font-brand font-extrabold text-[#bba0f9]">
+                    class="absolute inset-0 flex items-center justify-center text-center text-2xl font-brand font-extrabold text-[#daf9a0]">
                     Rice Partner</p>
                 </div>
                 <a href="#"
                   class="mt-3 inline-flex w-full items-center justify-between px-2 pb-1 text-sm font-medium text-[#34343f] hover:text-[#bba0f9] transition-colors">
-                  Ontdek Partnership+
+                  Ontdek Rice Partnership
                   <span class="opacity-50" aria-hidden="true">→</span>
                 </a>
               </article>
@@ -632,11 +641,11 @@
     <section class="bg-slate-100 py-3">
       <div class="overflow-hidden rounded-[2rem] py-8 lg:py-10" data-review-carousel>
         <div class="flex flex-col gap-4">
-          <div class="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory [touch-action:pan-x_pan-y] overscroll-x-contain" data-review-row data-direction="left">
-            <div class="flex gap-2 sm:gap-8 px-4 sm:px-6 lg:px-8" data-review-track></div>
+          <div class="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [touch-action:pan-x_pan-y] overscroll-x-contain" data-review-row data-direction="left">
+            <div class="flex gap-2 sm:gap-4 px-4 sm:px-6 lg:px-8" data-review-track></div>
           </div>
-          <div class="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory [touch-action:pan-x_pan-y] overscroll-x-contain" data-review-row data-direction="right">
-            <div class="flex gap-2 sm:gap-8 px-4 sm:px-6 lg:px-8" data-review-track></div>
+          <div class="overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [touch-action:pan-x_pan-y] overscroll-x-contain" data-review-row data-direction="right">
+            <div class="flex gap-2 sm:gap-4 px-4 sm:px-6 lg:px-8" data-review-track></div>
           </div>
         </div>
       </div>
@@ -714,15 +723,15 @@
                 data-values-slide tabindex="0">
                 <div class="text-[1.75rem] font-black leading-none tracking-[-0.08em] text-[#bba0f9]">03</div>
                 <h3
-                  class="mt-4 max-w-[13rem] text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.2rem]">
-                  Copy & Content&shy;strategie
+                  class="mt-4 text-[1.6rem] font-black leading-[0.94] tracking-[-0.06em] sm:text-[2.1rem]">
+                  Copy & Content Strategie
                 </h3>
                 <p class="mt-4 max-w-[15rem] text-sm leading-6 text-slate-700 sm:text-[0.95rem]">
-                  We schrijven sterke teksten (ook wel
+                  We schrijven sterke teksten (oftewel
                   <span class="text-[#9981d0] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">copy</span><span
                     class="text-[#bba0f9] bg-[#daf9a0] pb-[2px]">&amp;</span><span
                     class="text-[#9981d0] bg-[#daf9a0] px-[2px] pb-[2px] font-medium">content</span>
-                  genoemd), die jouw verhaal duidelijk vertelt en bezoekers overtuigt om contact op te nemen.
+                  ), die jouw verhaal duidelijk vertelt en bezoekers overtuigt om contact op te nemen.
                 </p>
               </article>
 
@@ -1092,7 +1101,7 @@
         <div class="flex flex-col items-center gap-6 lg:items-start lg:justify-between lg:gap-4">
           <div class="flex flex-col items-center gap-4 lg:items-start lg:gap-3">
             <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 lg:justify-start">
-              <a class="transition hover:text-[#bba0f9]" href="#diensten">Diensten</a>
+              <a class="transition hover:text-[#bba0f9]" href="./">Home</a>
               <a class="transition hover:text-[#bba0f9]" href="./proces">Proces</a>
               <a class="transition hover:text-[#bba0f9]" href="./portfolio/">Ons werk</a>
               <a class="transition hover:text-[#bba0f9]" href="#contact">Contact</a>

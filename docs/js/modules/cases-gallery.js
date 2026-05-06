@@ -1,33 +1,33 @@
 const GALLERY_IMAGE_COLUMNS = [
 	[
-		{ src: "./assets/images/oottat-tattoo-2.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio/oottat-tattoo" },
-		{ src: "./assets/images/proper-beauty-salon.jpg", alt: "Proper Beauty Salon — Nagelsalon", href: "./portfolio/proper-beauty-salon" },
-		{ src: "./assets/images/glamour-by-tink.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio/glamour-by-tink" },
-		{ src: "./assets/images/klimazon.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio/klimazon" },
-		{ src: "./assets/images/portfolio/portfolio-oottattattoo-1920-1080.png", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio/oottat-tattoo" },
-		{ src: "./assets/images/klimazon-2.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio/klimazon" },
-		{ src: "./assets/images/studio-ieks-2.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio/studio-ieks" },
-		{ src: "./assets/images/glamour-by-tink-2.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio/glamour-by-tink" },
+		{ src: "./assets/images/oottat-tattoo-2.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio" },
+		{ src: "./assets/images/proper-beauty-salon.jpg", alt: "Proper Beauty Salon — Nagelsalon", href: "./portfolio" },
+		{ src: "./assets/images/glamour-by-tink.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio" },
+		{ src: "./assets/images/klimazon.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio" },
+		{ src: "./assets/images/portfolio/portfolio-oottattattoo-1920-1080.png", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio" },
+		{ src: "./assets/images/klimazon-2.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio" },
+		{ src: "./assets/images/studio-ieks-2.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio" },
+		{ src: "./assets/images/glamour-by-tink-2.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio" },
 	],
 	[
-		{ src: "./assets/images/studio-ieks.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio/studio-ieks" },
-		{ src: "./assets/images/klimazon.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio/klimazon" },
-		{ src: "./assets/images/oottat-tattoo.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio/oottat-tattoo" },
-		{ src: "./assets/images/studio-ieks-2.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio/studio-ieks" },
-		{ src: "./assets/images/oottat-tattoo-2.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio/oottat-tattoo" },
-		{ src: "./assets/images/glamour-by-tink-2.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio/glamour-by-tink" },
-		{ src: "./assets/images/proper-beauty-salon-2.jpg", alt: "Proper Beauty Salon — Nagelsalon", href: "./portfolio/proper-beauty-salon" },
-		{ src: "./assets/images/glamour-by-tink.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio/glamour-by-tink" },
+		{ src: "./assets/images/studio-ieks.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio" },
+		{ src: "./assets/images/klimazon.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio" },
+		{ src: "./assets/images/oottat-tattoo.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio" },
+		{ src: "./assets/images/studio-ieks-2.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio" },
+		{ src: "./assets/images/oottat-tattoo-2.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio" },
+		{ src: "./assets/images/glamour-by-tink-2.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio" },
+		{ src: "./assets/images/proper-beauty-salon-2.jpg", alt: "Proper Beauty Salon — Nagelsalon", href: "./portfolio" },
+		{ src: "./assets/images/glamour-by-tink.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio" },
 	],
 	[
-		{ src: "./assets/images/oottat-tattoo.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio/oottat-tattoo" },
-		{ src: "./assets/images/glamour-by-tink.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio/glamour-by-tink" },
-		{ src: "./assets/images/studio-ieks.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio/studio-ieks" },
-		{ src: "./assets/images/proper-beauty-salon-2.jpg", alt: "Proper Beauty Salon — Nagelsalon", href: "./portfolio/proper-beauty-salon" },
-		{ src: "./assets/images/klimazon-2.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio/klimazon" },
-		{ src: "./assets/images/portfolio/portfolio-petraslaserenbeauty-1920-1080.png", alt: "Petras Laseren Beauty — Schoonheidssalon", href: "./portfolio/petras-laseren-beauty" },
-		{ src: "./assets/images/glamour-by-tink-2.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio/glamour-by-tink" },
-		{ src: "./assets/images/oottat-tattoo-2.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio/oottat-tattoo" },
+		{ src: "./assets/images/oottat-tattoo.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio" },
+		{ src: "./assets/images/glamour-by-tink.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio" },
+		{ src: "./assets/images/studio-ieks.jpg", alt: "Studio IEKS — Lokale Artiestenstudio", href: "./portfolio" },
+		{ src: "./assets/images/proper-beauty-salon-2.jpg", alt: "Proper Beauty Salon — Nagelsalon", href: "./portfolio" },
+		{ src: "./assets/images/klimazon-2.jpg", alt: "Klimazon — Klimaat- & Zontechniek", href: "./portfolio" },
+		{ src: "./assets/images/portfolio/portfolio-petraslaserenbeauty-1920-1080.png", alt: "Petras Laseren Beauty — Schoonheidssalon", href: "./portfolio" },
+		{ src: "./assets/images/glamour-by-tink-2.jpg", alt: "Glamour by Tink — PMU-Salon & Academy", href: "./portfolio" },
+		{ src: "./assets/images/oottat-tattoo-2.jpg", alt: "Oottat Tattoo — Zaanse Tattooshop", href: "./portfolio" },
 	],
 ];
 
@@ -55,7 +55,7 @@ export function initCasesGallery() {
 			columnImages.forEach(({ src, alt, href }) => {
 				const link = document.createElement("a");
 				link.href = href;
-				link.target = "_blank";
+			    /*link.target = "_blank";*/
 				link.rel = "noopener noreferrer";
 				link.className = "block overflow-hidden";
 
