@@ -20,6 +20,7 @@ import { initOpposingParallaxGallery } from "./modules/opposing-parallax-gallery
 import { initPageVisibilityTitle } from "./modules/page-visibility-title.js";
 import { initProcesNav } from "./modules/proces-nav.js";
 import { initPortfolio } from "./modules/portfolio.js";
+import { initReviewCarousel } from "./modules/review-carousel.js";
 
 initPageVisibilityTitle({
 	delayToHiddenMs: 10500,
@@ -46,3 +47,4 @@ initContactTabs();
 initCasesGallery();
 initOpposingParallaxGallery();
 initPortfolio();
+initReviewCarousel();
