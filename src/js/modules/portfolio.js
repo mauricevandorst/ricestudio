@@ -71,7 +71,7 @@ export function initPortfolio() {
 		const img = document.createElement("img");
 		img.src = imageUrl;
 		img.alt = title;
-		img.className = "block w-full h-auto rounded-2xl transition-opacity duration-300 hover:opacity-90";
+		img.className = "block w-full h-auto rounded-t-2xl transition-opacity duration-300 hover:opacity-90";
 		img.loading = "lazy";
 		imageLink.appendChild(img);
 

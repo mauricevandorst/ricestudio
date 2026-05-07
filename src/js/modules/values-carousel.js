@@ -102,6 +102,7 @@ export function initValuesCarousel() {
       track.style.transform = "";
       viewport.scrollTo({ left: offset, behavior });
     } else {
+      viewport.scrollTo({ left: 0, behavior: "auto" });
       track.style.transform = `translateX(-${offset}px)`;
     }
 
@@ -186,12 +187,18 @@ export function initValuesCarousel() {
   viewport.addEventListener(
     "scroll",
     () => {
-      if (!isMobileViewport || scrollFrame) {
+      if (scrollFrame) {
         return;
       }
 
       scrollFrame = window.requestAnimationFrame(() => {
         scrollFrame = 0;
+        
+        // Reset transform on desktop when manually scrolling
+        if (!isMobileViewport) {
+          track.style.transform = "";
+        }
+        
         const nextIndex = getClosestIndex();
 
         if (nextIndex === currentIndex) {
@@ -202,7 +209,9 @@ export function initValuesCarousel() {
         updateControls();
       });
 
-      scheduleSnapToNearest();
+      if (isMobileViewport) {
+        scheduleSnapToNearest();
+      }
     },
     { passive: true },
   );
