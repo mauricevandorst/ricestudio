@@ -40,6 +40,13 @@ export function initCasesGallery() {
 		return;
 	}
 
+	// Zoek het basePath attribuut in de parent elementen
+	let basePath = "./";
+	const parentWithPath = tracks[0]?.closest("[data-base-path]");
+	if (parentWithPath) {
+		basePath = parentWithPath.dataset.basePath || "./";
+	}
+
 	tracks.forEach((track) => {
 		const columnIndex = Number(track.dataset.galleryColumn ?? -1);
 		const columnImages = GALLERY_IMAGE_COLUMNS[columnIndex];
@@ -54,7 +61,8 @@ export function initCasesGallery() {
 		for (let repeatIndex = 0; repeatIndex < LOOP_REPEATS; repeatIndex += 1) {
 			columnImages.forEach(({ src, alt, href }) => {
 				const link = document.createElement("a");
-				link.href = href;
+				// Pas het pad aan met het basePath
+				link.href = href.replace("./", basePath);
 			    /*link.target = "_blank";*/
 				link.rel = "noopener noreferrer";
 				link.className = "block overflow-hidden";
@@ -67,7 +75,8 @@ export function initCasesGallery() {
 				}
 
 				const image = document.createElement("img");
-				image.src = src;
+				// Pas het pad aan met het basePath
+				image.src = src.replace("./", basePath);
 				image.alt = repeatIndex === 0 ? alt : "";
 				image.loading = "lazy";
 				image.decoding = "async";

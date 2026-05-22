@@ -47,6 +47,7 @@ const REVIEWS_BOTTOM = [
 const COPIES = 3;
 const LERP_FACTOR = 0.1;
 const SETTLE_THRESHOLD = 0.05;
+const COLORS = ["#bba0f9", "#daf9a0"];
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -62,9 +63,12 @@ function getInitials(name) {
 }
 
 function createCard({ name, company, quote, color }) {
+  const oppositeColor = color === COLORS[0] ? COLORS[1] : COLORS[0];
+  
   const article = document.createElement("article");
   article.className =
     "flex-shrink-0 w-[17rem] sm:w-[18.75rem] rounded-lg bg-slate-50 skew-x-[-4deg] select-none";
+  article.style.boxShadow = `0 4px 16px ${oppositeColor}40`;
 
   const surface = document.createElement("div");
   surface.className =
@@ -103,12 +107,11 @@ function createCard({ name, company, quote, color }) {
 }
 
 function buildTrack(trackEl, reviews) {
-  const colors = ["#bba0f9", "#daf9a0"];
   let cardIndex = 0;
   
   for (let i = 0; i < COPIES; i++) {
     reviews.forEach((review) => {
-      const avatarColor = colors[cardIndex % 2];
+      const avatarColor = COLORS[cardIndex % 2];
       trackEl.appendChild(createCard({ ...review, color: avatarColor }));
       cardIndex++;
     });

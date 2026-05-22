@@ -2,12 +2,14 @@ export function initHeroVideo() {
   const heroVideo = document.querySelector("[data-hero-video]");
   const heroOverlay = document.querySelector("[data-hero-overlay]");
 
+  /*
   if (heroOverlay instanceof HTMLElement) {
     requestAnimationFrame(() => {
-      heroOverlay.classList.remove("bg-[#3d3a42ed]");
-      heroOverlay.classList.add("bg-[#3d3a42cf]");
+      heroOverlay.classList.remove("bg-[#09001ea3]");
+      heroOverlay.classList.add("bg-[#00000091]");
     });
   }
+  */
 
   if (!(heroVideo instanceof HTMLVideoElement)) {
     return;

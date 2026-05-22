@@ -34,14 +34,19 @@ function initialSync() {
   ensureDirs();
 
   for (const file of readdirSync(SRC)) {
+    const srcPath = path.join(SRC, file);
     const ext = path.extname(file).toLowerCase();
+    
+    // Copy root-level static files
     if (ROOT_STATIC_EXTENSIONS.has(ext)) {
-      copyFile(path.join(SRC, file), path.join(DOCS, file));
+      copyFile(srcPath, path.join(DOCS, file));
+    }
+    
+    // Copy all directories (portfolio, proces, website-assendelft, etc.)
+    if (existsSync(srcPath) && readdirSync(SRC, { withFileTypes: true }).find(d => d.isDirectory() && d.name === file)) {
+      copyDir(srcPath, path.join(DOCS, file));
     }
   }
-
-  copyDir(path.join(SRC, "js"), path.join(DOCS, "js"));
-  copyDir(path.join(SRC, "assets"), path.join(DOCS, "assets"));
 }
 
 function toDocsPath(srcPath) {
