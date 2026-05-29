@@ -200,7 +200,55 @@ function wireMessageForm(messageForm, feedback) {
   });
 }
 
-function wireTabs({ tabs, panels }) {
+function createFilloutLoader(root) {
+  const filloutContainer = root.querySelector("[data-fillout-container]");
+  let isLoaded = false;
+  let pendingLoad = null;
+
+  const ensureFilloutLoaded = () => {
+    if (!(filloutContainer instanceof HTMLElement)) {
+      return Promise.resolve();
+    }
+
+    if (isLoaded) {
+      return Promise.resolve();
+    }
+
+    if (pendingLoad) {
+      return pendingLoad;
+    }
+
+    pendingLoad = new Promise((resolve, reject) => {
+      const existingScript = document.querySelector('script[src="https://server.fillout.com/embed/v1/"]');
+
+      if (existingScript instanceof HTMLScriptElement) {
+        isLoaded = true;
+        resolve();
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = "https://server.fillout.com/embed/v1/";
+      script.async = true;
+      script.onload = () => {
+        isLoaded = true;
+        resolve();
+      };
+      script.onerror = () => {
+        pendingLoad = null;
+        reject(new Error("Fillout script failed to load"));
+      };
+
+      document.head.appendChild(script);
+    });
+
+    return pendingLoad;
+  };
+
+  return { ensureFilloutLoaded };
+}
+
+function wireTabs({ tabs, panels, onTabActivated }) {
   const activateTab = (tabName) => {
     tabs.forEach((tab) => {
       const isActive = tab.dataset.contactTab === tabName;
@@ -217,6 +265,10 @@ function wireTabs({ tabs, panels }) {
       panel.classList.toggle("hidden", !isActive);
       panel.classList.toggle("block", isActive);
     });
+
+    if (typeof onTabActivated === "function") {
+      onTabActivated(tabName);
+    }
   };
 
   tabs.forEach((tab, index) => {
@@ -290,7 +342,18 @@ export function initContactTabs() {
 
   const feedback = createFeedbackController(root);
   const messageForm = root.querySelector("[data-contact-message-form]") ?? root.querySelector("form");
+  const { ensureFilloutLoaded } = createFilloutLoader(root);
 
   wireMessageForm(messageForm, feedback);
-  wireTabs({ tabs, panels });
+  wireTabs({
+    tabs,
+    panels,
+    onTabActivated: (tabName) => {
+      if (tabName === "call") {
+        ensureFilloutLoaded().catch(() => {
+          // Keep interaction responsive even if the external script is blocked.
+        });
+      }
+    },
+  });
 }
