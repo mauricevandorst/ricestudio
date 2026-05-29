@@ -52,14 +52,14 @@ const MAX_SCROLL_DELTA = 28;
 
 function getScrollSpeedMultiplier() {
   if (window.matchMedia("(max-width: 640px)").matches) {
-    return 0.14;
+    return 0.08;
   }
 
   if (window.matchMedia("(max-width: 1024px)").matches) {
-    return 0.18;
+    return 0.11;
   }
 
-  return 0.22;
+  return 0.14;
 }
 
 function lerp(a, b, t) {
