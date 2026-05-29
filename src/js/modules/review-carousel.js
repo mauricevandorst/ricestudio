@@ -48,6 +48,19 @@ const COPIES = 3;
 const LERP_FACTOR = 0.1;
 const SETTLE_THRESHOLD = 0.05;
 const COLORS = ["#bba0f9", "#daf9a0"];
+const MAX_SCROLL_DELTA = 28;
+
+function getScrollSpeedMultiplier() {
+  if (window.matchMedia("(max-width: 640px)").matches) {
+    return 0.14;
+  }
+
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    return 0.18;
+  }
+
+  return 0.22;
+}
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -310,13 +323,19 @@ export function initReviewCarousel() {
     () => {
       const currentScrollY = window.scrollY;
       const delta = currentScrollY - lastScrollY;
+      const normalizedDelta = Math.max(
+        -MAX_SCROLL_DELTA,
+        Math.min(MAX_SCROLL_DELTA, delta),
+      );
+      const speedMultiplier = getScrollSpeedMultiplier();
       lastScrollY = currentScrollY;
 
       // direction -1 ("left"): scrollLeft increases on scroll down.
       // direction  1 ("right"): scrollLeft decreases on scroll down.
       rowStates.forEach((state) => {
         if (state.isVisible) {
-          state.targetScrollLeft += delta * -state.direction * 0.35;
+          state.targetScrollLeft +=
+            normalizedDelta * -state.direction * speedMultiplier;
         }
       });
 
