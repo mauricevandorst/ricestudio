@@ -19,6 +19,19 @@ export function initValuesCarousel() {
   let resizeFrame = 0;
   let scrollFrame = 0;
   let snapTimeout = 0;
+  let carouselId = "values-carousel";
+
+  const ensureId = (element, fallbackId) => {
+    if (!(element instanceof HTMLElement)) {
+      return fallbackId;
+    }
+
+    if (!element.id) {
+      element.id = fallbackId;
+    }
+
+    return element.id;
+  };
 
   const getSlidesPerView = () => {
     if (window.innerWidth >= 1024) {
@@ -46,6 +59,7 @@ export function initValuesCarousel() {
       button.className = "h-2.5 rounded-full bg-black/20 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/35";
       button.setAttribute("aria-label", `Ga naar item ${index + 1}`);
       button.setAttribute("aria-pressed", index === currentIndex ? "true" : "false");
+      button.setAttribute("aria-controls", `${carouselId}-slide-${index + 1}`);
       button.addEventListener("click", () => {
         goToIndex(index, "smooth");
       });
@@ -85,6 +99,18 @@ export function initValuesCarousel() {
   const updateControls = () => {
     prevButton.disabled = currentIndex === 0;
     nextButton.disabled = currentIndex === maxIndex;
+    prevButton.setAttribute("aria-disabled", String(prevButton.disabled));
+    nextButton.setAttribute("aria-disabled", String(nextButton.disabled));
+
+    const firstVisibleIndex = currentIndex;
+    const lastVisibleIndex = Math.min(currentIndex + slidesPerView - 1, slides.length - 1);
+
+    slides.forEach((slide, index) => {
+      const isVisible = index >= firstVisibleIndex && index <= lastVisibleIndex;
+
+      slide.setAttribute("aria-hidden", String(!isVisible));
+      slide.setAttribute("tabindex", isVisible ? "0" : "-1");
+    });
 
     dotButtons.forEach((button, index) => {
       const isActive = index === currentIndex;
@@ -92,6 +118,7 @@ export function initValuesCarousel() {
       button.classList.toggle("bg-black", isActive);
       button.classList.toggle("bg-black/20", !isActive);
       button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      button.setAttribute("aria-current", isActive ? "true" : "false");
     });
   };
 
@@ -144,6 +171,18 @@ export function initValuesCarousel() {
     buildDots();
     update();
   };
+
+  carouselId = ensureId(root, `values-carousel-${Math.random().toString(36).slice(2, 8)}`);
+  ensureId(viewport, `${carouselId}-viewport`);
+  ensureId(track, `${carouselId}-track`);
+
+  track.setAttribute("role", "list");
+  slides.forEach((slide, index) => {
+    slide.setAttribute("role", "listitem");
+    slide.setAttribute("aria-roledescription", "slide");
+    slide.setAttribute("aria-label", `Stap ${index + 1} van ${slides.length}`);
+    ensureId(slide, `${carouselId}-slide-${index + 1}`);
+  });
 
   prevButton.addEventListener("click", () => {
     if (currentIndex === 0) {

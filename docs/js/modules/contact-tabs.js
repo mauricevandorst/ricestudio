@@ -256,7 +256,7 @@ function wireTabs({ tabs, panels, onTabActivated }) {
       tab.setAttribute("aria-selected", String(isActive));
       tab.setAttribute("tabindex", isActive ? "0" : "-1");
       tab.classList.toggle("text-slate-950", isActive);
-      tab.classList.toggle("text-slate-400", !isActive);
+      tab.classList.toggle("text-slate-500", !isActive);
     });
 
     panels.forEach((panel) => {
@@ -264,6 +264,7 @@ function wireTabs({ tabs, panels, onTabActivated }) {
 
       panel.classList.toggle("hidden", !isActive);
       panel.classList.toggle("block", isActive);
+      panel.setAttribute("aria-hidden", String(!isActive));
     });
 
     if (typeof onTabActivated === "function") {

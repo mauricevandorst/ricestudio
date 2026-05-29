@@ -6,7 +6,7 @@ import { readdirSync } from "node:fs";
 
 const SRC = "src";
 const DOCS = "docs";
-const ROOT_STATIC_EXTENSIONS = new Set([".html", ".xml", ".txt"]);
+const ROOT_STATIC_EXTENSIONS = new Set([".html", ".xml", ".txt", ".js"]);
 
 function ensureDirs() {
   mkdirSync(path.join(DOCS, "css"), { recursive: true });

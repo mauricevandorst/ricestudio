@@ -1,6 +1,8 @@
 export function initMobileMenu() {
   const menuButton = document.querySelector("[data-menu-button]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
+  const closeButton = mobileMenu?.querySelector("[data-menu-close]");
+  const submenuToggle = mobileMenu?.querySelector("[data-mobile-submenu-toggle]");
 
   if (!menuButton || !mobileMenu) {
     return;
@@ -58,6 +60,8 @@ export function initMobileMenu() {
   const setMenuOpen = (open) => {
     menuButton.setAttribute("aria-expanded", String(open));
     menuButton.setAttribute("aria-label", open ? "Sluit menu" : "Open menu");
+    menuButton.setAttribute("aria-haspopup", "dialog");
+    mobileMenu.setAttribute("aria-hidden", String(!open));
     document.documentElement.classList.toggle("overflow-hidden", open);
     document.body.classList.toggle("overflow-hidden", open);
 
@@ -71,12 +75,23 @@ export function initMobileMenu() {
         clearTimeout(closeTimer);
         closeTimer = null;
       }
+
+      mobileMenu.removeAttribute("inert");
       mobileMenu.classList.remove("hidden");
       animateMenuOpen();
+
+      const focusTarget = closeButton ?? mobileMenu.querySelector("a, button");
+      if (focusTarget instanceof HTMLElement) {
+        window.setTimeout(() => {
+          focusTarget.focus();
+        }, 0);
+      }
     } else {
       animateMenuClose(() => {
         mobileMenu.classList.add("hidden");
+        mobileMenu.setAttribute("inert", "");
         resetAnimations();
+        menuButton.focus();
       });
     }
   };
@@ -91,7 +106,6 @@ export function initMobileMenu() {
   // Samsung Internet does not reliably fire 'click' on elements inside CSS-transformed
   // containers (skewY). Using touchstart (fires before transform hit-testing) for touch
   // devices, and click for mouse/desktop. A flag prevents double-firing.
-  const closeButton = mobileMenu.querySelector("[data-menu-close]");
   if (closeButton) {
     let closeTouchFired = false;
 
@@ -124,19 +138,28 @@ export function initMobileMenu() {
   }
 
   // Submenu toggle
-  const submenuToggle = mobileMenu.querySelector("[data-mobile-submenu-toggle]");
   if (submenuToggle) {
+    const submenuId = submenuToggle.getAttribute("aria-controls");
+    const submenu = submenuId ? mobileMenu.querySelector(`#${submenuId}`) : null;
+
+    if (submenu instanceof HTMLElement) {
+      const isExpanded = submenuToggle.getAttribute("aria-expanded") === "true";
+      submenu.classList.toggle("hidden", !isExpanded);
+      submenu.setAttribute("aria-hidden", String(!isExpanded));
+    }
+
     submenuToggle.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
 
       const isExpanded = submenuToggle.getAttribute("aria-expanded") === "true";
-      const submenuId = submenuToggle.getAttribute("aria-controls");
-      const submenu = submenuId ? mobileMenu.querySelector(`#${submenuId}`) : null;
       const icon = submenuToggle.querySelector("[data-mobile-submenu-icon]");
 
       submenuToggle.setAttribute("aria-expanded", String(!isExpanded));
       submenu?.classList.toggle("hidden", isExpanded);
+      if (submenu instanceof HTMLElement) {
+        submenu.setAttribute("aria-hidden", String(isExpanded));
+      }
       icon?.classList.toggle("rotate-180", !isExpanded);
     });
   }
@@ -165,4 +188,7 @@ export function initMobileMenu() {
       setMenuOpen(false);
     }
   });
+
+  mobileMenu.setAttribute("aria-hidden", "true");
+  mobileMenu.setAttribute("inert", "");
 }

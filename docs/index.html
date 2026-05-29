@@ -190,6 +190,7 @@
           <div class="hidden min-w-0 flex-1 items-center gap-6 md:flex lg:gap-8">
             <nav
               class="flex min-w-0 items-center gap-5 text-lg tracking-[-0.05em] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-2xl"
+              aria-label="Hoofdmenu"
               data-header-text>
               <a class="transition duration-300 hover:text-[#daf9a0]" href="./">Home</a>
               <a class="transition duration-300 hover:text-[#daf9a0]" href="./proces/">Proces</a>
@@ -199,6 +200,7 @@
 
             <nav
               class="ml-auto flex items-center gap-5 text-[0.95rem] font-medium text-[#bba0f9] transition-colors duration-300 lg:gap-7 lg:text-[1rem]"
+              aria-label="Snelle links"
               data-header-text>
               <a class="transition duration-300 hover:text-[#daf9a0]" href="./portfolio/">Cases</a>
             </nav>
@@ -218,13 +220,13 @@
 
           <button type="button"
             class="ml-auto inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full text-[#bba0f9] transition-colors duration-300 md:hidden"
-            data-menu-button data-header-text aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            data-menu-button data-header-text aria-expanded="false" aria-controls="mobile-menu" aria-haspopup="dialog" aria-label="Open menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="1.9" data-menu-open-icon>
+              stroke="currentColor" stroke-width="1.9" data-menu-open-icon aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 6.75h18M8 12h13M3 17.25h18" />
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="1.9" data-menu-close-icon>
+              stroke="currentColor" stroke-width="1.9" data-menu-close-icon aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
             </svg>
           </button>
@@ -232,9 +234,9 @@
       </div>
     </div>
 
-    <div id="mobile-menu" class="fixed inset-0 z-[70] hidden md:hidden" data-mobile-menu>
+    <div id="mobile-menu" class="fixed inset-0 z-[70] hidden md:hidden" data-mobile-menu role="dialog" aria-modal="true" aria-label="Mobiel menu" aria-hidden="true">
 
-      <div class="absolute inset-0 bg-[#34343f]" data-mobile-menu-backdrop></div>
+      <div class="absolute inset-0 bg-[#34343f]" data-mobile-menu-backdrop aria-hidden="true"></div>
 
       <div class="relative z-10 flex h-full flex-col" data-mobile-menu-container>
         <div class="px-4 py-2 flex items-center justify-center gap-4 text-[13px]">
@@ -265,7 +267,7 @@
                   </svg>
                 </button>
               </div>
-              <nav class="flex flex-col gap-2">
+              <nav class="flex flex-col gap-2" aria-label="Mobiele navigatie">
                 <div class="flex items-center gap-2 rounded-lg bg-[#bba0f9]/15" data-mobile-menu-item>
                   <a href="./"
                     class="min-w-0 flex-1 rounded-lg px-4 py-2 text-xl font-medium text-[#34343f] transition hover:bg-[#bba0f9]/10">
@@ -281,7 +283,7 @@
                     </svg>
                   </button>
                 </div>
-                <div id="mobile-home-submenu" class="space-y-1 pl-2">
+                <div id="mobile-home-submenu" class="space-y-1 pl-2" role="group" aria-label="Home submenu">
                   <a href="./proces"
                     class="inline-flex w-full items-center justify-between rounded-lg px-4 py-2 text-sm font-medium text-[#34343f] hover:bg-[#bba0f9]/10"
                     data-mobile-menu-item>
@@ -420,52 +422,52 @@
                 <div class="marquee__track overflow-hidden">
                   <ul class="marquee__content" aria-label="Technologie">
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" loading="eager" />
+                      <img src="./assets/icons/nodedotjs.svg" alt="Node.js" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="eager" />
+                      <img src="./assets/icons/tailwind.svg" alt="Tailwind CSS" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" loading="eager" />
+                      <img src="./assets/icons/github.svg" alt="GitHub" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" loading="eager" />
+                      <img src="./assets/icons/cloudflare.svg" alt="Cloudflare" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" loading="eager"
+                      <img src="./assets/icons/javascript.svg" alt="JavaScript" loading="eager"
                         decoding="async" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" loading="eager" />
+                      <img src="./assets/icons/vite.svg" alt="Vite" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="eager"
+                      <img src="./assets/icons/html5.svg" alt="HTML5" loading="eager"
                         decoding="async" />
                     </li>
                   </ul>
 
                   <ul class="marquee__content" aria-hidden="true">
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" loading="eager" />
+                      <img src="./assets/icons/nodedotjs.svg" alt="" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="" loading="eager" />
+                      <img src="./assets/icons/tailwind.svg" alt="" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/github/181717" alt="" loading="eager" />
+                      <img src="./assets/icons/github.svg" alt="" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="" loading="eager" />
+                      <img src="./assets/icons/cloudflare.svg" alt="" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" loading="eager"
+                      <img src="./assets/icons/javascript.svg" alt="" loading="eager"
                         decoding="async" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/vite/646CFF" alt="" loading="eager" />
+                      <img src="./assets/icons/vite.svg" alt="" loading="eager" />
                     </li>
                     <li class="logo-tile">
-                      <img src="https://cdn.simpleicons.org/html5/E34F26" alt="" loading="eager" decoding="async" />
+                      <img src="./assets/icons/html5.svg" alt="" loading="eager" decoding="async" />
                     </li>
                   </ul>
                 </div>
@@ -677,6 +679,7 @@
     <!-- Proces -->
     <section class="bg-slate-100 py-3" id="proces">
       <div class="mx-auto rounded-[2rem] bg-[#bba0f9] px-4 py-8 sm:px-6 lg:px-8 lg:py-10" data-values-carousel
+        role="region" aria-roledescription="carousel" aria-label="Processtappen"
         data-reveal>
         <div class="flex flex-col gap-8">
           <div class="flex flex justify-between gap-6 lg:flex-row lg:items-start ">
@@ -691,13 +694,13 @@
               <div class="flex items-center gap-2">
                 <button type="button"
                   class="inline-flex h-12 w-12 items-center justify-center text-black transition disabled:cursor-not-allowed disabled:opacity-35"
-                  data-values-prev aria-label="Vorige proces">
+                  data-values-prev aria-label="Vorige proces" aria-controls="values-carousel-viewport">
                   <img src="./assets/icons/arrow-down-dark.svg" alt="" aria-hidden="true"
                     class="h-12 w-12 rotate-90 scale-x-[-1] transition duration-300 ease-out hover:rotate-[70deg]" />
                 </button>
                 <button type="button"
                   class="inline-flex h-12 w-12 items-center justify-center text-black transition disabled:cursor-not-allowed disabled:opacity-35"
-                  data-values-next aria-label="Volgende proces">
+                  data-values-next aria-label="Volgende proces" aria-controls="values-carousel-viewport">
                   <img src="./assets/icons/arrow-down-dark.svg" alt="" aria-hidden="true"
                     class="h-12 w-12 rotate-90 scale-y-[-1] scale-x-[-1] transition duration-300 ease-out hover:rotate-[110deg]" />
                 </button>
@@ -707,7 +710,7 @@
 
           <div
             class="overflow-x-auto scroll-smooth snap-x snap-mandatory [touch-action:pan-x_pan-y] overscroll-x-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:snap-none"
-            data-values-viewport>
+            id="values-carousel-viewport" data-values-viewport aria-live="off" aria-atomic="false">
             <div
               class="flex items-stretch gap-3 rounded-[1.75rem] pr-4 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:pr-0"
               data-values-track>
@@ -850,7 +853,7 @@
             </div>
           </div>
 
-          <div class="flex items-center justify-center gap-2" data-values-dots aria-label="Carousel paginering"></div>
+          <div class="flex items-center justify-center gap-2" data-values-dots role="group" aria-label="Carousel paginering"></div>
         </div>
       </div>
     </section>
@@ -926,7 +929,8 @@
             </div>
 
             <article class="rounded-[1.75rem] bg-slate-100/90 p-5 sm:p-6" data-reveal>
-              <div class="flex items-center gap-[1px] text-[#c874ff]" aria-label="5 uit 5 sterren">
+              <div class="flex items-center gap-[1px] text-[#c874ff]">
+                <span class="sr-only">5 uit 5 sterren</span>
                 <i class="fa-solid fa-star text-sm" aria-hidden="true"></i>
                 <i class="fa-solid fa-star text-sm" aria-hidden="true"></i>
                 <i class="fa-solid fa-star text-sm" aria-hidden="true"></i>
@@ -955,13 +959,13 @@
                 class="flex flex-col sm:flex-row sm:items-center gap-2 gap-x-4 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                 role="tablist" aria-label="Contact opties">
                 <button type="button"
-                  class="inline-flex w-max shrink-0 rounded-[1.1rem] text-[1.85rem] font-black leading-none tracking-[-0.06em] text-slate-400 transition-colors duration-200 sm:px-2 sm:text-[2.2rem]"
+                  class="inline-flex w-max shrink-0 rounded-[1.1rem] text-[1.85rem] font-black leading-none tracking-[-0.06em] text-slate-500 transition-colors duration-200 sm:px-2 sm:text-[2.2rem]"
                   data-contact-tab="message" data-contact-default aria-selected="true"
                   aria-controls="contact-panel-message" id="contact-tab-message" role="tab">
                   Bericht versturen
                 </button>
                 <button type="button"
-                  class="inline-flex w-max shrink-0 rounded-[1.1rem] text-[1.85rem] font-black leading-none tracking-[-0.06em] text-slate-400 transition-colors duration-200 sm:px-2 sm:text-[2.2rem]"
+                  class="inline-flex w-max shrink-0 rounded-[1.1rem] text-[1.85rem] font-black leading-none tracking-[-0.06em] text-slate-500 transition-colors duration-200 sm:px-2 sm:text-[2.2rem]"
                   data-contact-tab="call" aria-selected="false" aria-controls="contact-panel-call" id="contact-tab-call"
                   role="tab" tabindex="-1">
                   Plan een call
@@ -987,7 +991,7 @@
                           class="text-rose-700">*</span></span>
                     </div>
                     <input type="text" name="name" placeholder="Jan Jansen" autocomplete="off" required
-                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
+                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
                   <label class="block px-0">
@@ -997,7 +1001,7 @@
                       <span class="text-sm font-medium text-slate-950 sm:text-base">Je telefoonnummer</span>
                     </div>
                     <input type="tel" name="phone" placeholder="Telefoonnummer" autocomplete="off"
-                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
+                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
                   <label class="block px-0">
@@ -1007,7 +1011,7 @@
                       <span class="text-sm font-medium text-slate-950 sm:text-base">Bedrijfsnaam</span>
                     </div>
                     <input type="text" name="company" placeholder="Bedrijf" autocomplete="off"
-                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
+                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
                   <label class="block px-0">
@@ -1018,7 +1022,7 @@
                           class="text-rose-700">*</span></span>
                     </div>
                     <input type="email" name="email" placeholder="info@bedrijf.nl" autocomplete="off" required
-                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
+                      class="mt-4 w-full border-0 rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base" />
                   </label>
 
                   <label class="block px-0">
@@ -1031,7 +1035,7 @@
                     <textarea name="message" rows="5"
                       placeholder="Waar ben je naar op zoek? Wat is hierbij belangrijk? Hoe ziet je ideale project eruit?"
                       required
-                      class="mt-4 min-h-[8rem] w-full resize-y rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-300 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base"></textarea>
+                      class="mt-4 min-h-[8rem] w-full resize-y rounded-lg border-b border-r border-slate-200 bg-transparent px-2 pb-4 pt-0 text-sm text-slate-950 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none focus:ring-0 sm:px-3 sm:text-base"></textarea>
                   </label>
 
                   <div class="px-2 pt-4 sm:px-3">
@@ -1105,7 +1109,7 @@
 
   </main>
 
-  <footer class="bg-slate-100 flex flex-col gap-4">
+  <footer class="bg-slate-100 flex flex-col gap-4 text-slate-900">
     <div
       class="mx-auto grid w-full lg:justify-between grid-cols-1 gap-12 rounded-xl bg-[#292938] shadow-xl px-4 py-8 text-sm text-white/50 lg:grid-cols-2 lg:text-base lg:px-[6rem] lg:py-10 lg:gap-0">
       <!-- Footer top section -->
@@ -1185,21 +1189,22 @@
     <div class="mx-auto py-4">
       <div class="flex gap-3 items-start text-slate-700 leading-none">
         <div class="mt-1 flex flex-col gap-1 items-end">
-          <span class="text-[0.55rem] font-semibold uppercase tracking-[0.13em] text-slate-500">
+          <span class="text-[0.55rem] font-semibold uppercase tracking-[0.13em] text-slate-700">
             Reviewed On
           </span>
           <img src="./assets/logos/google-logo.jpg" alt="Google logo" aria-hidden="true"
             class="block h-[1.55rem] w-auto transition-all duration-300" />
         </div>
         <div class="mt-[0.1rem] flex flex-col items-center gap-[0.35rem]">
-          <span class="text-yellow-500 flex gap-2" aria-label="5 uit 5 sterren">
+          <span class="text-yellow-500 flex gap-2">
+            <span class="sr-only">5 uit 5 sterren</span>
             <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
             <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
             <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
             <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
             <i class="fa-solid fa-star text-xs -mx-1" aria-hidden="true"></i>
           </span>
-          <span class="w-full text-[0.70rem] text-center font-medium uppercase tracking-[0.05em] text-slate-600/70">
+          <span class="w-full text-[0.70rem] text-center font-medium uppercase tracking-[0.05em] text-slate-700">
             5.0 rating
           </span>
         </div>

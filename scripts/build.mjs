@@ -3,7 +3,7 @@ import { execSync } from "node:child_process";
 
 const SRC = "src";
 const DOCS = "docs";
-const ROOT_STATIC_EXTENSIONS = new Set([".html", ".xml", ".txt"]);
+const ROOT_STATIC_EXTENSIONS = new Set([".html", ".xml", ".txt", ".js"]);
 
 function clean() {
   if (existsSync(DOCS)) rmSync(DOCS, { recursive: true, force: true });

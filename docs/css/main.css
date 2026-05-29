@@ -2528,10 +2528,6 @@ video {
   color: rgb(100 116 139 / var(--tw-text-opacity, 1));
 }
 
-.text-slate-600\/70 {
-  color: rgb(71 85 105 / 0.7);
-}
-
 .text-slate-700 {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity, 1));
@@ -2904,14 +2900,14 @@ html {
   color: rgb(15 23 42 / var(--tw-text-opacity, 1));
 }
 
-.placeholder\:text-slate-300::-moz-placeholder {
+.placeholder\:text-slate-500::-moz-placeholder {
   --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity, 1));
+  color: rgb(100 116 139 / var(--tw-text-opacity, 1));
 }
 
-.placeholder\:text-slate-300::placeholder {
+.placeholder\:text-slate-500::placeholder {
   --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity, 1));
+  color: rgb(100 116 139 / var(--tw-text-opacity, 1));
 }
 
 .hover\:rotate-\[110deg\]:hover {
